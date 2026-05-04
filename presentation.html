@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luyện tập thuyết trình | Yoodli AI</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        .main-content {
+            background-color: #FFFFFF;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        
+        .app-header {
+            background: none;
+            padding: 24px 40px;
+            margin-bottom: 0;
+            position: relative;
+            box-shadow: none;
+            border-bottom: 1px solid #E2E8F0;
+        }
+        
+        .app-header h1 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #0F172A;
+            margin: 0;
+        }
+
+        /* Sidebar styles from practice */
+        .sidebar {
+            padding: 16px;
+            justify-content: flex-start;
+        }
+        .sidebar-header {
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .logo-small {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary-blue);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .btn-practice {
+            background: linear-gradient(90deg, #60A5FA 0%, #8B5CF6 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 12px 16px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-weight: 600;
+            font-size: 15px;
+            cursor: pointer;
+            margin-bottom: 0;
+        }
+        .btn-practice i { font-size: 18px; }
+        .btn-practice .left {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .practice-menu-container {
+            position: relative;
+            margin-bottom: 24px;
+        }
+        .practice-dropdown {
+            position: absolute;
+            top: 0;
+            left: calc(100% + 8px);
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            border: 1px solid #E2E8F0;
+            width: 220px;
+            padding: 8px 0;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateX(-10px);
+            transition: all 0.2s ease;
+            z-index: 100;
+        }
+        .practice-menu-container:hover .practice-dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(0);
+        }
+        .practice-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 20px;
+            color: #1E1B4B;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+        .practice-item:hover { background: #F8FAFC; }
+        .practice-item i { font-size: 20px; color: #1E1B4B; }
+        
+        .sidebar-nav { gap: 4px; }
+        .nav-item {
+            padding: 10px 12px;
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 8px;
+            color: #334155;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .nav-item.active {
+            background-color: transparent;
+            color: var(--primary-blue);
+        }
+        .nav-item.active i { color: var(--primary-blue); }
+        .nav-item:hover { background-color: #F1F5F9; }
+        .nav-item i { font-size: 20px; color: #64748B; }
+
+        .sidebar-bottom {
+            margin-top: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .plan-banner {
+            background-color: #0F172A;
+            border-radius: 12px;
+            padding: 16px;
+            color: white;
+            text-align: center;
+        }
+        .plan-banner .plan-title {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .plan-banner .plan-desc {
+            font-size: 12px;
+            color: #94A3B8;
+            margin-bottom: 12px;
+        }
+        .plan-banner .btn-upgrade {
+            background: linear-gradient(90deg, #3B82F6 0%, #8B5CF6 100%);
+            border: none;
+            border-radius: 6px;
+            color: white;
+            width: 100%;
+            padding: 8px;
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            margin-bottom: 12px;
+        }
+        .plan-banner .promo {
+            font-size: 11px;
+            color: #E2E8F0;
+        }
+
+        .user-profile {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 8px;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            border-top: 1px solid #E2E8F0;
+            border-radius: 0;
+        }
+        .user-profile:hover { background: #F8FAFC; }
+        .user-profile .left { display: flex; align-items: center; gap: 10px; }
+        .user-profile img { width: 32px; height: 32px; border-radius: 50%; }
+        .user-info { display: flex; flex-direction: column; align-items: flex-start; }
+        .user-info .name { font-size: 13px; font-weight: 700; color: #0F172A; }
+        .user-info .email { font-size: 11px; color: #64748B; }
+
+        /* Presentation Layout */
+        .presentation-layout {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+            overflow-y: auto;
+        }
+
+        .prompt-text {
+            font-size: 15px;
+            margin-bottom: 24px;
+            color: #0F172A;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .prompt-text .blue-part {
+            color: #2563EB;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+        }
+        
+        .prompt-text .blue-part i {
+            font-size: 18px;
+        }
+
+        .presentation-container {
+            width: 100%;
+            max-width: 800px;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+        }
+
+        .video-box {
+            background: #F1F5F9;
+            border-radius: 12px;
+            height: 400px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+        }
+
+        .audio-bars {
+            display: flex;
+            gap: 6px;
+            align-items: center;
+        }
+        .audio-bars .dot {
+            width: 4px;
+            height: 4px;
+            background: #6366F1;
+            border-radius: 50%;
+        }
+        .audio-bars .bar {
+            width: 4px;
+            background: #6366F1;
+            border-radius: 4px;
+        }
+
+        .lang-select {
+            position: absolute;
+            bottom: 16px;
+            left: 16px;
+            background: #64748B;
+            color: white;
+            border-radius: 20px;
+            padding: 6px 12px;
+            font-size: 12px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+        }
+
+        .user-cam-badge {
+            position: absolute;
+            bottom: 16px;
+            right: 16px;
+            background: rgba(255,255,255,0.8);
+            backdrop-filter: blur(4px);
+            color: #3B82F6;
+            border-radius: 20px;
+            padding: 6px 12px;
+            font-size: 12px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .actions-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .icon-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #F1F5F9;
+            border: none;
+            color: #64748B;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .icon-btn:hover { background: #E2E8F0; }
+
+        .btn-start {
+            background: linear-gradient(90deg, #3B82F6 0%, #8B5CF6 100%);
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 32px;
+            font-size: 15px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+        }
+
+        .upgrade-banner-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+            background: white;
+            border: 1px solid #E2E8F0;
+            border-radius: 12px;
+            padding: 12px 24px;
+            width: 100%;
+        }
+
+        .upgrade-banner-bottom .left-part {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #0F172A;
+        }
+
+        .upgrade-banner-bottom .btn-upgrade {
+            background: linear-gradient(90deg, #3B82F6 0%, #8B5CF6 100%);
+            border: none;
+            border-radius: 20px;
+            color: white;
+            padding: 6px 16px;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <a href="index.html" class="logo-small">
+                    <i class="ph-fill ph-microphone-stage"></i> yoodli
+                </a>
+                <a href="#" style="color: #64748B;"><i class="ph-bold ph-caret-left"></i></a>
+            </div>
+            
+            <div class="practice-menu-container">
+                <button class="btn-practice">
+                    <span class="left">
+                        <i class="ph-fill ph-video-camera"></i> Luyện tập
+                    </span>
+                    <i class="ph-bold ph-caret-right" style="font-size: 14px;"></i>
+                </button>
+                <div class="practice-dropdown">
+                    <a href="practice.html" class="practice-item">
+                        <i class="ph-duotone ph-chat-circle-text"></i> Diễn tập
+                    </a>
+                    <a href="presentation.html" class="practice-item" style="background: #F8FAFC;">
+                        <i class="ph-duotone ph-presentation-chart"></i> Bài thuyết trình
+                    </a>
+                    <a href="interview.html" class="practice-item">
+                        <i class="ph-duotone ph-users-three"></i> Phỏng vấn
+                    </a>
+                    <a href="#" class="practice-item">
+                        <i class="ph-duotone ph-cloud-arrow-up"></i> Tải lên
+                    </a>
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="app.html" class="nav-item">
+                    <i class="ph-duotone ph-house"></i> Trang chủ
+                </a>
+                <a href="builder.html" class="nav-item">
+                    <i class="ph-duotone ph-magic-wand"></i> Trình tạo
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="ph-duotone ph-chart-bar"></i> Bảng điều khiển
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="ph-duotone ph-video"></i> Bản ghi âm của tôi
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="ph-duotone ph-book-open"></i> Quá trình học tập của tôi
+                </a>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <div class="plan-banner">
+                    <div class="plan-title">
+                        <i class="ph-fill ph-star" style="color: #60A5FA;"></i> Bạn đang sử dụng gói miễn phí
+                    </div>
+                    <div class="plan-desc">Còn lại 5 Yoodlis</div>
+                    <button class="btn-upgrade"><i class="ph-bold ph-arrow-up"></i> NÂNG CẤP</button>
+                    <div class="promo">Sử dụng mã khuyến mãi <strong>SPRING20</strong></div>
+                </div>
+
+                <div class="user-profile">
+                    <div class="left">
+                        <img src="https://ui-avatars.com/api/?name=Ngan&background=0F172A&color=fff" alt="User Avatar">
+                        <div class="user-info">
+                            <span class="name">Ngân</span>
+                            <span class="email">lykimngan777@...</span>
+                        </div>
+                    </div>
+                    <i class="ph-bold ph-caret-up" style="color: #64748B;"></i>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="app-header">
+                <h1>Luyện tập thuyết trình</h1>
+            </header>
+
+            <div class="presentation-layout">
+                <div class="prompt-text">
+                    <span class="blue-part"><i class="ph-bold ph-arrows-clockwise"></i> Thử một lời nhắc vui vẻ</span>
+                    <strong>nếu bạn không chắc chắn về những gì bạn muốn nói</strong>
+                </div>
+
+                <div class="presentation-container">
+                    <div class="video-box">
+                        <div class="audio-bars">
+                            <div class="dot"></div>
+                            <div class="bar" style="height: 12px;"></div>
+                            <div class="bar" style="height: 24px;"></div>
+                            <div class="bar" style="height: 32px;"></div>
+                            <div class="bar" style="height: 18px;"></div>
+                            <div class="bar" style="height: 24px;"></div>
+                            <div class="bar" style="height: 12px;"></div>
+                            <div class="dot"></div>
+                        </div>
+
+                        <div class="lang-select">
+                            <i class="ph-bold ph-globe"></i> VI <i class="ph-bold ph-caret-down" style="font-size: 10px;"></i>
+                        </div>
+
+                        <div class="user-cam-badge">
+                            <i class="ph-fill ph-video-camera-slash"></i> Ngân Lý
+                        </div>
+                    </div>
+
+                    <div class="actions-row">
+                        <button class="icon-btn"><i class="ph-fill ph-gear"></i></button>
+                        <button class="icon-btn"><i class="ph-bold ph-upload-simple"></i></button>
+                        <button class="btn-start">
+                            <i class="ph-fill ph-record"></i> Bắt đầu
+                        </button>
+                    </div>
+
+                    <div class="upgrade-banner-bottom">
+                        <div class="left-part">
+                            <i class="ph-duotone ph-target" style="font-size: 20px; color: #0F172A;"></i>
+                            <span>4 Yoodlis remaining</span>
+                        </div>
+                        <button class="btn-upgrade"><i class="ph-bold ph-arrow-up"></i> NÂNG CẤP</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

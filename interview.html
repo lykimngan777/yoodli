@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luyện tập phỏng vấn | Yoodli AI</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        /* Specific overrides for practice page */
+        .main-content {
+            background-color: #FFFFFF;
+        }
+        
+        .app-header {
+            background: none;
+            padding: 24px 40px;
+            margin-bottom: 0;
+            position: relative;
+            box-shadow: none;
+            border-bottom: 1px solid #E2E8F0;
+        }
+        
+        .app-header h1 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #0F172A;
+            margin: 0;
+        }
+
+        /* Sidebar updates */
+        .sidebar {
+            padding: 16px;
+            justify-content: flex-start;
+        }
+
+        .sidebar-header {
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo-small {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary-blue);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-practice {
+            background: linear-gradient(90deg, #60A5FA 0%, #8B5CF6 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 12px 16px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-weight: 600;
+            font-size: 15px;
+            cursor: pointer;
+            margin-bottom: 0;
+        }
+        .btn-practice i {
+            font-size: 18px;
+        }
+        .btn-practice .left {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .practice-menu-container {
+            position: relative;
+            margin-bottom: 24px;
+        }
+
+        .practice-dropdown {
+            position: absolute;
+            top: 0;
+            left: calc(100% + 8px);
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            border: 1px solid #E2E8F0;
+            width: 220px;
+            padding: 8px 0;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateX(-10px);
+            transition: all 0.2s ease;
+            z-index: 100;
+        }
+
+        .practice-menu-container:hover .practice-dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(0);
+        }
+
+        .practice-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 20px;
+            color: #1E1B4B;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+
+        .practice-item:hover {
+            background: #F8FAFC;
+        }
+
+        .practice-item i {
+            font-size: 20px;
+            color: #1E1B4B;
+        }
+
+        .sidebar-nav {
+            gap: 4px;
+        }
+        
+        .nav-item {
+            padding: 10px 12px;
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 8px;
+            color: #334155;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .nav-item.active {
+            background-color: transparent;
+            color: var(--primary-blue);
+        }
+        .nav-item.active i {
+            color: var(--primary-blue);
+        }
+        .nav-item:hover {
+            background-color: #F1F5F9;
+        }
+        .nav-item i {
+            font-size: 20px;
+            color: #64748B;
+        }
+
+        .sidebar-bottom {
+            margin-top: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .plan-banner {
+            background-color: #0F172A;
+            border-radius: 12px;
+            padding: 16px;
+            color: white;
+            text-align: center;
+        }
+        .plan-banner .plan-title {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .plan-banner .plan-desc {
+            font-size: 12px;
+            color: #94A3B8;
+            margin-bottom: 12px;
+        }
+        .plan-banner .btn-upgrade {
+            background: linear-gradient(90deg, #3B82F6 0%, #8B5CF6 100%);
+            border: none;
+            border-radius: 6px;
+            color: white;
+            width: 100%;
+            padding: 8px;
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            margin-bottom: 12px;
+        }
+        .plan-banner .promo {
+            font-size: 11px;
+            color: #E2E8F0;
+        }
+
+        .user-profile {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 8px;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            border-top: 1px solid #E2E8F0;
+            border-radius: 0;
+        }
+        
+        .user-profile:hover {
+            background: #F8FAFC;
+        }
+
+        .user-profile .left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .user-profile img {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+        }
+
+        .user-info {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .user-info .name {
+            font-size: 13px;
+            font-weight: 700;
+            color: #0F172A;
+        }
+
+        .user-info .email {
+            font-size: 11px;
+            color: #64748B;
+        }
+
+        /* Practice Area Layout */
+        .practice-layout {
+            display: flex;
+            gap: 24px;
+            padding: 32px 40px;
+            height: calc(100vh - 73px);
+            background-color: #FFFFFF;
+        }
+
+        /* Left Panel - Configuration */
+        .config-panel {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            background: #F8FAFC;
+            border-radius: 12px;
+            padding: 8px;
+            max-width: 500px;
+        }
+
+        .config-tabs {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 16px;
+            border-bottom: 1px solid #E2E8F0;
+            padding: 0 8px;
+        }
+
+        .config-tab {
+            padding: 12px 16px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #64748B;
+            cursor: pointer;
+            position: relative;
+            text-align: center;
+            flex: 1;
+        }
+
+        .config-tab.active {
+            color: #2563EB;
+            background: white;
+            border-radius: 8px 8px 0 0;
+        }
+        .config-tab.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: white;
+        }
+
+        .config-content {
+            padding: 16px 24px;
+            background: white;
+            border-radius: 12px;
+            flex: 1;
+            overflow-y: auto;
+        }
+
+        .section-header-flex {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 16px;
+            margin-top: 24px;
+        }
+        
+        .section-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: #0F172A;
+            margin: 0;
+        }
+        
+        .section-title-first {
+            margin-top: 0;
+            margin-bottom: 16px;
+            font-size: 14px;
+            font-weight: 700;
+            color: #0F172A;
+        }
+
+        /* Inputs */
+        .input-group {
+            margin-bottom: 16px;
+        }
+        .input-label {
+            font-size: 11px;
+            color: #94A3B8;
+            margin-bottom: 6px;
+            margin-left: 4px;
+            font-weight: 500;
+            display: block;
+        }
+        .input-box {
+            display: flex;
+            align-items: center;
+            border: 1px solid #E2E8F0;
+            border-radius: 8px;
+            padding: 10px 16px;
+            background: white;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+            position: relative;
+        }
+        .input-box i.search-icon {
+            color: #0F172A;
+            font-size: 18px;
+            margin-right: 8px;
+            font-weight: bold;
+        }
+        .input-box i.clear-icon {
+            color: #64748B;
+            font-size: 14px;
+            cursor: pointer;
+            margin-left: 8px;
+        }
+        .input-box input {
+            border: none;
+            outline: none;
+            font-size: 14px;
+            color: #0F172A;
+            width: 100%;
+            font-family: inherit;
+            font-weight: 600;
+        }
+        .row-inputs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+        .select-box {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border: 1px solid #E2E8F0;
+            border-radius: 8px;
+            padding: 11px 16px;
+            background: white;
+            font-size: 14px;
+            font-weight: 600;
+            color: #0F172A;
+            cursor: pointer;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+        }
+
+        /* Questions list */
+        .question-item {
+            border: 1px solid #E2E8F0;
+            border-radius: 8px;
+            padding: 14px 16px;
+            margin-bottom: 12px;
+            background: white;
+            font-size: 14px;
+            color: #0F172A;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+        }
+        .question-item-add {
+            border: 1px dashed #CBD5E1;
+            border-radius: 8px;
+            padding: 14px 16px;
+            background: #F8FAFC;
+            font-size: 14px;
+            color: #94A3B8;
+            cursor: pointer;
+            text-align: left;
+        }
+
+        /* Right Panel - Action */
+        .action-panel {
+            flex: 1.5;
+            display: flex;
+            flex-direction: column;
+            min-width: 0; /* Standard flex fix */
+            width: 100%;
+        }
+
+        .video-container {
+            background: #F1F5F9;
+            border-radius: 16px;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            min-height: 400px;
+            width: 100%;
+        }
+        .ai-partner-badge {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            background: #A78BFA;
+            border-radius: 12px;
+            width: 85px;
+            height: 75px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+        }
+        .ai-partner-badge .mic {
+            position: absolute;
+            top: 6px;
+            left: 6px;
+            background: rgba(0,0,0,0.2);
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+        .ai-partner-badge .avatar-icon {
+            font-size: 36px;
+            margin-top: 4px;
+        }
+        .ai-partner-badge .name {
+            background: white;
+            color: #8B5CF6;
+            font-size: 10px;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 12px;
+            position: absolute;
+            bottom: -8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            white-space: nowrap;
+        }
+        .audio-bars {
+            display: flex;
+            gap: 6px;
+            align-items: center;
+        }
+        .audio-bars .dot {
+            width: 4px;
+            height: 4px;
+            background: #3B82F6;
+            border-radius: 50%;
+        }
+        .audio-bars .bar {
+            width: 4px;
+            background: #3B82F6;
+            border-radius: 4px;
+        }
+        .lang-select {
+            position: absolute;
+            bottom: 16px;
+            left: 16px;
+            background: #475569;
+            color: white;
+            border-radius: 20px;
+            padding: 6px 12px;
+            font-size: 12px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+        }
+        .user-cam-badge {
+            position: absolute;
+            bottom: 16px;
+            right: 16px;
+            background: rgba(255,255,255,0.8);
+            backdrop-filter: blur(4px);
+            color: #3B82F6;
+            border-radius: 20px;
+            padding: 6px 12px;
+            font-size: 12px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .btn-start-active {
+            background: linear-gradient(90deg, #3B82F6 0%, #8B5CF6 100%);
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 32px;
+            font-size: 15px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+        }
+        .upgrade-banner-horizontal {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+            background: white;
+            border: 1px solid #E2E8F0;
+            border-radius: 12px;
+            padding: 12px 24px;
+            margin-top: 24px;
+            width: 100%;
+        }
+        .upgrade-banner-horizontal .left-part {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #0F172A;
+        }
+        .upgrade-banner-horizontal .btn-upgrade {
+            background: linear-gradient(90deg, #3B82F6 0%, #8B5CF6 100%);
+            border: none;
+            border-radius: 20px;
+            color: white;
+            padding: 6px 16px;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Common actions */
+        .bottom-actions {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 24px;
+        }
+        .icon-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #F1F5F9;
+            border: none;
+            color: #64748B;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .icon-btn:hover {
+            background: #E2E8F0;
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <a href="index.html" class="logo-small">
+                    <i class="ph-fill ph-microphone-stage"></i> yoodli
+                </a>
+                <a href="#" style="color: #64748B;"><i class="ph-bold ph-caret-left"></i></a>
+            </div>
+            
+            <div class="practice-menu-container">
+                <button class="btn-practice">
+                    <span class="left">
+                        <i class="ph-fill ph-video-camera"></i> Luyện tập
+                    </span>
+                    <i class="ph-bold ph-caret-right" style="font-size: 14px;"></i>
+                </button>
+                <div class="practice-dropdown">
+                    <a href="practice.html" class="practice-item">
+                        <i class="ph-duotone ph-chat-circle-text"></i> Diễn tập
+                    </a>
+                    <a href="presentation.html" class="practice-item">
+                        <i class="ph-duotone ph-presentation-chart"></i> Bài thuyết trình
+                    </a>
+                    <a href="interview.html" class="practice-item" style="background: #F8FAFC;">
+                        <i class="ph-duotone ph-users-three"></i> Phỏng vấn
+                    </a>
+                    <a href="#" class="practice-item">
+                        <i class="ph-duotone ph-cloud-arrow-up"></i> Tải lên
+                    </a>
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="app.html" class="nav-item">
+                    <i class="ph-duotone ph-house"></i> Trang chủ
+                </a>
+                <a href="builder.html" class="nav-item">
+                    <i class="ph-duotone ph-magic-wand"></i> Trình tạo
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="ph-duotone ph-chart-bar"></i> Bảng điều khiển
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="ph-duotone ph-video"></i> Bản ghi âm của tôi
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="ph-duotone ph-book-open"></i> Quá trình học tập của tôi
+                </a>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <div class="plan-banner">
+                    <div class="plan-title">
+                        <i class="ph-fill ph-star" style="color: #60A5FA;"></i> Bạn đang sử dụng gói miễn phí
+                    </div>
+                    <div class="plan-desc">Còn lại 5 Yoodlis</div>
+                    <button class="btn-upgrade"><i class="ph-bold ph-arrow-up"></i> NÂNG CẤP</button>
+                    <div class="promo">Sử dụng mã khuyến mãi <strong>SPRING20</strong></div>
+                </div>
+
+                <div class="user-profile">
+                    <div class="left">
+                        <img src="https://ui-avatars.com/api/?name=Ngan&background=0F172A&color=fff" alt="User Avatar">
+                        <div class="user-info">
+                            <span class="name">Ngân</span>
+                            <span class="email">lykimngan777@...</span>
+                        </div>
+                    </div>
+                    <i class="ph-bold ph-caret-up" style="color: #64748B;"></i>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="app-header">
+                <h1>Luyện tập phỏng vấn</h1>
+            </header>
+
+            <div class="practice-layout">
+                <!-- Left Panel -->
+                <div class="config-panel">
+                    <div class="config-tabs">
+                        <div class="config-tab">Chọn Một Vai Diễn</div>
+                        <div class="config-tab active">Luyện Tập Câu Hỏi</div>
+                    </div>
+                    
+                    <div class="config-content">
+                        <h2 class="section-title-first">Cá Nhân Hóa Phỏng Vấn Của Bạn</h2>
+                        
+                        <div class="input-group">
+                            <span class="input-label">Vai trò</span>
+                            <div class="input-box">
+                                <i class="ph-bold ph-magnifying-glass search-icon"></i>
+                                <input type="text" value="Tổng quan">
+                            </div>
+                        </div>
+
+                        <div class="row-inputs">
+                            <div class="input-group">
+                                <span class="input-label">Công ty</span>
+                                <div class="input-box">
+                                    <i class="ph-bold ph-magnifying-glass search-icon"></i>
+                                    <input type="text" value="Chung">
+                                    <i class="ph-bold ph-x clear-icon"></i>
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <span class="input-label">Phỏng vấn</span>
+                                <div class="select-box">
+                                    <span>Chuyên Nghiệp</span>
+                                    <i class="ph-bold ph-caret-down"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="section-header-flex">
+                            <h2 class="section-title">Câu hỏi thực hành phỏng vấn</h2>
+                            <i class="ph-fill ph-pencil-simple" style="color: #0F172A; font-size: 18px; cursor: pointer;"></i>
+                        </div>
+
+                        <div class="question-item">
+                            <span>Hãy nói với tôi về bản thân bạn.</span>
+                            <!-- faint grid icon for drag handle -->
+                            <i class="ph-duotone ph-dots-six-vertical" style="color: #CBD5E1; font-size: 20px;"></i>
+                        </div>
+
+                        <div class="question-item-add">
+                            Bấm để thêm câu hỏi tùy chỉnh
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Panel -->
+                <div class="action-panel">
+                    <div class="video-container">
+                        <div class="ai-partner-badge">
+                            <div class="mic"><i class="ph-fill ph-microphone"></i></div>
+                            <i class="ph-fill ph-user avatar-icon"></i>
+                            <div class="name">Phỏng vấn viên</div>
+                        </div>
+
+                        <div class="audio-bars">
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                            <div class="dot"></div>
+                        </div>
+
+                        <div class="lang-select">
+                            <i class="ph-bold ph-globe"></i> VI <i class="ph-bold ph-caret-down" style="font-size: 10px;"></i>
+                        </div>
+
+                        <div class="user-cam-badge">
+                            <i class="ph-fill ph-video-camera-slash"></i> Ngân Lý
+                        </div>
+                    </div>
+
+                    <div class="bottom-actions">
+                        <button class="icon-btn"><i class="ph-fill ph-gear"></i></button>
+                        <button class="icon-btn"><i class="ph-bold ph-closed-captioning"></i></button>
+                        <button class="icon-btn"><i class="ph-bold ph-upload-simple"></i></button>
+                        <button class="btn-start-active">
+                            <i class="ph-fill ph-record"></i> Bắt đầu
+                        </button>
+                    </div>
+
+                    <div class="upgrade-banner-horizontal">
+                        <div class="left-part">
+                            <i class="ph-duotone ph-target" style="font-size: 20px; color: #0F172A;"></i>
+                            <span>4 Yoodlis remaining</span>
+                        </div>
+                        <button class="btn-upgrade"><i class="ph-bold ph-arrow-up"></i> NÂNG CẤP</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

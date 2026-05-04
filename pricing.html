@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bảng giá | Yoodli</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .pricing-hero {
+            text-align: center;
+            padding: 80px 20px 40px;
+        }
+        .pricing-hero h1 {
+            font-size: 40px;
+            font-weight: 800;
+            color: #0F172A;
+            margin-bottom: 16px;
+        }
+        .pricing-hero p {
+            color: #64748B;
+            max-width: 600px;
+            margin: 0 auto 32px;
+            line-height: 1.6;
+        }
+        .billing-toggle {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 600;
+            color: #0F172A;
+            margin-bottom: 60px;
+        }
+        .toggle-switch {
+            width: 48px;
+            height: 24px;
+            background: #3B82F6;
+            border-radius: 12px;
+            position: relative;
+            cursor: pointer;
+        }
+        .toggle-switch::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: white;
+            border-radius: 50%;
+            top: 2px;
+            left: 2px;
+            transition: 0.3s;
+        }
+        .toggle-switch.annual::after {
+            left: 26px;
+        }
+        .save-badge {
+            background: #DCFCE7;
+            color: #166534;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .pricing-card {
+            background: white;
+            border: 1px solid #E2E8F0;
+            border-radius: 16px;
+            padding: 32px 24px;
+            text-align: left;
+            position: relative;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            display: flex;
+            flex-direction: column;
+        }
+        .pricing-card.popular {
+            border: 2px solid #6366F1;
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.15);
+        }
+        .popular-badge {
+            position: absolute;
+            top: -12px;
+            left: 24px;
+            background: #6366F1;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        .plan-name {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .plan-price {
+            font-size: 40px;
+            font-weight: 800;
+            color: #0F172A;
+            margin-bottom: 4px;
+            display: flex;
+            align-items: baseline;
+            gap: 4px;
+        }
+        .plan-price span {
+            font-size: 14px;
+            font-weight: 500;
+            color: #64748B;
+        }
+        .plan-btn {
+            display: block;
+            text-align: center;
+            padding: 12px;
+            border-radius: 99px;
+            font-weight: 600;
+            margin: 24px 0 16px;
+            transition: all 0.2s;
+            text-decoration: none;
+        }
+        .btn-outline-blue {
+            border: 1px solid #3B82F6;
+            color: #3B82F6;
+        }
+        .btn-outline-blue:hover {
+            background: #EFF6FF;
+        }
+        .btn-filled-blue {
+            background: #3B82F6;
+            color: white;
+        }
+        .btn-filled-blue:hover {
+            background: #2563EB;
+        }
+        .plan-subtext {
+            text-align: center;
+            font-size: 14px;
+            color: #0F172A;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+        .plan-features {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            flex-grow: 1;
+        }
+        .plan-features li {
+            font-size: 14px;
+            color: #475569;
+            margin-bottom: 16px;
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            line-height: 1.4;
+        }
+        .plan-features li i {
+            color: #3B82F6;
+            margin-top: 2px;
+        }
+        
+        .reimburse-banner {
+            text-align: center;
+            margin: 60px 0;
+            font-weight: 600;
+            color: #0F172A;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        .reimburse-banner a {
+            color: #3B82F6;
+            text-decoration: none;
+        }
+
+        .faq-section {
+            max-width: 800px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+        .faq-title {
+            text-align: center;
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 40px;
+            color: #0F172A;
+        }
+        .faq-item {
+            background: white;
+            border: 1px solid #E2E8F0;
+            border-radius: 8px;
+            margin-bottom: 16px;
+            padding: 20px 24px;
+            cursor: pointer;
+        }
+        .faq-question {
+            font-weight: 600;
+            font-size: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #0F172A;
+        }
+        .faq-question i {
+            color: #6366F1;
+        }
+        .faq-answer {
+            display: none;
+            margin-top: 16px;
+            color: #64748B;
+            line-height: 1.6;
+        }
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .testimonial-section {
+            max-width: 800px;
+            margin: 80px auto;
+            padding: 0 20px;
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+        .testimonial-image {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #EFF6FF;
+        }
+        .testimonial-content {
+            flex: 1;
+        }
+        .quote-icon {
+            font-size: 40px;
+            color: #1E1B4B;
+            margin-bottom: 16px;
+            font-style: italic;
+            font-weight: 900;
+        }
+        .testimonial-text {
+            font-size: 20px;
+            font-weight: 500;
+            color: #0F172A;
+            line-height: 1.5;
+            margin-bottom: 16px;
+        }
+        .testimonial-author {
+            color: #3B82F6;
+            font-weight: 600;
+        }
+        .testimonial-title {
+            color: #64748B;
+            font-size: 14px;
+        }
+
+        .bottom-cta {
+            background: #0B0F19;
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+            margin-top: 80px;
+        }
+        .bottom-cta h2 {
+            font-size: 32px;
+            margin-bottom: 16px;
+            font-weight: 800;
+        }
+        .bottom-cta p {
+            margin-bottom: 32px;
+            font-weight: 500;
+        }
+        
+        /* Site top banner */
+        .top-banner {
+            background: #1E1B4B;
+            color: white;
+            text-align: center;
+            padding: 12px 20px;
+            font-size: 14px;
+        }
+        .top-banner a {
+            color: white;
+            text-decoration: underline;
+            font-weight: 600;
+        }
+        
+        @media (max-width: 992px) {
+            .pricing-grid { grid-template-columns: repeat(2, 1fr); }
+            .testimonial-section { flex-direction: column; text-align: center; }
+        }
+        @media (max-width: 768px) {
+            .pricing-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body style="background:#F8FAFC;">
+    <div class="top-banner">
+        <i class="ph-fill ph-book-open" style="margin-right: 8px;"></i> Yoodli ra mắt Cẩm nang 90 ngày sau Hội nghị Bán hàng (Post-SKO) để biến Kế hoạch thành Hành động. <a href="#">Tải xuống tại đây</a>
+    </div>
+    <header class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <i class="ph-fill ph-microphone-stage"></i> yoodli
+            </a>
+            <nav class="nav-links">
+                <div class="nav-item">
+                    <a href="#">Nền tảng <i class="ph ph-caret-down"></i></a>
+                    <div class="dropdown">
+                        <a href="platform/ai-roleplays.html" class="dropdown-item">
+                            <span class="title">Nhập vai AI</span>
+                            <span class="desc">Luyện tập với các Persona thực tế</span>
+                        </a>
+                        <a href="platform/ai-tutor.html" class="dropdown-item">
+                            <span class="title">Gia sư AI</span>
+                            <span class="desc">Học kỹ năng giao tiếp 1-1</span>
+                        </a>
+                        <a href="platform/ai-continuous-coaching.html" class="dropdown-item">
+                            <span class="title">Huấn luyện AI Liên tục</span>
+                            <span class="desc">Cải thiện kỹ năng mỗi ngày</span>
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            <span class="title">Học tập Trải nghiệm</span>
+                            <span class="desc">Học thông qua thực hành thực tế</span>
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            <span class="title">Phản hồi Cá nhân hóa</span>
+                            <span class="desc">Nhận đánh giá chi tiết từ AI</span>
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            <span class="title">Phân tích & Báo cáo</span>
+                            <span class="desc">Đo lường hiệu quả đội ngũ</span>
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            <span class="title">Tích hợp & MCP</span>
+                            <span class="desc">Kết nối hệ sinh thái của bạn</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="nav-item">
+                    <a href="#">Giải pháp <i class="ph ph-caret-down"></i></a>
+                    <div class="dropdown mega-menu">
+                        <div class="mega-col">
+                            <div class="mega-col-title">DÀNH CHO ĐỘI NGŨ</div>
+                            <div class="mega-links">
+                                <a href="for-business/revenue-teams.html">Đội ngũ Doanh thu</a>
+                                <a href="for-business/sales-enablement.html">Hỗ trợ Bán hàng</a>
+                                <a href="for-business/learning-and-development.html">Học tập & Phát triển (L&D)</a>
+                                <a href="for-business/executive-coaching.html">Huấn luyện Điều hành</a>
+                            </div>
+                        </div>
+                        <div class="mega-col">
+                            <div class="mega-col-title">NGÀNH NGHỀ</div>
+                            <div class="mega-links">
+                                <a href="industries/tech-saas.html">Công nghệ & SaaS</a>
+                                <a href="industries/financial-services.html">Dịch vụ Tài chính</a>
+                                <a href="industries/healthcare.html">Y tế & Chăm sóc Sức khỏe</a>
+                                <a href="industries/education.html">Giáo dục</a>
+                                <a href="industries/professional-services.html">Dịch vụ Chuyên nghiệp</a>
+                                <a href="industries/retail-hospitality.html">Bán lẻ & Khách sạn</a>
+                            </div>
+                        </div>
+                        <div class="mega-col">
+                            <div class="mega-col-title">TRƯỜNG HỢP SỬ DỤNG</div>
+                            <div class="mega-links">
+                                <a href="#">Đào tạo Bán hàng</a>
+                                <a href="#">Đào tạo Hỗ trợ Khách hàng</a>
+                                <a href="#">Nhập môn & Chứng chỉ</a>
+                                <a href="#">Diễn thuyết Công chúng</a>
+                                <a href="#">Hỗ trợ Đối tác</a>
+                                <a href="#">Chuẩn bị Phỏng vấn</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nav-item"><a href="pricing.html" style="color: var(--primary);">Bảng giá</a></div>
+
+                <div class="nav-item">
+                    <a href="#">Tài nguyên <i class="ph ph-caret-down"></i></a>
+                    <div class="dropdown">
+                        <a href="resources/blog.html" class="dropdown-item"><span class="title">Blog</span></a>
+                        <a href="resources/feature-announcements.html" class="dropdown-item"><span class="title">Thông báo Tính năng</span></a>
+                        <a href="resources/case-studies.html" class="dropdown-item"><span class="title">Câu chuyện Thành công</span></a>
+                        <a href="#" class="dropdown-item"><span class="title">Báo chí</span></a>
+                        <a href="#" class="dropdown-item"><span class="title">Trung tâm Trợ giúp</span></a>
+                    </div>
+                </div>
+
+                <div class="nav-item">
+                    <a href="#">Về chúng tôi <i class="ph ph-caret-down"></i></a>
+                    <div class="dropdown">
+                        <a href="#" class="dropdown-item"><span class="title">Đội ngũ của Chúng tôi</span></a>
+                        <a href="#" class="dropdown-item"><span class="title">Tuyển dụng</span></a>
+                        <a href="#" class="dropdown-item"><span class="title">Hội thảo Trực tuyến</span></a>
+                    </div>
+                </div>
+            </nav>
+            <div class="nav-actions">
+                <a href="#" class="login-link">Đăng nhập</a>
+                <a href="app.html" class="btn btn-outline-pill">Dùng thử Yoodli</a>
+                <a href="app.html" class="btn btn-primary-pill">Nhận Demo</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="pricing-hero">
+            <h1>Chọn gói phù hợp nhất với mục tiêu giao tiếp của bạn</h1>
+            <p>So sánh các gói giá của Yoodli dành cho cá nhân và đội ngũ doanh nghiệp. Lưu ý: Các tính năng dành cho doanh nghiệp bao gồm nhập vai AI tùy chỉnh, phân tích nâng cao, SSO và hỗ trợ chuyên biệt.</p>
+            
+            <div class="billing-toggle">
+                <span>Thanh toán hàng tháng</span>
+                <div class="toggle-switch annual" id="billingToggle"></div>
+                <span>Thanh toán hàng năm <span class="save-badge">TIẾT KIỆM 40%</span></span>
+            </div>
+        </div>
+
+        <div class="pricing-grid">
+            <!-- Starter -->
+            <div class="pricing-card">
+                <div class="plan-name">Cơ bản</div>
+                <div class="plan-price">$0</div>
+                <a href="app.html" class="plan-btn btn-outline-blue">Bắt đầu</a>
+                <div class="plan-subtext">Chỉ để khám phá</div>
+                <ul class="plan-features">
+                    <li><i class="ph ph-check"></i> Tối đa 5 lần nhập vai/tuần</li>
+                    <li><i class="ph ph-check"></i> Phân tích toàn diện</li>
+                    <li><i class="ph ph-check"></i> Nhận phản hồi cho bản ghi âm tải lên</li>
+                    <li><i class="ph ph-check"></i> Không yêu cầu thẻ tín dụng</li>
+                </ul>
+            </div>
+
+            <!-- Pro -->
+            <div class="pricing-card">
+                <div class="plan-name">Chuyên nghiệp</div>
+                <div class="plan-price">$8 <span>/ tháng, thanh toán năm</span></div>
+                <a href="app.html" class="plan-btn btn-outline-blue">Đăng ký ngay</a>
+                <div class="plan-subtext">Chuẩn bị cho sự kiện quan trọng</div>
+                <ul class="plan-features">
+                    <li><i class="ph ph-check"></i> Tối đa 10 lần nhập vai/tuần</li>
+                    <li><i class="ph ph-check"></i> Phân tích toàn diện</li>
+                    <li><i class="ph ph-check"></i> Nhận phản hồi cho bản ghi âm tải lên</li>
+                    <li><i class="ph ph-check"></i> Truy cập cộng đồng người dùng độc quyền</li>
+                </ul>
+            </div>
+
+            <!-- Advanced -->
+            <div class="pricing-card popular">
+                <span class="popular-badge">PHỔ BIẾN NHẤT</span>
+                <div class="plan-name">Nâng cao</div>
+                <div class="plan-price">$20 <span>/ tháng, thanh toán năm</span></div>
+                <a href="app.html" class="plan-btn btn-filled-blue">Đăng ký ngay</a>
+                <div class="plan-subtext">Cải thiện hiệu suất liên tục</div>
+                <ul class="plan-features">
+                    <li><i class="ph ph-check"></i> Nhập vai không giới hạn</li>
+                    <li><i class="ph ph-check"></i> Tất cả tính năng gói Chuyên nghiệp</li>
+                    <li><i class="ph ph-check"></i> Phản hồi từ mô hình AI được đào tạo riêng</li>
+                    <li><i class="ph ph-check"></i> Báo cáo theo dõi dữ liệu cá nhân hóa</li>
+                </ul>
+            </div>
+
+            <!-- Enterprise -->
+            <div class="pricing-card">
+                <div class="plan-name">Đội ngũ & Doanh nghiệp</div>
+                <div class="plan-price" style="font-size: 28px; line-height: 48px;">Thương lượng</div>
+                <a href="#" class="plan-btn btn-outline-blue">Liên hệ Kinh doanh</a>
+                <div class="plan-subtext">Dành cho tổ chức và công ty huấn luyện</div>
+                <ul class="plan-features">
+                    <li><i class="ph ph-check"></i> Tùy chỉnh tiêu chí chấm điểm, chân dung khách hàng (ICP) & phương pháp luận</li>
+                    <li><i class="ph ph-check"></i> Bảng điều khiển đội ngũ với quản lý kịch bản nhập vai và phân quyền người dùng nâng cao</li>
+                    <li><i class="ph ph-check"></i> Đăng nhập một lần (SSO), SCIM & lưu giữ dữ liệu theo yêu cầu</li>
+                    <li><i class="ph ph-check"></i> Tích hợp với LMS, CMS & HRIS</li>
+                    <li><i class="ph ph-check"></i> Chứng nhận bảo mật SOC2 Type 2</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="reimburse-banner">
+            ✨ Xem chi tiết về <a href="#">cách yêu cầu công ty hoàn trả chi phí</a> ✨
+        </div>
+
+        <!-- FAQ -->
+        <div class="faq-section">
+            <h2 class="faq-title">Câu hỏi thường gặp</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">Một lần nhập vai được tính như thế nào? <i class="ph ph-caret-down"></i></div>
+                <div class="faq-answer">Một lần nhập vai được tính khi bạn hoàn thành và nhận được báo cáo phản hồi từ AI cho một tình huống giao tiếp bất kỳ.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Làm cách nào để yêu cầu công ty hoàn trả chi phí dùng Yoodli? <i class="ph ph-caret-down"></i></div>
+                <div class="faq-answer">Nhiều công ty có chính sách hỗ trợ chi phí học tập và phát triển. Bạn có thể tải hóa đơn thanh toán trong phần Cài đặt tài khoản và nộp cùng với biểu mẫu xin hoàn phí của công ty. Yoodli cũng cung cấp một mẫu thư đề xuất hỗ trợ để bạn gửi cho quản lý.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Tôi có thể mua Yoodli cho công ty của mình không? <i class="ph ph-caret-down"></i></div>
+                <div class="faq-answer">Hoàn toàn có thể. Gói Đội ngũ & Doanh nghiệp cung cấp bảng điều khiển quản lý, báo cáo tổng quan và tùy chỉnh kịch bản nhập vai riêng cho doanh nghiệp. Vui lòng liên hệ đội ngũ kinh doanh để được tư vấn chi tiết.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Làm thế nào để thay đổi gói đăng ký Yoodli của tôi? <i class="ph ph-caret-down"></i></div>
+                <div class="faq-answer">Bạn có thể nâng cấp, hạ cấp hoặc hủy gói đăng ký bất kỳ lúc nào trong phần Cài đặt thanh toán. Thay đổi sẽ được áp dụng vào chu kỳ thanh toán tiếp theo.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Yoodli có chính sách giảm giá cho tổ chức phi chính phủ (NGO) hoặc trường đại học không? <i class="ph ph-caret-down"></i></div>
+                <div class="faq-answer">Có, chúng tôi có chương trình hỗ trợ đặc biệt cho các tổ chức giáo dục và phi lợi nhuận. Vui lòng liên hệ với chúng tôi qua email để nhận được báo giá ưu đãi.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Bạn có chương trình giới thiệu (referral program) không? <i class="ph ph-caret-down"></i></div>
+                <div class="faq-answer">Có, khi bạn giới thiệu người dùng mới đăng ký gói trả phí, cả bạn và người được giới thiệu đều sẽ nhận được tín dụng ưu đãi cho chu kỳ tiếp theo. Xem chi tiết trong mục Phần thưởng giới thiệu.</div>
+            </div>
+        </div>
+
+        <!-- Testimonial -->
+        <div class="testimonial-section">
+            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400" alt="Bryan Ackermann" class="testimonial-image">
+            <div class="testimonial-content">
+                <div class="quote-icon">"</div>
+                <div class="testimonial-text">Tương lai của huấn luyện đang ở đây. Tất cả khách hàng của Korn Ferry giờ đây có thể nhận được sự huấn luyện giao tiếp chủ động, không phán xét, được hỗ trợ bởi Yoodli. Đây là sự bổ sung hoàn hảo cho các chương trình huấn luyện bởi con người.</div>
+                <div class="testimonial-author">Bryan Ackermann</div>
+                <div class="testimonial-title">Trưởng bộ phận Chiến lược AI, Korn Ferry</div>
+            </div>
+        </div>
+
+        <!-- Bottom CTA -->
+        <div class="bottom-cta">
+            <h2>Nhận phản hồi giao tiếp tức thì, <br>được hỗ trợ bởi AI</h2>
+            <p>Trải nghiệm Yoodli miễn phí ngay hôm nay!</p>
+            <a href="app.html" class="btn btn-primary-pill" style="padding: 16px 40px; font-size: 18px;">Dùng thử Yoodli</a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" style="background: white; padding: 80px 0 40px; border-top: 1px solid #F1F5F9;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 2fr repeat(4, 1fr); gap: 40px;">
+                <div class="footer-col">
+                    <a href="index.html" class="logo" style="margin-bottom: 20px; display: inline-block;">
+                        <i class="ph-fill ph-microphone-stage"></i> yoodli
+                    </a>
+                </div>
+                <div class="footer-col">
+                    <h4 style="margin-bottom: 20px;">Nền tảng</h4>
+                    <a href="platform/ai-roleplays.html" style="display: block; margin-bottom: 12px; color: #64748B;">Nhập vai AI</a>
+                    <a href="platform/ai-tutor.html" style="display: block; margin-bottom: 12px; color: #64748B;">Gia sư AI</a>
+                    <a href="platform/ai-continuous-coaching.html" style="display: block; margin-bottom: 12px; color: #64748B;">Huấn luyện AI Liên tục</a>
+                    <a href="#" style="display: block; margin-bottom: 12px; color: #64748B;">Học tập Trải nghiệm</a>
+                    <a href="#" style="display: block; margin-bottom: 12px; color: #64748B;">Phản hồi Cá nhân hóa</a>
+                    <a href="#" style="display: block; margin-bottom: 12px; color: #64748B;">Phân tích & Báo cáo</a>
+                    <a href="#" style="display: block; margin-bottom: 12px; color: #64748B;">Tích hợp & MCP</a>
+                </div>
+                <div class="footer-col">
+                    <h4 style="margin-bottom: 20px;">Giải pháp</h4>
+                    <a href="for-business/revenue-teams.html" style="display: block; margin-bottom: 12px; color: #64748B;">Đội ngũ Doanh thu</a>
+                    <a href="for-business/sales-enablement.html" style="display: block; margin-bottom: 12px; color: #64748B;">Hỗ trợ Bán hàng</a>
+                    <a href="for-business/learning-and-development.html" style="display: block; margin-bottom: 12px; color: #64748B;">Học tập & Phát triển</a>
+                    <a href="for-business/executive-coaching.html" style="display: block; margin-bottom: 12px; color: #64748B;">Huấn luyện Điều hành</a>
+                    <a href="#" style="display: block; margin-bottom: 12px; color: #64748B;">Đào tạo Đối tác</a>
+                </div>
+                <div class="footer-col">
+                    <h4 style="margin-bottom: 20px;">Tài nguyên</h4>
+                    <a href="#" style="display: block; margin-bottom: 12px; color: #64748B;">Blog</a>
+                    <a href="#" style="display: block; margin-bottom: 12px; color: #64748B;">Thông báo Tính năng</a>
+                    <a href="#" style="display: block; margin-bottom: 12px; color: #64748B;">Câu chuyện Thành công</a>
+                    <a href="#" style="display: block; margin-bottom: 12px; color: #64748B;">Báo chí</a>
+                    <a href="#" style="display: block; margin-bottom: 12px; color: #64748B;">Trung tâm Trợ giúp</a>
+                </div>
+                <div class="footer-col">
+                    <h4 style="margin-bottom: 20px;">Công ty</h4>
+                    <a href="#" style="display: block; margin-bottom: 12px; color: #64748B;">Đội ngũ của Chúng tôi</a>
+                    <a href="#" style="display: block; margin-bottom: 12px; color: #64748B;">Tuyển dụng</a>
+                    <a href="#" style="display: block; margin-bottom: 12px; color: #64748B;">Hội thảo Trực tuyến</a>
+                    
+                    <div style="margin-top: 30px; display: flex; gap: 16px;">
+                        <a href="#" style="color: #0F172A;"><i class="ph-fill ph-linkedin-logo" style="font-size: 24px;"></i></a>
+                        <a href="#" style="color: #0F172A;"><i class="ph-fill ph-twitter-logo" style="font-size: 24px;"></i></a>
+                        <a href="#" style="color: #0F172A;"><i class="ph-fill ph-youtube-logo" style="font-size: 24px;"></i></a>
+                        <a href="#" style="color: #0F172A;"><i class="ph-fill ph-instagram-logo" style="font-size: 24px;"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div style="margin-top: 80px; padding-top: 40px; border-top: 1px solid #F1F5F9; display: flex; justify-content: space-between; align-items: center;">
+                <p style="color: #94A3B8; font-size: 14px;">&copy; 2026 Yoodli Clone Vietnam.</p>
+                <div style="display: flex; gap: 24px; font-size: 14px;">
+                    <a href="#" style="color: #64748B;">Liên hệ</a>
+                    <a href="#" style="color: #64748B;">Chính sách bảo mật</a>
+                    <a href="#" style="color: #64748B;">Điều khoản dịch vụ</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle Switch functionality
+        const toggleSwitch = document.getElementById('billingToggle');
+        toggleSwitch.addEventListener('click', () => {
+            toggleSwitch.classList.toggle('annual');
+            // In a real app, this would also toggle the prices displayed
+        });
+
+        // FAQ Toggle functionality
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                
+                // Close all others
+                document.querySelectorAll('.faq-item').forEach(otherItem => {
+                    otherItem.classList.remove('active');
+                    const icon = otherItem.querySelector('i');
+                    icon.classList.replace('ph-caret-up', 'ph-caret-down');
+                });
+                
+                if (!isActive) {
+                    item.classList.add('active');
+                    item.querySelector('i').classList.replace('ph-caret-down', 'ph-caret-up');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

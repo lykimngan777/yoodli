@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trình tạo | Yoodli AI</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        /* Specific overrides for builder page */
+        .main-content {
+            background-color: #FFFFFF;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+        }
+        
+        .builder-header {
+            background: #F1F5F9;
+            padding: 32px 40px 0 40px;
+            border-bottom: 1px solid #E2E8F0;
+        }
+        
+        .builder-header h1 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #0F172A;
+            margin: 0 0 24px 0;
+        }
+
+        .builder-tabs {
+            display: flex;
+            gap: 32px;
+        }
+
+        .builder-tab {
+            padding: 12px 4px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #64748B;
+            cursor: pointer;
+            position: relative;
+            text-decoration: none;
+        }
+
+        .builder-tab.active {
+            color: #0F172A;
+        }
+
+        .builder-tab.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: #0F172A;
+        }
+
+        .builder-content {
+            padding: 40px;
+            flex: 1;
+        }
+
+        /* --- Empty State --- */
+        .empty-state {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .empty-text h2 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #0F172A;
+            margin: 0 0 12px 0;
+        }
+
+        .empty-text p {
+            font-size: 14px;
+            color: #64748B;
+            margin: 0;
+        }
+
+        .btn-create-new {
+            background: linear-gradient(90deg, #3B82F6 0%, #8B5CF6 100%);
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 24px;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+        }
+
+        /* --- AI Input State --- */
+        .ai-input-state {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 60px;
+            max-width: 800px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .ai-input-state h2 {
+            font-size: 32px;
+            font-weight: 800;
+            color: #2563EB;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .input-container-ai {
+            width: 100%;
+            background: white;
+            border: 2px solid #E2E8F0;
+            border-radius: 24px;
+            padding: 24px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+            transition: border-color 0.2s;
+        }
+
+        .input-container-ai:focus-within {
+            border-color: #3B82F6;
+        }
+
+        .input-container-ai textarea {
+            border: none;
+            outline: none;
+            font-size: 18px;
+            font-weight: 500;
+            color: #0F172A;
+            resize: none;
+            min-height: 80px;
+            width: 100%;
+            font-family: inherit;
+        }
+
+        .input-footer-ai {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .input-footer-ai .left-icons {
+            display: flex;
+            gap: 16px;
+            color: #94A3B8;
+        }
+
+        .input-footer-ai .left-icons i {
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .btn-generate-ai {
+            background: #F1F5F9;
+            color: #94A3B8;
+            border: none;
+            border-radius: 24px;
+            padding: 10px 24px;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: not-allowed;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s;
+        }
+
+        .btn-generate-ai.active {
+            background: linear-gradient(90deg, #3B82F6 0%, #8B5CF6 100%);
+            color: white;
+            cursor: pointer;
+        }
+
+        .template-suggestions {
+            display: flex;
+            gap: 12px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .suggestion-chip {
+            padding: 8px 16px;
+            border-radius: 20px;
+            border: 1px solid #E2E8F0;
+            background: white;
+            font-size: 13px;
+            font-weight: 600;
+            color: #64748B;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .suggestion-chip:hover {
+            border-color: #3B82F6;
+            color: #3B82F6;
+        }
+
+        /* --- Loading State --- */
+        .loading-state {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding-top: 100px;
+        }
+
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #F1F5F9;
+            border-top: 5px solid #3B82F6;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 24px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* --- Preview State --- */
+        .preview-state {
+            display: none;
+            max-width: 1000px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .preview-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        .preview-layout {
+            display: flex;
+            gap: 32px;
+        }
+
+        .preview-left {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .preview-right {
+            flex: 1.5;
+            background: white;
+            border-radius: 16px;
+            border: 1px solid #E2E8F0;
+            padding: 32px;
+        }
+
+        .preview-card {
+            background: white;
+            border-radius: 12px;
+            border: 1px solid #E2E8F0;
+            padding: 20px;
+        }
+
+        .preview-card h3 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .preview-card p {
+            font-size: 14px;
+            color: #475569;
+            line-height: 1.6;
+        }
+
+        .ai-assistant-fab {
+            position: fixed;
+            bottom: 32px;
+            right: 32px;
+            width: 48px;
+            height: 48px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            cursor: pointer;
+            border: 1px solid #E2E8F0;
+        }
+
+        .hidden { display: none !important; }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <a href="index.html" class="logo-small">
+                    <i class="ph-fill ph-microphone-stage"></i> yoodli
+                </a>
+                <a href="#" style="color: #64748B;"><i class="ph-bold ph-caret-left"></i></a>
+            </div>
+            
+            <div class="practice-menu-container">
+                <button class="btn-practice">
+                    <span class="left">
+                        <i class="ph-fill ph-video-camera"></i> Luyện tập
+                    </span>
+                    <i class="ph-bold ph-caret-right" style="font-size: 14px;"></i>
+                </button>
+                <div class="practice-dropdown">
+                    <a href="practice.html" class="practice-item">
+                        <i class="ph-duotone ph-chat-circle-text"></i> Diễn tập
+                    </a>
+                    <a href="presentation.html" class="practice-item">
+                        <i class="ph-duotone ph-presentation-chart"></i> Bài thuyết trình
+                    </a>
+                    <a href="interview.html" class="practice-item">
+                        <i class="ph-duotone ph-users-three"></i> Phỏng vấn
+                    </a>
+                    <a href="#" class="practice-item">
+                        <i class="ph-duotone ph-cloud-arrow-up"></i> Tải lên
+                    </a>
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="app.html" class="nav-item">
+                    <i class="ph-duotone ph-house"></i> Trang chủ
+                </a>
+                <a href="builder.html" class="nav-item active">
+                    <i class="ph-duotone ph-magic-wand"></i> Trình tạo
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="ph-duotone ph-chart-bar"></i> Bảng điều khiển
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="ph-duotone ph-video"></i> Bản ghi âm của tôi
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="ph-duotone ph-book-open"></i> Quá trình học tập của tôi
+                </a>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <div class="plan-banner">
+                    <div class="plan-title">
+                        <i class="ph-fill ph-star" style="color: #60A5FA;"></i> Bạn đang sử dụng gói miễn phí
+                    </div>
+                    <div class="plan-desc">Còn lại 5 Yoodlis</div>
+                    <button class="btn-upgrade"><i class="ph-bold ph-arrow-up"></i> NÂNG CẤP</button>
+                    <div class="promo">Sử dụng mã khuyến mãi <strong>SPRING20</strong></div>
+                </div>
+
+                <div class="user-profile">
+                    <div class="left">
+                        <img src="https://ui-avatars.com/api/?name=Ngan&background=0F172A&color=fff" alt="User Avatar">
+                        <div class="user-info">
+                            <span class="name">Ngân</span>
+                            <span class="email">lykimngan777@...</span>
+                        </div>
+                    </div>
+                    <i class="ph-bold ph-caret-up" style="color: #64748B;"></i>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="builder-header" id="main-header">
+                <h1>Trình tạo</h1>
+                <div class="builder-tabs">
+                    <a href="#" class="builder-tab active">Vai diễn</a>
+                    <a href="#" class="builder-tab">Khám phá</a>
+                    <a href="#" class="builder-tab">Cuộc phỏng vấn</a>
+                    <a href="#" class="builder-tab">Nhân vật</a>
+                </div>
+            </header>
+
+            <div class="builder-content">
+                <!-- Initial State -->
+                <div class="empty-state" id="empty-state">
+                    <div class="empty-text">
+                        <h2>Tạo vai diễn</h2>
+                        <p>Xây dựng thư viện cá nhân với các bài tập vai diễn tùy chỉnh của bạn</p>
+                    </div>
+                    <button class="btn-create-new" id="show-ai-input">Tạo mới</button>
+                </div>
+
+                <!-- AI Input State -->
+                <div class="ai-input-state" id="ai-input-state">
+                    <h2>Bạn đang vai diễn về điều gì?</h2>
+                    <div class="input-container-ai">
+                        <textarea id="ai-textarea" placeholder="Mô tả vai trò của bạn trong vai diễn..."></textarea>
+                        <div class="input-footer-ai">
+                            <div class="left-icons">
+                                <i class="ph-bold ph-plus"></i>
+                                <i class="ph-bold ph-arrows-left-right"></i>
+                            </div>
+                            <button class="btn-generate-ai" id="generate-btn">
+                                <i class="ph-fill ph-sparkle"></i> Tạo với AI
+                            </button>
+                        </div>
+                    </div>
+                    <div class="template-suggestions">
+                        <div class="suggestion-chip"><i class="ph-fill ph-circles-three-plus" style="color: #A855F7;"></i> Tùy chỉnh</div>
+                        <div class="suggestion-chip"><i class="ph-fill ph-graduation-cap" style="color: #22C55E;"></i> Huấn luyện viên</div>
+                        <div class="suggestion-chip"><i class="ph-fill ph-phone-call" style="color: #3B82F6;"></i> Cuộc gọi bán hàng lạnh</div>
+                        <div class="suggestion-chip">Xem tất cả mẫu <i class="ph-bold ph-caret-down"></i></div>
+                    </div>
+                </div>
+
+                <!-- Loading State -->
+                <div class="loading-state" id="loading-state">
+                    <div class="loading-spinner"></div>
+                    <p style="font-weight: 600; color: #0F172A;">Chờ một chút...</p>
+                    <p style="font-size: 14px; color: #64748B;">Đang tạo trải nghiệm vai diễn của bạn...</p>
+                </div>
+
+                <!-- Preview State -->
+                <div class="preview-state" id="preview-state">
+                    <div class="preview-header">
+                        <div style="display: flex; align-items: center; gap: 12px; cursor: pointer;" id="back-to-library">
+                            <i class="ph-bold ph-caret-left"></i>
+                            <span style="font-weight: 600;">Quay lại thư viện</span>
+                        </div>
+                        <button class="btn-create-new">Tiếp tục</button>
+                    </div>
+                    
+                    <div class="preview-layout">
+                        <div class="preview-left">
+                            <h2 style="font-size: 24px; font-weight: 800; color: #2563EB;">Xong rồi! ✨</h2>
+                            <div class="preview-card">
+                                <h3 style="color: #22C55E;"><i class="ph-fill ph-check-circle"></i> Bối cảnh</h3>
+                                <p>Bạn là một tư vấn viên tuyển sinh đại học giàu kinh nghiệm. Bạn đang hỗ trợ học sinh lớp 12 chọn ngành và trường phù hợp...</p>
+                            </div>
+                            <div class="preview-card">
+                                <h3 style="color: #3B82F6;"><i class="ph-fill ph-users"></i> Nhân vật</h3>
+                                <p>Nguyễn Minh Anh - Học sinh lớp 12 trường THPT chuyên, có xu hướng lo lắng về tương lai.</p>
+                            </div>
+                        </div>
+                        <div class="preview-right">
+                            <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
+                                <div style="background: #EEF2FF; padding: 12px; border-radius: 12px;">
+                                    <i class="ph-duotone ph-graduation-cap" style="font-size: 32px; color: #4F46E5;"></i>
+                                </div>
+                                <div>
+                                    <h3 style="margin: 0; font-size: 20px;">Tư vấn tuyển sinh đại học</h3>
+                                    <p style="margin: 0; font-size: 14px; color: #64748B;">Phác thảo • Ngân Lý • 4 tháng 5, 2026</p>
+                                </div>
+                            </div>
+                            <div style="margin-bottom: 24px;">
+                                <h4 style="font-size: 14px; color: #64748B; margin-bottom: 8px;">Mô tả</h4>
+                                <p style="font-size: 14px; line-height: 1.6;">Luyện tập kỹ năng tư vấn, thấu cảm và giải đáp thắc mắc về hướng nghiệp cho học sinh cuối cấp.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI Floating Button -->
+            <div class="ai-assistant-fab">
+                <i class="ph-fill ph-sparkle" style="color: #3B82F6; font-size: 24px;"></i>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        const showAiInputBtn = document.getElementById('show-ai-input');
+        const emptyState = document.getElementById('empty-state');
+        const aiInputState = document.getElementById('ai-input-state');
+        const mainHeader = document.getElementById('main-header');
+        const aiTextarea = document.getElementById('ai-textarea');
+        const generateBtn = document.getElementById('generate-btn');
+        const loadingState = document.getElementById('loading-state');
+        const previewState = document.getElementById('preview-state');
+        const backToLibrary = document.getElementById('back-to-library');
+
+        showAiInputBtn.addEventListener('click', () => {
+            emptyState.classList.add('hidden');
+            mainHeader.classList.add('hidden');
+            aiInputState.style.display = 'flex';
+        });
+
+        aiTextarea.addEventListener('input', () => {
+            if (aiTextarea.value.trim().length > 0) {
+                generateBtn.classList.add('active');
+            } else {
+                generateBtn.classList.remove('active');
+            }
+        });
+
+        generateBtn.addEventListener('click', () => {
+            if (!generateBtn.classList.contains('active')) return;
+            
+            aiInputState.style.display = 'none';
+            loadingState.style.display = 'flex';
+            
+            setTimeout(() => {
+                loadingState.style.display = 'none';
+                previewState.style.display = 'block';
+            }, 2000);
+        });
+
+        backToLibrary.addEventListener('click', () => {
+            previewState.style.display = 'none';
+            emptyState.classList.remove('hidden');
+            mainHeader.classList.remove('hidden');
+            aiTextarea.value = '';
+            generateBtn.classList.remove('active');
+        });
+    </script>
+</body>
+</html>
+

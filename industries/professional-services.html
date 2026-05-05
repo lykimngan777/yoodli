@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dịch vụ Chuyên nghiệp | Yoodli - Giao tiếp đẳng cấp</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../roleplay.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        :root {
+            --prof-blue: #0284C7;
+            --prof-navy: #0F172A;
+            --prof-bg: #F0F9FF;
+        }
+
+        .prof-hero {
+            padding: 140px 0 100px;
+            background: radial-gradient(circle at 90% 10%, rgba(2, 132, 199, 0.1) 0%, transparent 40%),
+                        linear-gradient(180deg, #FFFFFF 0%, #F0F9FF 100%);
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+        }
+
+        .hero-image-wrapper img {
+            width: 100%;
+            border-radius: 32px;
+            box-shadow: 0 30px 60px rgba(2, 132, 199, 0.15);
+        }
+
+        .section-title {
+            font-size: 44px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            color: var(--prof-navy);
+        }
+
+        .prof-card-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-top: 60px;
+        }
+
+        .prof-card {
+            background: white;
+            padding: 48px 40px;
+            border-radius: 32px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            border: 1px solid #E0F2FE;
+            transition: all 0.3s ease;
+        }
+
+        .prof-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--prof-blue);
+            box-shadow: 0 20px 40px rgba(2, 132, 199, 0.1);
+        }
+
+        .prof-card i {
+            font-size: 40px;
+            color: var(--prof-blue);
+            margin-bottom: 24px;
+            display: block;
+        }
+
+        .trust-section {
+            padding: 100px 0;
+            background: var(--prof-navy);
+            color: white;
+            text-align: center;
+        }
+
+        .trust-category-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-top: 60px;
+        }
+
+        .trust-cat-item {
+            background: rgba(255,255,255,0.05);
+            padding: 32px;
+            border-radius: 24px;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s;
+        }
+
+        .trust-cat-item i {
+            font-size: 32px;
+            margin-bottom: 16px;
+            display: block;
+            color: #38BDF8;
+        }
+
+        .ui-mockup-wrapper {
+            background: #E0F2FE;
+            border-radius: 48px;
+            padding: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .ui-mockup {
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 400px;
+            padding: 30px;
+        }
+
+        .impact-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 100px;
+            align-items: center;
+            margin-bottom: 120px;
+        }
+
+        .impact-content h3 {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .faq-section {
+            padding: 120px 0;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #E2E8F0;
+            padding: 24px 0;
+        }
+
+        .faq-question {
+            font-weight: 700;
+            font-size: 18px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .faq-answer {
+            margin-top: 16px;
+            color: #64748B;
+            display: none;
+            line-height: 1.6;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .final-cta {
+            background: var(--prof-navy);
+            color: white;
+            padding: 120px 0;
+            text-align: center;
+            border-radius: 64px 64px 0 0;
+        }
+
+        @media (max-width: 992px) {
+            .hero-grid, .impact-row { grid-template-columns: 1fr; gap: 60px; text-align: center; }
+            .prof-card-grid, .trust-category-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar will be injected by master_layout.js -->
+
+    <main>
+        <!-- Hero Section -->
+        <section class="prof-hero">
+            <div class="container hero-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
+                <div class="hero-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32d7?auto=format&fit=crop&q=80&w=1000" alt="Professional services consultant on a call">
+                </div>
+                <div class="hero-content">
+                    <h1 class="section-title">Yoodli dành cho <br><span style="color: var(--prof-blue);">Dịch vụ Chuyên nghiệp</span></h1>
+                    <p style="font-size: 20px; color: #64748B; margin-bottom: 32px; line-height: 1.6;">Xây dựng niềm tin với khách hàng thông qua giao tiếp chuyên nghiệp. Giúp các chuyên gia tư vấn, luật sư và kế toán giao tiếp rõ ràng và tự tin.</p>
+                    <a href="../app.html" class="btn btn-primary-pill" style="padding: 18px 40px; font-size: 18px; background: var(--prof-blue);">Bắt đầu miễn phí</a>
+                    <p style="font-size: 14px; color: #94A3B8; margin-top: 24px; font-weight: 500;">Được tin dùng bởi các hãng luật và công ty tư vấn hàng đầu</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Value Prop Cards -->
+        <section class="container" style="padding: 100px 0; text-align: center;">
+            <h2 class="section-title">Xây dựng sự kiên cường trong <br>giao tiếp Dịch vụ Chuyên nghiệp</h2>
+            <div class="prof-card-grid">
+                <div class="prof-card">
+                    <i class="ph-fill ph-users-three"></i>
+                    <h3 style="font-size: 22px; font-weight: 700; margin-bottom: 16px;">Tư vấn Khách hàng</h3>
+                    <p style="color: #64748B; line-height: 1.6;">Luyện tập các cuộc họp khởi động dự án và trình bày giải pháp thuyết phục, chuyên nghiệp.</p>
+                </div>
+                <div class="prof-card">
+                    <i class="ph-fill ph-handshake"></i>
+                    <h3 style="font-size: 22px; font-weight: 700; margin-bottom: 16px;">Đàm phán & Thương lượng</h3>
+                    <p style="color: #64748B; line-height: 1.6;">Nâng cao kỹ năng thương lượng hợp đồng và giải quyết xung đột lợi ích với khách hàng lớn.</p>
+                </div>
+                <div class="prof-card">
+                    <i class="ph-fill ph-chart-line-up"></i>
+                    <h3 style="font-size: 22px; font-weight: 700; margin-bottom: 16px;">Phát triển Kinh doanh</h3>
+                    <p style="color: #64748B; line-height: 1.6;">Đào tạo kỹ năng bán chéo dịch vụ và mở rộng mối quan hệ đối tác một cách tinh tế.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust Category Section -->
+        <section class="trust-section">
+            <div class="container">
+                <h2 style="font-size: 36px; font-weight: 800;">Được tin dùng bởi các tổ chức trong mảng:</h2>
+                <div class="trust-category-grid">
+                    <div class="trust-cat-item">
+                        <i class="ph ph-briefcase"></i>
+                        <span style="font-weight: 700;">Tư vấn Quản lý</span>
+                    </div>
+                    <div class="trust-cat-item">
+                        <i class="ph ph-scales"></i>
+                        <span style="font-weight: 700;">Hãng Luật</span>
+                    </div>
+                    <div class="trust-cat-item">
+                        <i class="ph ph-calculator"></i>
+                        <span style="font-weight: 700;">Kế toán & Kiểm toán</span>
+                    </div>
+                    <div class="trust-cat-item">
+                        <i class="ph ph-users"></i>
+                        <span style="font-weight: 700;">Cố vấn Nhân sự</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How it works -->
+        <section style="padding: 120px 0; background: white;">
+            <div class="container" style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 80px; align-items: center;">
+                <div class="ui-mockup-wrapper">
+                    <div class="ui-mockup">
+                        <div style="border-bottom: 1px solid #F1F5F9; padding-bottom: 20px; margin-bottom: 20px;">
+                            <div style="font-weight: 800; color: var(--prof-blue);">Kịch bản: Thuyết trình Đề xuất</div>
+                            <div style="font-size: 14px; color: #64748B;">Khách hàng: Khắt khe về chi phí</div>
+                        </div>
+                        <div style="background: #F8FAFC; padding: 20px; border-radius: 12px; margin-bottom: 16px;">
+                            <div style="font-size: 12px; color: #94A3B8; margin-bottom: 8px;">MỨC ĐỘ THUYẾT PHỤC</div>
+                            <div style="font-weight: 600; color: #0284C7;">95/100 - "Lập luận sắc bén"</div>
+                        </div>
+                        <div style="display: flex; gap: 10px;">
+                            <div style="flex: 1; height: 8px; background: #E2E8F0; border-radius: 4px; overflow: hidden;">
+                                <div style="width: 95%; height: 100%; background: #38BDF8;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h2 class="section-title">Cách thức Nhập vai AI Yoodli vận hành</h2>
+                    <div style="display: flex; flex-direction: column; gap: 32px; margin-top: 40px;">
+                        <div style="display: flex; gap: 24px;">
+                            <div style="width: 48px; height: 48px; background: #E0F2FE; color: var(--prof-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; flex-shrink: 0;">1</div>
+                            <div>
+                                <h4 style="font-size: 20px; font-weight: 700; margin-bottom: 8px;">Chọn kịch bản chuyên ngành</h4>
+                                <p style="color: #64748B;">Sử dụng các tình huống đặc thù như bảo vệ tư vấn chiến lược, đàm phán phí dịch vụ hay giải quyết khiếu nại.</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 24px;">
+                            <div style="width: 48px; height: 48px; background: #E0F2FE; color: var(--prof-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; flex-shrink: 0;">2</div>
+                            <div>
+                                <h4 style="font-size: 20px; font-weight: 700; margin-bottom: 8px;">Tương tác với khách hàng AI</h4>
+                                <p style="color: #64748B;">Luyện tập phản xạ với các câu hỏi khó, các lời từ chối từ những persona khách hàng giả lập cực kỳ thực tế.</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 24px;">
+                            <div style="width: 48px; height: 48px; background: #E0F2FE; color: var(--prof-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; flex-shrink: 0;">3</div>
+                            <div>
+                                <h4 style="font-size: 20px; font-weight: 700; margin-bottom: 8px;">Nhận phản hồi về sự chuyên nghiệp</h4>
+                                <p style="color: #64748B;">Đo lường mức độ tự tin, tính rõ ràng trong ngôn ngữ chuyên môn và khả năng tạo thiện cảm.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Impact Section -->
+        <section class="container" style="padding: 120px 0;">
+            <h2 class="section-title" style="text-align: center; margin-bottom: 80px;">Tác động của Yoodli đối với <br>Đội ngũ của bạn</h2>
+            
+            <div class="impact-row">
+                <div class="impact-content">
+                    <div style="color: var(--prof-blue); font-weight: 700; margin-bottom: 12px;">TĂNG TRƯỞNG</div>
+                    <h3>Tỷ lệ chốt hợp đồng cao hơn</h3>
+                    <p>Tăng khả năng giành được dự án nhờ vào kỹ năng thuyết trình xuất sắc và khả năng trả lời câu hỏi trôi chảy trong các vòng pitching.</p>
+                </div>
+                <div class="impact-visual">
+                    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=800" alt="Team pitching to client" style="width: 100%; border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.05);">
+                </div>
+            </div>
+
+            <div class="impact-row" style="grid-template-columns: 1.2fr 1fr;">
+                <div class="impact-visual">
+                    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=800" alt="Consultants reviewing document" style="width: 100%; border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.05);">
+                </div>
+                <div class="impact-content">
+                    <div style="color: var(--prof-blue); font-weight: 700; margin-bottom: 12px;">LONG TRUNG THÀNH</div>
+                    <h3>Giữ chân khách hàng dài hạn</h3>
+                    <p>Xây dựng mối quan hệ đối tác bền vững và gia tăng giá trị thông qua giao tiếp đáng tin cậy, thấu hiểu trong suốt quá trình triển khai dự án.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <h2 class="section-title" style="text-align: center;">Câu hỏi thường gặp</h2>
+            <div style="margin-top: 60px;">
+                <div class="faq-item">
+                    <div class="faq-question">Bảo mật dữ liệu nội bộ của hãng tư vấn như thế nào? <i class="ph ph-plus"></i></div>
+                    <div class="faq-answer">Yoodli cung cấp môi trường luyện tập riêng tư với mã hóa đầu cuối. Mọi kịch bản và dữ liệu ghi âm không bao giờ được sử dụng để huấn luyện mô hình AI bên ngoài.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Chúng tôi có thể tải lên các kịch bản đàm phán độc quyền của mình không? <i class="ph ph-plus"></i></div>
+                    <div class="faq-answer">Có, quản trị viên có thể dễ dàng tạo ra các kịch bản nhập vai phản ánh chính xác quy trình và phương pháp tư vấn độc quyền của công ty bạn.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Yoodli có giúp đào tạo nhân sự mới (onboarding) không? <i class="ph ph-plus"></i></div>
+                    <div class="faq-answer">Rất hiệu quả. Nhân viên mới có thể luyện tập các tình huống giao tiếp với khách hàng an toàn với AI trước khi chính thức tiếp quản dự án.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Làm sao để đánh giá hiệu quả của hệ thống đối với công ty luật? <i class="ph ph-plus"></i></div>
+                    <div class="faq-answer">Bảng điều khiển Analytics cung cấp cái nhìn chi tiết về thời lượng luyện tập, sự cải thiện điểm số tự tin, và mức độ trôi chảy khi tranh luận của từng luật sư.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="final-cta">
+            <div class="container">
+                <h2 style="font-size: 48px; font-weight: 800; margin-bottom: 24px;">Sẵn sàng nâng tầm dịch vụ <br>chuyên nghiệp của bạn?</h2>
+                <p style="font-size: 20px; opacity: 0.8; margin-bottom: 40px; max-width: 700px; margin-left: auto; margin-right: auto;">Hãy để đội ngũ của bạn giao tiếp bằng sự tự tin, chuyên môn cao và xây dựng lòng tin tuyệt đối với khách hàng.</p>
+                <div style="display: flex; gap: 20px; justify-content: center;">
+                    <a href="../app.html" class="btn btn-primary-pill" style="background: white; color: var(--prof-navy); padding: 20px 48px; font-size: 20px;">Trải nghiệm miễn phí</a>
+                </div>
+                <p style="margin-top: 32px; font-size: 14px; opacity: 0.6;"><i class="ph ph-check-circle"></i> Đăng ký cho doanh nghiệp • Hỗ trợ tùy chỉnh kịch bản</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <!-- Footer will be injected by master_layout.js -->
+    <script src="../master_layout.js"></script>
+
+    <script>
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+                
+                const icon = item.querySelector('i');
+                if (parent.classList.contains('active')) {
+                    icon.classList.replace('ph-plus', 'ph-minus');
+                } else {
+                    icon.classList.replace('ph-minus', 'ph-plus');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

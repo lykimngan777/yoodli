@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Roleplays | Yoodli - Nền tảng Nhập vai AI</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../roleplay.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+
+<body>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="rp-hero">
+            <div class="container hero-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;">
+                <div class="rp-hero-content">
+                    <div class="rp-hero-badge" style="display: inline-flex; align-items: center; gap: 8px; background: rgba(79, 70, 229, 0.1); color: var(--rp-indigo); padding: 8px 16px; border-radius: 99px; font-size: 13px; font-weight: 700; margin-bottom: 24px; border: 1px solid rgba(79, 70, 229, 0.2);">
+                        <span style="width: 8px; height: 8px; background: #EF4444; border-radius: 50%; display: inline-block; animation: pulse 2s infinite;"></span>
+                        THỰC TẾ — HIỆU QUẢ — ĐỘT PHÁ
+                    </div>
+                    <h1 style="font-size: 64px; font-weight: 800; line-height: 1.1; margin-bottom: 24px; color: #0F172A;">Làm chủ mọi cuộc hội thoại với <span style="display: block; color: var(--rp-indigo);">Nhập vai AI</span></h1>
+                    <p style="font-size: 20px; color: #64748B; margin-bottom: 40px; line-height: 1.6; max-width: 550px;">Luyện tập các kịch bản quan trọng nhất của bạn — từ chốt hợp đồng đến đàm phán khó khăn — trong một môi trường an toàn với phản hồi tức thì từ AI.</p>
+                    <div class="hero-actions" style="display: flex; gap: 16px;">
+                        <a href="../app.html" class="btn btn-primary-pill" style="padding: 20px 48px; font-size: 18px; box-shadow: 0 10px 20px rgba(79, 70, 229, 0.3);">Xem bản demo ngay</a>
+                        <a href="#how-it-works" class="btn btn-outline-pill" style="padding: 20px 32px; font-size: 18px; border: 2px solid #E2E8F0;">Tìm hiểu thêm</a>
+                    </div>
+                    <div style="margin-top: 48px; display: flex; align-items: center; gap: 24px;">
+                        <div style="display: flex;">
+                            <img src="https://ui-avatars.com/api/?name=User+1&background=6366f1&color=fff" style="width: 32px; height: 32px; border-radius: 50%; border: 2px solid white;">
+                            <img src="https://ui-avatars.com/api/?name=User+2&background=4f46e5&color=fff" style="width: 32px; height: 32px; border-radius: 50%; border: 2px solid white; margin-left: -12px;">
+                            <img src="https://ui-avatars.com/api/?name=User+3&background=3b82f6&color=fff" style="width: 32px; height: 32px; border-radius: 50%; border: 2px solid white; margin-left: -12px;">
+                        </div>
+                        <p style="font-size: 14px; color: #94A3B8; margin: 0; font-weight: 500;">Hơn 5,000+ chuyên gia đang sử dụng Yoodli hằng ngày</p>
+                    </div>
+                </div>
+                <div class="rp-hero-visual">
+                    <div class="hero-image-container" style="position: relative;">
+                        <!-- AI Analysis Overlay -->
+                        <div style="position: absolute; bottom: 30px; left: -40px; background: white; padding: 24px; border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); z-index: 5; border: 1px solid #F1F5F9; width: 240px;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                                <span style="font-weight: 800; font-size: 14px; color: #0F172A;">Chỉ số Thấu cảm</span>
+                                <span style="color: #10B981; font-weight: 700; font-size: 14px;">+12%</span>
+                            </div>
+                            <div style="height: 6px; background: #F1F5F9; border-radius: 3px; overflow: hidden; margin-bottom: 8px;">
+                                <div style="width: 85%; height: 100%; background: #10B981;"></div>
+                            </div>
+                            <p style="font-size: 12px; color: #64748B; margin: 0;">Bạn đang lắng nghe tích cực hơn 85% người dùng khác.</p>
+                        </div>
+                        
+                        <!-- Coach Bubble -->
+                        <div class="ai-coach-bubble" style="position: absolute; top: -20px; right: -20px; background: white; padding: 20px; border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); display: flex; gap: 12px; align-items: center; max-width: 320px; z-index: 10; border: 1px solid #EEF2FF; animation: float 6s ease-in-out infinite;">
+                            <div style="width: 48px; height: 48px; border-radius: 12px; background: var(--rp-indigo); display: flex; align-items: center; justify-content: center; color: white;">
+                                <i class="ph-fill ph-sparkle" style="font-size: 24px;"></i>
+                            </div>
+                            <div class="bubble-content">
+                                <div style="font-weight: 800; font-size: 13px; color: var(--rp-indigo);">YOODLI AI COACH</div>
+                                <p style="font-size: 12px; margin: 4px 0 0; line-height: 1.4; color: #334155; font-weight: 500;">"Cấu trúc giải quyết vấn đề của bạn rất tốt, nhưng hãy thử nhấn mạnh vào giá trị (ROI) hơn nữa ở phần sau!"</p>
+                            </div>
+                        </div>
+
+                        <img src="../yoodli_ai_roleplay_hero_1777948906995.png" alt="Yoodli AI Roleplay Interface" class="main-hero-img" style="width: 100%; border-radius: 32px; box-shadow: 0 40px 80px rgba(79, 70, 229, 0.15); border: 8px solid white;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Enterprise Section -->
+        <section class="wavy-section">
+            <div class="wavy-bg"></div>
+            <div class="container">
+                <h2 style="font-size: 32px; font-weight: 800; margin-bottom: 16px;">Nhập vai AI tốt nhất cho các đội ngũ doanh nghiệp</h2>
+                <p style="color: #64748B; max-width: 600px; margin: 0 auto;">Được tin dùng bởi hàng ngàn chuyên gia doanh thu để tạo ra tác động đo lường được đến lợi nhuận.</p>
+                <div class="enterprise-box">
+                    <h3 style="font-size: 24px; margin-bottom: 20px;">Nhập vai vào bất kỳ kịch bản nào, với bất kỳ chân dung nào, trong bất kỳ ngôn ngữ nào</h3>
+                    <p style="opacity: 0.9; max-width: 800px; margin: 0 auto 32px;">AI tạo sinh của Yoodli tạo ra các cuộc hội thoại thực tế, năng động phù hợp với nhu cầu kinh doanh cụ thể của bạn. Từ tìm kiếm khách hàng đến các cuộc đàm phán phức tạp.</p>
+                    <a href="#" style="color: white; font-weight: 700; text-decoration: underline;">Tìm hiểu về học tập trải nghiệm</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section class="container how-it-works" style="padding: 100px 0;">
+            <div class="hw-text" style="text-align: center; margin-bottom: 60px;">
+                <h2 style="font-size: 48px; font-weight: 800; margin-bottom: 24px;">Cách thức hoạt động</h2>
+                <p style="color: #64748B; font-size: 18px;">Trao quyền cho đội ngũ của bạn một không gian an toàn để luyện tập, thất bại và cải thiện trước khi họ thực sự nói chuyện với khách hàng.</p>
+            </div>
+            <div class="hw-card-list" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px;">
+                <div class="hw-card">
+                    <div class="hw-icon"><i class="ph-bold ph-sketch-logo"></i></div>
+                    <div>
+                        <div style="font-weight:700; font-size:18px; margin-bottom:8px;">Luyện tập kịch bản thực tế</div>
+                        <p style="color:#64748B; font-size:14px;">Chọn từ các kịch bản có sẵn hoặc tạo kịch bản riêng dựa trên các thách thức thực tế của doanh nghiệp.</p>
+                    </div>
+                </div>
+                <div class="hw-card">
+                    <div class="hw-icon"><i class="ph-bold ph-lightning"></i></div>
+                    <div>
+                        <div style="font-weight:700; font-size:18px; margin-bottom:8px;">Nhận phản hồi tức thì</div>
+                        <p style="color:#64748B; font-size:14px;">AI phân tích cảm xúc, ngôn ngữ cơ thể và thông điệp của bạn trong thời gian thực để đưa ra lời khuyên hành động.</p>
+                    </div>
+                </div>
+                <div class="hw-card">
+                    <div class="hw-icon"><i class="ph-bold ph-arrows-counter-clockwise"></i></div>
+                    <div>
+                        <div style="font-weight:700; font-size:18px; margin-bottom:8px;">Lặp lại cho đến khi sẵn sàng</div>
+                        <p style="color:#64748B; font-size:14px;">Luyện tập không giới hạn cho đến khi bạn đạt được sự tự tin và tiêu chuẩn của tổ chức.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Measurable Readiness -->
+        <section class="readiness-section" style="padding: 100px 0; background: #F8FAFF;">
+            <div class="container readiness-layout" style="display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;">
+                <div class="dashboard-visual">
+                    <img src="https://images.unsplash.com/photo-1551288049-bbda4833effb?auto=format&fit=crop&q=80&w=1000" alt="Dashboard" style="width: 100%; border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
+                </div>
+                <div class="readiness-text">
+                    <h2 style="font-size: 40px; font-weight: 800; margin-bottom: 24px;">Thúc đẩy sự sẵn sàng có thể đo lường</h2>
+                    <p style="font-size: 18px; opacity: 0.8;">"Yoodli cho phép chúng tôi quy mô hóa việc luyện tập nhập vai cho đội ngũ bán hàng toàn cầu của mình, đảm bảo mọi người đều sẵn sàng trước khi bước vào cuộc họp khách hàng."</p>
+                    <div style="margin-top: 40px; display:flex; gap:12px; align-items:center;">
+                        <img src="https://ui-avatars.com/api/?name=Molly+Quinn&background=random" style="width:40px; height:40px; border-radius:50%;">
+                        <div>
+                            <div style="font-weight:700;">Molly Quinn</div>
+                            <div style="font-size:12px; opacity:0.6;">Giám đốc Cao cấp về Hỗ trợ Bán hàng, Snowflake</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="faq-section" style="padding: 100px 0;">
+            <h2 style="text-align:center; margin-bottom:60px; font-size:36px; font-weight:800;">Câu hỏi Thường gặp</h2>
+            <div class="faq-list" style="max-width: 800px; margin: 0 auto;">
+                <div class="faq-item">
+                    <div class="faq-question">Nhập vai AI là gì? <i class="ph ph-plus"></i></div>
+                    <div class="faq-answer">Nhập vai AI là các cuộc hội thoại mô phỏng nơi bạn tương tác với một chân dung AI tạo sinh đóng vai khách hàng, quản lý hoặc đồng nghiệp.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Yoodli khác biệt như thế nào? <i class="ph ph-plus"></i></div>
+                    <div class="faq-answer">Yoodli được xây dựng cho quy mô doanh nghiệp với các cuộc hội thoại cực kỳ thực tế, khả năng tùy chỉnh Persona sâu sắc và hệ thống phân tích dữ liệu chi tiết cho cấp quản lý.</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="../master_layout.js"></script>
+    <script>
+        document.querySelectorAll('.faq-question').forEach(q => {
+            q.addEventListener('click', () => {
+                const item = q.parentElement;
+                item.classList.toggle('active');
+                const icon = q.querySelector('i');
+                if (item.classList.contains('active')) {
+                    icon.classList.replace('ph-plus', 'ph-minus');
+                } else {
+                    icon.classList.replace('ph-minus', 'ph-plus');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

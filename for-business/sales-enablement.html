@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hỗ trợ Bán hàng & GTM | Yoodli - Huấn luyện quy mô lớn</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../roleplay.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        .enablement-hero {
+            padding: 120px 0 100px;
+            background: radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.05) 0%, transparent 40%),
+                        linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
+        }
+
+        .hex-frame {
+            width: 280px;
+            height: 320px;
+            background: white;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .hex-frame img {
+            width: 90%;
+            height: 90%;
+            object-fit: cover;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        }
+
+        .feature-grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin: 60px 0;
+        }
+
+        .enable-card {
+            background: #F0F4FF;
+            padding: 40px;
+            border-radius: 32px;
+            text-align: left;
+            transition: transform 0.3s ease;
+        }
+
+        .enable-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .security-badge {
+            background: white;
+            padding: 40px;
+            border-radius: 48px;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            margin-bottom: 40px;
+        }
+
+        .case-story-card {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            text-align: left;
+        }
+
+        .case-story-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .case-story-img {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .case-story-content {
+            padding: 24px;
+        }
+
+        .how-works-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .how-works-list li {
+            background: white;
+            padding: 24px;
+            border-radius: 20px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+            border: 1px solid #F1F5F9;
+        }
+
+        .how-works-list i {
+            color: var(--rp-indigo);
+            font-size: 24px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <!-- Navbar will be injected by master_layout.js -->
+
+    <main>
+        <!-- Hero Section -->
+        <section class="enablement-hero">
+            <div class="container hero-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
+                <div class="hero-content">
+                    <span class="hero-tag" style="background: #EEF2FF; color: var(--rp-indigo); padding: 8px 16px; border-radius: 100px; font-size: 14px; font-weight: 700; margin-bottom: 24px; display: inline-block;">HỖ TRỢ BÁN HÀNG & GTM</span>
+                    <h1 style="font-size: 64px; font-weight: 800; line-height: 1.1; margin-bottom: 24px;">Hỗ trợ Bán hàng và GTM</h1>
+                    <p style="font-size: 20px; color: var(--text-light); margin-bottom: 32px; line-height: 1.6;">Huấn luyện và thống nhất đội ngũ bán hàng & GTM ở quy mô lớn. Tăng tốc thời gian hòa nhập, cải thiện tỷ lệ thắng và đảm bảo mọi người đều nói cùng một ngôn ngữ giá trị.</p>
+                    <a href="../app.html" class="btn btn-primary" style="padding: 18px 40px; font-size: 18px;">Dùng thử Yoodli miễn phí</a>
+                </div>
+                <div class="hero-visual" style="display: flex; justify-content: center;">
+                    <div class="hex-frame">
+                        <img src="https://images.unsplash.com/photo-1519085185758-2ed980ba3373?auto=format&fit=crop&q=80&w=400" alt="Enablement Leader">
+                        <div style="position: absolute; bottom: 10px; right: -20px; background: white; padding: 12px 20px; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); border: 1px solid #F1F5F9;">
+                            <div style="display: flex; gap: 8px; align-items: center;">
+                                <i class="ph-fill ph-check-circle" style="color: #22C55E;"></i>
+                                <span style="font-weight: 700;">Đã sẵn sàng</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trusted By -->
+        <section style="padding: 60px 0; border-bottom: 1px solid #F1F5F9;">
+            <div class="container" style="text-align: center;">
+                <p style="font-size: 13px; font-weight: 700; color: #94A3B8; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 40px;">Hơn 200,000 chuyên gia bán hàng sử dụng Yoodli để chiến thắng</p>
+                <div style="display: flex; justify-content: center; gap: 60px; filter: grayscale(1); opacity: 0.5; flex-wrap: wrap;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" style="height: 24px;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Salesforce.com_logo.svg" alt="Salesforce" style="height: 24px;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/59/SAP_2011_logo.svg" alt="SAP" style="height: 24px;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft" style="height: 24px;">
+                </div>
+            </div>
+        </section>
+
+        <!-- How it works -->
+        <section class="container" style="padding: 120px 0; text-align: center;">
+            <h2 style="font-size: 44px; font-weight: 800; margin-bottom: 60px;">Cách các đội ngũ Hỗ trợ sử dụng Yoodli</h2>
+            <div class="feature-grid-3">
+                <div class="enable-card">
+                    <i class="ph-bold ph-arrows-merge" style="font-size: 32px; color: var(--rp-indigo); margin-bottom: 24px;"></i>
+                    <h3 style="font-size: 22px; font-weight: 700; margin-bottom: 16px;">Thống nhất thông điệp</h3>
+                    <p style="color: var(--text-light); line-height: 1.6;">Đảm bảo mọi nhân viên mới đều trình bày đúng thông điệp sản phẩm và giá trị cốt lõi ngay từ ngày đầu.</p>
+                </div>
+                <div class="enable-card">
+                    <i class="ph-bold ph-lightning" style="font-size: 32px; color: var(--rp-indigo); margin-bottom: 24px;"></i>
+                    <h3 style="font-size: 22px; font-weight: 700; margin-bottom: 16px;">Huấn luyện Nhập vai quy mô</h3>
+                    <p style="color: var(--text-light); line-height: 1.6;">Tự động hóa các buổi nhập vai (Roleplay) mà không cần sự can thiệp trực tiếp của quản lý, tiết kiệm hàng trăm giờ mỗi tháng.</p>
+                </div>
+                <div class="enable-card">
+                    <i class="ph-bold ph-chart-line-up" style="font-size: 32px; color: var(--rp-indigo); margin-bottom: 24px;"></i>
+                    <h3 style="font-size: 22px; font-weight: 700; margin-bottom: 16px;">Đo lường mức độ sẵn sàng</h3>
+                    <p style="color: var(--text-light); line-height: 1.6;">Xác nhận kỹ năng của đội ngũ thông qua dữ liệu khách quan thay vì chỉ dựa vào cảm nhận cá nhân.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Build for how it works -->
+        <section style="background: #F8FAFC; padding: 120px 0;">
+            <div class="container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
+                <div>
+                    <h2 style="font-size: 44px; font-weight: 800; margin-bottom: 24px;">Xây dựng cho cách thức hoạt động thực tế của Enablement</h2>
+                    <p style="font-size: 18px; color: var(--text-light); margin-bottom: 40px;">Yoodli không thay thế quy trình hiện có của bạn. Chúng tôi nâng tầm nó bằng cách mang lại khả năng luyện tập có cấu trúc.</p>
+                    <ul class="how-works-list">
+                        <li><i class="ph-fill ph-check-circle"></i> <span>Thư viện Persona khách hàng tùy chỉnh</span></li>
+                        <li><i class="ph-fill ph-check-circle"></i> <span>Phản hồi AI theo bộ kỹ năng (Scorecards)</span></li>
+                        <li><i class="ph-fill ph-check-circle"></i> <span>Bảng điều khiển phân tích tổng hợp</span></li>
+                        <li><i class="ph-fill ph-check-circle"></i> <span>Tích hợp sâu với LMS và CRM</span></li>
+                    </ul>
+                </div>
+                <div>
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1000" alt="Enablement Dashboard" style="width: 100%; border-radius: 32px; box-shadow: 0 30px 60px rgba(0,0,0,0.1);">
+                </div>
+            </div>
+        </section>
+
+        <!-- Success Stories -->
+        <section class="container" style="padding: 120px 0; text-align: center;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 60px;">
+                <h2 style="font-size: 44px; font-weight: 800; text-align: left;">Câu chuyện thành công</h2>
+                <a href="#" style="color: var(--rp-indigo); font-weight: 700; text-decoration: none;">Xem tất cả bài học <i class="ph-bold ph-arrow-right"></i></a>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;">
+                <div class="case-story-card">
+                    <img src="https://images.unsplash.com/photo-1551288049-bbbda536339a?auto=format&fit=crop&q=80&w=600" alt="Snowflake" class="case-story-img">
+                    <div class="case-story-content">
+                        <div style="text-transform: uppercase; font-size: 11px; font-weight: 800; color: #22C55E; margin-bottom: 12px;">Bán hàng & Doanh thu</div>
+                        <h3 style="font-size: 18px; font-weight: 800; margin-bottom: 12px;">Snowflake tiết kiệm 700,000 USD chi phí đào tạo</h3>
+                        <a href="#" style="color: var(--rp-indigo); font-size: 14px; font-weight: 700; text-decoration: none;">Đọc chi tiết →</a>
+                    </div>
+                </div>
+                <div class="case-story-card">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=600" alt="Google Cloud" class="case-story-img">
+                    <div class="case-story-content">
+                        <div style="text-transform: uppercase; font-size: 11px; font-weight: 800; color: #22C55E; margin-bottom: 12px;">Đào tạo nội bộ</div>
+                        <h3 style="font-size: 18px; font-weight: 800; margin-bottom: 12px;">Google Cloud chuẩn hóa kỹ năng cho 1,200+ nhân viên</h3>
+                        <a href="#" style="color: var(--rp-indigo); font-size: 14px; font-weight: 700; text-decoration: none;">Đọc chi tiết →</a>
+                    </div>
+                </div>
+                <div class="case-story-card">
+                    <img src="https://images.unsplash.com/photo-1521791136064-7986c2923216?auto=format&fit=crop&q=80&w=600" alt="Korn Ferry" class="case-story-img">
+                    <div class="case-story-content">
+                        <div style="text-transform: uppercase; font-size: 11px; font-weight: 800; color: #22C55E; margin-bottom: 12px;">Phát triển Lãnh đạo</div>
+                        <h3 style="font-size: 18px; font-weight: 800; margin-bottom: 12px;">Korn Ferry tiết kiệm 1,200+ giờ huấn luyện hàng tháng</h3>
+                        <a href="#" style="color: var(--rp-indigo); font-size: 14px; font-weight: 700; text-decoration: none;">Đọc chi tiết →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Compliance -->
+        <section class="container" style="padding: 120px 0; text-align: center;">
+            <div class="security-badge">
+                <div style="width: 80px; height: 80px; background: #EEF2FF; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; color: var(--rp-indigo);">
+                    <i class="ph-fill ph-shield-check"></i>
+                </div>
+                <div style="text-align: left;">
+                    <h3 style="font-size: 24px; font-weight: 800; margin-bottom: 8px;">Tuân thủ tiêu chuẩn SOC2 Type 2 & GDPR</h3>
+                    <p style="color: var(--text-light); max-width: 600px;">Dữ liệu của bạn được bảo mật ở mức độ cao nhất. Chúng tôi không sử dụng dữ liệu của bạn để huấn luyện các mô hình AI công khai.</p>
+                </div>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 60px;">
+                <div>
+                    <i class="ph-fill ph-check-circle" style="color: #22C55E; font-size: 24px; margin-bottom: 12px;"></i>
+                    <h4 style="font-weight: 800;">Mã hóa dữ liệu</h4>
+                    <p style="font-size: 14px; color: var(--text-light);">Bảo vệ dữ liệu cả khi lưu trữ và truyền tải.</p>
+                </div>
+                <div>
+                    <i class="ph-fill ph-check-circle" style="color: #22C55E; font-size: 24px; margin-bottom: 12px;"></i>
+                    <h4 style="font-weight: 800;">Riêng tư tuyệt đối</h4>
+                    <p style="font-size: 14px; color: var(--text-light);">Bạn có toàn quyền kiểm soát dữ liệu huấn luyện.</p>
+                </div>
+                <div>
+                    <i class="ph-fill ph-check-circle" style="color: #22C55E; font-size: 24px; margin-bottom: 12px;"></i>
+                    <h4 style="font-weight: 800;">Sẵn sàng cho Doanh nghiệp</h4>
+                    <p style="font-size: 14px; color: var(--text-light);">Hỗ trợ SSO (Okta, Azure) và quản lý người dùng tập trung.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="revenue-dark" style="margin-top: 100px;">
+            <div class="container">
+                <h2 style="font-size: 56px; font-weight: 800; margin-bottom: 24px;">Sẵn sàng cho mọi cuộc đối thoại</h2>
+                <p style="font-size: 20px; opacity: 0.8; margin-bottom: 40px; max-width: 800px; margin-left: auto; margin-right: auto;">Tham gia cùng hàng ngàn đội ngũ hỗ trợ bán hàng đang nâng tầm hiệu suất với Yoodli.</p>
+                <a href="../app.html" class="btn btn-primary" style="background: white; color: #0B0E23; padding: 20px 48px; font-size: 20px;">Dùng thử Yoodli ngay</a>
+            </div>
+        </section>
+
+        <!-- Who is your coach? Tabbed Section -->
+        <section style="background: #F8FAFC; padding: 120px 0;">
+            <div class="container">
+                <h2 style="text-align: center; font-size: 44px; font-weight: 800; margin-bottom: 60px;">Huấn luyện viên của bạn là ai?</h2>
+                
+                <div style="background: white; border-radius: 32px; padding: 40px; box-shadow: 0 20px 40px rgba(0,0,0,0.05); display: grid; grid-template-columns: 1fr 1.5fr; gap: 60px; align-items: center;">
+                    <div style="display: flex; flex-direction: column; gap: 12px;">
+                        <div class="inner-tab active" data-coach="sales" style="padding: 20px; border-radius: 16px; cursor: pointer; transition: all 0.3s; border: 1px solid transparent;">
+                            <h4 style="font-size: 18px; font-weight: 800; margin-bottom: 4px;">Huấn luyện bán hàng</h4>
+                            <p style="font-size: 14px; color: var(--text-light);">Cải thiện tỷ lệ thắng và xử lý phản đối.</p>
+                        </div>
+                        <div class="inner-tab" data-coach="leadership" style="padding: 20px; border-radius: 16px; cursor: pointer; transition: all 0.3s; border: 1px solid transparent;">
+                            <h4 style="font-size: 18px; font-weight: 800; margin-bottom: 4px;">Huấn luyện lãnh đạo</h4>
+                            <p style="font-size: 14px; color: var(--text-light);">Truyền cảm hứng và dẫn dắt đội ngũ.</p>
+                        </div>
+                        <div class="inner-tab" data-coach="presentation" style="padding: 20px; border-radius: 16px; cursor: pointer; transition: all 0.3s; border: 1px solid transparent;">
+                            <h4 style="font-size: 18px; font-weight: 800; margin-bottom: 4px;">Huấn luyện thuyết trình</h4>
+                            <p style="font-size: 14px; color: var(--text-light);">Làm chủ sân khấu và nội dung.</p>
+                        </div>
+                        <div class="inner-tab" data-coach="interview" style="padding: 20px; border-radius: 16px; cursor: pointer; transition: all 0.3s; border: 1px solid transparent;">
+                            <h4 style="font-size: 18px; font-weight: 800; margin-bottom: 4px;">Chuẩn bị phỏng vấn</h4>
+                            <p style="font-size: 14px; color: var(--text-light);">Tự tin chinh phục mọi vị trí.</p>
+                        </div>
+                    </div>
+                    
+                    <div id="coach-display" style="display: flex; gap: 40px; align-items: center; background: #EEF2FF; padding: 40px; border-radius: 24px;">
+                        <div style="flex: 1;">
+                            <h3 id="coach-title" style="font-size: 28px; font-weight: 800; margin-bottom: 20px;">Sẵn sàng cho mọi cuộc đối thoại bán hàng</h3>
+                            <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 16px;" id="coach-features">
+                                <li style="display: flex; gap: 12px; align-items: center;"><i class="ph-fill ph-check-circle" style="color: var(--rp-indigo);"></i> <span>Luyện tập xử lý phản đối theo thời gian thực</span></li>
+                                <li style="display: flex; gap: 12px; align-items: center;"><i class="ph-fill ph-check-circle" style="color: var(--rp-indigo);"></i> <span>Nhận phản hồi về giọng điệu và sự tự tin</span></li>
+                                <li style="display: flex; gap: 12px; align-items: center;"><i class="ph-fill ph-check-circle" style="color: var(--rp-indigo);"></i> <span>Chuẩn bị cho các tình huống thương thảo khó khăn</span></li>
+                            </ul>
+                        </div>
+                        <div style="width: 200px; height: 200px; border-radius: 50%; overflow: hidden; border: 4px solid white; box-shadow: 0 10px 25px rgba(0,0,0,0.1);">
+                            <img id="coach-img" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400" alt="Coach" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <style>
+            .inner-tab.active {
+                background: #F1F5F9;
+                border-color: #CBD5E1 !important;
+            }
+            .inner-tab:hover:not(.active) {
+                background: #F8FAFC;
+            }
+        </style>
+
+        <script>
+            const coaches = {
+                sales: {
+                    title: "Sẵn sàng cho mọi cuộc đối thoại bán hàng",
+                    img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400",
+                    features: ["Luyện tập xử lý phản đối theo thời gian thực", "Nhận phản hồi về giọng điệu và sự tự tin", "Chuẩn bị cho các tình huống thương thảo khó khăn"]
+                },
+                leadership: {
+                    title: "Dẫn dắt với tầm ảnh hưởng tuyệt đối",
+                    img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400",
+                    features: ["Mô phỏng các cuộc họp 1-1 khó khăn", "Cải thiện khả năng truyền đạt tầm nhìn", "Huấn luyện kỹ năng phản hồi nhân viên"]
+                },
+                presentation: {
+                    title: "Làm chủ bài thuyết trình tiếp theo",
+                    img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=400",
+                    features: ["Phân tích tốc độ nói và từ thừa", "Đo lường sự lôi cuốn trong diễn đạt", "Tối ưu hóa cấu trúc nội dung bài nói"]
+                },
+                interview: {
+                    title: "Chinh phục nhà tuyển dụng tiềm năng",
+                    img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=400",
+                    features: ["Mô phỏng phỏng vấn theo vị trí cụ thể", "Luyện tập trả lời các câu hỏi tình huống", "Cải thiện ngôn ngữ cơ thể qua video"]
+                }
+            };
+
+            document.querySelectorAll('.inner-tab').forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const type = tab.getAttribute('data-coach');
+                    document.querySelectorAll('.inner-tab').forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                    
+                    const data = coaches[type];
+                    document.getElementById('coach-title').textContent = data.title;
+                    document.getElementById('coach-img').src = data.img;
+                    
+                    const featuresList = document.getElementById('coach-features');
+                    featuresList.innerHTML = data.features.map(f => `
+                        <li style="display: flex; gap: 12px; align-items: center;">
+                            <i class="ph-fill ph-check-circle" style="color: var(--rp-indigo);"></i> 
+                            <span>${f}</span>
+                        </li>
+                    `).join('');
+                });
+            });
+        </script>
+
+        <!-- FAQ -->
+        <section class="faq-section" style="padding: 120px 0; max-width: 900px; margin: 0 auto;">
+            <h2 style="text-align:center; margin-bottom:60px; font-size:36px; font-weight:800;">Câu hỏi thường gặp về Sales Enablement</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">Yoodli có thay thế các buổi huấn luyện trực tiếp không? <i class="ph ph-plus"></i></div>
+                    <div class="faq-answer">Không, Yoodli bổ trợ cho các buổi huấn luyện trực tiếp bằng cách cung cấp môi trường luyện tập an toàn, giúp nhân viên sẵn sàng hơn trước khi gặp quản lý hoặc khách hàng thực tế.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Chúng tôi có thể tùy chỉnh các tiêu chí đánh giá không? <i class="ph ph-plus"></i></div>
+                    <div class="faq-answer">Hoàn toàn có thể. Bạn có thể thiết lập các Scorecard riêng dựa trên bộ kỹ năng bán hàng cụ thể của doanh nghiệp (ví dụ: MEDDIC, SPIN, Challenger).</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Yoodli bảo mật dữ liệu khách hàng như thế nào? <i class="ph ph-plus"></i></div>
+                    <div class="faq-answer">Chúng tôi tuân thủ nghiêm ngặt SOC2 và GDPR. Mọi dữ liệu luyện tập đều được mã hóa và chỉ có những người được cấp quyền trong tổ chức của bạn mới có thể truy cập.</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <!-- Footer will be injected by master_layout.js -->
+    <script src="../master_layout.js"></script>
+
+    <script>
+        document.querySelectorAll('.faq-question').forEach(q => {
+            q.addEventListener('click', () => {
+                q.parentElement.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+
+</html>

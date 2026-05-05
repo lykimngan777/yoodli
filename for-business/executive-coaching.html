@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Huấn luyện Điều hành | Yoodli - Nâng tầm lãnh đạo</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../roleplay.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        .executive-hero {
+            padding: 120px 0 100px;
+            background: radial-gradient(circle at 10% 90%, rgba(99, 102, 241, 0.05) 0%, transparent 40%),
+                        linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
+        }
+
+        .exec-card {
+            background: #F0F4FF;
+            padding: 40px;
+            border-radius: 32px;
+            text-align: left;
+            transition: all 0.3s ease;
+        }
+
+        .exec-card:hover {
+            background: #E0E7FF;
+            transform: translateY(-5px);
+        }
+
+        .impact-section {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .video-box {
+            position: relative;
+            border-radius: 32px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+            margin: 60px 0;
+            background: #000;
+        }
+
+        .video-box img {
+            width: 100%;
+            display: block;
+            opacity: 0.8;
+        }
+
+        .play-btn-large {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            color: var(--rp-indigo);
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .confidential-badge {
+            background: white;
+            padding: 40px;
+            border-radius: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            border: 1px solid #F1F5F9;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar will be injected by master_layout.js -->
+
+    <main>
+        <!-- Hero -->
+        <section class="executive-hero">
+            <div class="container hero-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
+                <div class="hero-content">
+                    <span style="color: #6366F1; font-weight: 700; font-size: 14px; text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-bottom: 24px;">GIẢI PHÁP CHO NHÀ LÃNH ĐẠO</span>
+                    <h1 style="font-size: 64px; font-weight: 800; line-height: 1.1; margin-bottom: 24px;">Huấn luyện Điều hành</h1>
+                    <p style="font-size: 20px; color: var(--text-light); margin-bottom: 32px; line-height: 1.6;">Huấn luyện AI bảo mật và riêng tư dành cho các nhà lãnh đạo. Làm chủ phong thái, sự tự tin và khả năng truyền cảm hứng trong mọi tình huống giao tiếp quan trọng.</p>
+                    <a href="../app.html" class="btn btn-primary" style="padding: 18px 40px; font-size: 18px;">Thử nghiệm Yoodli miễn phí</a>
+                </div>
+                <div class="hero-visual" style="display: flex; justify-content: flex-end;">
+                    <div style="position: relative;">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=500" alt="Executive" style="width: 400px; border-radius: 32px; box-shadow: 0 30px 60px rgba(0,0,0,0.1);">
+                        <div style="position: absolute; top: 40px; left: -40px; background: white; padding: 20px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); display: flex; gap: 12px; align-items: center;">
+                            <div style="width: 12px; height: 12px; background: #22C55E; border-radius: 50%;"></div>
+                            <span style="font-weight: 700; font-size: 14px;">Đang trong phiên luyện tập...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Use Cases -->
+        <section class="container" style="padding: 120px 0; text-align: center;">
+            <h2 style="font-size: 44px; font-weight: 800; margin-bottom: 60px;">Cách các đội ngũ Huấn luyện Điều hành sử dụng Yoodli</h2>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;">
+                <div class="exec-card">
+                    <i class="ph-bold ph-presentation-chart" style="font-size: 32px; color: var(--rp-indigo); margin-bottom: 24px;"></i>
+                    <h3 style="font-size: 22px; font-weight: 700; margin-bottom: 16px;">Giao tiếp quan trọng</h3>
+                    <p style="color: var(--text-light); line-height: 1.6;">Luyện tập cho các buổi họp hội đồng quản trị, thuyết trình trước cổ đông hoặc phát biểu trước công chúng.</p>
+                </div>
+                <div class="exec-card">
+                    <i class="ph-bold ph-user-focus" style="font-size: 32px; color: var(--rp-indigo); margin-bottom: 24px;"></i>
+                    <h3 style="font-size: 22px; font-weight: 700; margin-bottom: 16px;">Phong thái lãnh đạo</h3>
+                    <p style="color: var(--text-light); line-height: 1.6;">Xây dựng sự hiện diện nhất quán và thuyết phục, từ giọng điệu đến ngôn ngữ cơ thể.</p>
+                </div>
+                <div class="exec-card">
+                    <i class="ph-bold ph-shield-check" style="font-size: 32px; color: var(--rp-indigo); margin-bottom: 24px;"></i>
+                    <h3 style="font-size: 22px; font-weight: 700; margin-bottom: 16px;">Sẵn sàng cho mọi tình huống</h3>
+                    <p style="color: var(--text-light); line-height: 1.6;">Chuẩn bị cho các cuộc đối thoại khó khăn, quản lý khủng hoảng và đàm phán chiến lược.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video Section -->
+        <section style="background: #F8FAFC; padding: 120px 0;">
+            <div class="container" style="text-align: center;">
+                <h2 style="font-size: 44px; font-weight: 800; margin-bottom: 24px;">Con đường huấn luyện quy mô của Korn Ferry</h2>
+                <p style="font-size: 18px; color: var(--text-light); max-width: 800px; margin: 0 auto;">Tìm hiểu cách công ty tư vấn nhân sự hàng đầu thế giới sử dụng Yoodli để nâng tầm hàng ngàn nhà lãnh đạo.</p>
+                <div class="video-box">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1200" alt="Korn Ferry Success">
+                    <div class="play-btn-large">
+                        <i class="ph-fill ph-play"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- List Section -->
+        <section class="container" style="padding: 120px 0;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
+                <div>
+                    <h2 style="font-size: 44px; font-weight: 800; margin-bottom: 24px;">Xây dựng cho huấn luyện giao tiếp quy mô lớn</h2>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="background: #F1F5F9; padding: 24px; border-radius: 20px; margin-bottom: 16px; display: flex; gap: 20px; align-items: center;">
+                            <i class="ph-fill ph-check-circle" style="color: var(--rp-indigo); font-size: 24px;"></i>
+                            <span style="font-weight: 600;">Thống nhất thông điệp chiến lược của công ty</span>
+                        </li>
+                        <li style="background: #F1F5F9; padding: 24px; border-radius: 20px; margin-bottom: 16px; display: flex; gap: 20px; align-items: center;">
+                            <i class="ph-fill ph-check-circle" style="color: var(--rp-indigo); font-size: 24px;"></i>
+                            <span style="font-weight: 600;">Xây dựng phong thái cá nhân chuyên nghiệp</span>
+                        </li>
+                        <li style="background: #F1F5F9; padding: 24px; border-radius: 20px; margin-bottom: 16px; display: flex; gap: 20px; align-items: center;">
+                            <i class="ph-fill ph-check-circle" style="color: var(--rp-indigo); font-size: 24px;"></i>
+                            <span style="font-weight: 600;">Phản hồi thời gian thực dựa trên AI</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="confidential-badge" style="flex-direction: column; text-align: center;">
+                    <div style="font-size: 48px; color: var(--rp-indigo);"><i class="ph-fill ph-lock-key"></i></div>
+                    <h3 style="font-size: 24px; font-weight: 800;">Bảo mật & Riêng tư tuyệt đối</h3>
+                    <p style="color: var(--text-light);">Mọi phiên huấn luyện của lãnh đạo đều được mã hóa và không bao giờ được chia sẻ bên ngoài tổ chức của bạn.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="revenue-dark">
+            <div class="container">
+                <h2 style="font-size: 56px; font-weight: 800; margin-bottom: 24px;">Sẵn sàng để dẫn dắt?</h2>
+                <p style="font-size: 20px; opacity: 0.8; margin-bottom: 40px;">Bắt đầu hành trình nâng tầm lãnh đạo của bạn với Yoodli ngay hôm nay.</p>
+                <a href="../app.html" class="btn btn-primary" style="background: white; color: #0B0E23; padding: 20px 48px; font-size: 20px;">Dùng thử miễn phí</a>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="faq-section" style="padding: 120px 0; max-width: 900px; margin: 0 auto;">
+            <h2 style="text-align:center; margin-bottom:60px; font-size:36px; font-weight:800;">Câu hỏi thường gặp về Huấn luyện Điều hành</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">Yoodli có bảo mật thông tin nhạy cảm của lãnh đạo không? <i class="ph ph-plus"></i></div>
+                    <div class="faq-answer">Có, Yoodli sử dụng mã hóa đầu cuối và các tiêu chuẩn bảo mật doanh nghiệp cao nhất. Dữ liệu của bạn được cô lập và chỉ thuộc quyền sở hữu của tổ chức bạn.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Lãnh đạo có thể luyện tập các bài phát biểu cụ thể không? <i class="ph ph-plus"></i></div>
+                    <div class="faq-answer">Hoàn toàn có thể. Lãnh đạo có thể tải lên kịch bản bài phát biểu, luyện tập và nhận phản hồi tức thì về tốc độ, phong thái và độ rõ ràng của thông điệp.</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <!-- Footer will be injected by master_layout.js -->
+    <script src="../master_layout.js"></script>
+
+    <script>
+        document.querySelectorAll('.faq-question').forEach(q => {
+            q.addEventListener('click', () => {
+                q.parentElement.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+
+</html>

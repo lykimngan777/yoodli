@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yoodli | Nền tảng Nhập vai AI Thực tế</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+    <!-- Header and Banner will be injected by master_layout.js -->
+
+    <!-- Hero Section -->
+    <section class="hero-wrapper">
+        <div class="hero-glow"></div>
+        <div class="hero container">
+            <div class="hero-content">
+                <h1>Nhập vai AI tương tác cho <br><span class="gradient-text">chứng nhận thuyết trình</span></h1>
+                <p>Cải thiện kỹ năng giao tiếp của bạn với huấn luyện nhập vai riêng tư, thời gian thực và không phán xét — được hỗ trợ bởi AI.</p>
+                <div class="hero-actions">
+                    <a href="app.html" class="btn btn-primary" style="padding: 16px 40px; font-size: 16px; border-radius: 100px;">Bắt đầu nhập vai</a>
+                    <a href="#" class="btn btn-outline" style="padding: 16px 40px; font-size: 16px; border-radius: 100px; border-color: #4F46E5; color: #4F46E5;">Nhận Yoodli cho đội ngũ</a>
+                </div>
+                <div class="hero-trust">
+                    <i class="ph-fill ph-check-circle"></i>
+                    <span>Chứng nhận SOC 2 Loại 2 và tuân thủ GDPR</span>
+                </div>
+            </div>
+            <div class="hero-visual-new">
+                <div class="visual-glow"></div>
+                <div class="slideshow-container">
+                    <!-- Slide 1: Setup -->
+                    <div class="hero-slide-html active" id="slide-1">
+                        <div class="setup-card animate-element" style="--delay: 0.05s;">
+                            <div class="card-header">
+                                <i class="ph-fill ph-snowflake" style="color: #3B82F6;"></i>
+                                <span>Cold call roleplay</span>
+                            </div>
+                            <div class="card-item animate-element" style="--delay: 0.15s;">
+                                <div class="item-title">Agnes Beans, VP of Software at Hooli Inc</div>
+                            </div>
+                            <div class="card-item animate-element" style="--delay: 0.25s;">
+                                <div class="item-desc">A cold call to sell Yoodli to Agnes. She has a busy day so you'll have to hit your talking points quickly!</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2: Feedback -->
+                    <div class="hero-slide-html" id="slide-2">
+                        <div class="feedback-person animate-element" style="--delay: 0.05s;">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=200" alt="Esha">
+                        </div>
+                        <div class="feedback-card talking-points animate-element" style="--delay: 0.15s;">
+                            <div class="card-header">Talking points</div>
+                            <div class="points-grid">
+                                <div class="point-row"><i class="ph-fill ph-check-circle" style="color: #10B981;"></i><div class="bar"></div></div>
+                                <div class="point-row"><i class="ph-fill ph-check-circle" style="color: #10B981;"></i><div class="bar"></div></div>
+                                <div class="point-row"><i class="ph-fill ph-check-circle" style="color: #10B981;"></i><div class="bar"></div></div>
+                                <div class="point-row"><i class="ph-fill ph-x-circle" style="color: #EF4444;"></i><div class="bar"></div></div>
+                            </div>
+                        </div>
+                        <div class="feedback-card strength-card animate-element" style="--delay: 0.25s;">
+                            <div class="card-label" style="color: #10B981;"><i class="ph-fill ph-thumbs-up"></i> Strength</div>
+                            <div class="card-text">Overall, great job building rapport with the prospective customer</div>
+                        </div>
+                        <div class="feedback-card growth-card animate-element" style="--delay: 0.35s;">
+                            <div class="card-label" style="color: #F97316;"><i class="ph-fill ph-flag"></i> Growth area</div>
+                            <div class="card-text">Your response to the pricing objection could have been 25% more concise</div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3: Chat -->
+                    <div class="hero-slide-html" id="slide-3">
+                        <div class="chat-bubble left animate-element" style="--delay: 0.05s;">
+                            <div class="chat-name">Agnes Beans</div>
+                            <div class="chat-text">Hey there! Tell me more about what you're selling...</div>
+                        </div>
+                        <div class="chat-bubble right animate-element" style="--delay: 0.15s;">
+                            <div class="chat-name">Esha Joshi</div>
+                            <div class="chat-text">I'd love to tell you about how Yoodli can 10x your sales teams</div>
+                        </div>
+                        <div class="chat-controls animate-element" style="--delay: 0.3s;">
+                            <div class="record-timer"><div class="dot"></div> 00:12</div>
+                            <div class="next-btn">Next question <i class="ph ph-caret-right"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trusted By Logos -->
+    <section class="logos-section">
+        <div class="container">
+            <p>ĐƯỢC TIN DÙNG BỞI CÁC TỔ CHỨC HÀNG ĐẦU THẾ GIỚI</p>
+            <div class="logos-marquee">
+                <div class="marquee-content">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Salesforce.com_logo.svg" alt="Salesforce">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Cisco_logo_blue_2016.svg" alt="Cisco">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/59/SAP_2011_logo.svg" alt="SAP">
+                    <!-- Duplicate for loop -->
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Salesforce.com_logo.svg" alt="Salesforce">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Cisco_logo_blue_2016.svg" alt="Cisco">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/59/SAP_2011_logo.svg" alt="SAP">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies Section -->
+    <section class="case-studies-section">
+        <div class="container">
+            <div class="case-section-header">
+                <h2>Check out our case studies</h2>
+                <a href="resources/case-studies.html" class="see-all">See all <i class="ph ph-caret-right"></i></a>
+            </div>
+            <div class="case-studies-grid">
+                <!-- Case Study 1 -->
+                <a href="resources/google-cloud-case-study.html" class="case-card">
+                    <div class="case-image">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800" alt="Google Cloud">
+                        <div class="case-logo-overlay">
+                            <div class="overlay-inner">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google">
+                                <span class="plus">+</span>
+                                <img src="https://yoodli.ai/logo-white.svg" alt="Yoodli" style="height: 18px; filter: invert(1);">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="case-content">
+                        <h3>Google Cloud đã sử dụng Yoodli AI như thế nào để triển khai chứng nhận bài thuyết trình GTM mới cho...</h3>
+                        <div class="case-tags">
+                            <span class="tag tag-orange">Đào tạo nội bộ</span>
+                            <span class="tag tag-yellow">Chứng nhận Pitching</span>
+                            <span class="tag tag-green">Hỗ trợ bán hàng</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Case Study 2 -->
+                <a href="resources/snowflake-case-study.html" class="case-card">
+                    <div class="case-image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bbbda536639a?auto=format&fit=crop&q=80&w=800" alt="Snowflake">
+                        <div class="case-logo-overlay">
+                            <div class="overlay-inner">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/f/ff/Snowflake_Logo.svg" alt="Snowflake">
+                                <span class="plus">+</span>
+                                <img src="https://yoodli.ai/logo-white.svg" alt="Yoodli" style="height: 18px; filter: invert(1);">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="case-content">
+                        <h3>Snowflake đã tiết kiệm hơn 1.200 giờ huấn luyện của quản lý mỗi quý với...</h3>
+                        <div class="case-tags">
+                            <span class="tag tag-blue">Hỗ trợ GTM</span>
+                            <span class="tag tag-purple">Huấn luyện Quản lý</span>
+                            <span class="tag tag-green">Hỗ trợ bán hàng</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Case Study 3 -->
+                <a href="resources/harness-case-study.html" class="case-card">
+                    <div class="case-image">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800" alt="Harness">
+                        <div class="case-logo-overlay">
+                            <div class="overlay-inner">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Cisco_logo_blue_2016.svg" alt="Cisco">
+                                <span class="plus">+</span>
+                                <img src="https://yoodli.ai/logo-white.svg" alt="Yoodli" style="height: 18px; filter: invert(1);">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="case-content">
+                        <h3>Harness đã giảm 75% thời gian đánh giá đào tạo bán hàng với Yoodli AI...</h3>
+                        <div class="case-tags">
+                            <span class="tag tag-orange">Đào tạo nội bộ</span>
+                            <span class="tag tag-yellow">Chứng nhận Pitching</span>
+                            <span class="tag tag-green">Hỗ trợ bán hàng</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section: See Yoodli in action -->
+    <section class="video-action-section" style="padding: 80px 0; background: #fff; text-align: center;">
+        <div class="container">
+            <h2 style="font-size: 36px; font-weight: 800; color: #000235; margin-bottom: 12px;">Xem Yoodli hoạt động</h2>
+            <p style="font-size: 16px; color: #1E293B; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto; opacity: 0.8;">Thông báo Series B của chúng tôi và tương lai của học tập trải nghiệm với nhập vai AI.</p>
+            
+            <div class="video-container" style="max-width: 800px; margin: 0 auto; border-radius: 24px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.1); aspect-ratio: 16/9; background: #000; position: relative;">
+                <iframe 
+                    width="100%" 
+                    height="100%" 
+                    src="https://www.youtube-nocookie.com/embed/hM6jLMvTFnk?rel=0&modestbranding=1" 
+                    title="Yoodli Series B Announcement" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    allowfullscreen
+                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Training Section: Train like an athlete -->
+    <section class="training-athlete-section" style="padding: 100px 0; background: #fff;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 24px;">
+            <div style="text-align: center; margin-bottom: 70px;">
+                <h2 style="font-size: 42px; font-weight: 800; color: #000235; margin-bottom: 20px;">Luyện tập như vận động viên, <span style="color: #4F46E5;">bán hàng như chuyên gia</span></h2>
+                <p style="font-size: 18px; color: #475569; max-width: 700px; margin: 0 auto; opacity: 0.9;">Các vận động viên ưu tú dành 99% thời gian để tập luyện để có thể tỏa sáng khi cần thiết</p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px;">
+                <!-- Card 1 -->
+                <div class="training-card" style="background: #F8FAFF; border-radius: 24px; padding: 40px 30px; text-align: center; transition: transform 0.3s ease; border: 1px solid #EEF2FF;">
+                    <div class="card-visual" style="height: 200px; margin-bottom: 30px; display: flex; align-items: center; justify-content: center; position: relative;">
+                        <!-- Batting Cage Visual (CSS/HTML mockup) -->
+                        <div style="position: relative; width: 140px; height: 140px; border: 2px solid #4F46E5; border-radius: 12px; display: flex; align-items: center; justify-content: center; opacity: 0.8; overflow: hidden;">
+                            <div style="position: absolute; width: 200%; height: 2px; background: #4F46E5; transform: rotate(45deg); opacity: 0.1;"></div>
+                            <div style="position: absolute; width: 200%; height: 2px; background: #4F46E5; transform: rotate(-45deg); opacity: 0.1;"></div>
+                            <div style="position: absolute; width: 2px; height: 200%; background: #4F46E5; left: 25%; opacity: 0.1;"></div>
+                            <div style="position: absolute; width: 2px; height: 200%; background: #4F46E5; left: 50%; opacity: 0.1;"></div>
+                            <div style="position: absolute; width: 2px; height: 200%; background: #4F46E5; left: 75%; opacity: 0.1;"></div>
+                            <i class="ph-bold ph-grid-four" style="font-size: 40px; color: #4F46E5;"></i>
+                        </div>
+                        <div style="position: absolute; top: 10%; right: 0; background: white; padding: 8px 12px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); font-size: 11px; font-weight: 700; color: #F97316; display: flex; align-items: center; gap: 6px; border: 1px solid #FED7AA;">
+                            <i class="ph-fill ph-flag-banner"></i> Book a follow-up
+                        </div>
+                        <div style="position: absolute; bottom: 10%; left: -10px; background: white; padding: 8px 12px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); font-size: 11px; font-weight: 700; color: #10B981; display: flex; align-items: center; gap: 6px; border: 1px solid #D1FAE5;">
+                            <i class="ph-fill ph-thumbs-up"></i> Objection handling
+                        </div>
+                    </div>
+                    <h3 style="font-size: 22px; font-weight: 800; color: #000235; margin-bottom: 16px;">Step into the batting cage</h3>
+                    <p style="font-size: 15px; color: #475569; line-height: 1.6;">Get unlimited reps with realistic AI simulations that mimic real-world scenarios</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="training-card" style="background: #F8FAFF; border-radius: 24px; padding: 40px 30px; text-align: center; transition: transform 0.3s ease; border: 1px solid #EEF2FF;">
+                    <div class="card-visual" style="height: 200px; margin-bottom: 30px; display: flex; align-items: center; justify-content: center; position: relative;">
+                        <!-- Highlight Reel Visual -->
+                        <div style="display: flex; flex-direction: column; gap: 10px; width: 220px;">
+                            <div style="background: white; padding: 10px 14px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); font-size: 11px; font-weight: 700; color: #4F46E5; display: flex; align-items: center; gap: 8px; border-left: 4px solid #4F46E5;">
+                                <i class="ph-fill ph-circle-wavy-question" style="color: #4F46E5;"></i> Topic: What's your pricing?
+                            </div>
+                            <div style="background: white; padding: 10px 14px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); font-size: 11px; font-weight: 700; color: #10B981; display: flex; align-items: center; gap: 8px; border-left: 4px solid #10B981;">
+                                <i class="ph-fill ph-check-circle"></i> 5 talking points hit
+                            </div>
+                            <div style="background: white; padding: 10px 14px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); font-size: 11px; font-weight: 700; color: #10B981; display: flex; align-items: center; gap: 8px; border-left: 4px solid #10B981;">
+                                <i class="ph-fill ph-thumbs-up"></i> Strong discovery
+                            </div>
+                            <div style="background: white; padding: 10px 14px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); font-size: 11px; font-weight: 700; color: #EF4444; display: flex; align-items: center; gap: 8px; border-left: 4px solid #EF4444;">
+                                <i class="ph-fill ph-warning"></i> Use BANT framework
+                            </div>
+                        </div>
+                    </div>
+                    <h3 style="font-size: 22px; font-weight: 800; color: #000235; margin-bottom: 16px;">Coaching on your highlight reel</h3>
+                    <p style="font-size: 15px; color: #475569; line-height: 1.6;">Break down your performance with instant insights on what to double down on and what to improve</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="training-card" style="background: #F8FAFF; border-radius: 24px; padding: 40px 30px; text-align: center; transition: transform 0.3s ease; border: 1px solid #EEF2FF;">
+                    <div class="card-visual" style="height: 200px; margin-bottom: 30px; display: flex; align-items: center; justify-content: center;">
+                        <!-- Fine-tune Visual -->
+                        <div style="position: relative; width: 100%; display: flex; justify-content: center; align-items: center;">
+                            <div style="width: 200px; height: 130px; background: white; border-radius: 12px; box-shadow: 0 15px 35px rgba(0,0,0,0.08); padding: 10px; display: flex; gap: 8px;">
+                                <div style="flex: 1; background: #F1F5F9; border-radius: 6px; overflow: hidden;">
+                                    <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=200" style="width: 100%; height: 100%; object-fit: cover;">
+                                </div>
+                                <div style="flex: 1; display: flex; flex-direction: column; gap: 6px;">
+                                    <div style="height: 40px; background: #F1F5F9; border-radius: 4px;"></div>
+                                    <div style="height: 40px; background: #F1F5F9; border-radius: 4px;"></div>
+                                    <div style="height: 20px; background: #F1F5F9; border-radius: 4px;"></div>
+                                </div>
+                            </div>
+                            <div style="position: absolute; bottom: -5px; right: 20px; background: white; padding: 12px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); width: 160px; text-align: left; border: 1px solid #F1F5F9;">
+                                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+                                    <div style="width: 24px; height: 24px; background: #4F46E5; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                        <i class="ph-fill ph-microphone" style="color: white; font-size: 12px;"></i>
+                                    </div>
+                                    <div style="font-size: 9px; font-weight: 800; color: #000235;">Welcome to Yoodli! 👋</div>
+                                </div>
+                                <div style="font-size: 8px; color: #64748B;">How can we help?</div>
+                <div style="font-size: 7px; color: #94A3B8; margin-top: 4px;">Yoodli Roleplay Support Agent • 1d</div>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 style="font-size: 22px; font-weight: 800; color: #000235; margin-bottom: 16px;">Fine-tune your swing</h3>
+                    <p style="font-size: 15px; color: #475569; line-height: 1.6;">Focus on specific parts of your pitch your opener, close, and discovery - until it feels effortless</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <!-- Scroll-driven Sticky Section: How Yoodli AI Roleplays work -->
+    <!-- Scroll-driven Sticky Section: How Yoodli AI Roleplays work -->
+    <section class="how-it-works-sticky" style="height: 300vh; position: relative;">
+        <div class="sticky-inner" style="position: sticky; top: 0; height: 100vh; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #F3F4FA; padding: 10px 0 60px; border-radius: 0 0 50% 50% / 0 0 100px 100px; overflow: hidden;">
+            
+            <!-- 1. Header (Top Center) -->
+            <div style="text-align: center; width: 100%; margin-bottom: 10px;">
+                <div style="font-size: 13px; font-weight: 800; color: #4F46E5; letter-spacing: 2px; margin-bottom: 4px;">CÁCH THỨC HOẠT ĐỘNG</div>
+                <h2 style="font-size: 32px; font-weight: 800; color: #000235; margin: 0;">Cách thức hoạt động của Nhập vai AI Yoodli</h2>
+            </div>
+
+            <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 24px; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: center; width: 100%; position: relative;">
+                
+                <!-- 2. Left: Interactive Mockup -->
+                <div class="mockup-side" style="position: relative; height: 360px; background: rgba(255, 255, 255, 0.6); backdrop-filter: blur(10px); border-radius: 24px; display: flex; align-items: center; justify-content: center; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.8);">
+                    <!-- State 1: Choose Roleplay -->
+                    <div id="step-visual-1" class="step-visual" style="position: absolute; width: 85%; opacity: 1; transform: translateY(0);">
+                        <div style="background: white; padding: 16px; border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.05); margin-bottom: 12px; border: 1px solid #F1F5F9;">
+                            <div style="font-size: 11px; color: #64748B; margin-bottom: 4px; font-weight: 600;">Topic</div>
+                            <div style="font-size: 16px; font-weight: 800; color: #000235;">Why should we buy your product?</div>
+                        </div>
+                        <div style="background: white; padding: 16px; border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.05); margin-bottom: 12px; border: 1px solid #F1F5F9; display: flex; justify-content: space-between; align-items: center;">
+                            <div>
+                                <div style="font-size: 11px; color: #64748B; margin-bottom: 2px; font-weight: 600;">Conversation Partner</div>
+                                <div style="font-size: 16px; font-weight: 800; color: #000235;">Sophisticated Buyer</div>
+                            </div>
+                            <i class="ph ph-magnifying-glass" style="font-size: 20px; color: #94A3B8;"></i>
+                        </div>
+                    </div>
+
+                    <!-- State 2: Start Speaking -->
+                    <div id="step-visual-2" class="step-visual" style="position: absolute; width: 85%; opacity: 0; transform: translateY(20px);">
+                        <div style="background: white; padding: 24px; border-radius: 20px; box-shadow: 0 15px 50px rgba(0,0,0,0.08); position: relative; overflow: hidden;">
+                            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 15px;">
+                                <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #4F46E5, #818CF8); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+                                    <i class="ph-fill ph-microphone" style="color: white; font-size: 20px;"></i>
+                                </div>
+                                <div style="font-size: 14px; font-weight: 700; color: #000235;">How does your pricing structure work?</div>
+                            </div>
+                            <div style="display: flex; align-items: flex-end; gap: 4px; height: 50px; justify-content: center; margin-bottom: 15px;">
+                                <div class="wave" style="width: 5px; height: 15px; background: #E2E8F0; border-radius: 3px;"></div>
+                                <div class="wave" style="width: 5px; height: 35px; background: #CBD5E1; border-radius: 3px;"></div>
+                                <div class="wave" style="width: 5px; height: 45px; background: #4F46E5; border-radius: 3px;"></div>
+                                <div class="wave" style="width: 5px; height: 25px; background: #818CF8; border-radius: 3px;"></div>
+                                <div class="wave" style="width: 5px; height: 40px; background: #4F46E5; border-radius: 3px;"></div>
+                                <div class="wave" style="width: 5px; height: 20px; background: #E2E8F0; border-radius: 3px;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- State 3: View Results -->
+                    <div id="step-visual-3" class="step-visual" style="position: absolute; width: 85%; opacity: 0; transform: translateY(20px);">
+                        <div style="background: white; padding: 20px; border-radius: 20px; box-shadow: 0 15px 50px rgba(0,0,0,0.08);">
+                            <div style="display: flex; gap: 15px; align-items: center; margin-bottom: 15px;">
+                                <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=150" style="width: 80px; height: 80px; border-radius: 12px; object-fit: cover;">
+                                <div>
+                                    <div style="font-size: 20px; font-weight: 800; color: #000235; margin-bottom: 2px;">84%</div>
+                                    <div style="font-size: 12px; color: #64748B; font-weight: 600;">Overall Score</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Right: Text Content Cards -->
+                <div class="text-side" style="padding-left: 20px; position: relative; height: 160px;">
+                    <!-- Step 1 Text -->
+                    <div id="step-text-1" style="position: absolute; top: 0; left: 0; opacity: 1; transform: translateY(0); width: 100%;">
+                        <div style="background: white; padding: 24px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.04); border: 1px solid #F1F5F9;">
+                            <h3 style="font-size: 20px; font-weight: 800; color: #000235; margin-bottom: 6px;">Choose your roleplay</h3>
+                            <p style="font-size: 14px; color: #475569; line-height: 1.4; opacity: 0.8; margin: 0;">Customize your conversation partner and speaking goals to match your real-world scenarios.</p>
+                        </div>
+                    </div>
+                    <!-- Step 2 Text -->
+                    <div id="step-text-2" style="position: absolute; top: 0; left: 0; opacity: 0; transform: translateY(20px); width: 100%;">
+                        <div style="background: white; padding: 24px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.04); border: 1px solid #F1F5F9;">
+                            <h3 style="font-size: 20px; font-weight: 800; color: #000235; margin-bottom: 6px;">Start speaking</h3>
+                            <p style="font-size: 14px; color: #475569; line-height: 1.4; opacity: 0.8; margin: 0;">Yoodli will ask you AI-powered follow-up questions and challenge you like a real buyer.</p>
+                        </div>
+                    </div>
+                    <!-- Step 3 Text -->
+                    <div id="step-text-3" style="position: absolute; top: 0; left: 0; opacity: 0; transform: translateY(20px); width: 100%;">
+                        <div style="background: white; padding: 24px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.04); border: 1px solid #F1F5F9;">
+                            <h3 style="font-size: 20px; font-weight: 800; color: #000235; margin-bottom: 6px;">View your results</h3>
+                            <p style="font-size: 14px; color: #475569; line-height: 1.4; opacity: 0.8; margin: 0;">Real-time feedback on your content, delivery, and progress over time with actionable insights.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Far Right: Vertical Dots -->
+                <div style="position: absolute; right: 0; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 8px; z-index: 10;">
+                    <div id="dot-1" class="progress-dot active" style="width: 10px; height: 24px; border-radius: 10px; background: #4F46E5; transition: all 0.3s;"></div>
+                    <div id="dot-2" class="progress-dot" style="width: 10px; height: 10px; border-radius: 50%; background: #E2E8F0; transition: all 0.3s;"></div>
+                    <div id="dot-3" class="progress-dot" style="width: 10px; height: 10px; border-radius: 50%; background: #E2E8F0; transition: all 0.3s;"></div>
+                </div>
+            </div>
+
+            <!-- 5. Footer Button (Bottom Center) -->
+            <div style="text-align: center; margin-top: 5px;">
+                <a href="#" style="display: inline-flex; align-items: center; gap: 10px; padding: 12px 32px; background: linear-gradient(135deg, #3B82F6, #4F46E5); color: white; border-radius: 100px; font-weight: 700; text-decoration: none; box-shadow: 0 10px 25px rgba(79, 70, 229, 0.2); font-size: 14px;">
+                    Start roleplaying
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Multi-persona Roleplays Section -->
+    <section class="multi-persona-section" style="padding: 120px 0; background: #fff; overflow: hidden;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
+            
+            <!-- Left Content -->
+            <div class="multi-content">
+                <h2 style="font-size: 42px; font-weight: 800; color: #000235; margin-bottom: 12px;">Learn to read the room</h2>
+                <h3 style="font-size: 24px; font-weight: 700; color: #4F46E5; margin-bottom: 40px;">Introducing multi-persona roleplays</h3>
+                
+                <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 24px;">
+                    <li style="display: flex; gap: 16px; align-items: flex-start;">
+                        <div style="width: 6px; height: 6px; background: #4F46E5; border-radius: 50%; margin-top: 10px; flex-shrink: 0;"></div>
+                        <p style="font-size: 18px; color: #475569; line-height: 1.5; font-weight: 500;">Simulate a group presentation, buying committee pitch or interview panel</p>
+                    </li>
+                    <li style="display: flex; gap: 16px; align-items: flex-start;">
+                        <div style="width: 6px; height: 6px; background: #4F46E5; border-radius: 50%; margin-top: 10px; flex-shrink: 0;"></div>
+                        <p style="font-size: 18px; color: #475569; line-height: 1.5; font-weight: 500;">Create multiple personas with different characteristics</p>
+                    </li>
+                    <li style="display: flex; gap: 16px; align-items: flex-start;">
+                        <div style="width: 6px; height: 6px; background: #4F46E5; border-radius: 50%; margin-top: 10px; flex-shrink: 0;"></div>
+                        <p style="font-size: 18px; color: #475569; line-height: 1.5; font-weight: 500;">Learn to engage audience members in a single call</p>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Right Visual -->
+            <div class="multi-visual" style="position: relative; height: 400px; display: flex; align-items: center; justify-content: center;">
+                <!-- Avatars Wrapper -->
+                <div style="position: relative; width: 340px; height: 340px;">
+                    <!-- Avatar 1 (Top Left) -->
+                    <div style="position: absolute; top: 20px; left: 30px; width: 140px; height: 140px; border-radius: 50%; overflow: hidden; border: 4px solid #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.1); z-index: 2;">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=300" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <!-- Avatar 2 (Top Right) -->
+                    <div style="position: absolute; top: 40px; right: 30px; width: 150px; height: 150px; border-radius: 50%; overflow: hidden; border: 4px solid #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.1); z-index: 1;">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=300" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <!-- Avatar 3 (Bottom Center) -->
+                    <div style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); width: 160px; height: 160px; border-radius: 50%; overflow: hidden; border: 4px solid #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.1); z-index: 3;">
+                        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=300" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+
+                    <!-- Chat Bubble -->
+                    <div style="position: absolute; top: -50px; right: -60px; background: white; padding: 20px 24px; border-radius: 16px; box-shadow: 0 15px 40px rgba(0,0,0,0.08); width: 240px; border: 1px solid #F1F5F9; z-index: 10;">
+                        <p style="font-size: 15px; font-weight: 800; color: #000235; line-height: 1.4; margin: 0;">As CFO, I want to understand the ROI of this project</p>
+                        <!-- Bubble Pointer -->
+                        <div style="position: absolute; bottom: -10px; left: 40px; width: 20px; height: 20px; background: white; transform: rotate(45deg); border-right: 1px solid #F1F5F9; border-bottom: 1px solid #F1F5F9;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Yoodli Enterprises Section -->
+    <section class="enterprises-section" style="padding: 100px 0; background: #F8FAFF;">
+        <div class="container" style="max-width: 1100px; margin: 0 auto; padding: 0 24px;">
+            
+            <!-- Main Title -->
+            <div style="text-align: center; margin-bottom: 80px;">
+                <h2 style="font-size: 32px; font-weight: 800; color: #000235;">Yoodli Enterprises – the future of training is here</h2>
+            </div>
+
+            <!-- Ecosystem Integration Row -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; margin-bottom: 100px;">
+                <div>
+                    <h3 style="font-size: 24px; font-weight: 800; color: #000235; margin-bottom: 16px;">Yoodli fits into your ecosystem</h3>
+                    <p style="font-size: 16px; color: #475569; line-height: 1.6; font-weight: 500;">Automatically assign roleplays, track progress, and sync data with the tools your team already uses.</p>
+                </div>
+                <div style="display: flex; align-items: center; gap: 20px; position: relative;">
+                    <!-- Yoodli Logo -->
+                    <div style="background: white; padding: 20px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid #EEF2FF; z-index: 2;">
+                        <img src="https://yoodli.ai/logo-white.svg" alt="Yoodli" style="height: 40px; filter: invert(1);">
+                    </div>
+                    <!-- Connection Lines Visual (simplified) -->
+                    <div style="flex: 1; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;">
+                        <div style="background: white; padding: 8px 12px; border-radius: 8px; font-size: 11px; font-weight: 700; border: 1px solid #E2E8F0; text-align: center;">INTELLUM</div>
+                        <div style="background: white; padding: 8px 12px; border-radius: 8px; font-size: 11px; font-weight: 700; border: 1px solid #E2E8F0; text-align: center;">workday.</div>
+                        <div style="background: white; padding: 8px 12px; border-radius: 8px; font-size: 11px; font-weight: 700; border: 1px solid #E2E8F0; text-align: center;">HIGHSPOT</div>
+                        <div style="background: white; padding: 8px 12px; border-radius: 8px; font-size: 11px; font-weight: 700; border: 1px solid #E2E8F0; text-align: center;">Seismic</div>
+                        <div style="background: white; padding: 8px 12px; border-radius: 8px; font-size: 11px; font-weight: 700; border: 1px solid #E2E8F0; text-align: center;">docebo</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3-Column Features -->
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-bottom: 100px; text-align: center;">
+                <div>
+                    <i class="ph-fill ph-clipboard-text" style="font-size: 40px; color: #3B82F6; margin-bottom: 24px;"></i>
+                    <h4 style="font-size: 20px; font-weight: 800; color: #000235; margin-bottom: 12px;">Xây dựng dựa trên phương pháp của bạn</h4>
+                    <p style="font-size: 15px; color: #475569; line-height: 1.5;">Yoodli đào tạo nhân viên bằng giọng văn thương hiệu và các quy tắc tốt nhất của bạn</p>
+                </div>
+                <div>
+                    <i class="ph-fill ph-arrows-clockwise" style="font-size: 40px; color: #3B82F6; margin-bottom: 24px;"></i>
+                    <h4 style="font-size: 20px; font-weight: 800; color: #000235; margin-bottom: 12px;">Luôn mới mẻ</h4>
+                    <p style="font-size: 15px; color: #475569; line-height: 1.5;">Yoodli tự động cập nhật khi nội dung học tập của bạn thay đổi</p>
+                </div>
+                <div>
+                    <i class="ph-fill ph-circles-three-plus" style="font-size: 40px; color: #3B82F6; margin-bottom: 24px;"></i>
+                    <h4 style="font-size: 20px; font-weight: 800; color: #000235; margin-bottom: 12px;">Nhất quán trong toàn tổ chức</h4>
+                    <p style="font-size: 15px; color: #475569; line-height: 1.5;">Cung cấp chương trình đào tạo nhất quán ở quy mô lớn</p>
+                </div>
+            </div>
+
+            <!-- SOC 2 Certification -->
+            <div style="display: flex; align-items: center; justify-content: center; gap: 32px; margin-bottom: 60px;">
+                <div style="width: 100px; height: 100px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid #E2E8F0;">
+                    <div style="text-align: center; font-size: 14px; font-weight: 800; color: #1E40AF;">AICPA<br>SOC</div>
+                </div>
+                <div>
+                    <h4 style="font-size: 18px; font-weight: 800; color: #000235; margin-bottom: 8px;">Yoodli đạt chứng nhận SOC 2 Loại 2</h4>
+                    <p style="font-size: 15px; color: #475569;">Truy cập <a href="#" style="color: #4F46E5; font-weight: 700; text-decoration: none;">Trung tâm Tin cậy</a> để tìm hiểu thêm</p>
+                </div>
+            </div>
+
+            <!-- Bottom CTA -->
+            <div style="text-align: center;">
+                <a href="#" class="btn btn-primary" style="padding: 16px 40px; border-radius: 100px; font-size: 16px;">Nhận Demo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases Tabbed Section -->
+    <section class="use-cases-section" style="padding: 100px 0; background: #fff;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 24px;">
+            
+            <!-- Section Header -->
+            <div style="text-align: center; margin-bottom: 50px;">
+                <h2 style="font-size: 32px; font-weight: 800; color: #000235;">Bạn sẽ sử dụng Yoodli như thế nào?</h2>
+            </div>
+
+            <!-- Tabs Container (Card) -->
+            <div style="background: #F8FAFF; border-radius: 24px; box-shadow: 0 20px 50px rgba(0,0,0,0.03); min-height: 400px; position: relative; overflow: hidden; border: 1px solid #F1F5F9;">
+                
+                <!-- Tabs Navigation -->
+                <div style="display: flex; justify-content: center; gap: 40px; border-bottom: 1px solid #E2E8F0; background: transparent; padding: 0 20px;">
+                    <button onclick="switchTab(1)" id="tab-btn-1" class="tab-btn active" style="padding: 20px 0; font-size: 16px; font-weight: 700; color: #4F46E5; background: none; border: none; border-bottom: 3px solid #4F46E5; cursor: pointer; transition: all 0.3s;">Hỗ trợ GTM</button>
+                    <button onclick="switchTab(2)" id="tab-btn-2" class="tab-btn" style="padding: 20px 0; font-size: 16px; font-weight: 700; color: #64748B; background: none; border: none; border-bottom: 3px solid transparent; cursor: pointer; transition: all 0.3s;">Học tập & Phát triển</button>
+                    <button onclick="switchTab(3)" id="tab-btn-3" class="tab-btn" style="padding: 20px 0; font-size: 16px; font-weight: 700; color: #64748B; background: none; border: none; border-bottom: 3px solid transparent; cursor: pointer; transition: all 0.3s;">Hỗ trợ Đối tác</button>
+                    <button onclick="switchTab(4)" id="tab-btn-4" class="tab-btn" style="padding: 20px 0; font-size: 16px; font-weight: 700; color: #64748B; background: none; border: none; border-bottom: 3px solid transparent; cursor: pointer; transition: all 0.3s;">Truyền thông Doanh nghiệp</button>
+                </div>
+
+                <!-- Tabs Content Wrapper -->
+                <div style="padding: 60px;">
+                    <!-- Tab 1: GTM Enablement -->
+                    <div id="tab-content-1" class="tab-content active" style="display: grid; grid-template-columns: 1.4fr 1fr; gap: 80px; align-items: center;">
+                    <div>
+                        <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 24px; margin-bottom: 40px;">
+                            <li style="display: flex; gap: 16px; align-items: flex-start;">
+                                <i class="ph-fill ph-check-circle" style="color: #000235; font-size: 24px; margin-top: 2px;"></i>
+                                <p style="font-size: 16px; color: #475569; line-height: 1.5; font-weight: 500;">Tải lên nội dung tùy chỉnh, các phương pháp tốt nhất và quy trình của bạn</p>
+                            </li>
+                            <li style="display: flex; gap: 16px; align-items: flex-start;">
+                                <i class="ph-fill ph-check-circle" style="color: #000235; font-size: 24px; margin-top: 2px;"></i>
+                                <p style="font-size: 16px; color: #475569; line-height: 1.5; font-weight: 500;">Đào tạo và cấp chứng chỉ cho nhân viên với các tình huống nhập vai thực tế</p>
+                            </li>
+                            <li style="display: flex; gap: 16px; align-items: flex-start;">
+                                <i class="ph-fill ph-check-circle" style="color: #000235; font-size: 24px; margin-top: 2px;"></i>
+                                <p style="font-size: 16px; color: #475569; line-height: 1.5; font-weight: 500;">Định lượng hiệu suất, xuất báo cáo và theo dõi tiến độ theo thời gian</p>
+                            </li>
+                        </ul>
+                        <a href="for-business/sales-enablement.html" style="color: #4F46E5; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">Tìm hiểu thêm</a>
+                    </div>
+                    <div style="position: relative; display: flex; justify-content: center;">
+                        <div style="width: 280px; height: 280px; border-radius: 50%; overflow: hidden; position: relative;">
+                            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=400" style="width: 100%; height: 100%; object-fit: cover;">
+                            <div style="position: absolute; inset: 0; background: linear-gradient(to right, rgba(79, 70, 229, 0.4), transparent);"></div>
+                        </div>
+                        <!-- UI Elements -->
+                        <div style="position: absolute; right: -20px; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 10px;">
+                            <div style="background: white; padding: 12px 16px; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); display: flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 800; color: #000235; border: 1px solid #F1F5F9;">
+                                <i class="ph-fill ph-snowflake" style="color: #3B82F6;"></i> Gọi lạnh
+                            </div>
+                            <div style="background: white; padding: 12px 16px; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); display: flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 800; color: #000235; border: 1px solid #F1F5F9;">
+                                <i class="ph-fill ph-fire" style="color: #F97316;"></i> Khách hàng đến
+                            </div>
+                            <div style="background: white; padding: 12px 16px; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); display: flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 800; color: #000235; border: 1px solid #F1F5F9;">
+                                <i class="ph-fill ph-magnifying-glass" style="color: #A855F7;"></i> Khai phá
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 2: Learning & Development -->
+                <div id="tab-content-2" class="tab-content" style="display: none; grid-template-columns: 1.4fr 1fr; gap: 80px; align-items: center;">
+                    <div>
+                        <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 24px; margin-bottom: 40px;">
+                            <li style="display: flex; gap: 16px; align-items: flex-start;">
+                                <i class="ph-fill ph-check-circle" style="color: #000235; font-size: 24px; margin-top: 2px;"></i>
+                                <p style="font-size: 16px; color: #475569; line-height: 1.5; font-weight: 500;">Thiết lập tiêu chuẩn với phân tích lời nói định lượng như tốc độ, sự súc tích và cách mở đầu câu</p>
+                            </li>
+                            <li style="display: flex; gap: 16px; align-items: flex-start;">
+                                <i class="ph-fill ph-check-circle" style="color: #000235; font-size: 24px; margin-top: 2px;"></i>
+                                <p style="font-size: 16px; color: #475569; line-height: 1.5; font-weight: 500;">Tùy chỉnh các kịch bản để thực hành nhập vai</p>
+                            </li>
+                            <li style="display: flex; gap: 16px; align-items: flex-start;">
+                                <i class="ph-fill ph-check-circle" style="color: #000235; font-size: 24px; margin-top: 2px;"></i>
+                                <p style="font-size: 16px; color: #475569; line-height: 1.5; font-weight: 500;">Theo dõi tiến độ theo thời gian, tổng hợp theo từng nhóm học viên</p>
+                            </li>
+                        </ul>
+                        <a href="for-business/learning-and-development.html" style="color: #4F46E5; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">Tìm hiểu thêm</a>
+                    </div>
+                    <div style="position: relative; display: flex; justify-content: center;">
+                        <div style="width: 280px; height: 280px; border-radius: 50%; overflow: hidden; position: relative;">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=400" style="width: 100%; height: 100%; object-fit: cover;">
+                            <div style="position: absolute; inset: 0; background: linear-gradient(to right, rgba(37, 99, 235, 0.4), transparent);"></div>
+                        </div>
+                        <!-- Analytics Visual -->
+                        <div style="position: absolute; left: -30px; bottom: 20px; background: white; padding: 15px; border-radius: 12px; box-shadow: 0 15px 35px rgba(0,0,0,0.08); width: 180px; border: 1px solid #F1F5F9;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                                <span style="font-size: 11px; font-weight: 700; color: #64748B;">Tốc độ</span>
+                                <span style="font-size: 11px; font-weight: 700; color: #10B981;">Nhanh hơn 4%</span>
+                            </div>
+                            <div style="height: 40px; width: 100%; background: #F8FAFF; border-radius: 6px; position: relative; overflow: hidden;">
+                                <svg width="100%" height="100%" viewBox="0 0 100 40" preserveAspectRatio="none">
+                                    <path d="M0 30 Q 25 10, 50 25 T 100 15" fill="none" stroke="#F97316" stroke-width="2" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 3: Partner Enablement -->
+                <div id="tab-content-3" class="tab-content" style="display: none; grid-template-columns: 1.4fr 1fr; gap: 80px; align-items: center;">
+                    <div>
+                        <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 24px; margin-bottom: 40px;">
+                            <li style="display: flex; gap: 16px; align-items: flex-start;">
+                                <i class="ph-fill ph-check-circle" style="color: #000235; font-size: 24px; margin-top: 2px;"></i>
+                                <p style="font-size: 16px; color: #475569; line-height: 1.5; font-weight: 500;">Tải lên nội dung tùy chỉnh và bộ tiêu chí đánh giá chứng chỉ của bạn</p>
+                            </li>
+                            <li style="display: flex; gap: 16px; align-items: flex-start;">
+                                <i class="ph-fill ph-check-circle" style="color: #000235; font-size: 24px; margin-top: 2px;"></i>
+                                <p style="font-size: 16px; color: #475569; line-height: 1.5; font-weight: 500;">Mô phỏng các bài kiểm tra và cấp chứng nhận thông qua nhập vai thực tế</p>
+                            </li>
+                            <li style="display: flex; gap: 16px; align-items: flex-start;">
+                                <i class="ph-fill ph-check-circle" style="color: #000235; font-size: 24px; margin-top: 2px;"></i>
+                                <p style="font-size: 16px; color: #475569; line-height: 1.5; font-weight: 500;">Định lượng hiệu suất, xuất báo cáo và theo dõi tiến độ theo thời gian</p>
+                            </li>
+                        </ul>
+                        <a href="for-business/partner-enablement.html" style="color: #4F46E5; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">Tìm hiểu thêm</a>
+                    </div>
+                    <div style="position: relative; display: flex; justify-content: center;">
+                        <div style="width: 280px; height: 280px; border-radius: 50%; overflow: hidden; position: relative;">
+                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=400" style="width: 100%; height: 100%; object-fit: cover;">
+                            <div style="position: absolute; inset: 0; background: linear-gradient(to right, rgba(168, 85, 247, 0.4), transparent);"></div>
+                        </div>
+                        <!-- Feedback UI -->
+                        <div style="position: absolute; right: -40px; bottom: 30px; background: white; padding: 12px 16px; border-radius: 12px; box-shadow: 0 15px 35px rgba(0,0,0,0.08); width: 220px; border: 1px solid #F1F5F9; font-size: 12px;">
+                            <div style="display: flex; align-items: center; gap: 8px; color: #4F46E5; font-weight: 700; margin-bottom: 4px;">
+                                <i class="ph-fill ph-thumbs-up"></i> Tuyệt vời!
+                            </div>
+                            <div style="color: #475569; font-weight: 500;">Bạn không sử dụng ngôn ngữ thiếu bao hàm nào</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 4: Corporate Communications -->
+                <div id="tab-content-4" class="tab-content" style="display: none; grid-template-columns: 1.4fr 1fr; gap: 80px; align-items: center;">
+                    <div>
+                        <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 24px; margin-bottom: 40px;">
+                            <li style="display: flex; gap: 16px; align-items: flex-start;">
+                                <i class="ph-fill ph-check-circle" style="color: #000235; font-size: 24px; margin-top: 2px;"></i>
+                                <p style="font-size: 16px; color: #475569; line-height: 1.5; font-weight: 500;">Tải lên hướng dẫn thương hiệu, các điểm thảo luận và nội dung tùy chỉnh của bạn</p>
+                            </li>
+                            <li style="display: flex; gap: 16px; align-items: flex-start;">
+                                <i class="ph-fill ph-check-circle" style="color: #000235; font-size: 24px; margin-top: 2px;"></i>
+                                <p style="font-size: 16px; color: #475569; line-height: 1.5; font-weight: 500;">Mô phỏng nhập vai AI thực tế (đào tạo truyền thông, giao tiếp điều hành)</p>
+                            </li>
+                            <li style="display: flex; gap: 16px; align-items: flex-start;">
+                                <i class="ph-fill ph-check-circle" style="color: #000235; font-size: 24px; margin-top: 2px;"></i>
+                                <p style="font-size: 16px; color: #475569; line-height: 1.5; font-weight: 500;">Theo dõi tiến độ của bạn theo thời gian</p>
+                            </li>
+                        </ul>
+                        <a href="for-business/executive-coaching.html" style="color: #4F46E5; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">Tìm hiểu thêm</a>
+                    </div>
+                    <div style="position: relative; display: flex; justify-content: center;">
+                        <div style="width: 280px; height: 280px; border-radius: 50%; overflow: hidden; position: relative;">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400" style="width: 100%; height: 100%; object-fit: cover;">
+                            <div style="position: absolute; inset: 0; background: linear-gradient(to right, rgba(249, 115, 22, 0.4), transparent);"></div>
+                        </div>
+                        <!-- Talking Points Card -->
+                        <div style="position: absolute; right: -20px; bottom: 20px; background: white; padding: 15px; border-radius: 12px; box-shadow: 0 15px 35px rgba(0,0,0,0.08); width: 180px; border: 1px solid #F1F5F9;">
+                            <div style="display: flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 700; color: #10B981; margin-bottom: 8px;">
+                                <i class="ph-fill ph-check-circle"></i> 5 ý chính đã đạt
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 700; color: #10B981;">
+                                <i class="ph-fill ph-thumbs-up"></i> Ngôn ngữ súc tích
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Tab Content Wrapper -->
+                </div>
+                <!-- End Tab Container -->
+            </div>
+            <!-- End Container -->
+    </section>
+
+    <script>
+        function switchTab(tabId) {
+            // Hide all contents
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.style.display = 'none';
+            });
+            // Reset all buttons
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.style.color = '#64748B';
+                btn.style.borderBottom = '3px solid transparent';
+            });
+            
+            // Show active content
+            document.getElementById(`tab-content-${tabId}`).style.display = 'grid';
+            // Set active button
+            const activeBtn = document.getElementById(`tab-btn-${tabId}`);
+            activeBtn.style.color = '#4F46E5';
+            activeBtn.style.borderBottom = '3px solid #4F46E5';
+        }
+    </script>
+
+    <!-- Footer will be injected by master_layout.js -->
+
+    <script src="master_layout.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script>
+        // Hero Slideshow
+        const slides = document.querySelectorAll('.hero-slide-html');
+        let currentSlide = 0;
+
+        function nextSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+
+        setInterval(nextSlide, 5000);
+
+
+
+        // GSAP Scroll-driven Sticky Animation
+        gsap.registerPlugin(ScrollTrigger);
+
+        const stickySection = document.querySelector('.how-it-works-sticky');
+        
+        ScrollTrigger.create({
+            trigger: stickySection,
+            start: "top top",
+            end: "bottom bottom",
+            onUpdate: (self) => {
+                const p = self.progress;
+                let activeStep = 1;
+
+                if (p > 0.66) activeStep = 3;
+                else if (p > 0.33) activeStep = 2;
+
+                updateStickyState(activeStep);
+            }
+        });
+
+        function updateStickyState(step) {
+            // Update Visuals
+            for (let i = 1; i <= 3; i++) {
+                const visual = document.getElementById(`step-visual-${i}`);
+                const text = document.getElementById(`step-text-${i}`);
+                const dot = document.getElementById(`dot-${i}`);
+
+                if (i === step) {
+                    // Chuyển thẳng không hiệu ứng
+                    gsap.set(visual, { opacity: 1, y: 0 });
+                    gsap.set(text, { opacity: 1, y: 0 });
+                    dot.style.background = "#4F46E5";
+                    dot.style.height = "24px";
+                    dot.style.width = "10px";
+                    dot.style.borderRadius = "10px";
+                } else {
+                    gsap.set(visual, { opacity: 0, y: 0 });
+                    gsap.set(text, { opacity: 0, y: 0 });
+                    dot.style.background = "#E2E8F0";
+                    dot.style.height = "10px";
+                    dot.style.width = "10px";
+                    dot.style.borderRadius = "50%";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dịch vụ Tài chính | Yoodli - Huấn luyện giao tiếp chuẩn mực</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../roleplay.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        :root {
+            --finance-blue: #1E293B;
+            --finance-accent: #3B82F6;
+            --finance-bg: #F8FAFC;
+        }
+
+        .finance-hero {
+            padding: 140px 0 100px;
+            background: radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.05) 0%, transparent 40%),
+                        linear-gradient(180deg, #FFFFFF 0%, #F1F5F9 100%);
+            overflow: hidden;
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-image-wrapper img {
+            width: 100%;
+            border-radius: 32px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.12);
+        }
+
+        .hero-tag {
+            background: #E0F2FE;
+            color: #0369A1;
+            padding: 6px 16px;
+            border-radius: 99px;
+            font-size: 14px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 24px;
+        }
+
+        .section-title {
+            font-size: 44px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            color: var(--finance-blue);
+        }
+
+        .finance-card-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-top: 60px;
+        }
+
+        .finance-card {
+            background: white;
+            padding: 48px 40px;
+            border-radius: 32px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            border: 1px solid #F1F5F9;
+            transition: all 0.3s ease;
+        }
+
+        .finance-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            border-color: var(--finance-accent);
+        }
+
+        .finance-card i {
+            font-size: 40px;
+            color: var(--finance-accent);
+            margin-bottom: 24px;
+            display: block;
+        }
+
+        .trust-section {
+            padding: 100px 0;
+            background: #0B0E23;
+            color: white;
+            text-align: center;
+        }
+
+        .trust-category-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-top: 60px;
+        }
+
+        .trust-cat-item {
+            background: rgba(255,255,255,0.05);
+            padding: 32px;
+            border-radius: 24px;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s;
+        }
+
+        .trust-cat-item:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        .trust-cat-item i {
+            font-size: 32px;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .how-it-works-finance {
+            padding: 120px 0;
+            background: white;
+        }
+
+        .ui-mockup-wrapper {
+            background: #F1F5F9;
+            border-radius: 48px;
+            padding: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .ui-mockup {
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 400px;
+            padding: 30px;
+        }
+
+        .impact-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 100px;
+            align-items: center;
+            margin-bottom: 120px;
+        }
+
+        .impact-content h3 {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .impact-content p {
+            font-size: 18px;
+            color: #64748B;
+            line-height: 1.6;
+        }
+
+        .faq-section {
+            padding: 120px 0;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .faq-accordion {
+            margin-top: 60px;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #E2E8F0;
+            padding: 24px 0;
+        }
+
+        .faq-question {
+            font-weight: 700;
+            font-size: 18px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .faq-answer {
+            margin-top: 16px;
+            color: #64748B;
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .final-cta {
+            background: #0B0E23;
+            color: white;
+            padding: 120px 0;
+            text-align: center;
+            border-radius: 64px 64px 0 0;
+        }
+
+        @media (max-width: 992px) {
+            .hero-grid, .impact-row { grid-template-columns: 1fr; gap: 60px; text-align: center; }
+            .finance-card-grid, .trust-category-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <!-- Navbar will be injected by master_layout.js -->
+
+    <main>
+        <!-- Hero Section -->
+        <section class="finance-hero">
+            <div class="container hero-grid">
+                <div class="hero-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1556761175-5973cf0f32e7?auto=format&fit=crop&q=80&w=1000" alt="Financial Services Team">
+                </div>
+                <div class="hero-content">
+                    <h1 class="section-title">Yoodli dành cho <br><span style="color: var(--finance-accent);">Dịch vụ Tài chính</span></h1>
+                    <p style="font-size: 20px; color: #64748B; margin-bottom: 32px; line-height: 1.6;">Xây dựng niềm tin và sự tuân thủ trong mọi tương tác. Chuẩn hóa các cuộc hội thoại quan trọng với nhập vai AI và huấn luyện thời gian thực cho đội ngũ tài chính của bạn.</p>
+                    <a href="../app.html" class="btn btn-primary-pill" style="padding: 18px 40px; font-size: 18px;">Bắt đầu dùng thử miễn phí</a>
+                    <p style="font-size: 14px; color: #94A3B8; margin-top: 24px; font-weight: 500;">Được tin dùng bởi các công ty tài chính hàng đầu thế giới</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Value Prop Cards -->
+        <section class="container" style="padding: 100px 0; text-align: center;">
+            <h2 class="section-title">Xây dựng kỹ năng giao tiếp tốt hơn <br>thông qua nhập vai</h2>
+            <div class="finance-card-grid">
+                <div class="finance-card">
+                    <i class="ph-fill ph-users-three"></i>
+                    <h3 style="font-size: 22px; font-weight: 700; margin-bottom: 16px;">Tư vấn Quản lý Tài sản</h3>
+                    <p style="color: #64748B; line-height: 1.6;">Giúp các chuyên viên tư vấn xây dựng lòng tin thông qua kỹ năng lắng nghe và thấu cảm với khách hàng.</p>
+                </div>
+                <div class="finance-card">
+                    <i class="ph-fill ph-shield-check"></i>
+                    <h3 style="font-size: 22px; font-weight: 700; margin-bottom: 16px;">Đảm bảo Tuân thủ</h3>
+                    <p style="color: #64748B; line-height: 1.6;">Luyện tập việc truyền đạt các thông tin pháp lý và quy định một cách rõ ràng, minh bạch và chính xác.</p>
+                </div>
+                <div class="finance-card">
+                    <i class="ph-fill ph-bank"></i>
+                    <h3 style="font-size: 22px; font-weight: 700; margin-bottom: 16px;">Ngân hàng Bán lẻ</h3>
+                    <p style="color: #64748B; line-height: 1.6;">Chuẩn hóa phong thái phục vụ chuyên nghiệp và xử lý tình huống khách hàng hiệu quả ở quy mô lớn.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust Category Section -->
+        <section class="trust-section">
+            <div class="container">
+                <h2 style="font-size: 36px; font-weight: 800;">Được tin dùng bởi các đội ngũ tài chính trong:</h2>
+                <div class="trust-category-grid">
+                    <div class="trust-cat-item">
+                        <i class="ph ph-chart-pie"></i>
+                        <span style="font-weight: 700;">Quản lý Tài sản</span>
+                    </div>
+                    <div class="trust-cat-item">
+                        <i class="ph ph-trend-up"></i>
+                        <span style="font-weight: 700;">Ngân hàng Đầu tư</span>
+                    </div>
+                    <div class="trust-cat-item">
+                        <i class="ph ph-buildings"></i>
+                        <span style="font-weight: 700;">Ngân hàng Bán lẻ</span>
+                    </div>
+                    <div class="trust-cat-item">
+                        <div style="font-size: 32px; margin-bottom: 16px;"><i class="ph ph-shield-checkered"></i></div>
+                        <span style="font-weight: 700;">Bảo hiểm</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How it works -->
+        <section class="how-it-works-finance">
+            <div class="container" style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 80px; align-items: center;">
+                <div class="ui-mockup-wrapper">
+                    <div class="ui-mockup">
+                        <div style="border-bottom: 1px solid #F1F5F9; padding-bottom: 20px; margin-bottom: 20px;">
+                            <div style="font-weight: 800; color: var(--finance-accent);">Sẵn sàng Nhập vai</div>
+                            <div style="font-size: 14px; color: #64748B;">Khách hàng: Nhà đầu tư thận trọng</div>
+                        </div>
+                        <div style="background: #F8FAFC; padding: 20px; border-radius: 12px; margin-bottom: 16px;">
+                            <div style="font-size: 12px; color: #94A3B8; margin-bottom: 8px;">PHẢN HỒI AI</div>
+                            <div style="font-weight: 600;">"Hãy thử giải thích về rủi ro một cách đơn giản hơn..."</div>
+                        </div>
+                        <div style="display: flex; gap: 10px;">
+                            <div style="flex: 1; height: 8px; background: #E2E8F0; border-radius: 4px; overflow: hidden;">
+                                <div style="width: 70%; height: 100%; background: var(--finance-accent);"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h2 class="section-title">Cách thức Nhập vai AI Yoodli vận hành cho Dịch vụ Tài chính</h2>
+                    <div style="display: flex; flex-direction: column; gap: 32px; margin-top: 40px;">
+                        <div style="display: flex; gap: 24px;">
+                            <div style="width: 48px; height: 48px; background: #E0F2FE; color: var(--finance-accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; flex-shrink: 0;">1</div>
+                            <div>
+                                <h4 style="font-size: 20px; font-weight: 700; margin-bottom: 8px;">Chọn kịch bản thực tế</h4>
+                                <p style="color: #64748B;">Chọn từ thư viện các tình huống tài chính phổ biến hoặc tạo kịch bản tùy chỉnh của riêng bạn.</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 24px;">
+                            <div style="width: 48px; height: 48px; background: #E0F2FE; color: var(--finance-accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; flex-shrink: 0;">2</div>
+                            <div>
+                                <h4 style="font-size: 20px; font-weight: 700; margin-bottom: 8px;">Luyện tập với AI</h4>
+                                <p style="color: #64748B;">Đối thoại trực tiếp với khách hàng giả lập AI có phản ứng như người thật dựa trên phong thái của bạn.</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 24px;">
+                            <div style="width: 48px; height: 48px; background: #E0F2FE; color: var(--finance-accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; flex-shrink: 0;">3</div>
+                            <div>
+                                <h4 style="font-size: 20px; font-weight: 700; margin-bottom: 8px;">Nhận phản hồi tức thì</h4>
+                                <p style="color: #64748B;">Nhận phân tích chi tiết về sự tự tin, tốc độ nói, nội dung và các điểm cần cải thiện ngay sau phiên tập.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Impact Section -->
+        <section class="container" style="padding: 120px 0;">
+            <h2 class="section-title" style="text-align: center; margin-bottom: 80px;">Tác động của Yoodli đối với <br>Quản lý Tài sản</h2>
+            
+            <div class="impact-row">
+                <div class="impact-content">
+                    <div class="hero-tag">TĂNG TRƯỞNG</div>
+                    <h3>Cải thiện khả năng chốt hợp đồng</h3>
+                    <p>Giúp đội ngũ tư vấn chuẩn bị kỹ lưỡng cho các cuộc gặp quan trọng, nâng cao tỷ lệ chuyển đổi khách hàng tiềm năng thành khách hàng thực tế thông qua sự tự tin và thấu cảm.</p>
+                </div>
+                <div class="impact-visual">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800" alt="Chart impact" style="width: 100%; border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.05);">
+                </div>
+            </div>
+
+            <div class="impact-row" style="grid-template-columns: 1.2fr 1fr;">
+                <div class="impact-visual">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800" alt="Team impact" style="width: 100%; border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.05);">
+                </div>
+                <div class="impact-content">
+                    <div class="hero-tag">TRẢI NGHIỆM</div>
+                    <h3>Trải nghiệm khách hàng đồng bộ</h3>
+                    <p>Đảm bảo mọi khách hàng, tại mọi chi nhánh, đều nhận được chất lượng tư vấn và dịch vụ theo tiêu chuẩn cao nhất của doanh nghiệp bạn.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <h2 class="section-title" style="text-align: center;">Câu hỏi thường gặp</h2>
+            <div class="faq-accordion">
+                <div class="faq-item">
+                    <div class="faq-question">Yoodli có bảo mật thông tin khách hàng không? <i class="ph ph-plus"></i></div>
+                    <div class="faq-answer">Có, Yoodli sử dụng mã hóa cấp độ ngân hàng và tuân thủ các tiêu chuẩn bảo mật dữ liệu nghiêm ngặt nhất (SOC2, GDPR) để bảo vệ thông tin của bạn.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Tôi có thể tạo kịch bản riêng cho đội ngũ của mình không? <i class="ph ph-plus"></i></div>
+                    <div class="faq-answer">Hoàn toàn có thể. Bạn có thể dễ dàng thiết lập các Persona khách hàng và kịch bản đối thoại đặc thù cho các sản phẩm tài chính của doanh nghiệp mình.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Yoodli có hỗ trợ tiếng Việt tốt không? <i class="ph ph-plus"></i></div>
+                    <div class="faq-answer">Hệ thống AI của Yoodli hỗ trợ đa ngôn ngữ, bao gồm cả tiếng Việt với khả năng nhận diện giọng nói và phân tích ngữ cảnh chính xác.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Làm sao để theo dõi sự tiến bộ của đội ngũ? <i class="ph ph-plus"></i></div>
+                    <div class="faq-answer">Quản trị viên có bảng điều khiển phân tích chi tiết, cho phép theo dõi tần suất luyện tập và sự cải thiện kỹ năng của từng thành viên trong đội ngũ.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="final-cta">
+            <div class="container">
+                <h2 style="font-size: 48px; font-weight: 800; margin-bottom: 24px;">Sẵn sàng nâng tầm giao tiếp tài chính?</h2>
+                <p style="font-size: 20px; opacity: 0.8; margin-bottom: 40px; max-width: 700px; margin-left: auto; margin-right: auto;">Hãy tham gia cùng các công ty tài chính hàng đầu đang định nghĩa lại tiêu chuẩn dịch vụ khách hàng với Yoodli.</p>
+                <div style="display: flex; gap: 20px; justify-content: center;">
+                    <a href="../app.html" class="btn btn-primary-pill" style="background: white; color: #0B0E23; padding: 20px 48px; font-size: 20px;">Dùng thử miễn phí</a>
+                </div>
+                <p style="margin-top: 32px; font-size: 14px; opacity: 0.6;"><i class="ph ph-check-circle"></i> Không cần thẻ tín dụng • Thiết lập trong 2 phút</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <!-- Footer will be injected by master_layout.js -->
+    <script src="../master_layout.js"></script>
+
+    <script>
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+                
+                const icon = item.querySelector('i');
+                if (parent.classList.contains('active')) {
+                    icon.classList.replace('ph-plus', 'ph-minus');
+                } else {
+                    icon.classList.replace('ph-minus', 'ph-plus');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

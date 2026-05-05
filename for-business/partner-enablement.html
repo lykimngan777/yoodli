@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hỗ trợ Đối tác | Yoodli - Huấn luyện quy mô lớn</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../roleplay.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        .enablement-hero {
+            padding: 120px 0 100px;
+            background: radial-gradient(circle at 10% 20%, rgba(139, 92, 246, 0.05) 0%, transparent 40%),
+                        linear-gradient(180deg, #FFFFFF 0%, #F5F3FF 100%);
+        }
+
+        .hex-frame {
+            width: 280px;
+            height: 320px;
+            background: white;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .hex-frame img {
+            width: 90%;
+            height: 90%;
+            object-fit: cover;
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        }
+
+        .feature-grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin: 60px 0;
+        }
+
+        .enable-card {
+            background: #F5F3FF;
+            padding: 40px;
+            border-radius: 32px;
+            text-align: left;
+            transition: transform 0.3s ease;
+        }
+
+        .enable-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .security-badge {
+            background: white;
+            padding: 40px;
+            border-radius: 48px;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            margin-bottom: 40px;
+        }
+
+        .case-story-card {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            text-align: left;
+        }
+
+        .case-story-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .case-story-img {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .case-story-content {
+            padding: 24px;
+        }
+
+        .how-works-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .how-works-list li {
+            background: white;
+            padding: 24px;
+            border-radius: 20px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+            border: 1px solid #F1F5F9;
+        }
+
+        .how-works-list i {
+            color: #8B5CF6;
+            font-size: 24px;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="../master_layout.js"></script>
+    
+    <main>
+        <!-- Hero Section -->
+        <section class="enablement-hero">
+            <div class="container hero-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 24px;">
+                <div class="hero-content">
+                    <span class="hero-tag" style="background: #F5F3FF; color: #8B5CF6; padding: 8px 16px; border-radius: 100px; font-size: 14px; font-weight: 700; margin-bottom: 24px; display: inline-block;">HỖ TRỢ ĐỐI TÁC</span>
+                    <h1 style="font-size: 64px; font-weight: 800; line-height: 1.1; margin-bottom: 24px; color: #000235;">Đào tạo & Chứng nhận Đối tác</h1>
+                    <p style="font-size: 20px; color: #475569; margin-bottom: 32px; line-height: 1.6;">Đảm bảo mọi đối tác của bạn đều nắm vững giải pháp và trình bày giá trị nhất quán. Tự động hóa quá trình cấp chứng chỉ và nâng cao năng lực kênh phân phối.</p>
+                    <a href="../demo.html" class="btn btn-primary" style="padding: 18px 40px; font-size: 18px; border-radius: 100px; background: #4F46E5; color: white; text-decoration: none; font-weight: 700; display: inline-block;">Nhận bản Demo</a>
+                </div>
+                <div class="hero-visual" style="display: flex; justify-content: center;">
+                    <div class="hex-frame">
+                        <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=400" alt="Partner Manager">
+                        <div style="position: absolute; bottom: 10px; right: -20px; background: white; padding: 12px 20px; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); border: 1px solid #F1F5F9;">
+                            <div style="display: flex; gap: 8px; align-items: center;">
+                                <i class="ph-fill ph-certificate" style="color: #F59E0B;"></i>
+                                <span style="font-weight: 700;">Đã cấp chứng chỉ</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How it works -->
+        <section class="container" style="padding: 120px 0; text-align: center; max-width: 1200px; margin: 0 auto; padding: 0 24px;">
+            <h2 style="font-size: 44px; font-weight: 800; margin-bottom: 60px; color: #000235;">Tối ưu hóa năng lực đối tác</h2>
+            <div class="feature-grid-3">
+                <div class="enable-card">
+                    <i class="ph-bold ph-graduation-cap" style="font-size: 32px; color: #8B5CF6; margin-bottom: 24px;"></i>
+                    <h3 style="font-size: 22px; font-weight: 700; margin-bottom: 16px; color: #000235;">Cấp chứng nhận tự động</h3>
+                    <p style="color: #475569; line-height: 1.6;">Thiết lập các tiêu chuẩn đánh giá và để AI tự động kiểm tra, cấp chứng chỉ cho đối tác khi họ đạt yêu cầu.</p>
+                </div>
+                <div class="enable-card">
+                    <i class="ph-bold ph-handshake" style="font-size: 32px; color: #8B5CF6; margin-bottom: 24px;"></i>
+                    <h3 style="font-size: 22px; font-weight: 700; margin-bottom: 16px; color: #000235;">Mô phỏng tình huống thực tế</h3>
+                    <p style="color: #475569; line-height: 1.6;">Cho phép đối tác luyện tập thuyết trình giải pháp với AI trong các tình huống khách hàng khó tính nhất.</p>
+                </div>
+                <div class="enable-card">
+                    <i class="ph-bold ph-trend-up" style="font-size: 32px; color: #8B5CF6; margin-bottom: 24px;"></i>
+                    <h3 style="font-size: 22px; font-weight: 700; margin-bottom: 16px; color: #000235;">Đo lường hiệu quả kênh</h3>
+                    <p style="color: #475569; line-height: 1.6;">Báo cáo chi tiết về năng lực của từng đối tác, giúp bạn xác định được đối tác nào cần hỗ trợ thêm.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // No extra scripts needed as master_layout handles header/footer
+    </script>
+</body>
+
+</html>

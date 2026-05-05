@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Công nghệ & SaaS | Yoodli - Giải pháp cho doanh nghiệp Tech</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../roleplay.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        .tech-hero {
+            padding: 120px 0 100px;
+            background: linear-gradient(135deg, #F8FAFC 0%, #EFF6FF 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tech-hero::after {
+            content: '';
+            position: absolute;
+            top: -10%;
+            right: -10%;
+            width: 40%;
+            height: 60%;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, transparent 70%);
+            z-index: 0;
+        }
+
+        .tech-card {
+            background: white;
+            padding: 40px;
+            border-radius: 32px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            transition: all 0.3s ease;
+            text-align: left;
+            border: 1px solid #F1F5F9;
+        }
+
+        .tech-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            border-color: var(--rp-indigo);
+        }
+
+        .ecosystem-section {
+            padding: 120px 0;
+            background: white;
+        }
+
+        .floating-ui-box {
+            background: #F8FAFC;
+            border-radius: 40px;
+            padding: 60px;
+            position: relative;
+        }
+
+        .ui-card {
+            background: white;
+            padding: 20px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+            width: 280px;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .impact-row {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 80px;
+            align-items: center;
+            margin-bottom: 120px;
+        }
+
+        .impact-row.reverse {
+            grid-template-columns: 1.2fr 1fr;
+        }
+
+        .impact-img {
+            width: 100%;
+            border-radius: 32px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <!-- Navbar will be injected by master_layout.js -->
+
+    <main>
+        <!-- Hero -->
+        <section class="tech-hero">
+            <div class="container hero-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
+                <div class="hero-content">
+                    <h1 style="font-size: 64px; font-weight: 800; line-height: 1.1; margin-bottom: 24px;">Yoodli dành cho <br><span style="color: var(--rp-indigo);">Công nghệ & SaaS</span></h1>
+                    <p style="font-size: 20px; color: var(--text-light); margin-bottom: 32px; line-height: 1.6;">Huấn luyện đội ngũ bán hàng, thành công khách hàng và sản phẩm của bạn bằng AI. Tăng tốc độ tăng trưởng và chuẩn hóa thông điệp trong một thị trường thay đổi nhanh chóng.</p>
+                    <a href="../app.html" class="btn btn-primary" style="padding: 18px 40px; font-size: 18px;">Dùng thử miễn phí</a>
+                </div>
+                <div class="hero-visual">
+                    <img src="https://images.unsplash.com/photo-1522071823991-b59fe576caad?auto=format&fit=crop&q=80&w=800" alt="Tech Team" style="width: 100%; border-radius: 32px; box-shadow: 0 30px 60px rgba(0,0,0,0.1);">
+                </div>
+            </div>
+        </section>
+
+        <!-- Fast Growing Section -->
+        <section class="container" style="padding: 120px 0; text-align: center;">
+            <h2 style="font-size: 44px; font-weight: 800; margin-bottom: 60px;">Thúc đẩy hiệu suất cho các đội ngũ Tech</h2>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;">
+                <div class="tech-card">
+                    <i class="ph-bold ph-megaphone" style="font-size: 32px; color: var(--rp-indigo); margin-bottom: 24px;"></i>
+                    <h3 style="font-size: 22px; font-weight: 700; margin-bottom: 16px;">Chuẩn hóa bài Sales Pitch</h3>
+                    <p style="color: var(--text-light); line-height: 1.6;">Đảm bảo mọi AE và SDR đều truyền tải đúng giá trị sản phẩm và giải quyết được các nỗi đau của khách hàng.</p>
+                </div>
+                <div class="tech-card">
+                    <i class="ph-bold ph-user-gear" style="font-size: 32px; color: var(--rp-indigo); margin-bottom: 24px;"></i>
+                    <h3 style="font-size: 22px; font-weight: 700; margin-bottom: 16px;">Nâng cao kỹ năng CSM</h3>
+                    <p style="color: var(--text-light); line-height: 1.6;">Huấn luyện đội ngũ thành công khách hàng trong việc xử lý gia hạn, bán thêm và giải quyết khiếu nại.</p>
+                </div>
+                <div class="tech-card">
+                    <i class="ph-bold ph-rocket-launch" style="font-size: 32px; color: var(--rp-indigo); margin-bottom: 24px;"></i>
+                    <h3 style="font-size: 22px; font-weight: 700; margin-bottom: 16px;">Tăng tốc hòa nhập (Onboarding)</h3>
+                    <p style="color: var(--text-light); line-height: 1.6;">Giảm thời gian ramp-up cho nhân viên mới từ vài tháng xuống còn vài tuần thông qua luyện tập AI.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trusted By -->
+        <section style="background: #0B0E23; padding: 80px 0; color: white;">
+            <div class="container" style="text-align: center;">
+                <p style="font-size: 14px; opacity: 0.6; text-transform: uppercase; letter-spacing: 0.2em; margin-bottom: 40px;">Được tin dùng bởi các nhà lãnh đạo công nghệ</p>
+                <div style="display: flex; justify-content: center; gap: 80px; flex-wrap: wrap;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft" style="height: 30px; filter: brightness(0) invert(1);">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Salesforce.com_logo.svg" alt="Salesforce" style="height: 40px; filter: brightness(0) invert(1);">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Slack_Technologies_Logo.svg" alt="Slack" style="height: 30px; filter: brightness(0) invert(1);">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/59/SAP_2011_logo.svg" alt="SAP" style="height: 30px; filter: brightness(0) invert(1);">
+                </div>
+            </div>
+        </section>
+
+        <!-- Ecosystem -->
+        <section class="ecosystem-section">
+            <div class="container" style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 80px; align-items: center;">
+                <div class="floating-ui-box">
+                    <div class="ui-card" style="animation-delay: 0s;">
+                        <div style="font-weight: 700; font-size: 14px; margin-bottom: 8px;">Nhập vai Bán hàng</div>
+                        <div style="font-size: 12px; color: #64748B;">Luyện tập xử lý phản đối giá</div>
+                    </div>
+                    <div class="ui-card" style="animation-delay: 1s; margin-left: 60px;">
+                        <div style="font-weight: 700; font-size: 14px; margin-bottom: 8px;">Scorecard AI</div>
+                        <div style="font-size: 12px; color: #64748B;">Đạt 95% mức độ tự tin</div>
+                    </div>
+                    <div class="ui-card" style="animation-delay: 2s; margin-left: 20px;">
+                        <div style="font-weight: 700; font-size: 14px; margin-bottom: 8px;">Phân tích đội ngũ</div>
+                        <div style="font-size: 12px; color: #64748B;">Hàn thiện kỹ năng thuyết trình</div>
+                    </div>
+                </div>
+                <div>
+                    <h2 style="font-size: 44px; font-weight: 800; margin-bottom: 24px;">Cách Yoodli AI phù hợp với hệ sinh thái Công nghệ</h2>
+                    <p style="font-size: 18px; color: var(--text-light); line-height: 1.6;">Yoodli tích hợp trực tiếp vào quy trình làm việc của bạn, từ CRM đến Slack, cung cấp phản hồi ngay lập tức khi đội ngũ của bạn cần nhất.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Impact Rows -->
+        <section class="container" style="padding: 120px 0;">
+            <div class="impact-row">
+                <div>
+                    <h2 style="font-size: 36px; font-weight: 800; margin-bottom: 20px;">Thống nhất thông điệp chung</h2>
+                    <p style="color: var(--text-light); font-size: 18px; line-height: 1.6;">Trong các công ty SaaS phát triển nhanh, sản phẩm thay đổi hàng tuần. Yoodli giúp đảm bảo toàn bộ đội ngũ GTM đều cập nhật và trình bày thông điệp mới nhất một cách chuẩn xác.</p>
+                </div>
+                <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=1000" alt="Meeting" class="impact-img">
+            </div>
+            <div class="impact-row reverse">
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1000" alt="Coaching" class="impact-img">
+                <div>
+                    <h2 style="font-size: 36px; font-weight: 800; margin-bottom: 20px;">Xây dựng văn hóa huấn luyện đẳng cấp thế giới</h2>
+                    <p style="color: var(--text-light); font-size: 18px; line-height: 1.6;">Biến việc huấn luyện từ một gánh nặng quản lý thành một thói quen tự giác của nhân viên. AI của chúng tôi cung cấp sự hỗ trợ liên tục mà không cần sự can thiệp 24/7 của cấp quản lý.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section style="background: #0B0E23; padding: 120px 0; color: white; text-align: center;">
+            <div class="container">
+                <h2 style="font-size: 56px; font-weight: 800; margin-bottom: 24px;">Sẵn sàng thay đổi cách giao tiếp?</h2>
+                <p style="font-size: 20px; opacity: 0.8; margin-bottom: 40px;">Hãy tham gia cùng các công ty SaaS hàng đầu đang định nghĩa lại tiêu chuẩn giao tiếp.</p>
+                <a href="../app.html" class="btn btn-primary" style="background: white; color: #0B0E23; padding: 20px 48px; font-size: 20px;">Bắt đầu ngay bây giờ</a>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="faq-section" style="padding: 120px 0; max-width: 900px; margin: 0 auto;">
+            <h2 style="text-align:center; margin-bottom:60px; font-size:36px; font-weight:800;">Câu hỏi thường gặp</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">Yoodli có hỗ trợ các thuật ngữ chuyên ngành Tech không? <i class="ph ph-plus"></i></div>
+                    <div class="faq-answer">Có, AI của chúng tôi có thể được tùy chỉnh để hiểu các thuật ngữ kỹ thuật, tên sản phẩm và các khái niệm SaaS đặc thù của doanh nghiệp bạn.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Làm sao để triển khai cho đội ngũ 100+ người? <i class="ph ph-plus"></i></div>
+                    <div class="faq-answer">Yoodli được xây dựng để mở rộng quy mô. Bạn có thể dễ dàng quản lý người dùng, phân phối các bài tập nhập vai và theo dõi tiến độ thông qua bảng điều khiển quản trị tập trung.</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <!-- Footer will be injected by master_layout.js -->
+    <script src="../master_layout.js"></script>
+
+    <script>
+        document.querySelectorAll('.faq-question').forEach(q => {
+            q.addEventListener('click', () => {
+                q.parentElement.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+
+</html>

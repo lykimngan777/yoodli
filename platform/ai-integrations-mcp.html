@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tích hợp & MCP | Yoodli - Kết nối hệ sinh thái doanh nghiệp</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../roleplay.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        .integration-hero {
+            padding: 120px 0 100px;
+            background: radial-gradient(circle at 20% 30%, rgba(99, 102, 241, 0.08) 0%, transparent 50%), 
+                        linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
+        }
+
+        .eco-visual {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .yoodli-core {
+            width: 100px;
+            height: 100px;
+            background: white;
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            z-index: 10;
+        }
+
+        .eco-line {
+            position: absolute;
+            height: 2px;
+            background: #E2E8F0;
+            z-index: 1;
+        }
+
+        .mcp-banner {
+            background: linear-gradient(90deg, #F0F4FF 0%, #E0E7FF 100%);
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mcp-sparkle {
+            position: absolute;
+            color: #6366F1;
+            font-size: 24px;
+            opacity: 0.5;
+        }
+
+        .int-list-section {
+            background: #0B0E23;
+            color: white;
+            padding: 120px 0;
+        }
+
+        .int-row {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            margin-bottom: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .int-row:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .int-header {
+            padding: 24px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .int-content {
+            padding: 0 32px 24px;
+            display: none;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .int-row.active .int-content {
+            display: block;
+        }
+
+        .int-row.active .ph-caret-down {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="container">
+            <a href="../index.html" class="logo">
+                <i class="ph-fill ph-microphone-stage"></i> yoodli
+            </a>
+            <nav class="nav-links">
+                <div class="nav-item">
+                    <a href="#">Nền tảng <i class="ph ph-caret-down"></i></a>
+                    <div class="dropdown">
+                        <a href="ai-roleplays.html" class="dropdown-item">
+                            <span class="title">Nhập vai AI</span>
+                            <span class="desc">Luyện tập với các Persona thực tế</span>
+                        </a>
+                        <a href="ai-tutor.html" class="dropdown-item">
+                            <span class="title">Gia sư AI</span>
+                            <span class="desc">Học kỹ năng giao tiếp 1-1</span>
+                        </a>
+                        <a href="ai-continuous-coaching.html" class="dropdown-item">
+                            <span class="title">Huấn luyện AI Liên tục</span>
+                            <span class="desc">Cải thiện kỹ năng mỗi ngày</span>
+                        </a>
+                        <a href="ai-experiential-learning.html" class="dropdown-item">
+                            <span class="title">Học tập qua Trải nghiệm</span>
+                            <span class="desc">Biến kiến thức thành phản xạ</span>
+                        </a>
+                        <a href="ai-feedback.html" class="dropdown-item">
+                            <span class="title">Phản hồi Cá nhân hóa</span>
+                            <span class="desc">Nhận đánh giá chi tiết từ AI</span>
+                        </a>
+                        <a href="ai-analytics-reporting.html" class="dropdown-item">
+                            <span class="title">Phân tích & Báo cáo</span>
+                            <span class="desc">Đo lường hiệu quả đội ngũ</span>
+                        </a>
+                        <a href="ai-integrations-mcp.html" class="dropdown-item">
+                            <span class="title">Tích hợp & MCP</span>
+                            <span class="desc">Kết nối hệ sinh thái của bạn</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <a href="#">Giải pháp <i class="ph ph-caret-down"></i></a>
+                    <div class="dropdown mega-menu">
+                        <div class="mega-col">
+                            <div class="mega-col-title">Dành cho Đội ngũ</div>
+                            <div class="mega-links">
+                                <a href="#" class="dropdown-item"><span class="title">Đội ngũ Doanh thu</span></a>
+                                <a href="#" class="dropdown-item"><span class="title">Hỗ trợ Bán hàng</span></a>
+                            </div>
+                        </div>
+                        <div class="mega-col">
+                            <div class="mega-col-title">Ngành nghề</div>
+                            <div class="mega-links">
+                                <a href="#" class="dropdown-item"><span class="title">Công nghệ & SaaS</span></a>
+                                <a href="#" class="dropdown-item"><span class="title">Dịch vụ Tài chính</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-item"><a href="../pricing.html">Bảng giá</a></div>
+                <div class="nav-item"><a href="#">Tài nguyên <i class="ph ph-caret-down"></i></a></div>
+                <div class="nav-item"><a href="#">Về chúng tôi <i class="ph ph-caret-down"></i></a></div>
+            </nav>
+            <div class="nav-actions">
+                <a href="../app.html" class="btn btn-text">Đăng nhập</a>
+                <a href="../app.html" class="btn btn-primary">Dùng thử Yoodli</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="integration-hero">
+            <div class="container hero-grid" style="display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 80px; align-items: center;">
+                <div class="hero-visual">
+                    <div class="eco-visual">
+                        <div class="yoodli-core">
+                            <i class="ph-fill ph-microphone-stage" style="font-size: 48px; color: var(--rp-indigo);"></i>
+                        </div>
+                        <!-- Integration Logos Mockup -->
+                        <div style="position: absolute; top: 10%; left: 10%; background: white; padding: 10px 20px; border-radius: 12px; box-shadow: 0 10px 20px rgba(0,0,0,0.05); font-weight: 800; color: #000; display: flex; align-items: center; gap: 8px;"><i class="ph-fill ph-microsoft-teams-logo" style="color: #6264A7;"></i> Teams</div>
+                        <div style="position: absolute; bottom: 10%; right: 10%; background: white; padding: 10px 20px; border-radius: 12px; box-shadow: 0 10px 20px rgba(0,0,0,0.05); font-weight: 800; color: #000; display: flex; align-items: center; gap: 8px;"><i class="ph-fill ph-slack-logo" style="color: #4A154B;"></i> Slack</div>
+                        <div style="position: absolute; top: 50%; right: 0; background: white; padding: 10px 20px; border-radius: 12px; box-shadow: 0 10px 20px rgba(0,0,0,0.05); font-weight: 800; color: #000; display: flex; align-items: center; gap: 8px;"><i class="ph-fill ph-google-logo" style="color: #4285F4;"></i> Google</div>
+                    </div>
+                </div>
+                <div class="hero-content">
+                    <span class="hero-tag" style="font-size: 11px; font-weight: 800; color: var(--rp-indigo); text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 16px; display: inline-block;">TÍCH HỢP & MCP</span>
+                    <h1 style="font-size: 64px; font-weight: 800; line-height: 1.1; margin-bottom: 24px; letter-spacing: -0.04em;">Tương thích hoàn hảo với hệ sinh thái của bạn</h1>
+                    <p style="font-size: 18px; color: var(--text-light); margin-bottom: 32px; line-height: 1.6;">Yoodli tích hợp mượt mà với các hệ thống mà đội ngũ của bạn đã quen thuộc. Từ nền tảng học tập đến hạ tầng dữ liệu đám mây, chúng tôi kết nối việc thực hành và huấn luyện trực tiếp vào quy trình làm việc hiện tại.</p>
+                    <a href="#" class="btn btn-primary" style="padding: 18px 40px; font-size: 18px;">Xem danh sách tích hợp</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- MCP Banner -->
+        <section class="mcp-banner">
+            <i class="ph ph-sparkle mcp-sparkle" style="top: 20%; left: 10%;"></i>
+            <i class="ph ph-sparkle mcp-sparkle" style="bottom: 20%; right: 15%;"></i>
+            <div class="container">
+                <h2 style="font-size: 44px; font-weight: 800; margin-bottom: 24px;">Đã ra mắt: MCP</h2>
+                <p style="font-size: 18px; color: var(--text-light); max-width: 800px; margin: 0 auto 32px;">Thông qua MCP, Yoodli kết nối với các nền tảng mà đội ngũ của bạn đang làm việc. Từ tài liệu, cuộc họp đến email, tất cả các luồng công việc đều được hỗ trợ bởi AI để nâng cao hiệu suất.</p>
+                <a href="#" class="btn btn-primary" style="background: var(--rp-indigo); color: white; padding: 14px 32px; border-radius: 100px;">Tìm hiểu thêm</a>
+            </div>
+        </section>
+
+        <!-- Integration Categories -->
+        <section class="int-list-section">
+            <div class="container">
+                <h2 style="text-align: center; font-size: 44px; font-weight: 800; margin-bottom: 60px;">Danh mục tích hợp</h2>
+                <div class="int-list" style="max-width: 900px; margin: 0 auto;">
+                    <div class="int-row">
+                        <div class="int-header">Nền tảng Học tập & Đào tạo (LMS) <i class="ph ph-caret-down"></i></div>
+                        <div class="int-content">Kết nối Yoodli với Docebo, Cornerstone, Seismic và các nền tảng LMS hàng đầu khác để đồng bộ dữ liệu đào tạo.</div>
+                    </div>
+                    <div class="int-row">
+                        <div class="int-header">Hệ thống Quản trị Nhân sự (HRIS) <i class="ph ph-caret-down"></i></div>
+                        <div class="int-content">Đồng bộ danh sách nhân viên và cơ cấu tổ chức trực tiếp từ Workday, BambooHR hoặc các hệ thống nhân sự khác.</div>
+                    </div>
+                    <div class="int-row">
+                        <div class="int-header">Hệ thống CRM & Doanh thu <i class="ph ph-caret-down"></i></div>
+                        <div class="int-content">Tích hợp với Salesforce và HubSpot để phân tích kỹ năng giao tiếp trong bối cảnh các giao dịch thực tế.</div>
+                    </div>
+                    <div class="int-row">
+                        <div class="int-header">Công cụ Cộng tác <i class="ph ph-caret-down"></i></div>
+                        <div class="int-content">Ghi lại và phân tích các cuộc họp trực tiếp trên Zoom, Microsoft Teams và Slack.</div>
+                    </div>
+                    <div class="int-row">
+                        <div class="int-header">Cơ sở hạ tầng Dữ liệu & Đám mây <i class="ph ph-caret-down"></i></div>
+                        <div class="int-content">Lưu trữ và phân tích dữ liệu quy mô lớn thông qua các giải pháp lưu trữ đám mây doanh nghiệp.</div>
+                    </div>
+                    <div class="int-row">
+                        <div class="int-header">Bảo mật, Danh tính & Truy cập (SSO) <i class="ph ph-caret-down"></i></div>
+                        <div class="int-content">Đăng nhập một lần (SSO) an toàn qua Okta, Azure AD và hỗ trợ chuẩn SOC2.</div>
+                    </div>
+                    <div class="int-row">
+                        <div class="int-header">API mở cho tích hợp tùy chỉnh <i class="ph ph-caret-down"></i></div>
+                        <div class="int-content">Xây dựng các giải pháp tích hợp riêng biệt phù hợp với nhu cầu đặc thù của doanh nghiệp bạn.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Expanding with organization -->
+        <section class="container" style="padding: 120px 0; text-align: center;">
+            <h2 style="font-size: 44px; font-weight: 800; margin-bottom: 24px;">Thiết kế để mở rộng cùng tổ chức của bạn</h2>
+            <p style="color: var(--text-light); font-size: 18px; max-width: 800px; margin: 0 auto 40px;">Bắt đầu với một đội ngũ và mở rộng tích hợp cho toàn bộ doanh nghiệp. Yoodli phù hợp với hệ sinh thái của bạn mà không làm gián đoạn dòng chảy công việc.</p>
+            <a href="#" class="btn btn-primary" style="padding: 18px 40px; font-size: 18px; border-radius: 100px;">Xem lộ trình tích hợp</a>
+        </section>
+
+        <!-- FAQ -->
+        <section class="faq-section" style="padding: 120px 0; max-width: 900px; margin: 0 auto;">
+            <h2 style="text-align:center; margin-bottom:60px; font-size:36px; font-weight:800;">Câu hỏi thường gặp</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">Yoodli tích hợp với những hệ thống nào? <i class="ph ph-plus"></i></div>
+                    <div class="faq-answer">Yoodli tích hợp với hầu hết các nền tảng CRM, LMS, công cụ cộng tác video (Zoom, Teams) và các hệ thống quản trị nhân sự phổ biến nhất hiện nay.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Yoodli có thể tích hợp với LMS của chúng tôi không? <i class="ph ph-plus"></i></div>
+                    <div class="faq-answer">Hoàn toàn có thể. Chúng tôi hỗ trợ các chuẩn tích hợp phổ biến để đồng bộ lộ trình học tập và kết quả luyện tập trực tiếp vào LMS của bạn.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Yoodli có hỗ trợ SSO không? <i class="ph ph-plus"></i></div>
+                    <div class="faq-answer">Có, chúng tôi hỗ trợ đăng nhập một lần (SSO) thông qua Okta, Azure Active Directory và các nhà cung cấp định danh khác để đảm bảo bảo mật doanh nghiệp.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Chúng tôi có thể xây dựng tích hợp tùy chỉnh không? <i class="ph ph-plus"></i></div>
+                    <div class="faq-answer">Có, Yoodli cung cấp hệ thống API mở mạnh mẽ giúp đội ngũ kỹ thuật của bạn có thể xây dựng các kết nối tùy chỉnh theo nhu cầu riêng.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Yoodli xử lý bảo mật và tuân thủ như thế nào? <i class="ph ph-plus"></i></div>
+                    <div class="faq-answer">Chúng tôi tuân thủ các tiêu chuẩn bảo mật khắt khe nhất bao gồm SOC2 Type II và GDPR để đảm bảo dữ liệu tích hợp của bạn luôn được an toàn.</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" style="background: #F1F5F9; padding: 80px 0 40px; margin-top: 100px;">
+        <div class="container">
+            <div class="footer-grid" style="display: grid; grid-template-columns: 2fr repeat(4, 1fr); gap: 40px;">
+                <div class="footer-col">
+                    <a href="../index.html" class="logo" style="margin-bottom: 24px; display: inline-block;">
+                        <i class="ph-fill ph-microphone-stage"></i> yoodli
+                    </a>
+                    <p style="color: var(--text-light); font-size: 14px;">Làm chủ nghệ thuật giao tiếp với AI. Nền tảng hàng đầu thế giới về huấn luyện diễn thuyết và nhập vai.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Nền tảng</h4>
+                    <a href="ai-roleplays.html">Nhập vai AI</a>
+                    <a href="ai-tutor.html">Gia sư AI</a>
+                    <a href="ai-continuous-coaching.html">Huấn luyện AI</a>
+                    <a href="ai-experiential-learning.html">Học tập trải nghiệm</a>
+                    <a href="ai-feedback.html">Phản hồi cá nhân hóa</a>
+                    <a href="ai-analytics-reporting.html">Phân tích & báo cáo</a>
+                    <a href="ai-integrations-mcp.html">Tích hợp & MCP</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Giải pháp</h4>
+                    <a href="#">Bán hàng</a>
+                    <a href="#">Hỗ trợ</a>
+                    <a href="#">Lãnh đạo</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Công ty</h4>
+                    <a href="#">Về chúng tôi</a>
+                    <a href="#">Tuyển dụng</a>
+                    <a href="#">Blog</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Hỗ trợ</h4>
+                    <a href="#">Trung tâm trợ giúp</a>
+                    <a href="#">Liên hệ</a>
+                    <a href="#">Bảo mật</a>
+                </div>
+            </div>
+            <div style="border-top: 1px solid #CBD5E1; margin-top: 60px; padding-top: 24px; display: flex; justify-content: space-between; font-size: 14px; color: var(--text-light);">
+                <p>&copy; 2024 Yoodli Clone Vietnam. Tất cả quyền được bảo lưu.</p>
+                <div style="display: flex; gap: 24px;">
+                    <a href="#"><i class="ph ph-linkedin-logo"></i></a>
+                    <a href="#"><i class="ph ph-twitter-logo"></i></a>
+                    <a href="#"><i class="ph ph-youtube-logo"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(q => {
+            q.addEventListener('click', () => {
+                const item = q.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+
+        // Integration Accordion Toggle
+        document.querySelectorAll('.int-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const row = header.parentElement;
+                row.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+
+</html>

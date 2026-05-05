@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phản hồi Cá nhân hóa | Yoodli - Nâng tầm kỹ năng giao tiếp</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../roleplay.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        .feedback-hero {
+            padding: 120px 0 100px;
+            background: radial-gradient(circle at 80% 30%, rgba(99, 102, 241, 0.08) 0%, transparent 50%), 
+                        linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
+        }
+
+        .dark-matters {
+            background: #0B0E23;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .standard-card {
+            background: #F8FAFC;
+            padding: 32px;
+            border-radius: 24px;
+            text-align: left;
+            border: 1px solid #E2E8F0;
+            transition: all 0.3s ease;
+        }
+
+        .standard-card:hover {
+            border-color: var(--rp-indigo);
+            background: white;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+        }
+
+        .guidance-section {
+            background: #EEF2FF;
+            padding: 120px 0;
+            border-radius: 100px;
+            margin: 40px 20px;
+        }
+
+        .feedback-mockup {
+            background: white;
+            padding: 40px;
+            border-radius: 32px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.05);
+            border: 1px solid #F1F5F9;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="container">
+            <a href="../index.html" class="logo">
+                <i class="ph-fill ph-microphone-stage"></i> yoodli
+            </a>
+            <nav class="nav-links">
+                <div class="nav-item">
+                    <a href="#">Nền tảng <i class="ph ph-caret-down"></i></a>
+                    <div class="dropdown">
+                        <a href="ai-roleplays.html" class="dropdown-item">
+                            <span class="title">Nhập vai AI</span>
+                            <span class="desc">Luyện tập với các Persona thực tế</span>
+                        </a>
+                        <a href="ai-tutor.html" class="dropdown-item">
+                            <span class="title">Gia sư AI</span>
+                            <span class="desc">Học kỹ năng giao tiếp 1-1</span>
+                        </a>
+                        <a href="ai-continuous-coaching.html" class="dropdown-item">
+                            <span class="title">Huấn luyện AI Liên tục</span>
+                            <span class="desc">Cải thiện kỹ năng mỗi ngày</span>
+                        </a>
+                        <a href="ai-experiential-learning.html" class="dropdown-item">
+                            <span class="title">Học tập qua Trải nghiệm</span>
+                            <span class="desc">Biến kiến thức thành phản xạ</span>
+                        </a>
+                        <a href="ai-feedback.html" class="dropdown-item">
+                            <span class="title">Phản hồi Cá nhân hóa</span>
+                            <span class="desc">Nhận đánh giá chi tiết từ AI</span>
+                        </a>
+                        <a href="ai-analytics-reporting.html" class="dropdown-item">
+                            <span class="title">Phân tích & Báo cáo</span>
+                            <span class="desc">Đo lường hiệu quả đội ngũ</span>
+                        </a>
+                        <a href="ai-integrations-mcp.html" class="dropdown-item">
+                            <span class="title">Tích hợp & MCP</span>
+                            <span class="desc">Kết nối hệ sinh thái của bạn</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <a href="#">Giải pháp <i class="ph ph-caret-down"></i></a>
+                    <div class="dropdown mega-menu">
+                        <div class="mega-col">
+                            <div class="mega-col-title">Dành cho Đội ngũ</div>
+                            <div class="mega-links">
+                                <a href="#" class="dropdown-item"><span class="title">Đội ngũ Doanh thu</span></a>
+                                <a href="#" class="dropdown-item"><span class="title">Hỗ trợ Bán hàng</span></a>
+                            </div>
+                        </div>
+                        <div class="mega-col">
+                            <div class="mega-col-title">Ngành nghề</div>
+                            <div class="mega-links">
+                                <a href="#" class="dropdown-item"><span class="title">Công nghệ & SaaS</span></a>
+                                <a href="#" class="dropdown-item"><span class="title">Dịch vụ Tài chính</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-item"><a href="../pricing.html">Bảng giá</a></div>
+                <div class="nav-item"><a href="#">Tài nguyên <i class="ph ph-caret-down"></i></a></div>
+                <div class="nav-item"><a href="#">Về chúng tôi <i class="ph ph-caret-down"></i></a></div>
+            </nav>
+            <div class="nav-actions">
+                <a href="../app.html" class="btn btn-text">Đăng nhập</a>
+                <a href="../app.html" class="btn btn-primary">Dùng thử Yoodli</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="feedback-hero">
+            <div class="container hero-grid" style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 80px; align-items: center;">
+                <div class="hero-content">
+                    <span class="hero-tag" style="font-size: 11px; font-weight: 800; color: var(--rp-indigo); text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 16px; display: inline-block;">ĐÁNH GIÁ CHÍNH XÁC, CẢI THIỆN TỨC THÌ</span>
+                    <h1 style="font-size: 72px; font-weight: 800; line-height: 1; margin-bottom: 24px; letter-spacing: -0.04em;">Phản hồi Cá nhân hóa</h1>
+                    <p style="font-size: 18px; color: var(--text-light); margin-bottom: 32px; line-height: 1.6;">AI của chúng tôi phân tích từng sắc thái trong giao tiếp của bạn để đưa ra những hiểu biết sâu sắc và hành động được. Mỗi buổi luyện tập đều trở thành một bước tiến rõ rệt.</p>
+                    <div style="display: flex; gap: 16px;">
+                        <a href="../app.html" class="btn btn-primary" style="padding: 18px 40px; font-size: 18px;">Xem thực tế ngay</a>
+                    </div>
+                </div>
+                <div class="hero-visual" style="position: relative; display: flex; justify-content: center;">
+                    <div style="position: relative; width: 400px; height: 400px;">
+                        <div style="width: 380px; height: 380px; border-radius: 50%; background: linear-gradient(135deg, #FDFCFB 0%, #E2D1C3 100%); display: flex; align-items: center; justify-content: center; position: relative; z-index: 1;">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=1000" alt="Professional" style="width: 320px; height: 320px; border-radius: 50%; object-fit: cover; border: 8px solid white; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
+                        </div>
+                        
+                        <!-- Floating Badges -->
+                        <div style="position: absolute; top: 10%; right: -20px; background: white; padding: 12px 20px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); display: flex; align-items: center; gap: 12px; z-index: 5; border: 1px solid #E2E8F0;">
+                            <i class="ph-fill ph-chat-teardrop-dots" style="color: #6366F1; font-size: 20px;"></i>
+                            <span style="font-weight: 700; font-size: 14px;">Gợi ý: Tránh từ đệm</span>
+                        </div>
+                        <div style="position: absolute; bottom: 20%; right: -10px; background: white; padding: 12px 20px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); display: flex; align-items: center; gap: 12px; z-index: 5; border: 1px solid #E2E8F0;">
+                            <i class="ph-fill ph-heart" style="color: #EF4444; font-size: 20px;"></i>
+                            <span style="font-weight: 700; font-size: 14px;">Tông giọng ấm áp</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why structured feedback matters -->
+        <section class="dark-matters">
+            <div class="container">
+                <h2 style="font-size: 44px; font-weight: 800; margin-bottom: 24px;">Tại sao phản hồi có cấu trúc lại quan trọng</h2>
+                <p style="font-size: 18px; opacity: 0.8; max-width: 800px; margin: 0 auto; line-height: 1.6;">Phản hồi mơ hồ cản trở sự phát triển. Yoodli cung cấp dữ liệu nhất quán để bạn biết chính xác mình đang đứng ở đâu và cần cải thiện điều gì.</p>
+            </div>
+        </section>
+
+        <!-- Built around your standards -->
+        <section class="container" style="padding: 120px 0; text-align: center;">
+            <h2 style="font-size: 44px; font-weight: 800; margin-bottom: 60px;">Phản hồi được xây dựng dựa trên tiêu chuẩn của bạn</h2>
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;">
+                <div class="standard-card">
+                    <i class="ph-bold ph-list-checks" style="font-size: 32px; color: var(--rp-indigo); margin-bottom: 20px;"></i>
+                    <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 12px;">Rubric tùy chỉnh</h3>
+                    <p style="color: var(--text-light); font-size: 14px; line-height: 1.6;">Căn chỉnh tiêu chí đánh giá theo phương pháp luận riêng của tổ chức bạn.</p>
+                </div>
+                <div class="standard-card">
+                    <i class="ph-bold ph-target" style="font-size: 32px; color: var(--rp-indigo); margin-bottom: 20px;"></i>
+                    <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 12px;">Thang điểm nhất quán</h3>
+                    <p style="color: var(--text-light); font-size: 14px; line-height: 1.6;">Đảm bảo mọi đánh giá đều công bằng và dựa trên cùng một bộ quy tắc.</p>
+                </div>
+                <div class="standard-card">
+                    <i class="ph-bold ph-megaphone" style="font-size: 32px; color: var(--rp-indigo); margin-bottom: 20px;"></i>
+                    <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 12px;">Mục tiêu cụ thể</h3>
+                    <p style="color: var(--text-light); font-size: 14px; line-height: 1.6;">Đặt ra các cột mốc quan trọng để theo dõi tiến trình thực hiện mục tiêu.</p>
+                </div>
+                <div class="standard-card">
+                    <i class="ph-bold ph-chat-centered-text" style="font-size: 32px; color: var(--rp-indigo); margin-bottom: 20px;"></i>
+                    <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 12px;">Phân tích đa chiều</h3>
+                    <p style="color: var(--text-light); font-size: 14px; line-height: 1.6;">Đánh giá toàn diện về tốc độ, sự rõ ràng, cấu trúc và từ vựng.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guidance, not just scoring -->
+        <section class="guidance-section">
+            <div class="container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
+                <div>
+                    <h2 style="font-size: 44px; font-weight: 800; margin-bottom: 24px;">Hướng dẫn, không chỉ là chấm điểm</h2>
+                    <p style="font-size: 18px; color: var(--text-light); margin-bottom: 32px;">Phản hồi của Yoodli được thiết kế để hành động. Sau mỗi phiên, người học nhận được:</p>
+                    <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 16px;">
+                        <li style="display: flex; align-items: center; gap: 12px; font-weight: 600;">
+                            <i class="ph-bold ph-check" style="color: var(--rp-indigo);"></i> Những gì bạn đã làm tốt
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 12px; font-weight: 600;">
+                            <i class="ph-bold ph-check" style="color: var(--rp-indigo);"></i> Những điểm cần cải thiện cụ thể
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 12px; font-weight: 600;">
+                            <i class="ph-bold ph-check" style="color: var(--rp-indigo);"></i> Gợi ý kịch bản luyện tập tiếp theo
+                        </li>
+                    </ul>
+                </div>
+                <div class="feedback-mockup">
+                    <img src="https://images.unsplash.com/photo-1551288049-bbbda536339a?auto=format&fit=crop&q=80&w=1000" alt="Feedback UI" style="width: 100%; border-radius: 16px;">
+                </div>
+            </div>
+        </section>
+
+        <!-- How it works -->
+        <section class="container" style="padding: 120px 0;">
+            <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px; align-items: center;">
+                <div>
+                    <h2 style="font-size: 44px; font-weight: 800; margin-bottom: 24px;">Cách thức hoạt động</h2>
+                    <p style="color: var(--text-light); font-size: 18px;">Hệ thống phản hồi tự động giúp tăng tốc độ phát triển kỹ năng.</p>
+                </div>
+                <div class="hw-card-list">
+                    <div class="hw-card">
+                        <div class="hw-icon"><i class="ph-bold ph-waveform"></i></div>
+                        <div>
+                            <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 12px;">Ghi lại phiên làm việc</h3>
+                            <p style="color: var(--text-light); font-size: 15px;">Dễ dàng ghi lại các buổi thuyết trình hoặc cuộc gọi thực tế của bạn.</p>
+                        </div>
+                    </div>
+                    <div class="hw-card">
+                        <div class="hw-icon"><i class="ph-bold ph-lightning"></i></div>
+                        <div>
+                            <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 12px;">Nhận phản hồi ngay lập tức</h3>
+                            <p style="color: var(--text-light); font-size: 15px;">AI xử lý và đưa ra các chỉ số quan trọng chỉ trong vài giây sau khi kết thúc.</p>
+                        </div>
+                    </div>
+                    <div class="hw-card">
+                        <div class="hw-icon"><i class="ph-bold ph-path"></i></div>
+                        <div>
+                            <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 12px;">Lập kế hoạch cải thiện</h3>
+                            <p style="color: var(--text-light); font-size: 15px;">Theo dõi các gợi ý hành động để áp dụng vào lần luyện tập tiếp theo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Faster skill development -->
+        <section style="background: #F8FAFC; padding: 120px 0;">
+            <div class="container" style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 80px; align-items: center;">
+                <div style="background: white; padding: 40px; border-radius: 32px; box-shadow: 0 20px 50px rgba(0,0,0,0.05);">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1000" alt="Analytics" style="width: 100%; border-radius: 16px;">
+                </div>
+                <div>
+                    <h2 style="font-size: 44px; font-weight: 800; margin-bottom: 24px;">Phát triển kỹ năng nhanh hơn</h2>
+                    <p style="font-size: 18px; color: var(--text-light); margin-bottom: 32px; line-height: 1.6;">Phản hồi tức thì giúp củng cố hành vi tích cực và sửa lỗi ngay khi chúng xảy ra, rút ngắn chu kỳ học tập.</p>
+                    <div class="carousel-dots" style="display: flex; gap: 8px;">
+                        <span style="width: 24px; height: 4px; background: var(--rp-indigo); border-radius: 2px;"></span>
+                        <span style="width: 12px; height: 4px; background: #E2E8F0; border-radius: 2px;"></span>
+                        <span style="width: 12px; height: 4px; background: #E2E8F0; border-radius: 2px;"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Enterprise ready -->
+        <section class="container" style="padding: 120px 0; text-align: center;">
+            <h2 style="font-size: 44px; font-weight: 800; margin-bottom: 60px;">Sẵn sàng cho doanh nghiệp & Tùy chỉnh hoàn toàn</h2>
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 900px; margin: 0 auto; text-align: left;">
+                <div style="display: flex; align-items: center; gap: 16px; font-size: 18px; font-weight: 600;">
+                    <i class="ph-fill ph-check-circle" style="color: #22C55E; font-size: 24px;"></i> Bảo mật và tuân thủ tuyệt đối
+                </div>
+                <div style="display: flex; align-items: center; gap: 16px; font-size: 18px; font-weight: 600;">
+                    <i class="ph-fill ph-check-circle" style="color: #22C55E; font-size: 24px;"></i> Tùy chỉnh thang điểm theo ý muốn
+                </div>
+                <div style="display: flex; align-items: center; gap: 16px; font-size: 18px; font-weight: 600;">
+                    <i class="ph-fill ph-check-circle" style="color: #22C55E; font-size: 24px;"></i> Báo cáo tổng hợp cho lãnh đạo
+                </div>
+                <div style="display: flex; align-items: center; gap: 16px; font-size: 18px; font-weight: 600;">
+                    <i class="ph-fill ph-check-circle" style="color: #22C55E; font-size: 24px;"></i> Tích hợp với hệ thống LMS hiện có
+                </div>
+            </div>
+            <a href="../app.html" class="btn btn-primary" style="margin-top: 60px; padding: 20px 48px; font-size: 18px; border-radius: 100px;">Sử dụng Yoodli ngay</a>
+        </section>
+
+        <!-- FAQ -->
+        <section class="faq-section" style="padding: 120px 0; max-width: 900px; margin: 0 auto;">
+            <h2 style="text-align:center; margin-bottom:60px; font-size:36px; font-weight:800;">Câu hỏi thường gặp</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">Yoodli cung cấp loại phản hồi nào? <i class="ph ph-plus"></i></div>
+                    <div class="faq-answer">Yoodli cung cấp phản hồi về từ đệm, tốc độ nói, tông giọng, sự rõ ràng, cấu trúc bài nói và cả gợi ý về nội dung thay thế hiệu quả hơn.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Tôi có thể tùy chỉnh cách chấm điểm không? <i class="ph ph-plus"></i></div>
+                    <div class="faq-answer">Có, các tài khoản doanh nghiệp có thể tạo các rubric đánh giá riêng để phù hợp với văn hóa và tiêu chuẩn giao tiếp của công ty mình.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Phản hồi có được gửi ngay lập tức không? <i class="ph ph-plus"></i></div>
+                    <div class="faq-answer">Hoàn toàn có. Sau khi bạn kết thúc phiên luyện tập, AI sẽ xử lý và đưa ra kết quả phân tích chi tiết chỉ trong vài giây.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Phản hồi này hỗ trợ việc huấn luyện dài hạn như thế nào? <i class="ph ph-plus"></i></div>
+                    <div class="faq-answer">Hệ thống theo dõi sự tiến bộ của bạn qua thời gian, giúp bạn và người hướng dẫn thấy rõ những điểm đã cải thiện và những điểm vẫn cần tập trung luyện tập.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Lãnh đạo có thể theo dõi sự tiến bộ của đội ngũ không? <i class="ph ph-plus"></i></div>
+                    <div class="faq-answer">Có, lãnh đạo có quyền truy cập vào bảng điều khiển tổng hợp để xem mức độ sẵn sàng và tiến bộ của toàn bộ đội ngũ.</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" style="background: #F1F5F9; padding: 80px 0 40px; margin-top: 100px;">
+        <div class="container">
+            <div class="footer-grid" style="display: grid; grid-template-columns: 2fr repeat(4, 1fr); gap: 40px;">
+                <div class="footer-col">
+                    <a href="../index.html" class="logo" style="margin-bottom: 24px; display: inline-block;">
+                        <i class="ph-fill ph-microphone-stage"></i> yoodli
+                    </a>
+                    <p style="color: var(--text-light); font-size: 14px;">Làm chủ nghệ thuật giao tiếp với AI. Nền tảng hàng đầu thế giới về huấn luyện diễn thuyết và nhập vai.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Nền tảng</h4>
+                    <a href="ai-roleplays.html">Nhập vai AI</a>
+                    <a href="ai-tutor.html">Gia sư AI</a>
+                    <a href="ai-continuous-coaching.html">Huấn luyện AI</a>
+                    <a href="ai-experiential-learning.html">Học tập trải nghiệm</a>
+                    <a href="ai-feedback.html">Phản hồi cá nhân hóa</a>
+                    <a href="ai-analytics-reporting.html">Phân tích & báo cáo</a>
+                    <a href="ai-integrations-mcp.html">Tích hợp & MCP</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Giải pháp</h4>
+                    <a href="#">Bán hàng</a>
+                    <a href="#">Hỗ trợ</a>
+                    <a href="#">Lãnh đạo</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Công ty</h4>
+                    <a href="#">Về chúng tôi</a>
+                    <a href="#">Tuyển dụng</a>
+                    <a href="#">Blog</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Hỗ trợ</h4>
+                    <a href="#">Trung tâm trợ giúp</a>
+                    <a href="#">Liên hệ</a>
+                    <a href="#">Bảo mật</a>
+                </div>
+            </div>
+            <div style="border-top: 1px solid #CBD5E1; margin-top: 60px; padding-top: 24px; display: flex; justify-content: space-between; font-size: 14px; color: var(--text-light);">
+                <p>&copy; 2024 Yoodli Clone Vietnam. Tất cả quyền được bảo lưu.</p>
+                <div style="display: flex; gap: 24px;">
+                    <a href="#"><i class="ph ph-linkedin-logo"></i></a>
+                    <a href="#"><i class="ph ph-twitter-logo"></i></a>
+                    <a href="#"><i class="ph ph-youtube-logo"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(q => {
+            q.addEventListener('click', () => {
+                const item = q.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+
+</html>

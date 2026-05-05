@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bán lẻ & Khách sạn | Yoodli - Giao tiếp xuất sắc</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../roleplay.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        :root {
+            --retail-blue: #4F46E5;
+            --retail-navy: #1E1B4B;
+            --retail-bg: #EEF2FF;
+        }
+
+        .retail-hero {
+            padding: 140px 0 100px;
+            background: radial-gradient(circle at 90% 10%, rgba(79, 70, 229, 0.1) 0%, transparent 40%),
+                        linear-gradient(180deg, #FFFFFF 0%, #EEF2FF 100%);
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+        }
+
+        .hero-image-wrapper img {
+            width: 100%;
+            border-radius: 32px;
+            box-shadow: 0 30px 60px rgba(79, 70, 229, 0.15);
+        }
+
+        .section-title {
+            font-size: 44px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            color: var(--retail-navy);
+        }
+
+        .retail-card-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-top: 60px;
+        }
+
+        .retail-card {
+            background: white;
+            padding: 48px 40px;
+            border-radius: 32px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            border: 1px solid #E0E7FF;
+            transition: all 0.3s ease;
+        }
+
+        .retail-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--retail-blue);
+            box-shadow: 0 20px 40px rgba(79, 70, 229, 0.1);
+        }
+
+        .retail-card i {
+            font-size: 40px;
+            color: var(--retail-blue);
+            margin-bottom: 24px;
+            display: block;
+        }
+
+        .trust-section {
+            padding: 100px 0;
+            background: var(--retail-navy);
+            color: white;
+            text-align: center;
+        }
+
+        .trust-category-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-top: 60px;
+        }
+
+        .trust-cat-item {
+            background: rgba(255,255,255,0.05);
+            padding: 32px;
+            border-radius: 24px;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s;
+        }
+
+        .trust-cat-item i {
+            font-size: 32px;
+            margin-bottom: 16px;
+            display: block;
+            color: #818CF8;
+        }
+
+        .ui-mockup-wrapper {
+            background: #E0E7FF;
+            border-radius: 48px;
+            padding: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .ui-mockup {
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 400px;
+            padding: 30px;
+        }
+
+        .impact-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 100px;
+            align-items: center;
+            margin-bottom: 120px;
+        }
+
+        .impact-content h3 {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .faq-section {
+            padding: 120px 0;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #E2E8F0;
+            padding: 24px 0;
+        }
+
+        .faq-question {
+            font-weight: 700;
+            font-size: 18px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .faq-answer {
+            margin-top: 16px;
+            color: #64748B;
+            display: none;
+            line-height: 1.6;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .final-cta {
+            background: var(--retail-navy);
+            color: white;
+            padding: 120px 0;
+            text-align: center;
+            border-radius: 64px 64px 0 0;
+        }
+
+        @media (max-width: 992px) {
+            .hero-grid, .impact-row { grid-template-columns: 1fr; gap: 60px; text-align: center; }
+            .retail-card-grid, .trust-category-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <!-- Navbar will be injected by master_layout.js -->
+
+    <main>
+        <!-- Hero Section -->
+        <section class="retail-hero">
+            <div class="container hero-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
+                <div class="hero-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=1000" alt="Customer service representative assisting a guest">
+                </div>
+                <div class="hero-content">
+                    <h1 class="section-title">Yoodli dành cho <br><span style="color: var(--retail-blue);">Bán lẻ & Khách sạn</span></h1>
+                    <p style="font-size: 20px; color: #64748B; margin-bottom: 32px; line-height: 1.6;">Nâng tầm trải nghiệm khách hàng với dịch vụ xuất sắc. Đào tạo đội ngũ tiền sảnh, nhân viên bán hàng và CSKH cách giao tiếp tự tin, chuẩn mực và thấu hiểu.</p>
+                    <a href="../app.html" class="btn btn-primary-pill" style="padding: 18px 40px; font-size: 18px; background: var(--retail-blue);">Bắt đầu miễn phí</a>
+                    <p style="font-size: 14px; color: #94A3B8; margin-top: 24px; font-weight: 500;">Được tin dùng bởi các chuỗi bán lẻ và tập đoàn khách sạn hàng đầu</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Value Prop Cards -->
+        <section class="container" style="padding: 100px 0; text-align: center;">
+            <h2 class="section-title">Xây dựng trải nghiệm khách hàng xuất sắc</h2>
+            <div class="retail-card-grid">
+                <div class="retail-card">
+                    <i class="ph-fill ph-warning-circle"></i>
+                    <h3 style="font-size: 22px; font-weight: 700; margin-bottom: 16px;">Xử lý tình huống khó</h3>
+                    <p style="color: #64748B; line-height: 1.6;">Đào tạo nhân viên cách giải quyết phàn nàn của khách hàng một cách chuyên nghiệp, đồng cảm và giữ bình tĩnh.</p>
+                </div>
+                <div class="retail-card">
+                    <i class="ph-fill ph-shopping-cart"></i>
+                    <h3 style="font-size: 22px; font-weight: 700; margin-bottom: 16px;">Bán chéo & Nâng hạng</h3>
+                    <p style="color: #64748B; line-height: 1.6;">Luyện tập cách giới thiệu sản phẩm, dịch vụ thêm (upsell/cross-sell) một cách tinh tế và hiệu quả.</p>
+                </div>
+                <div class="retail-card">
+                    <i class="ph-fill ph-star"></i>
+                    <h3 style="font-size: 22px; font-weight: 700; margin-bottom: 16px;">Tiêu chuẩn Dịch vụ</h3>
+                    <p style="color: #64748B; line-height: 1.6;">Đảm bảo mọi nhân viên đều nắm vững và thực hành đúng kịch bản chào đón và phục vụ chuẩn mực của thương hiệu.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust Category Section -->
+        <section class="trust-section">
+            <div class="container">
+                <h2 style="font-size: 36px; font-weight: 800;">Được tin dùng bởi các tổ chức trong mảng:</h2>
+                <div class="trust-category-grid">
+                    <div class="trust-cat-item">
+                        <i class="ph ph-storefront"></i>
+                        <span style="font-weight: 700;">Chuỗi Bán lẻ</span>
+                    </div>
+                    <div class="trust-cat-item">
+                        <i class="ph ph-buildings"></i>
+                        <span style="font-weight: 700;">Khách sạn & Nghỉ dưỡng</span>
+                    </div>
+                    <div class="trust-cat-item">
+                        <i class="ph ph-fork-knife"></i>
+                        <span style="font-weight: 700;">Nhà hàng & F&B</span>
+                    </div>
+                    <div class="trust-cat-item">
+                        <i class="ph ph-headset"></i>
+                        <span style="font-weight: 700;">Chăm sóc Khách hàng</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How it works -->
+        <section style="padding: 120px 0; background: white;">
+            <div class="container" style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 80px; align-items: center;">
+                <div class="ui-mockup-wrapper">
+                    <div class="ui-mockup">
+                        <div style="border-bottom: 1px solid #F1F5F9; padding-bottom: 20px; margin-bottom: 20px;">
+                            <div style="font-weight: 800; color: var(--retail-blue);">Kịch bản: Khách hàng phàn nàn dịch vụ</div>
+                            <div style="font-size: 14px; color: #64748B;">Khách hàng: Tức giận, mất bình tĩnh</div>
+                        </div>
+                        <div style="background: #F8FAFC; padding: 20px; border-radius: 12px; margin-bottom: 16px;">
+                            <div style="font-size: 12px; color: #94A3B8; margin-bottom: 8px;">ĐIỂM ĐỒNG CẢM</div>
+                            <div style="font-weight: 600; color: #4F46E5;">92/100 - "Sự lắng nghe và thấu hiểu tuyệt vời"</div>
+                        </div>
+                        <div style="display: flex; gap: 10px;">
+                            <div style="flex: 1; height: 8px; background: #E2E8F0; border-radius: 4px; overflow: hidden;">
+                                <div style="width: 92%; height: 100%; background: #818CF8;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h2 class="section-title">Cách thức Nhập vai AI Yoodli vận hành</h2>
+                    <div style="display: flex; flex-direction: column; gap: 32px; margin-top: 40px;">
+                        <div style="display: flex; gap: 24px;">
+                            <div style="width: 48px; height: 48px; background: #E0E7FF; color: var(--retail-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; flex-shrink: 0;">1</div>
+                            <div>
+                                <h4 style="font-size: 20px; font-weight: 700; margin-bottom: 8px;">Chọn kịch bản dịch vụ</h4>
+                                <p style="color: #64748B;">Sử dụng các tình huống đặc thù như xử lý phàn nàn, tư vấn sản phẩm, hoặc hỗ trợ nâng hạng phòng khách sạn.</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 24px;">
+                            <div style="width: 48px; height: 48px; background: #E0E7FF; color: var(--retail-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; flex-shrink: 0;">2</div>
+                            <div>
+                                <h4 style="font-size: 20px; font-weight: 700; margin-bottom: 8px;">Tương tác với khách hàng AI</h4>
+                                <p style="color: #64748B;">Luyện tập phản xạ với các persona đa dạng, từ khách hàng dễ tính đến những vị khách khó chiều nhất.</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 24px;">
+                            <div style="width: 48px; height: 48px; background: #E0E7FF; color: var(--retail-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; flex-shrink: 0;">3</div>
+                            <div>
+                                <h4 style="font-size: 20px; font-weight: 700; margin-bottom: 8px;">Nhận phản hồi về sự tận tâm</h4>
+                                <p style="color: #64748B;">Đo lường mức độ đồng cảm, tính chuyên nghiệp và khả năng giải quyết vấn đề nhanh chóng.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Impact Section -->
+        <section class="container" style="padding: 120px 0;">
+            <h2 class="section-title" style="text-align: center; margin-bottom: 80px;">Tác động của Yoodli đối với <br>Đội ngũ Dịch vụ</h2>
+            
+            <div class="impact-row">
+                <div class="impact-content">
+                    <div style="color: var(--retail-blue); font-weight: 700; margin-bottom: 12px;">TRẢI NGHIỆM KHÁCH HÀNG</div>
+                    <h3>Chỉ số hài lòng (CSAT) cao hơn</h3>
+                    <p>Tăng điểm hài lòng của khách hàng thông qua đội ngũ nhân viên tự tin, thấu hiểu và có khả năng giao tiếp chuẩn mực trong mọi tình huống.</p>
+                </div>
+                <div class="impact-visual">
+                    <img src="https://images.unsplash.com/photo-1560264280-88b68371db39?auto=format&fit=crop&q=80&w=800" alt="Hotel receptionist assisting guests" style="width: 100%; border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.05);">
+                </div>
+            </div>
+
+            <div class="impact-row" style="grid-template-columns: 1.2fr 1fr;">
+                <div class="impact-visual">
+                    <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?auto=format&fit=crop&q=80&w=800" alt="Retail worker helping customer" style="width: 100%; border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.05);">
+                </div>
+                <div class="impact-content">
+                    <div style="color: var(--retail-blue); font-weight: 700; margin-bottom: 12px;">HIỆU QUẢ KINH DOANH</div>
+                    <h3>Tăng trưởng doanh thu</h3>
+                    <p>Cải thiện tỷ lệ bán thêm (upsell) và bán chéo (cross-sell) bằng cách luyện tập kịch bản giới thiệu sản phẩm tự nhiên, không gây khó chịu cho khách hàng.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <h2 class="section-title" style="text-align: center;">Câu hỏi thường gặp</h2>
+            <div style="margin-top: 60px;">
+                <div class="faq-item">
+                    <div class="faq-question">Yoodli có thể giả lập khách hàng khó tính không? <i class="ph ph-plus"></i></div>
+                    <div class="faq-answer">Có, AI Persona của Yoodli có thể được tùy chỉnh để đóng vai những khách hàng đang tức giận, không hài lòng, giúp nhân viên rèn luyện kỹ năng giữ bình tĩnh và xoa dịu tình huống.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Nhân viên cửa hàng có thể luyện tập bằng điện thoại di động không? <i class="ph ph-plus"></i></div>
+                    <div class="faq-answer">Hoàn toàn có thể. Yoodli hỗ trợ trên đa nền tảng, cho phép nhân viên có thể luyện tập nhanh chóng qua điện thoại ngay trong giờ giải lao.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Làm sao để triển khai hệ thống kịch bản đồng nhất cho nhiều chi nhánh? <i class="ph ph-plus"></i></div>
+                    <div class="faq-answer">Quản trị viên có thể tạo và phân phối các kịch bản chuẩn mực từ hệ thống trung tâm xuống tất cả các chi nhánh, đảm bảo sự nhất quán trong chất lượng dịch vụ.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Quản lý có thể theo dõi tiến độ của nhân viên không? <i class="ph ph-plus"></i></div>
+                    <div class="faq-answer">Có, hệ thống Analytics cung cấp báo cáo chi tiết về mức độ hoàn thành bài tập, điểm số cải thiện và những kỹ năng nhân viên cần bổ sung thêm.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="final-cta">
+            <div class="container">
+                <h2 style="font-size: 48px; font-weight: 800; margin-bottom: 24px;">Nâng tầm dịch vụ khách hàng <br>ngay hôm nay?</h2>
+                <p style="font-size: 20px; opacity: 0.8; margin-bottom: 40px; max-width: 700px; margin-left: auto; margin-right: auto;">Trang bị cho đội ngũ của bạn kỹ năng giao tiếp tự tin để mang lại những trải nghiệm tuyệt vời nhất cho khách hàng.</p>
+                <div style="display: flex; gap: 20px; justify-content: center;">
+                    <a href="../app.html" class="btn btn-primary-pill" style="background: white; color: var(--retail-navy); padding: 20px 48px; font-size: 20px;">Bắt đầu dùng thử</a>
+                </div>
+                <p style="margin-top: 32px; font-size: 14px; opacity: 0.6;"><i class="ph ph-check-circle"></i> Triển khai nhanh chóng • Linh hoạt trên di động</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <!-- Footer will be injected by master_layout.js -->
+    <script src="../master_layout.js"></script>
+
+    <script>
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+                
+                const icon = item.querySelector('i');
+                if (parent.classList.contains('active')) {
+                    icon.classList.replace('ph-plus', 'ph-minus');
+                } else {
+                    icon.classList.replace('ph-minus', 'ph-plus');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

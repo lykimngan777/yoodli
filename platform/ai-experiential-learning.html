@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Học tập qua Trải nghiệm | Yoodli - Biến kiến thức thành kỹ năng</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../roleplay.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        /* ===== HERO ===== */
+        .exp-hero {
+            padding: 80px 0 60px;
+            background: #ffffff;
+            overflow: hidden;
+        }
+
+        .exp-hero-grid {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr;
+            gap: 60px;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Left column */
+        .exp-hero-eyebrow {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 800;
+            color: #050A30;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 20px;
+        }
+
+        .exp-hero-headline {
+            font-size: 48px;
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, #2D9CDB 0%, #6F5CF1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .exp-hero-body {
+            font-size: 15px;
+            color: #334155;
+            line-height: 1.75;
+            margin-bottom: 36px;
+            max-width: 560px;
+        }
+
+        .exp-hero-body p {
+            margin-bottom: 10px;
+        }
+
+        .exp-hero-body p:last-child {
+            margin-bottom: 0;
+        }
+
+        .exp-hero-cta {
+            display: inline-block;
+            padding: 13px 30px;
+            border-radius: 50px;
+            background: linear-gradient(90deg, #2D9CDB 0%, #6F5CF1 100%);
+            color: white;
+            font-weight: 700;
+            font-size: 15px;
+            text-decoration: none;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+            box-shadow: 0 8px 24px rgba(111, 92, 241, 0.35);
+        }
+
+        .exp-hero-cta:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        /* Right column - Visual */
+        .exp-hero-visual {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 420px;
+        }
+
+        .exp-hero-circle-bg {
+            width: 380px;
+            height: 380px;
+            border-radius: 50%;
+            background: rgba(196, 181, 253, 0.28);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .exp-hero-avatar {
+            position: relative;
+            z-index: 2;
+            width: 240px;
+            height: 240px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: top center;
+            filter: grayscale(30%);
+        }
+
+        /* Practice cards stack */
+        .exp-practice-panel {
+            position: absolute;
+            right: -10px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 5;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .exp-practice-label {
+            font-size: 11px;
+            font-weight: 700;
+            color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 4px;
+        }
+
+        .exp-practice-card {
+            background: white;
+            border-radius: 10px;
+            padding: 11px 18px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            font-size: 14px;
+            font-weight: 600;
+            color: #0f1b3d;
+            min-width: 155px;
+            transition: transform 0.2s ease;
+        }
+
+        .exp-practice-card:hover {
+            transform: translateX(-3px);
+        }
+
+        .exp-practice-card .card-icon {
+            font-size: 20px;
+            width: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Sparkle decorations */
+        .exp-star {
+            position: absolute;
+            z-index: 6;
+        }
+        .exp-star-main {
+            top: 10%;
+            left: 22%;
+            font-size: 28px;
+            color: #FBBF24;
+        }
+        .exp-star-sm1 {
+            top: 8%;
+            left: 38%;
+            font-size: 16px;
+            color: #6F5CF1;
+        }
+        .exp-star-sm2 {
+            bottom: 14%;
+            left: 20%;
+            font-size: 14px;
+            color: #FBBF24;
+        }
+
+        /* ===== REST OF PAGE STYLES ===== */
+        .short-card {
+            background: #EEF2FF;
+            padding: 32px;
+            border-radius: 24px;
+            text-align: left;
+            transition: all 0.3s ease;
+        }
+
+        .short-card:hover {
+            transform: translateY(-5px);
+            background: white;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+        }
+
+        .short-icon {
+            width: 48px;
+            height: 48px;
+            background: white;
+            border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 24px;
+            color: var(--rp-indigo);
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .enterprise-platform {
+            background: #F0F4FF;
+            padding: 120px 0;
+            border-radius: 100px;
+            margin: 40px 20px;
+        }
+
+        .outcome-visual {
+            background: linear-gradient(135deg, #6366F1 0%, #4F46E5 100%);
+            padding: 40px;
+            border-radius: 32px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .built-card {
+            background: white;
+            padding: 40px;
+            border-radius: 24px;
+            border: 1px solid #F1F5F9;
+            text-align: left;
+            transition: all 0.3s ease;
+        }
+
+        .built-card:hover {
+            border-color: var(--rp-indigo);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+        }
+
+        .built-icon {
+            font-size: 32px;
+            color: var(--rp-indigo);
+            margin-bottom: 24px;
+        }
+
+        @media (max-width: 992px) {
+            .exp-hero-grid {
+                grid-template-columns: 1fr;
+            }
+            .exp-hero-headline {
+                font-size: 34px;
+            }
+            .exp-hero-visual {
+                min-height: 340px;
+            }
+            .exp-practice-panel {
+                right: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="container">
+            <a href="../index.html" class="logo">
+                <i class="ph-fill ph-microphone-stage"></i> yoodli
+            </a>
+            <nav class="nav-links">
+                <div class="nav-item">
+                    <a href="#">Nền tảng <i class="ph ph-caret-down"></i></a>
+                    <div class="dropdown">
+                        <a href="ai-roleplays.html" class="dropdown-item">
+                            <span class="title">Nhập vai AI</span>
+                            <span class="desc">Luyện tập với các Persona thực tế</span>
+                        </a>
+                        <a href="ai-tutor.html" class="dropdown-item">
+                            <span class="title">Gia sư AI</span>
+                            <span class="desc">Học kỹ năng giao tiếp 1-1</span>
+                        </a>
+                        <a href="ai-continuous-coaching.html" class="dropdown-item">
+                            <span class="title">Huấn luyện AI Liên tục</span>
+                            <span class="desc">Cải thiện kỹ năng mỗi ngày</span>
+                        </a>
+                        <a href="ai-experiential-learning.html" class="dropdown-item">
+                            <span class="title">Học tập qua Trải nghiệm</span>
+                            <span class="desc">Biến kiến thức thành phản xạ</span>
+                        </a>
+                        <a href="ai-feedback.html" class="dropdown-item">
+                            <span class="title">Phản hồi Cá nhân hóa</span>
+                            <span class="desc">Nhận đánh giá chi tiết từ AI</span>
+                        </a>
+                        <a href="ai-analytics-reporting.html" class="dropdown-item">
+                            <span class="title">Phân tích & Báo cáo</span>
+                            <span class="desc">Đo lường hiệu quả đội ngũ</span>
+                        </a>
+                        <a href="ai-integrations-mcp.html" class="dropdown-item">
+                            <span class="title">Tích hợp & MCP</span>
+                            <span class="desc">Kết nối hệ sinh thái của bạn</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <a href="#">Giải pháp <i class="ph ph-caret-down"></i></a>
+                    <div class="dropdown mega-menu">
+                        <div class="mega-col">
+                            <div class="mega-col-title">Dành cho Đội ngũ</div>
+                            <div class="mega-links">
+                                <a href="#" class="dropdown-item"><span class="title">Đội ngũ Doanh thu</span></a>
+                                <a href="#" class="dropdown-item"><span class="title">Hỗ trợ Bán hàng</span></a>
+                            </div>
+                        </div>
+                        <div class="mega-col">
+                            <div class="mega-col-title">Ngành nghề</div>
+                            <div class="mega-links">
+                                <a href="#" class="dropdown-item"><span class="title">Công nghệ & SaaS</span></a>
+                                <a href="#" class="dropdown-item"><span class="title">Dịch vụ Tài chính</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-item"><a href="../pricing.html">Bảng giá</a></div>
+                <div class="nav-item"><a href="#">Tài nguyên <i class="ph ph-caret-down"></i></a></div>
+                <div class="nav-item"><a href="#">Về chúng tôi <i class="ph ph-caret-down"></i></a></div>
+            </nav>
+            <div class="nav-actions">
+                <a href="../app.html" class="btn btn-text">Đăng nhập</a>
+                <a href="../app.html" class="btn btn-primary">Dùng thử Yoodli</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="exp-hero">
+            <div class="exp-hero-grid">
+                <!-- Left: Content -->
+                <div class="exp-hero-content">
+                    <span class="exp-hero-eyebrow">TURN LEARNING INTO REAL-WORLD PERFORMANCE</span>
+                    <h1 class="exp-hero-headline">Experiential Learning</h1>
+                    <div class="exp-hero-body">
+                        <p>Hầu hết các chương trình đào tạo chỉ cung cấp thông tin. <strong>Học tập qua trải nghiệm xây dựng năng lực thực sự.</strong></p>
+                        <p>Yoodli chuyển đổi việc học tập từ nội dung thụ động sang phát triển kỹ năng chủ động. Đội ngũ thực hành các kịch bản thực tế, nhận phản hồi có cấu trúc, và cải thiện qua việc lặp lại cho đến khi sự sẵn sàng trở thành thói quen.</p>
+                        <p>Được hỗ trợ bởi <strong>AI Roleplays</strong>, hướng dẫn cá nhân hóa từ <strong>AI Tutor</strong>, và củng cố liên tục qua <strong>AI Continuous Coaching</strong>, Yoodli kết nối việc học tập trực tiếp với hiệu suất.</p>
+                        <p>Không còn các chương trình nặng về slide. Không còn các chỉ số hoàn thành không có bằng chứng.<br>Chỉ có thực hành, phản hồi và sự cải thiện có thể đo lường ở quy mô lớn.</p>
+                    </div>
+                    <a href="../app.html" class="exp-hero-cta">See Yoodli in action</a>
+                </div>
+
+                <!-- Right: Visual -->
+                <div class="exp-hero-visual">
+                    <!-- Purple circle BG -->
+                    <div class="exp-hero-circle-bg"></div>
+
+                    <!-- Sparkle decorations -->
+                    <i class="ph-fill ph-sparkle exp-star exp-star-main"></i>
+                    <i class="ph-fill ph-sparkle exp-star exp-star-sm1"></i>
+                    <i class="ph-fill ph-sparkle exp-star exp-star-sm2"></i>
+
+                    <!-- Avatar -->
+                    <img
+                        src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=facearea&facepad=2.5&w=400&h=480&q=80"
+                        alt="Learner"
+                        class="exp-hero-avatar"
+                    >
+
+                    <!-- Practice selection cards -->
+                    <div class="exp-practice-panel">
+                        <div class="exp-practice-label">What do you want to practice?</div>
+                        <!-- Card 1: Cold call -->
+                        <div class="exp-practice-card">
+                            <span class="card-icon" style="color: #2D9CDB;"><i class="ph-fill ph-snowflake"></i></span>
+                            <span>Cold call</span>
+                        </div>
+                        <!-- Card 2: Tutor -->
+                        <div class="exp-practice-card">
+                            <span class="card-icon" style="color: #22C55E;"><i class="ph-fill ph-graduation-cap"></i></span>
+                            <span>Tutor</span>
+                        </div>
+                        <!-- Card 3: Custom -->
+                        <div class="exp-practice-card">
+                            <span class="card-icon" style="color: #6F5CF1;"><i class="ph-fill ph-lightbulb"></i></span>
+                            <span>Custom</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why traditional fails -->
+        <section style="padding: 80px 0; text-align: center; background: #fff;">
+            <div class="container">
+                <h2 style="font-size: 32px; font-weight: 800; color: #050A30; margin-bottom: 16px;">Why traditional learning falls short</h2>
+                <p style="color: #475569; font-size: 15px; max-width: 640px; margin: 0 auto 56px; line-height: 1.7;">Organizations invest heavily in training, yet behavior change remains inconsistent. Knowledge alone does not create performance, practice does.</p>
+
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; text-align: left;">
+                    <!-- Card 1 -->
+                    <div style="background: #EEF2FF; border-radius: 16px; padding: 28px 24px; display: flex; flex-direction: column; gap: 32px;">
+                        <i class="ph-bold ph-note-pencil" style="font-size: 22px; color: #6366F1;"></i>
+                        <h3 style="font-size: 15px; font-weight: 700; color: #050A30; line-height: 1.4; margin: 0;">Content is consumed but not applied</h3>
+                    </div>
+                    <!-- Card 2 -->
+                    <div style="background: #EEF2FF; border-radius: 16px; padding: 28px 24px; display: flex; flex-direction: column; gap: 32px;">
+                        <i class="ph-bold ph-timer" style="font-size: 22px; color: #6366F1;"></i>
+                        <h3 style="font-size: 15px; font-weight: 700; color: #050A30; line-height: 1.4; margin: 0;">Workshops create short-term momentum</h3>
+                    </div>
+                    <!-- Card 3 -->
+                    <div style="background: #EEF2FF; border-radius: 16px; padding: 28px 24px; display: flex; flex-direction: column; gap: 32px;">
+                        <i class="ph-bold ph-list-dashes" style="font-size: 22px; color: #6366F1;"></i>
+                        <h3 style="font-size: 15px; font-weight: 700; color: #050A30; line-height: 1.4; margin: 0;">Skills vary by manager, region, or tenure</h3>
+                    </div>
+                    <!-- Card 4 -->
+                    <div style="background: #EEF2FF; border-radius: 16px; padding: 28px 24px; display: flex; flex-direction: column; gap: 32px;">
+                        <i class="ph-bold ph-chart-pie-slice" style="font-size: 22px; color: #6366F1;"></i>
+                        <h3 style="font-size: 15px; font-weight: 700; color: #050A30; line-height: 1.4; margin: 0;">Readiness is assumed rather than demonstrated</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Platform Section -->
+        <section class="enterprise-platform">
+            <div class="container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
+                <div style="background: white; padding: 40px; border-radius: 32px; box-shadow: 0 20px 50px rgba(0,0,0,0.05);">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1000" alt="Dashboard" style="width: 100%; border-radius: 16px;">
+                </div>
+                <div>
+                    <h2 style="font-size: 28px; font-weight: 800; color: #050A30; margin-bottom: 20px; line-height: 1.3;">The experiential learning platform for enterprise teams</h2>
+                    <p style="font-size: 15px; color: #334155; margin-bottom: 12px; line-height: 1.7;">Yoodli makes learning active through AI roleplays that mirror real-world conversations. Learners engage in realistic scenarios, receive immediate feedback, and improve through repetition.</p>
+                    <p style="font-size: 15px; color: #334155; margin-bottom: 12px; line-height: 1.7;">The AI Tutor guides development by identifying skill gaps and recommending targeted next steps.</p>
+                    <p style="font-size: 15px; color: #334155; margin-bottom: 12px; line-height: 1.7;">AI Continuous Coaching reinforces progress over time, ensuring skills remain sharp beyond a single training event.</p>
+                    <p style="font-size: 15px; color: #334155; margin-bottom: 20px; line-height: 1.7;">Learning and execution are connected in one continuous system.</p>
+                    <p style="font-size: 14px; font-weight: 700; color: #6366F1; font-style: italic;">This is not content delivery. It is skill development in action.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- How it works (hw-section-new) -->
+        <section class="hw-section-new">
+            <div class="hw-grid-new">
+                <div class="hw-left">
+                    <h2 class="hw-left h2">How it works</h2>
+                    <p>No guesswork. No one-time events.<br>No dependency on manager availability.</p>
+                </div>
+                <div class="hw-cards-new">
+                    <div class="hw-card-new">
+                        <div class="hw-card-icon-new"><i class="ph ph-play-circle"></i></div>
+                        <div class="hw-card-content-new">
+                            <h3>Practice real scenarios</h3>
+                            <p>Learners engage in realistic AI roleplays aligned to their role and expectations.</p>
+                        </div>
+                    </div>
+                    <div class="hw-card-new">
+                        <div class="hw-card-icon-new"><i class="ph ph-lightning"></i></div>
+                        <div class="hw-card-content-new">
+                            <h3>Receive objective feedback</h3>
+                            <p>The AI Tutor analyzes performance and highlights areas for improvement.</p>
+                        </div>
+                    </div>
+                    <div class="hw-card-new">
+                        <div class="hw-card-icon-new"><i class="ph ph-arrow-clockwise"></i></div>
+                        <div class="hw-card-content-new">
+                            <h3>Reinforce through continuous coaching</h3>
+                            <p>AI Continuous Coaching ensures skills are practiced and strengthened over time.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Better Outcomes – Leader Slider -->
+        <section class="rp-leader-section coaching-leader-section">
+            <div class="container">
+                <div class="leader-header">
+                    <h2>Why experiential learning drives better outcomes</h2>
+                    <p>Experiential learning ensures that what is taught is actually applied.</p>
+                </div>
+                <div class="slider-container">
+                    <div class="slider-track" id="expSliderTrack">
+                        <div class="slide-item active">
+                            <div class="slide-visual"><div class="visual-gradient-box"><div class="ui-mockup-dash"><div class="dash-top"><div class="avatar">DV</div><div class="info"><div class="name">David James</div><div class="status">Active today</div></div><div class="stat">100/256</div></div><div class="dash-bottom"><div class="dash-card"><div class="d-header">Readiness</div><div class="d-chart"></div></div><div class="dash-card"><div class="d-header">Scenarios</div><div class="d-donut"><div class="donut-circle"></div><div class="donut-text"><strong>8/10</strong><br>Done</div></div></div></div></div></div></div>
+                            <div class="slide-text"><h3>Measurable readiness</h3><p>Leaders gain visibility into demonstrated skill, not just content completion.</p></div>
+                        </div>
+                        <div class="slide-item">
+                            <div class="slide-visual"><div class="visual-gradient-box"><div class="ui-mockup-stack"><div class="ui-card"><div class="ui-label">Scenario</div><div class="ui-value">Objection handling</div></div><div class="ui-card"><div class="ui-label">Score</div><div class="ui-value">92% &uarr;</div></div><div class="ui-card"><div class="ui-label">Feedback</div><div class="ui-value">Concise &amp; confident</div></div></div></div></div>
+                            <div class="slide-text"><h3>Faster skill development</h3><p>Repetition with feedback accelerates learning far beyond passive content consumption.</p></div>
+                        </div>
+                        <div class="slide-item">
+                            <div class="slide-visual"><div class="visual-gradient-box"><div class="ui-mockup-video"><img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400" alt="Video"><div class="ui-tag tag-green"><i class="ph-fill ph-thumbs-up"></i> Strong opener</div><div class="ui-tag tag-red"><i class="ph-fill ph-flag"></i> Slow down</div><div class="ui-controls"><span>00:18</span><i class="ph-fill ph-pause"></i><div class="btn-done">Done <i class="ph-bold ph-check"></i></div></div></div></div></div>
+                            <div class="slide-text"><h3>Consistent performance at scale</h3><p>Every rep gets the same quality practice, regardless of manager availability.</p></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-navigation">
+                    <button class="nav-btn" onclick="prevExpSlide()"><i class="ph-bold ph-caret-left"></i></button>
+                    <div class="progress-track-container">
+                        <div class="progress-segment" onclick="goToExpSlide(0)"><div class="progress-fill" id="exp-fill-0"></div></div>
+                        <div class="progress-segment" onclick="goToExpSlide(1)"><div class="progress-fill" id="exp-fill-1"></div></div>
+                        <div class="progress-segment" onclick="goToExpSlide(2)"><div class="progress-fill" id="exp-fill-2"></div></div>
+                    </div>
+                    <button class="nav-btn" onclick="nextExpSlide()"><i class="ph-bold ph-caret-right"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Built for Enterprise -->
+        <section style="padding: 80px 0; text-align: center; background: #fff;">
+            <div class="container">
+                <h2 style="font-size: 26px; font-weight: 800; color: #050A30; margin-bottom: 10px;">Built for enterprise organizations</h2>
+                <p style="color: #475569; font-size: 14px; margin-bottom: 52px;">Your learning strategy, reinforced through real practice.</p>
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; text-align: left;">
+                    <div style="padding: 20px 16px;"><i class="ph ph-users-four" style="font-size: 26px; color: #6366F1; display: block; margin-bottom: 14px;"></i><p style="font-size: 13px; font-weight: 600; color: #050A30; line-height: 1.6;">Custom scenarios aligned to your standards and messaging</p></div>
+                    <div style="padding: 20px 16px;"><i class="ph ph-scales" style="font-size: 26px; color: #6366F1; display: block; margin-bottom: 14px;"></i><p style="font-size: 13px; font-weight: 600; color: #050A30; line-height: 1.6;">Consistent evaluation across teams and regions</p></div>
+                    <div style="padding: 20px 16px;"><i class="ph ph-shield-check" style="font-size: 26px; color: #6366F1; display: block; margin-bottom: 14px;"></i><p style="font-size: 13px; font-weight: 600; color: #050A30; line-height: 1.6;">Secure, scalable deployment across global organizations</p></div>
+                    <div style="padding: 20px 16px;"><i class="ph ph-intersect" style="font-size: 26px; color: #6366F1; display: block; margin-bottom: 14px;"></i><p style="font-size: 13px; font-weight: 600; color: #050A30; line-height: 1.6;">Integrated across AI roleplays, AI Tutor, and AI Continuous Coaching</p></div>
+                </div>
+            </div>
+        </section>
+
+
+
+                    <p style="color: var(--text-light); font-size: 14px; line-height: 1.6;">Căn chỉnh theo tiêu chuẩn và thông điệp thương hiệu cụ thể của bạn.</p>
+                </div>
+                <div class="built-card">
+                    <i class="ph ph-globe-hemisphere-west built-icon"></i>
+                    <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 12px;">Đánh giá nhất quán</h3>
+                    <p style="color: var(--text-light); font-size: 14px; line-height: 1.6;">Đánh giá công bằng trên toàn bộ các đội ngũ và khu vực địa lý.</p>
+                </div>
+                <div class="built-card">
+                    <i class="ph ph-shield-check built-icon"></i>
+                    <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 12px;">Bảo mật & Tuân thủ</h3>
+                    <h4 style="font-size: 14px; margin-bottom: 8px; color: var(--rp-indigo);">SOC2 & GDPR</h4>
+                    <p style="color: var(--text-light); font-size: 14px; line-height: 1.6;">Đáp ứng các tiêu chuẩn bảo mật khắt khe nhất của doanh nghiệp.</p>
+                </div>
+                <div class="built-card">
+                    <i class="ph ph-intersect built-icon"></i>
+                    <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 12px;">Tích hợp mượt mà</h3>
+                    <p style="color: var(--text-light); font-size: 14px; line-height: 1.6;">Kết nối với Nhập vai, Gia sư và Huấn luyện liên tục.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="faq-section" style="padding: 80px 0; max-width: 760px; margin: 0 auto;">
+            <h2 style="text-align:center; margin-bottom:40px; font-size:22px; font-weight:800; color:#050A30;">Frequently asked questions about experiential learning</h2>
+            <div class="faq-list">
+                <div class="faq-item"><div class="faq-question">What is experiential learning? <i class="ph ph-caret-down"></i></div><div class="faq-answer">Experiential learning builds skills through doing, not just watching. Learners practice realistic scenarios and receive immediate feedback to improve.</div></div>
+                <div class="faq-item"><div class="faq-question">How is experiential learning different from traditional training? <i class="ph ph-caret-down"></i></div><div class="faq-answer">Traditional training delivers information. Experiential learning builds capability through repetition and feedback aligned to real-world scenarios.</div></div>
+                <div class="faq-item"><div class="faq-question">How does Yoodli enable experiential learning at scale? <i class="ph ph-caret-down"></i></div><div class="faq-answer">Yoodli uses AI to deliver thousands of personalized practice sessions simultaneously — something human coaches cannot do at scale.</div></div>
+                <div class="faq-item"><div class="faq-question">Can experiential learning support enterprise onboarding? <i class="ph ph-caret-down"></i></div><div class="faq-answer">Yes. New hires can practice real job scenarios from day one, accelerating ramp time and ensuring consistent messaging across the org.</div></div>
+                <div class="faq-item"><div class="faq-question">How do leaders measure the impact of experiential learning? <i class="ph ph-caret-down"></i></div><div class="faq-answer">Yoodli provides skill progression metrics, confidence scores, and scenario performance data — giving leaders clear visibility into readiness.</div></div>
+            </div>
+        </section>
+        <!-- CTA -->
+        <section class="container" style="padding: 80px 0; text-align: center;">
+            <div style="background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%); padding: 80px 40px; border-radius: 48px; color: white;">
+                <h2 style="font-size: 36px; font-weight: 800; margin-bottom: 16px;">Learning should be a doing journey</h2>
+                <p style="font-size: 16px; opacity: 0.9; margin-bottom: 32px; max-width: 560px; margin-left: auto; margin-right: auto;">Start scaling experiential learning across your entire organization today.</p>
+                <a href="../app.html" class="btn btn-primary" style="background: white; color: var(--rp-indigo); padding: 14px 36px; font-size: 15px; font-weight: 800; border-radius: 100px;">Try Yoodli free</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" style="background: #F1F5F9; padding: 80px 0 40px; margin-top: 100px;">
+        <div class="container">
+            <div class="footer-grid" style="display: grid; grid-template-columns: 2fr repeat(4, 1fr); gap: 40px;">
+                <div class="footer-col">
+                    <a href="../index.html" class="logo" style="margin-bottom: 24px; display: inline-block;">
+                        <i class="ph-fill ph-microphone-stage"></i> yoodli
+                    </a>
+                    <p style="color: var(--text-light); font-size: 14px;">Làm chủ nghệ thuật giao tiếp với AI. Nền tảng hàng đầu thế giới về huấn luyện diễn thuyết và nhập vai.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Nền tảng</h4>
+                    <a href="ai-roleplays.html">Nhập vai AI</a>
+                    <a href="ai-tutor.html">Gia sư AI</a>
+                    <a href="ai-continuous-coaching.html">Huấn luyện AI</a>
+                    <a href="ai-experiential-learning.html">Học tập trải nghiệm</a>
+                    <a href="ai-feedback.html">Phản hồi cá nhân hóa</a>
+                    <a href="ai-analytics-reporting.html">Phân tích & báo cáo</a>
+                    <a href="ai-integrations-mcp.html">Tích hợp & MCP</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Giải pháp</h4>
+                    <a href="#">Bán hàng</a>
+                    <a href="#">Hỗ trợ</a>
+                    <a href="#">Lãnh đạo</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Công ty</h4>
+                    <a href="#">Về chúng tôi</a>
+                    <a href="#">Tuyển dụng</a>
+                    <a href="#">Blog</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Hỗ trợ</h4>
+                    <a href="#">Trung tâm trợ giúp</a>
+                    <a href="#">Liên hệ</a>
+                    <a href="#">Bảo mật</a>
+                </div>
+            </div>
+            <div style="border-top: 1px solid #CBD5E1; margin-top: 60px; padding-top: 24px; display: flex; justify-content: space-between; font-size: 14px; color: var(--text-light);">
+                <p>&copy; 2024 Yoodli Clone Vietnam. Tất cả quyền được bảo lưu.</p>
+                <div style="display: flex; gap: 24px;">
+                    <a href="#"><i class="ph ph-linkedin-logo"></i></a>
+                    <a href="#"><i class="ph ph-twitter-logo"></i></a>
+                    <a href="#"><i class="ph ph-youtube-logo"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(q => {
+            q.addEventListener('click', () => {
+                const item = q.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+
+        // Exp Slider
+        let expCurrent = 0;
+        const expSlides = document.querySelectorAll('#expSliderTrack .slide-item');
+        const expFills = [document.getElementById('exp-fill-0'), document.getElementById('exp-fill-1'), document.getElementById('exp-fill-2')];
+        let expTimer;
+
+        function updateExpSlider() {
+            expSlides.forEach((s, i) => s.classList.toggle('active', i === expCurrent));
+            expFills.forEach((f, i) => { if (f) { f.style.transition = 'none'; f.style.width = '0%'; } });
+            if (expFills[expCurrent]) { setTimeout(() => { expFills[expCurrent].style.transition = 'width 4s linear'; expFills[expCurrent].style.width = '100%'; }, 50); }
+        }
+        function nextExpSlide() { expCurrent = (expCurrent + 1) % expSlides.length; updateExpSlider(); resetExpTimer(); }
+        function prevExpSlide() { expCurrent = (expCurrent - 1 + expSlides.length) % expSlides.length; updateExpSlider(); resetExpTimer(); }
+        function goToExpSlide(i) { expCurrent = i; updateExpSlider(); resetExpTimer(); }
+        function resetExpTimer() { clearInterval(expTimer); expTimer = setInterval(nextExpSlide, 4500); }
+        updateExpSlider();
+        resetExpTimer();
+    </script>
+</body>
+
+</html>

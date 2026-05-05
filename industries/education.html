@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giáo dục | Yoodli - Nâng tầm giao tiếp học thuật</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../roleplay.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        :root {
+            --edu-blue: #4F46E5;
+            --edu-navy: #1E1B4B;
+            --edu-bg: #EEF2FF;
+        }
+
+        .edu-hero {
+            padding: 140px 0 100px;
+            background: radial-gradient(circle at 90% 10%, rgba(79, 70, 229, 0.1) 0%, transparent 40%),
+                        linear-gradient(180deg, #FFFFFF 0%, #EEF2FF 100%);
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+        }
+
+        .hero-image-wrapper img {
+            width: 100%;
+            border-radius: 32px;
+            box-shadow: 0 30px 60px rgba(79, 70, 229, 0.15);
+        }
+
+        .section-title {
+            font-size: 44px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            color: var(--edu-navy);
+        }
+
+        .edu-card-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            margin-top: 60px;
+        }
+
+        .edu-card {
+            background: white;
+            padding: 48px 40px;
+            border-radius: 32px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            border: 1px solid #E0E7FF;
+            transition: all 0.3s ease;
+        }
+
+        .edu-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--edu-blue);
+            box-shadow: 0 20px 40px rgba(79, 70, 229, 0.1);
+        }
+
+        .edu-card i {
+            font-size: 40px;
+            color: var(--edu-blue);
+            margin-bottom: 24px;
+            display: block;
+        }
+
+        .trust-section {
+            padding: 100px 0;
+            background: var(--edu-navy);
+            color: white;
+            text-align: center;
+        }
+
+        .trust-category-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-top: 60px;
+        }
+
+        .trust-cat-item {
+            background: rgba(255,255,255,0.05);
+            padding: 32px;
+            border-radius: 24px;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s;
+        }
+
+        .trust-cat-item i {
+            font-size: 32px;
+            margin-bottom: 16px;
+            display: block;
+            color: #818CF8;
+        }
+
+        .ui-mockup-wrapper {
+            background: #E0E7FF;
+            border-radius: 48px;
+            padding: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .ui-mockup {
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 400px;
+            padding: 30px;
+        }
+
+        .impact-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 100px;
+            align-items: center;
+            margin-bottom: 120px;
+        }
+
+        .impact-content h3 {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .faq-section {
+            padding: 120px 0;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #E2E8F0;
+            padding: 24px 0;
+        }
+
+        .faq-question {
+            font-weight: 700;
+            font-size: 18px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .faq-answer {
+            margin-top: 16px;
+            color: #64748B;
+            display: none;
+            line-height: 1.6;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .final-cta {
+            background: var(--edu-navy);
+            color: white;
+            padding: 120px 0;
+            text-align: center;
+            border-radius: 64px 64px 0 0;
+        }
+
+        @media (max-width: 992px) {
+            .hero-grid, .impact-row { grid-template-columns: 1fr; gap: 60px; text-align: center; }
+            .edu-card-grid, .trust-category-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <!-- Navbar will be injected by master_layout.js -->
+
+    <main>
+        <!-- Hero Section -->
+        <section class="edu-hero">
+            <div class="container hero-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
+                <div class="hero-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=1000" alt="Students presenting in classroom">
+                </div>
+                <div class="hero-content">
+                    <h1 class="section-title">Yoodli dành cho <br><span style="color: var(--edu-blue);">Giáo dục</span></h1>
+                    <p style="font-size: 20px; color: #64748B; margin-bottom: 32px; line-height: 1.6;">Nâng cao năng lực giao tiếp cho sinh viên. Giúp người học tự tin thuyết trình, phỏng vấn và bảo vệ luận án với sự hỗ trợ của AI.</p>
+                    <a href="../app.html" class="btn btn-primary-pill" style="padding: 18px 40px; font-size: 18px; background: var(--edu-blue);">Bắt đầu miễn phí</a>
+                    <p style="font-size: 14px; color: #94A3B8; margin-top: 24px; font-weight: 500;">Được tin dùng bởi các tổ chức giáo dục hàng đầu</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Value Prop Cards -->
+        <section class="container" style="padding: 100px 0; text-align: center;">
+            <h2 class="section-title">Xây dựng sự tự tin trong <br>giao tiếp học thuật</h2>
+            <div class="edu-card-grid">
+                <div class="edu-card">
+                    <i class="ph-fill ph-presentation-chart"></i>
+                    <h3 style="font-size: 22px; font-weight: 700; margin-bottom: 16px;">Thuyết trình & Bảo vệ Luận án</h3>
+                    <p style="color: #64748B; line-height: 1.6;">Luyện tập trình bày ý tưởng phức tạp một cách rõ ràng và thuyết phục trước hội đồng đánh giá.</p>
+                </div>
+                <div class="edu-card">
+                    <i class="ph-fill ph-handshake"></i>
+                    <h3 style="font-size: 22px; font-weight: 700; margin-bottom: 16px;">Chuẩn bị Phỏng vấn</h3>
+                    <p style="color: #64748B; line-height: 1.6;">Mô phỏng các cuộc phỏng vấn tuyển sinh hoặc xin việc với phản hồi tức thì để tăng cơ hội thành công.</p>
+                </div>
+                <div class="edu-card">
+                    <i class="ph-fill ph-chalkboard-teacher"></i>
+                    <h3 style="font-size: 22px; font-weight: 700; margin-bottom: 16px;">Giao tiếp Sư phạm</h3>
+                    <p style="color: #64748B; line-height: 1.6;">Đào tạo kỹ năng giảng dạy và truyền đạt hiệu quả cho giảng viên và trợ giảng.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust Category Section -->
+        <section class="trust-section">
+            <div class="container">
+                <h2 style="font-size: 36px; font-weight: 800;">Được tin dùng bởi các tổ chức giáo dục:</h2>
+                <div class="trust-category-grid">
+                    <div class="trust-cat-item">
+                        <i class="ph ph-student"></i>
+                        <span style="font-weight: 700;">Trường K-12</span>
+                    </div>
+                    <div class="trust-cat-item">
+                        <i class="ph ph-bank"></i>
+                        <span style="font-weight: 700;">Đại học & Cao đẳng</span>
+                    </div>
+                    <div class="trust-cat-item">
+                        <i class="ph ph-briefcase"></i>
+                        <span style="font-weight: 700;">Trường Kinh doanh</span>
+                    </div>
+                    <div class="trust-cat-item">
+                        <i class="ph ph-laptop"></i>
+                        <span style="font-weight: 700;">Nền tảng Trực tuyến</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How it works -->
+        <section style="padding: 120px 0; background: white;">
+            <div class="container" style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 80px; align-items: center;">
+                <div class="ui-mockup-wrapper">
+                    <div class="ui-mockup">
+                        <div style="border-bottom: 1px solid #F1F5F9; padding-bottom: 20px; margin-bottom: 20px;">
+                            <div style="font-weight: 800; color: var(--edu-blue);">Kịch bản: Bảo vệ Luận án</div>
+                            <div style="font-size: 14px; color: #64748B;">Giám khảo: Hội đồng chấm điểm khó tính</div>
+                        </div>
+                        <div style="background: #F8FAFC; padding: 20px; border-radius: 12px; margin-bottom: 16px;">
+                            <div style="font-size: 12px; color: #94A3B8; margin-bottom: 8px;">MỨC ĐỘ RÕ RÀNG</div>
+                            <div style="font-weight: 600; color: #4F46E5;">88/100 - "Trình bày mạch lạc"</div>
+                        </div>
+                        <div style="display: flex; gap: 10px;">
+                            <div style="flex: 1; height: 8px; background: #E2E8F0; border-radius: 4px; overflow: hidden;">
+                                <div style="width: 88%; height: 100%; background: #6366F1;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h2 class="section-title">Cách thức Nhập vai AI Yoodli vận hành cho Giáo dục</h2>
+                    <div style="display: flex; flex-direction: column; gap: 32px; margin-top: 40px;">
+                        <div style="display: flex; gap: 24px;">
+                            <div style="width: 48px; height: 48px; background: #E0E7FF; color: var(--edu-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; flex-shrink: 0;">1</div>
+                            <div>
+                                <h4 style="font-size: 20px; font-weight: 700; margin-bottom: 8px;">Thiết lập kịch bản học thuật</h4>
+                                <p style="color: #64748B;">Chọn từ các tình huống phổ biến: thuyết trình trước lớp, phỏng vấn xin việc, thảo luận nhóm hoặc bảo vệ đề tài.</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 24px;">
+                            <div style="width: 48px; height: 48px; background: #E0E7FF; color: var(--edu-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; flex-shrink: 0;">2</div>
+                            <div>
+                                <h4 style="font-size: 20px; font-weight: 700; margin-bottom: 8px;">Luyện tập với AI</h4>
+                                <p style="color: #64748B;">Tương tác với các nhân vật AI giả lập, bao gồm nhà tuyển dụng, giáo sư hoặc khán giả với nhiều tính cách khác nhau.</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 24px;">
+                            <div style="width: 48px; height: 48px; background: #E0E7FF; color: var(--edu-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; flex-shrink: 0;">3</div>
+                            <div>
+                                <h4 style="font-size: 20px; font-weight: 700; margin-bottom: 8px;">Nhận phân tích chi tiết</h4>
+                                <p style="color: #64748B;">Cải thiện thông qua phản hồi tự động về tốc độ nói, từ ngữ đệm, sự rõ ràng và cấu trúc lập luận.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Impact Section -->
+        <section class="container" style="padding: 120px 0;">
+            <h2 class="section-title" style="text-align: center; margin-bottom: 80px;">Tác động của Yoodli đối với <br>kết quả học tập</h2>
+            
+            <div class="impact-row">
+                <div class="impact-content">
+                    <div style="color: var(--edu-blue); font-weight: 700; margin-bottom: 12px;">TỰ TIN</div>
+                    <h3>Nâng cao sự tự tin của sinh viên</h3>
+                    <p>Cung cấp một môi trường luyện tập không phán xét, giúp sinh viên vượt qua nỗi sợ thuyết trình và giao tiếp lưu loát hơn trước đám đông.</p>
+                </div>
+                <div class="impact-visual">
+                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=800" alt="Confident student presenting" style="width: 100%; border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.05);">
+                </div>
+            </div>
+
+            <div class="impact-row" style="grid-template-columns: 1.2fr 1fr;">
+                <div class="impact-visual">
+                    <img src="https://images.unsplash.com/photo-1515168833906-d1a3b825c02a?auto=format&fit=crop&q=80&w=800" alt="Students in an interview" style="width: 100%; border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.05);">
+                </div>
+                <div class="impact-content">
+                    <div style="color: var(--edu-blue); font-weight: 700; margin-bottom: 12px;">SẴN SÀNG NGHỀ NGHIỆP</div>
+                    <h3>Tăng tỷ lệ có việc làm sau tốt nghiệp</h3>
+                    <p>Trang bị cho sinh viên những kỹ năng giao tiếp cốt lõi để thành công trong các cuộc phỏng vấn tuyển dụng, giúp họ nổi bật trước các nhà tuyển dụng.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <h2 class="section-title" style="text-align: center;">Câu hỏi thường gặp</h2>
+            <div style="margin-top: 60px;">
+                <div class="faq-item">
+                    <div class="faq-question">Yoodli có tích hợp với LMS của trường đại học không? <i class="ph ph-plus"></i></div>
+                    <div class="faq-answer">Có, Yoodli có khả năng tích hợp linh hoạt với nhiều hệ thống quản lý học tập (LMS) phổ biến như Canvas, Blackboard, và Moodle thông qua LTI.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Giảng viên có thể xem tiến trình của sinh viên không? <i class="ph ph-plus"></i></div>
+                    <div class="faq-answer">Có, bảng điều khiển quản trị cho phép giảng viên theo dõi tiến độ luyện tập, xem video thực hành và đánh giá sự cải thiện của từng sinh viên theo thời gian.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Sinh viên có thể sử dụng Yoodli ngoài giờ lên lớp không? <i class="ph ph-plus"></i></div>
+                    <div class="faq-answer">Chắc chắn rồi. Yoodli hoạt động 24/7, cho phép sinh viên tự luyện tập và nhận phản hồi mọi lúc, mọi nơi chỉ với máy tính có kết nối internet và camera/micro.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Yoodli có hỗ trợ các ngôn ngữ khác ngoài tiếng Anh không? <i class="ph ph-plus"></i></div>
+                    <div class="faq-answer">Hiện tại Yoodli hỗ trợ phân tích ngôn ngữ cho nhiều thứ tiếng, bao gồm tiếng Việt, giúp ích cho sinh viên ngoại ngữ và sinh viên quốc tế cải thiện kỹ năng giao tiếp.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="final-cta">
+            <div class="container">
+                <h2 style="font-size: 48px; font-weight: 800; margin-bottom: 24px;">Sẵn sàng trang bị kỹ năng <br>tương lai cho sinh viên?</h2>
+                <p style="font-size: 20px; opacity: 0.8; margin-bottom: 40px; max-width: 700px; margin-left: auto; margin-right: auto;">Đồng hành cùng hàng trăm trường đại học hàng đầu thế giới trong việc đổi mới phương pháp giáo dục kỹ năng mềm với Yoodli.</p>
+                <div style="display: flex; gap: 20px; justify-content: center;">
+                    <a href="../app.html" class="btn btn-primary-pill" style="background: white; color: var(--edu-navy); padding: 20px 48px; font-size: 20px;">Trải nghiệm miễn phí</a>
+                </div>
+                <p style="margin-top: 32px; font-size: 14px; opacity: 0.6;"><i class="ph ph-check-circle"></i> Đăng ký dành cho nhà trường • Hỗ trợ thiết lập toàn diện</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <!-- Footer will be injected by master_layout.js -->
+    <script src="../master_layout.js"></script>
+
+    <script>
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+                
+                const icon = item.querySelector('i');
+                if (parent.classList.contains('active')) {
+                    icon.classList.replace('ph-plus', 'ph-minus');
+                } else {
+                    icon.classList.replace('ph-minus', 'ph-plus');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

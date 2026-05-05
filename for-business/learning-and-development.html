@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Học tập & Phát triển (L&D) | Yoodli - Nâng cao kỹ năng đội ngũ</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../roleplay.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        .ld-hero {
+            padding: 120px 0 100px;
+            background: radial-gradient(circle at 90% 10%, rgba(99, 102, 241, 0.08) 0%, transparent 50%),
+                        linear-gradient(180deg, #FFFFFF 0%, #F1F5F9 100%);
+        }
+
+        .chat-visual {
+            background: white;
+            padding: 30px;
+            border-radius: 32px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+            position: relative;
+            max-width: 500px;
+        }
+
+        .chat-bubble {
+            background: #EEF2FF;
+            padding: 20px;
+            border-radius: 20px 20px 20px 0;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .ld-feature-card {
+            background: #F0F4FF;
+            padding: 40px;
+            border-radius: 32px;
+            text-align: left;
+            transition: all 0.3s ease;
+        }
+
+        .ld-feature-card:hover {
+            background: #E0E7FF;
+            transform: translateY(-5px);
+        }
+
+        .gap-section {
+            background: white;
+            padding: 100px 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .stat-item {
+            padding: 40px;
+            border-left: 2px solid #E2E8F0;
+        }
+
+        .stat-number {
+            font-size: 56px;
+            font-weight: 800;
+            color: var(--rp-indigo);
+            margin-bottom: 12px;
+        }
+
+        .dark-list-section {
+            background: #0B0E23;
+            color: white;
+            padding: 120px 0;
+            border-radius: 48px;
+            margin: 60px 0;
+        }
+
+        .ld-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .ld-list li {
+            background: rgba(255,255,255,0.05);
+            padding: 24px;
+            border-radius: 20px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s;
+        }
+
+        .ld-list li:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        .ld-list i {
+            color: #818CF8;
+            font-size: 24px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <!-- Navbar will be injected by master_layout.js -->
+
+    <main>
+        <!-- Hero -->
+        <section class="ld-hero">
+            <div class="container hero-grid" style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 80px; align-items: center;">
+                <div class="hero-content">
+                    <span style="color: var(--rp-indigo); font-weight: 700; font-size: 14px; text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-bottom: 24px;">GIẢI PHÁP CHO ĐÀO TẠO NỘI BỘ</span>
+                    <h1 style="font-size: 64px; font-weight: 800; line-height: 1.1; margin-bottom: 24px;">Học tập và Phát triển (L&D)</h1>
+                    <p style="font-size: 20px; color: var(--text-light); margin-bottom: 32px; line-height: 1.6;">Nâng cao và phát triển kỹ năng cho đội ngũ của bạn thông qua thực hành cá nhân hóa. Biến kiến thức lý thuyết thành hành động thực tế.</p>
+                    <a href="../app.html" class="btn btn-primary" style="padding: 18px 40px; font-size: 18px;">Bắt đầu dùng thử</a>
+                </div>
+                <div class="hero-visual">
+                    <div class="chat-visual">
+                        <div class="chat-bubble">Tôi muốn luyện tập cách đưa ra phản hồi khó khăn cho nhân viên...</div>
+                        <div style="display: flex; gap: 12px; align-items: center;">
+                            <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=100" alt="Avatar" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
+                            <div>
+                                <div style="font-weight: 700; font-size: 14px;">Chuyên gia L&D</div>
+                                <div style="font-size: 12px; color: #94A3B8;">Đang thực hành...</div>
+                            </div>
+                        </div>
+                        <div style="margin-top: 30px; display: flex; gap: 12px;">
+                            <div style="flex: 1; height: 40px; background: #F1F5F9; border-radius: 20px; display: flex; align-items: center; padding: 0 16px;">
+                                <div style="width: 100%; height: 4px; background: #CBD5E1; border-radius: 2px; position: relative;">
+                                    <div style="width: 60%; height: 100%; background: var(--rp-indigo); border-radius: 2px;"></div>
+                                </div>
+                            </div>
+                            <button style="width: 40px; height: 40px; border-radius: 50%; border: none; background: var(--rp-indigo); color: white;"><i class="ph-fill ph-microphone"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Logo Ticker -->
+        <section style="padding: 80px 0; background: white; text-align: center;">
+            <div class="container">
+                <p style="font-size: 14px; color: #94A3B8; margin-bottom: 40px; font-weight: 600;">Được tin dùng bởi các tổ chức giáo dục và đào tạo hàng đầu</p>
+                <div style="display: flex; justify-content: center; gap: 60px; filter: grayscale(1); opacity: 0.6; flex-wrap: wrap;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt="IBM" style="height: 30px;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg" alt="Microsoft" style="height: 30px;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Slack_Technologies_Logo.svg" alt="Slack" style="height: 30px;">
+                </div>
+            </div>
+        </section>
+
+        <!-- Use Cases -->
+        <section class="container" style="padding: 120px 0; text-align: center;">
+            <h2 style="font-size: 44px; font-weight: 800; margin-bottom: 60px;">Cách các đội ngũ L&D sử dụng Yoodli</h2>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;">
+                <div class="ld-feature-card">
+                    <i class="ph-fill ph-users-three" style="font-size: 32px; color: var(--rp-indigo); margin-bottom: 24px;"></i>
+                    <h3 style="font-size: 22px; font-weight: 700; margin-bottom: 16px;">Quy mô hóa huấn luyện 1-1</h3>
+                    <p style="color: var(--text-light); line-height: 1.6;">Cung cấp cho mọi nhân viên một huấn luyện viên AI cá nhân mà không tốn thêm chi phí nhân sự.</p>
+                </div>
+                <div class="ld-feature-card">
+                    <i class="ph-fill ph-heart" style="font-size: 32px; color: var(--rp-indigo); margin-bottom: 24px;"></i>
+                    <h3 style="font-size: 22px; font-weight: 700; margin-bottom: 16px;">Xây dựng sự tự tin & lòng trắc ẩn</h3>
+                    <p style="color: var(--text-light); line-height: 1.6;">Môi trường an toàn để nhân viên luyện tập các cuộc đối thoại khó khăn với sự thấu cảm.</p>
+                </div>
+                <div class="ld-feature-card">
+                    <i class="ph-fill ph-brain" style="font-size: 32px; color: var(--rp-indigo); margin-bottom: 24px;"></i>
+                    <h3 style="font-size: 22px; font-weight: 700; margin-bottom: 16px;">Hỗ trợ kỹ năng mềm</h3>
+                    <p style="color: var(--text-light); line-height: 1.6;">Tập trung vào giao tiếp, thuyết trình và lãnh đạo - những kỹ năng khó đào tạo nhất ở quy mô lớn.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gap Section -->
+        <section class="gap-section">
+            <div class="container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
+                <div style="position: relative;">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=1000" alt="Team practicing" style="width: 100%; border-radius: 32px;">
+                    <div style="position: absolute; top: -20px; left: -20px; background: var(--rp-indigo); color: white; padding: 20px; border-radius: 20px; font-weight: 700;">+44% Kỹ năng</div>
+                </div>
+                <div>
+                    <h2 style="font-size: 44px; font-weight: 800; margin-bottom: 24px;">Rút ngắn khoảng cách giữa việc học và thay đổi hành vi</h2>
+                    <p style="font-size: 18px; color: var(--text-light); line-height: 1.6;">Đào tạo truyền thống thường kết thúc ở việc xem video. Yoodli đưa người học vào tình huống thực tế, nơi họ phải ứng dụng kiến thức ngay lập tức.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Impact -->
+        <section class="container" style="padding: 100px 0;">
+            <h2 style="text-align: center; font-size: 44px; font-weight: 800; margin-bottom: 40px;">Tác động của bài nhập vai AI Yoodli</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">92%</div>
+                    <p style="font-weight: 700;">Mức độ hài lòng (CSAT)</p>
+                    <p style="color: #64748B; font-size: 14px;">Người học cảm thấy tự tin hơn sau mỗi buổi tập.</p>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">20%</div>
+                    <p style="font-weight: 700;">Tăng tương tác người học</p>
+                    <p style="color: #64748B; font-size: 14px;">Cao hơn so với các nền tảng học tập truyền thống.</p>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">44%</div>
+                    <p style="font-weight: 700;">Cải thiện kỹ năng</p>
+                    <p style="color: #64748B; font-size: 14px;">Được đo lường qua sự thay đổi hành vi thực tế.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dark Section: How it operates -->
+        <section class="container">
+            <div class="dark-list-section">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; padding: 0 80px; align-items: center;">
+                    <div>
+                        <h2 style="font-size: 44px; font-weight: 800; margin-bottom: 24px;">Xây dựng cho cách thức vận hành thực tế của L&D</h2>
+                        <p style="font-size: 18px; opacity: 0.8; margin-bottom: 40px;">Chúng tôi hiểu rằng L&D cần sự linh hoạt và khả năng đo lường.</p>
+                    </div>
+                    <ul class="ld-list">
+                        <li><i class="ph-fill ph-check-circle"></i> <span>Cá nhân hóa theo lộ trình phát triển riêng</span></li>
+                        <li><i class="ph-fill ph-check-circle"></i> <span>Ánh xạ vào mô hình năng lực nội bộ</span></li>
+                        <li><i class="ph-fill ph-check-circle"></i> <span>Đo lường sự thay đổi hành vi thực tế</span></li>
+                        <li><i class="ph-fill ph-check-circle"></i> <span>Tích hợp sâu với LMS/LXP (Docebo, Cornerstone)</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section style="padding: 100px 0; text-align: center;">
+            <div class="container" style="background: #F1F5F9; padding: 80px; border-radius: 48px;">
+                <h2 style="font-size: 44px; font-weight: 800; margin-bottom: 24px;">Nâng tầm năng lực đội ngũ ngay hôm nay</h2>
+                <a href="../app.html" class="btn btn-primary" style="padding: 20px 48px; font-size: 18px;">Dùng thử Yoodli miễn phí</a>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="faq-section" style="padding: 120px 0; max-width: 900px; margin: 0 auto;">
+            <h2 style="text-align:center; margin-bottom:60px; font-size:36px; font-weight:800;">Câu hỏi thường gặp từ đội ngũ L&D</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">Yoodli có tích hợp được với hệ thống LMS không? <i class="ph ph-plus"></i></div>
+                    <div class="faq-answer">Có, Yoodli hỗ trợ tích hợp SCORM và API với các hệ thống LMS phổ biến như Cornerstone, Docebo và SAP SuccessFactors.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Làm sao để đo lường ROI của việc huấn luyện? <i class="ph ph-plus"></i></div>
+                    <div class="faq-answer">Chúng tôi cung cấp bảng điều khiển phân tích chi tiết về sự tiến bộ của kỹ năng giao tiếp, thời gian luyện tập và điểm số cải thiện theo thời gian.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Yoodli có hỗ trợ nhiều ngôn ngữ không? <i class="ph ph-plus"></i></div>
+                    <div class="faq-answer">Yoodli hỗ trợ hơn 30 ngôn ngữ khác nhau, cho phép đội ngũ toàn cầu của bạn luyện tập bằng ngôn ngữ bản địa của họ.</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <!-- Footer will be injected by master_layout.js -->
+    <script src="../master_layout.js"></script>
+
+    <script>
+        document.querySelectorAll('.faq-question').forEach(q => {
+            q.addEventListener('click', () => {
+                q.parentElement.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Học tập qua Trải nghiệm | Yoodli - Biến kiến thức thành kỹ năng</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../roleplay.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        .exp-hero {
+            padding: 120px 0 100px;
+            background: radial-gradient(circle at 80% 30%, rgba(99, 102, 241, 0.08) 0%, transparent 50%), 
+                        linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
+        }
+
+        .short-card {
+            background: #EEF2FF;
+            padding: 32px;
+            border-radius: 24px;
+            text-align: left;
+            transition: all 0.3s ease;
+        }
+
+        .short-card:hover {
+            transform: translateY(-5px);
+            background: white;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+        }
+
+        .short-icon {
+            width: 48px;
+            height: 48px;
+            background: white;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: var(--rp-indigo);
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .enterprise-platform {
+            background: #F0F4FF;
+            padding: 120px 0;
+            border-radius: 100px;
+            margin: 40px 20px;
+        }
+
+        .outcome-visual {
+            background: linear-gradient(135deg, #6366F1 0%, #4F46E5 100%);
+            padding: 40px;
+            border-radius: 32px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .built-card {
+            background: white;
+            padding: 40px;
+            border-radius: 24px;
+            border: 1px solid #F1F5F9;
+            text-align: left;
+            transition: all 0.3s ease;
+        }
+
+        .built-card:hover {
+            border-color: var(--rp-indigo);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+        }
+
+        .built-icon {
+            font-size: 32px;
+            color: var(--rp-indigo);
+            margin-bottom: 24px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="container">
+            <a href="../index.html" class="logo">
+                <i class="ph-fill ph-microphone-stage"></i> yoodli
+            </a>
+            <nav class="nav-links">
+                <div class="nav-item">
+                    <a href="#">Nền tảng <i class="ph ph-caret-down"></i></a>
+                    <div class="dropdown">
+                        <a href="ai-roleplays.html" class="dropdown-item">
+                            <span class="title">Nhập vai AI</span>
+                            <span class="desc">Luyện tập với các Persona thực tế</span>
+                        </a>
+                        <a href="ai-tutor.html" class="dropdown-item">
+                            <span class="title">Gia sư AI</span>
+                            <span class="desc">Học kỹ năng giao tiếp 1-1</span>
+                        </a>
+                        <a href="ai-continuous-coaching.html" class="dropdown-item">
+                            <span class="title">Huấn luyện AI Liên tục</span>
+                            <span class="desc">Cải thiện kỹ năng mỗi ngày</span>
+                        </a>
+                        <a href="experiential-learning.html" class="dropdown-item">
+                            <span class="title">Học tập qua Trải nghiệm</span>
+                            <span class="desc">Biến kiến thức thành phản xạ</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <a href="#">Giải pháp <i class="ph ph-caret-down"></i></a>
+                    <div class="dropdown mega-menu">
+                        <div class="mega-col">
+                            <div class="mega-col-title">Dành cho Đội ngũ</div>
+                            <div class="mega-links">
+                                <a href="#" class="dropdown-item"><span class="title">Đội ngũ Doanh thu</span></a>
+                                <a href="#" class="dropdown-item"><span class="title">Hỗ trợ Bán hàng</span></a>
+                            </div>
+                        </div>
+                        <div class="mega-col">
+                            <div class="mega-col-title">Ngành nghề</div>
+                            <div class="mega-links">
+                                <a href="#" class="dropdown-item"><span class="title">Công nghệ & SaaS</span></a>
+                                <a href="#" class="dropdown-item"><span class="title">Dịch vụ Tài chính</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-item"><a href="../pricing.html">Bảng giá</a></div>
+                <div class="nav-item"><a href="#">Tài nguyên <i class="ph ph-caret-down"></i></a></div>
+                <div class="nav-item"><a href="#">Về chúng tôi <i class="ph ph-caret-down"></i></a></div>
+            </nav>
+            <div class="nav-actions">
+                <a href="../app.html" class="btn btn-text">Đăng nhập</a>
+                <a href="../app.html" class="btn btn-primary">Dùng thử Yoodli</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="exp-hero">
+            <div class="container hero-grid" style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 80px; align-items: center;">
+                <div class="hero-content">
+                    <span class="hero-tag" style="font-size: 11px; font-weight: 800; color: var(--rp-indigo); text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 16px; display: inline-block;">BIẾN KIẾN THỨC THÀNH HIỆU SUẤT THỰC TẾ</span>
+                    <h1 style="font-size: 72px; font-weight: 800; line-height: 1; margin-bottom: 24px; letter-spacing: -0.04em;">Học tập qua Trải nghiệm</h1>
+                    <p style="font-size: 18px; color: var(--text-light); margin-bottom: 32px; line-height: 1.6;">Vượt xa khỏi việc học lý thuyết. Yoodli chuyển đổi việc đào tạo từ tiêu thụ nội dung thụ động sang phát triển năng lực chủ động thông qua các mô phỏng thực tế và phản hồi tức thì.</p>
+                    <div style="display: flex; flex-direction: column; gap: 12px;">
+                        <a href="../app.html" class="btn btn-primary" style="padding: 18px 40px; font-size: 18px; width: fit-content;">Xem Yoodli trong thực tế</a>
+                    </div>
+                </div>
+                <div class="hero-visual" style="position: relative; display: flex; justify-content: center;">
+                    <div style="position: relative; width: 400px; height: 400px;">
+                        <div style="width: 380px; height: 380px; border-radius: 50%; background: linear-gradient(135deg, #FDFCFB 0%, #E2D1C3 100%); display: flex; align-items: center; justify-content: center; position: relative; z-index: 1;">
+                            <img src="https://images.unsplash.com/photo-1531123897727-8f129e16fd3c?auto=format&fit=crop&q=80&w=1000" alt="Learner" style="width: 320px; height: 320px; border-radius: 50%; object-fit: cover; border: 8px solid white; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
+                        </div>
+                        
+                        <!-- Floating Badges -->
+                        <div style="position: absolute; top: 20%; right: -20px; background: white; padding: 12px 20px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); display: flex; align-items: center; gap: 12px; z-index: 5;">
+                            <div style="width: 12px; height: 12px; background: #6366F1; border-radius: 50%;"></div>
+                            <span style="font-weight: 700; font-size: 14px;">Quan trọng</span>
+                        </div>
+                        <div style="position: absolute; bottom: 20%; left: -20px; background: white; padding: 12px 20px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); display: flex; align-items: center; gap: 12px; z-index: 5;">
+                            <div style="width: 12px; height: 12px; background: #22C55E; border-radius: 50%;"></div>
+                            <span style="font-weight: 700; font-size: 14px;">Xuất sắc</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why traditional fails -->
+        <section class="container" style="padding: 120px 0; text-align: center;">
+            <h2 style="font-size: 44px; font-weight: 800; margin-bottom: 24px;">Tại sao phương pháp học tập truyền thống chưa hiệu quả</h2>
+            <p style="color: var(--text-light); font-size: 18px; max-width: 800px; margin: 0 auto 60px;">Các tổ chức dành hàng tỷ đô la cho việc đào tạo nhưng sự thay đổi hành vi vẫn không nhất quán. Yoodli giải quyết các rào cản chính về hiệu suất.</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;">
+                <div class="short-card">
+                    <div class="short-icon"><i class="ph-bold ph-file-text"></i></div>
+                    <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 12px;">Nội dung bị lãng quên</h3>
+                    <p style="color: var(--text-light); font-size: 14px; line-height: 1.6;">Kiến thức được tiếp nhận nhưng không được áp dụng ngay lập tức dẫn đến việc bị quên lãng.</p>
+                </div>
+                <div class="short-card">
+                    <div class="short-icon"><i class="ph-bold ph-hourglass-low"></i></div>
+                    <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 12px;">Thiếu động lực</h3>
+                    <p style="color: var(--text-light); font-size: 14px; line-height: 1.6;">Các buổi workshop tạo ra động lực ngắn hạn nhưng không duy trì được đà phát triển.</p>
+                </div>
+                <div class="short-card">
+                    <div class="short-icon"><i class="ph-bold ph-list-bullets"></i></div>
+                    <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 12px;">Kỹ năng không đồng đều</h3>
+                    <p style="color: var(--text-light); font-size: 14px; line-height: 1.6;">Hiệu suất giao tiếp khác nhau rất nhiều giữa các quản lý, khu vực và thâm niên.</p>
+                </div>
+                <div class="short-card">
+                    <div class="short-icon"><i class="ph-bold ph-target"></i></div>
+                    <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 12px;">Khó đo lường</h3>
+                    <p style="color: var(--text-light); font-size: 14px; line-height: 1.6;">Mức độ sẵn sàng thường được giả định thay vì được xác nhận qua thực tế.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Platform Section -->
+        <section class="enterprise-platform">
+            <div class="container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
+                <div style="background: white; padding: 40px; border-radius: 32px; box-shadow: 0 20px 50px rgba(0,0,0,0.05);">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1000" alt="Dashboard" style="width: 100%; border-radius: 16px;">
+                </div>
+                <div>
+                    <h2 style="font-size: 44px; font-weight: 800; margin-bottom: 24px;">Nền tảng học tập qua trải nghiệm cho doanh nghiệp</h2>
+                    <p style="font-size: 18px; color: var(--text-light); margin-bottom: 24px; line-height: 1.6;">Yoodli biến việc đào tạo thành hiện thực bằng cách đưa người học vào các mô phỏng vai trò thực tế, nơi họ có thể thực hành, nhận phản hồi và cải thiện trong môi trường an toàn.</p>
+                    <p style="font-size: 18px; color: var(--text-light); line-height: 1.6;">Đây không chỉ là phân phối nội dung, mà là hành động phát triển kỹ năng thực sự.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- How it works -->
+        <section class="container" style="padding: 120px 0;">
+            <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px; align-items: center;">
+                <div>
+                    <h2 style="font-size: 44px; font-weight: 800; margin-bottom: 24px;">Cách thức hoạt động</h2>
+                    <p style="color: var(--text-light); font-size: 18px;">Chúng tôi tạo ra một vòng lặp phản hồi liên tục giúp củng cố kỹ năng.</p>
+                </div>
+                <div class="hw-card-list">
+                    <div class="hw-card">
+                        <div class="hw-icon"><i class="ph-bold ph-play-circle"></i></div>
+                        <div>
+                            <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 12px;">Thực hành các kịch bản thực tế</h3>
+                            <p style="color: var(--text-light); font-size: 15px;">Người học đối mặt với các tình huống khách hàng hoặc nội bộ thực tế để áp dụng kiến thức ngay lập tức.</p>
+                        </div>
+                    </div>
+                    <div class="hw-card">
+                        <div class="hw-icon"><i class="ph-bold ph-chat-centered-text"></i></div>
+                        <div>
+                            <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 12px;">Nhận phản hồi khách quan</h3>
+                            <p style="color: var(--text-light); font-size: 15px;">AI cung cấp các chỉ số và gợi ý cải thiện cụ thể, loại bỏ sự thiên kiến trong đánh giá.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Drives better outcomes -->
+        <section style="background: #F8FAFC; padding: 120px 0;">
+            <div class="container" style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 80px; align-items: center;">
+                <div class="outcome-visual">
+                    <img src="https://images.unsplash.com/photo-1551288049-bbbda536339a?auto=format&fit=crop&q=80&w=1000" alt="Outcome Visual" style="width: 100%; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+                </div>
+                <div>
+                    <h2 style="font-size: 44px; font-weight: 800; margin-bottom: 24px;">Đo lường mức độ sẵn sàng</h2>
+                    <p style="font-size: 18px; color: var(--text-light); margin-bottom: 32px; line-height: 1.6;">Lãnh đạo có cái nhìn rõ ràng về các kỹ năng đã được chứng minh qua thực tế, không chỉ là hoàn thành các khóa học lý thuyết.</p>
+                    <div class="carousel-dots" style="display: flex; gap: 8px;">
+                        <span style="width: 24px; height: 4px; background: var(--rp-indigo); border-radius: 2px;"></span>
+                        <span style="width: 12px; height: 4px; background: #E2E8F0; border-radius: 2px;"></span>
+                        <span style="width: 12px; height: 4px; background: #E2E8F0; border-radius: 2px;"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Built for Enterprise -->
+        <section class="container" style="padding: 120px 0; text-align: center;">
+            <h2 style="font-size: 44px; font-weight: 800; margin-bottom: 60px;">Xây dựng cho các tổ chức quy mô lớn</h2>
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;">
+                <div class="built-card">
+                    <i class="ph ph-users-four built-icon"></i>
+                    <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 12px;">Persona tùy chỉnh</h3>
+                    <p style="color: var(--text-light); font-size: 14px; line-height: 1.6;">Căn chỉnh theo tiêu chuẩn và thông điệp thương hiệu cụ thể của bạn.</p>
+                </div>
+                <div class="built-card">
+                    <i class="ph ph-globe-hemisphere-west built-icon"></i>
+                    <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 12px;">Đánh giá nhất quán</h3>
+                    <p style="color: var(--text-light); font-size: 14px; line-height: 1.6;">Đánh giá công bằng trên toàn bộ các đội ngũ và khu vực địa lý.</p>
+                </div>
+                <div class="built-card">
+                    <i class="ph ph-shield-check built-icon"></i>
+                    <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 12px;">Bảo mật & Tuân thủ</h3>
+                    <h4 style="font-size: 14px; margin-bottom: 8px; color: var(--rp-indigo);">SOC2 & GDPR</h4>
+                    <p style="color: var(--text-light); font-size: 14px; line-height: 1.6;">Đáp ứng các tiêu chuẩn bảo mật khắt khe nhất của doanh nghiệp.</p>
+                </div>
+                <div class="built-card">
+                    <i class="ph ph-intersect built-icon"></i>
+                    <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 12px;">Tích hợp mượt mà</h3>
+                    <p style="color: var(--text-light); font-size: 14px; line-height: 1.6;">Kết nối với Nhập vai, Gia sư và Huấn luyện liên tục.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="faq-section" style="padding: 120px 0; max-width: 900px; margin: 0 auto;">
+            <h2 style="text-align:center; margin-bottom:60px; font-size:36px; font-weight:800;">Câu hỏi thường gặp</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">Học tập qua trải nghiệm là gì? <i class="ph ph-plus"></i></div>
+                    <div class="faq-answer">Học tập qua trải nghiệm là phương pháp học tập thông qua hành động thực tế và phản xạ. Thay vì chỉ nghe giảng, người học trực tiếp tham gia vào các mô phỏng kịch bản để xây dựng kỹ năng.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Nó khác gì với đào tạo truyền thống? <i class="ph ph-plus"></i></div>
+                    <div class="faq-answer">Đào tạo truyền thống thường tập trung vào lý thuyết và tiếp nhận thông tin một chiều. Học tập qua trải nghiệm tập trung vào việc áp dụng kiến thức vào thực tế và cải thiện thông qua phản hồi.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Yoodli quy mô hóa việc học này như thế nào? <i class="ph ph-plus"></i></div>
+                    <div class="faq-answer">Thông qua AI, Yoodli có thể cung cấp hàng ngàn phiên thực hành cá nhân hóa cùng lúc, điều mà các huấn luyện viên con người không thể thực hiện được do giới hạn về thời gian và nhân sự.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Nó có hỗ trợ quy trình onboarding không? <i class="ph ph-plus"></i></div>
+                    <div class="faq-answer">Hoàn toàn có. Học tập qua trải nghiệm giúp nhân viên mới nhanh chóng nắm bắt văn hóa và kỹ năng cần thiết bằng cách thực hành các tình huống công việc thực tế ngay từ ngày đầu.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Làm thế nào để đo lường tác động? <i class="ph ph-plus"></i></div>
+                    <div class="faq-answer">Yoodli cung cấp các chỉ số về sự tiến bộ của kỹ năng, mức độ tự tin và điểm số thực hiện trong các kịch bản mô phỏng, giúp lãnh đạo thấy rõ hiệu quả đầu tư đào tạo.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="container" style="padding: 120px 0; text-align: center;">
+            <div style="background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%); padding: 100px 40px; border-radius: 48px; color: white;">
+                <h2 style="font-size: 56px; font-weight: 800; margin-bottom: 24px;">Học tập nên là một hành trình hành động</h2>
+                <p style="font-size: 20px; opacity: 0.9; margin-bottom: 40px; max-width: 800px; margin-left: auto; margin-right: auto;">Bắt đầu quy mô hóa việc học tập qua trải nghiệm cho toàn bộ tổ chức của bạn ngay hôm nay.</p>
+                <a href="../app.html" class="btn btn-primary" style="background: white; color: var(--rp-indigo); padding: 20px 48px; font-size: 20px; font-weight: 800; border-radius: 100px;">Dùng thử Yoodli ngay</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" style="background: #F1F5F9; padding: 80px 0 40px; margin-top: 100px;">
+        <div class="container">
+            <div class="footer-grid" style="display: grid; grid-template-columns: 2fr repeat(4, 1fr); gap: 40px;">
+                <div class="footer-col">
+                    <a href="../index.html" class="logo" style="margin-bottom: 24px; display: inline-block;">
+                        <i class="ph-fill ph-microphone-stage"></i> yoodli
+                    </a>
+                    <p style="color: var(--text-light); font-size: 14px;">Làm chủ nghệ thuật giao tiếp với AI. Nền tảng hàng đầu thế giới về huấn luyện diễn thuyết và nhập vai.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Nền tảng</h4>
+                    <a href="ai-roleplays.html">Nhập vai AI</a>
+                    <a href="ai-tutor.html">Gia sư AI</a>
+                    <a href="ai-continuous-coaching.html">Huấn luyện AI</a>
+                    <a href="experiential-learning.html">Học tập trải nghiệm</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Giải pháp</h4>
+                    <a href="#">Bán hàng</a>
+                    <a href="#">Hỗ trợ</a>
+                    <a href="#">Lãnh đạo</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Công ty</h4>
+                    <a href="#">Về chúng tôi</a>
+                    <a href="#">Tuyển dụng</a>
+                    <a href="#">Blog</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Hỗ trợ</h4>
+                    <a href="#">Trung tâm trợ giúp</a>
+                    <a href="#">Liên hệ</a>
+                    <a href="#">Bảo mật</a>
+                </div>
+            </div>
+            <div style="border-top: 1px solid #CBD5E1; margin-top: 60px; padding-top: 24px; display: flex; justify-content: space-between; font-size: 14px; color: var(--text-light);">
+                <p>&copy; 2024 Yoodli Clone Vietnam. Tất cả quyền được bảo lưu.</p>
+                <div style="display: flex; gap: 24px;">
+                    <a href="#"><i class="ph ph-linkedin-logo"></i></a>
+                    <a href="#"><i class="ph ph-twitter-logo"></i></a>
+                    <a href="#"><i class="ph ph-youtube-logo"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(q => {
+            q.addEventListener('click', () => {
+                const item = q.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+
+</html>

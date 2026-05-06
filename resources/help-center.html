@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trung tâm Trợ giúp | Yoodli AI</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        :root {
+            --help-blue: #5548FF;
+            --text-dark: #000235;
+        }
+
+        body { font-family: 'Inter', sans-serif; color: #1E293B; background: #F8FAFC; margin: 0; }
+        .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+
+        /* Help Header */
+        .help-header {
+            background: var(--help-blue);
+            padding: 40px 0 60px;
+            color: white;
+            text-align: center;
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1000px;
+            margin: 0 auto 40px;
+            padding: 0 24px;
+        }
+
+        .help-logo { display: flex; align-items: center; gap: 8px; font-weight: 850; font-size: 24px; color: white; text-decoration: none; }
+        .lang-selector { display: flex; align-items: center; gap: 4px; font-size: 14px; font-weight: 600; opacity: 0.9; cursor: pointer; }
+
+        .help-header h1 {
+            font-size: 32px;
+            font-weight: 850;
+            margin-bottom: 32px;
+        }
+
+        .search-wrapper {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .search-wrapper i {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: rgba(255,255,255,0.7);
+            font-size: 20px;
+        }
+
+        .search-input {
+            width: 100%;
+            background: rgba(255,255,255,0.2);
+            border: 1.5px solid rgba(255,255,255,0.3);
+            border-radius: 12px;
+            padding: 14px 14px 14px 48px;
+            color: white;
+            font-size: 16px;
+            outline: none;
+            transition: background 0.3s;
+        }
+
+        .search-input::placeholder { color: rgba(255,255,255,0.7); }
+        .search-input:focus { background: rgba(255,255,255,0.3); }
+
+        /* Category Cards */
+        .help-categories { margin-top: -30px; }
+        .cat-card {
+            background: white;
+            border-radius: 12px;
+            padding: 32px;
+            display: flex;
+            gap: 24px;
+            margin-bottom: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            transition: transform 0.2s;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .cat-card:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.06); }
+
+        .cat-icon {
+            width: 56px;
+            height: 56px;
+            background: #F1F5F9;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: var(--help-blue);
+        }
+
+        .cat-content h3 {
+            font-size: 18px;
+            font-weight: 800;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+        }
+
+        .cat-content p {
+            font-size: 15px;
+            color: #64748B;
+            line-height: 1.5;
+            margin-bottom: 16px;
+        }
+
+        .contributor-line {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 13px;
+            color: #94A3B8;
+        }
+
+        .avatars { display: flex; }
+        .avatars img { width: 24px; height: 24px; border-radius: 50%; border: 2px solid white; margin-right: -8px; }
+
+        /* Article List */
+        .most-viewed {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            margin-top: 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+        }
+
+        .most-viewed h2 { font-size: 20px; font-weight: 850; margin-bottom: 32px; color: var(--text-dark); }
+        
+        .article-link {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+            border-top: 1px solid #F1F5F9;
+            text-decoration: none;
+            color: #475569;
+            font-size: 15px;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .article-link:hover { color: var(--help-blue); }
+        .article-link i { font-size: 14px; color: #94A3B8; }
+
+        /* Help Footer */
+        .help-footer {
+            padding: 80px 0;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .help-footer a {
+            text-decoration: none;
+            color: #94A3B8;
+            font-size: 14px;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .help-footer a:hover { color: var(--help-blue); }
+    </style>
+</head>
+<body>
+    <header class="help-header">
+        <div class="header-top">
+            <a href="../index.html" class="help-logo">
+                <i class="ph-fill ph-microphone-stage"></i> yoodli
+            </a>
+            <div class="lang-selector">
+                <i class="ph ph-globe"></i> English <i class="ph ph-caret-down"></i>
+            </div>
+        </div>
+        <h1>Welcome to the Yoodli Help Center!</h1>
+        <div class="search-wrapper">
+            <i class="ph ph-magnifying-glass"></i>
+            <input type="text" class="search-input" placeholder="Search for articles...">
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="help-categories">
+            <!-- Individual Accounts -->
+            <a href="#" class="cat-card">
+                <div class="cat-icon"><i class="ph ph-user"></i></div>
+                <div class="cat-content">
+                    <h3>Individual Accounts</h3>
+                    <p>Everything you need for your Free, Pro, or Advanced Plan</p>
+                    <div class="contributor-line">
+                        <div class="avatars">
+                            <img src="https://i.pravatar.cc/100?u=a" alt="User">
+                            <img src="https://i.pravatar.cc/100?u=b" alt="User">
+                            <img src="https://i.pravatar.cc/100?u=c" alt="User">
+                        </div>
+                        By Derek and 3 others • 16 articles
+                    </div>
+                </div>
+            </a>
+
+            <!-- Organizations -->
+            <a href="#" class="cat-card">
+                <div class="cat-icon"><i class="ph ph-buildings"></i></div>
+                <div class="cat-content">
+                    <h3>Organizations and Admins</h3>
+                    <p>Get help if you are an Admin and find what you need for your organization</p>
+                    <div class="contributor-line">
+                        <div class="avatars">
+                            <img src="https://i.pravatar.cc/100?u=d" alt="User">
+                            <img src="https://i.pravatar.cc/100?u=e" alt="User">
+                            <img src="https://i.pravatar.cc/100?u=f" alt="User">
+                        </div>
+                        By Christian and 3 others • 41 articles
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- Most Viewed -->
+        <section class="most-viewed">
+            <h2>Most Viewed Articles</h2>
+            <div class="article-list">
+                <a href="#" class="article-link">Yoodli Release Notes <i class="ph ph-caret-right"></i></a>
+                <a href="#" class="article-link">Yoodli Overview <i class="ph ph-caret-right"></i></a>
+                <a href="#" class="article-link">Practice with Yoodli <i class="ph ph-caret-right"></i></a>
+                <a href="#" class="article-link">How to build and customize Roleplays <i class="ph ph-caret-right"></i></a>
+                <a href="#" class="article-link">Roles in Yoodli organizations <i class="ph ph-caret-right"></i></a>
+                <a href="#" class="article-link">Subscriptions <i class="ph ph-caret-right"></i></a>
+            </div>
+        </section>
+
+        <!-- Help Footer -->
+        <footer class="help-footer">
+            <a href="#">Yoodli Support</a>
+            <a href="#">Yoodli Site Status</a>
+        </footer>
+    </main>
+</body>
+</html>

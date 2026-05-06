@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Báo chí & Truyền thông | Yoodli</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        :root {
+            --navy-dark: #000235;
+            --primary-blue: #3B82F6;
+            --bg-light: #F8FAFC;
+        }
+
+        body { font-family: 'Inter', sans-serif; color: #1E293B; background: white; margin: 0; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+        /* Page Header */
+        .page-header {
+            text-align: center;
+            padding: 60px 0;
+            background: linear-gradient(90deg, #E0F2FE 0%, #F5F3FF 100%);
+            margin-bottom: 60px;
+        }
+        
+        .page-header h1 {
+            font-size: 40px;
+            font-weight: 900;
+            color: var(--navy-dark);
+            margin: 0;
+        }
+
+        /* Section Titles */
+        .section-title {
+            font-size: 32px;
+            font-weight: 850;
+            color: var(--navy-dark);
+            margin-bottom: 32px;
+        }
+
+        /* Featured Section */
+        .featured-section { padding-bottom: 80px; }
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .featured-card {
+            background: white;
+            border-radius: 20px;
+            border: 1px solid rgba(226, 232, 240, 0.6);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            overflow: hidden;
+            padding: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .featured-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+        }
+
+        .card-visual {
+            background: #EEF2FF;
+            height: 180px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+
+        .card-visual img {
+            max-width: 70%;
+            max-height: 50%;
+            object-fit: contain;
+            transition: transform 0.3s;
+        }
+        
+        .featured-card:hover .card-visual img { transform: scale(1.1); }
+
+        .featured-card h3 {
+            font-size: 18px;
+            font-weight: 800;
+            line-height: 1.4;
+            color: var(--navy-dark);
+            margin-bottom: 12px;
+        }
+
+        .featured-card p {
+            font-size: 14px;
+            color: #64748B;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Press Coverage Grid */
+        .press-grid-section { padding-bottom: 100px; }
+        .press-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .press-card {
+            background: white;
+            border-radius: 16px;
+            border: 1px solid rgba(226, 232, 240, 0.6);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .press-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+        }
+
+        .press-card .card-thumb {
+            height: 150px;
+            background: #F1F5F9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .press-card .card-thumb img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            filter: grayscale(0.2);
+            transition: filter 0.3s;
+        }
+
+        .press-card:hover .card-thumb img { filter: grayscale(0); }
+
+        .press-info {
+            padding: 20px;
+            flex-grow: 1;
+        }
+
+        .source-label {
+            font-size: 10px;
+            font-weight: 800;
+            color: #94A3B8;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .press-title {
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 1.5;
+            color: var(--navy-dark);
+            margin: 0;
+        }
+
+        @media (max-width: 1024px) {
+            .press-grid { grid-template-columns: repeat(3, 1fr); }
+            .featured-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            .press-grid { grid-template-columns: repeat(2, 1fr); }
+            .featured-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 480px) {
+            .press-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <!-- Page Header -->
+        <section class="page-header">
+            <h1>Press & Media</h1>
+        </section>
+
+        <!-- Featured Section -->
+        <section class="featured-section">
+            <div class="container">
+                <h2 class="section-title">Featured</h2>
+                <div class="featured-grid">
+                    <!-- Axios -->
+                    <a href="#" class="press-card featured-card">
+                        <div class="card-visual">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Axios_logo.svg" alt="Axios">
+                        </div>
+                        <div class="press-info" style="padding:0">
+                            <span class="source-label">AXIOS</span>
+                            <h3>Exclusive: AI role-playing platform Yoodli raises $6M</h3>
+                            <p>Exclusive: AI role-playing startup Yoodli raises $6.3M led by Madrona and Norwest.</p>
+                        </div>
+                    </a>
+
+                    <!-- LinkedIn -->
+                    <a href="#" class="press-card featured-card">
+                        <div class="card-visual">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/0/01/LinkedIn_Logo.svg" alt="LinkedIn">
+                        </div>
+                        <div class="press-info" style="padding:0">
+                            <span class="source-label">LINKEDIN</span>
+                            <h3>Yoodli featured on LinkedIn News Top Startups</h3>
+                            <p>Yoodli has been named one of LinkedIn's Top Startups list for its innovative approach to AI coaching.</p>
+                        </div>
+                    </a>
+
+                    <!-- Google Cloud -->
+                    <a href="#" class="press-card featured-card">
+                        <div class="card-visual" style="background: #1a73e8;">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Google_Cloud_logo.svg" alt="Google Cloud" style="filter: brightness(0) invert(1);">
+                        </div>
+                        <div class="press-info" style="padding:0">
+                            <span class="source-label">GOOGLE CLOUD</span>
+                            <h3>Yoodli boosts confidence of job seekers with Google Cloud</h3>
+                            <p>Yoodli is helping millions of job seekers, presenters, and leaders speak with more confidence using Google Cloud AI.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Press Coverage Grid -->
+        <section class="press-grid-section">
+            <div class="container">
+                <h2 class="section-title">Press Coverage</h2>
+                <div class="press-grid">
+                    <!-- Row 1 -->
+                    <a href="#" class="press-card">
+                        <div class="card-thumb"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Business_Insider_logo.svg" alt="BI"></div>
+                        <div class="press-info">
+                            <span class="source-label">BUSINESS INSIDER</span>
+                            <p class="press-title">An interview coaching startup helps users with their video speaking in real-time</p>
+                        </div>
+                    </a>
+                    <a href="#" class="press-card">
+                        <div class="card-thumb"><img src="https://www.fastcompany.com/static/images/fastcompany-logo.svg" alt="FastCompany"></div>
+                        <div class="press-info">
+                            <span class="source-label">FAST COMPANY</span>
+                            <p class="press-title">Why you should practice interview online with Yoodli before you go</p>
+                        </div>
+                    </a>
+                    <a href="#" class="press-card">
+                        <div class="card-thumb"><h3>Madrona</h3></div>
+                        <div class="press-info">
+                            <span class="source-label">MADRONA</span>
+                            <p class="press-title">Announcing our investment in Yoodli: Personalized AI Communication Coach</p>
+                        </div>
+                    </a>
+                    <a href="#" class="press-card">
+                        <div class="card-thumb"><h3>GeekWire</h3></div>
+                        <div class="press-info">
+                            <span class="source-label">GEEKWIRE</span>
+                            <p class="press-title">Startup of the week: Yoodli wants to fix your speaking problems</p>
+                        </div>
+                    </a>
+
+                    <!-- Row 2 -->
+                    <a href="#" class="press-card">
+                        <div class="card-thumb"><h3>Forbes</h3></div>
+                        <div class="press-info">
+                            <span class="source-label">FORBES</span>
+                            <p class="press-title">Powering Next-Gen Communication Skills with Yoodli AI</p>
+                        </div>
+                    </a>
+                    <a href="#" class="press-card">
+                        <div class="card-thumb"><img src="https://yoodli.ai/_next/static/media/logo.8d172314.svg" alt="Yoodli" style="height:30px"></div>
+                        <div class="press-info">
+                            <span class="source-label">YAHOO</span>
+                            <p class="press-title">Yoodli raises $6M to build AI platform for interpersonal speaking</p>
+                        </div>
+                    </a>
+                    <a href="#" class="press-card">
+                        <div class="card-thumb"><h3>Fortune</h3></div>
+                        <div class="press-info">
+                            <span class="source-label">FORTUNE</span>
+                            <p class="press-title">Yoodli is using AI to help workers sharpen their soft skills</p>
+                        </div>
+                    </a>
+                    <a href="#" class="press-card">
+                        <div class="card-thumb"><h3>TechCrunch</h3></div>
+                        <div class="press-info">
+                            <span class="source-label">TECHCRUNCH</span>
+                            <p class="press-title">Yoodli raises funding to build AI-powered communication coach</p>
+                        </div>
+                    </a>
+
+                    <!-- Row 3 -->
+                    <a href="#" class="press-card">
+                        <div class="card-thumb"><h3>The Information</h3></div>
+                        <div class="press-info">
+                            <span class="source-label">THE INFORMATION</span>
+                            <p class="press-title">Why Toastmasters is adopting Yoodli's AI tools for its members</p>
+                        </div>
+                    </a>
+                    <a href="#" class="press-card">
+                        <div class="card-thumb"><h3>Bloomberg</h3></div>
+                        <div class="press-info">
+                            <span class="source-label">BLOOMBERG</span>
+                            <p class="press-title">How Yoodli uses AI to help you nail your next job interview</p>
+                        </div>
+                    </a>
+                    <a href="#" class="press-card">
+                        <div class="card-thumb"><h3>NBC</h3></div>
+                        <div class="press-info">
+                            <span class="source-label">NBC NEWS</span>
+                            <p class="press-title">Could AI help you become a better public speaker? Meet Yoodli</p>
+                        </div>
+                    </a>
+                    <a href="#" class="press-card">
+                        <div class="card-thumb"><h3>PR Week</h3></div>
+                        <div class="press-info">
+                            <span class="source-label">PR WEEK</span>
+                            <p class="press-title">Yoodli raises $6M to fix the world's speaking problems</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="../master_layout.js"></script>
+</body>
+</html>

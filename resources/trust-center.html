@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trung tâm Tin cậy | Yoodli AI</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        :root {
+            --trust-blue: #2563EB;
+            --trust-dark: #0F172A;
+            --bg-light: #F8FAFC;
+        }
+
+        body { font-family: 'Inter', sans-serif; color: #1E293B; background: white; margin: 0; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+        /* Trust Header */
+        .trust-header {
+            background: linear-gradient(135deg, #2563EB 0%, #06B6D4 100%);
+            padding: 80px 0;
+            color: white;
+        }
+
+        .trust-header h1 { font-size: 32px; font-weight: 850; margin-bottom: 24px; }
+        .trust-header p { font-size: 16px; line-height: 1.6; max-width: 600px; opacity: 0.9; margin-bottom: 24px; }
+        .trust-meta { display: flex; gap: 24px; font-size: 14px; font-weight: 600; }
+        .trust-meta a { color: white; text-decoration: none; display: flex; align-items: center; gap: 8px; }
+
+        /* Tabs */
+        .trust-tabs { border-bottom: 1px solid #E2E8F0; background: white; sticky: top; }
+        .tab-list { display: flex; gap: 32px; }
+        .tab-item { padding: 20px 0; font-size: 14px; font-weight: 600; color: #64748B; cursor: pointer; border-bottom: 2px solid transparent; }
+        .tab-item.active { color: var(--trust-blue); border-bottom-color: var(--trust-blue); }
+
+        /* Main Content Grid */
+        .trust-grid {
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 60px;
+            padding: 60px 0;
+        }
+
+        /* Left Column */
+        .left-col section { margin-bottom: 60px; }
+        .left-col h2 { font-size: 16px; font-weight: 800; color: var(--trust-dark); margin-bottom: 24px; text-transform: uppercase; letter-spacing: 0.05em; }
+        
+        .compliance-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 16px;
+            background: #F8FAFC;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            font-size: 14px;
+            font-weight: 700;
+        }
+        .compliance-item i { font-size: 24px; color: var(--trust-blue); }
+
+        .resource-link {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #F1F5F9;
+            text-decoration: none;
+            color: #475569;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .resource-link i { color: #94A3B8; font-size: 14px; }
+
+        /* Right Column */
+        .controls-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .control-card {
+            border: 1px solid #E2E8F0;
+            border-radius: 12px;
+            padding: 24px;
+        }
+
+        .control-card h3 { font-size: 15px; font-weight: 800; margin-bottom: 16px; display: flex; justify-content: space-between; }
+        .control-list { list-style: none; padding: 0; }
+        .control-list li { font-size: 13px; color: #475569; margin-bottom: 10px; display: flex; gap: 10px; align-items: start; }
+        .control-list li i { color: #22C55E; margin-top: 2px; }
+
+        .data-collected {
+            background: #F8FAFC;
+            border-radius: 12px;
+            padding: 32px;
+            margin-top: 40px;
+        }
+
+        .data-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .data-item { display: flex; align-items: center; gap: 12px; font-size: 14px; font-weight: 500; }
+        .data-item.yes i { color: #22C55E; }
+        .data-item.no i { color: #EF4444; }
+
+        .subprocessors-table { margin-top: 60px; }
+        .sub-row {
+            display: grid;
+            grid-template-columns: 60px 1fr 200px;
+            padding: 20px 0;
+            border-bottom: 1px solid #F1F5F9;
+            align-items: center;
+        }
+        .sub-logo { width: 32px; height: 32px; background: #F1F5F9; border-radius: 6px; }
+        .sub-info h4 { font-size: 14px; font-weight: 700; margin: 0; }
+        .sub-info p { font-size: 12px; color: #64748B; margin: 4px 0 0; }
+        .sub-loc { font-size: 12px; color: #64748B; text-align: right; }
+
+        /* FAQ */
+        .faq-section { margin-top: 80px; }
+        .faq-item { border: 1px solid #E2E8F0; border-radius: 8px; margin-bottom: 8px; }
+        .faq-q { padding: 16px; font-size: 14px; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; }
+
+        @media (max-width: 900px) {
+            .trust-grid { grid-template-columns: 1fr; }
+            .controls-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header class="trust-header">
+        <div class="container">
+            <h1>Yoodli</h1>
+            <p>Chào mừng bạn đến với Trung tâm Tin cậy của Yoodli. Chúng tôi tin rằng giao tiếp nên là một trải nghiệm thú vị và chân thực. Bảo mật và tuân thủ là ưu tiên hàng đầu của chúng tôi để đảm bảo dữ liệu của bạn luôn an toàn.</p>
+            <div class="trust-meta">
+                <a href="mailto:compliance@yoodli.ai"><i class="ph ph-envelope"></i> compliance@yoodli.ai</a>
+                <a href="#"><i class="ph ph-shield-check"></i> Privacy Policy</a>
+            </div>
+        </div>
+    </header>
+
+    <nav class="trust-tabs">
+        <div class="container tab-list">
+            <div class="tab-item active">Overview</div>
+            <div class="tab-item">Resources</div>
+            <div class="tab-item">Controls</div>
+            <div class="tab-item">Subprocessors</div>
+            <div class="tab-item">FAQ</div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="trust-grid">
+            <!-- Left Column -->
+            <aside class="left-col">
+                <section>
+                    <h2>Compliance</h2>
+                    <div class="compliance-item">
+                        <i class="ph-fill ph-seal-check"></i> SOC 2 Type 2
+                    </div>
+                    <div class="compliance-item">
+                        <i class="ph-fill ph-shield-star"></i> GDPR
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Resources</h2>
+                    <a href="#" class="resource-link">SOC 2 Type II Report <i class="ph ph-lock"></i></a>
+                    <a href="#" class="resource-link">Penetration test <i class="ph ph-lock"></i></a>
+                    <a href="#" class="resource-link">Yoodli Data Flow Diagram <i class="ph ph-lock"></i></a>
+                    <a href="#" class="resource-link">Code of Conduct <i class="ph ph-lock"></i></a>
+                    <a href="#" class="resource-link">Incident Response Plan <i class="ph ph-lock"></i></a>
+                    <a href="#" class="resource-link">Cryptography Policy <i class="ph ph-lock"></i></a>
+                </section>
+            </aside>
+
+            <!-- Right Column -->
+            <div class="right-col">
+                <div class="controls-grid">
+                    <!-- Infrastructure -->
+                    <div class="control-card">
+                        <h3>Infrastructure security <i class="ph ph-caret-right"></i></h3>
+                        <ul class="control-list">
+                            <li><i class="ph-fill ph-check-circle"></i> Unique production database authentication</li>
+                            <li><i class="ph-fill ph-check-circle"></i> Encryption key access restricted</li>
+                            <li><i class="ph-fill ph-check-circle"></i> Unique account authentication enforced</li>
+                        </ul>
+                    </div>
+                    <!-- Organizational -->
+                    <div class="control-card">
+                        <h3>Organizational security <i class="ph ph-caret-right"></i></h3>
+                        <ul class="control-list">
+                            <li><i class="ph-fill ph-check-circle"></i> Asset disposal procedures utilized</li>
+                            <li><i class="ph-fill ph-check-circle"></i> Production inventory maintained</li>
+                            <li><i class="ph-fill ph-check-circle"></i> Portable media encrypted</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="data-collected">
+                    <h2 style="font-size: 16px; margin-bottom: 24px;">Data collected</h2>
+                    <div class="data-grid">
+                        <div class="data-item yes"><i class="ph ph-check"></i> Customer PII</div>
+                        <div class="data-item yes"><i class="ph ph-check"></i> Employee PII</div>
+                        <div class="data-item no"><i class="ph ph-x"></i> Credit card information</div>
+                        <div class="data-item no"><i class="ph ph-x"></i> Personal health information</div>
+                    </div>
+                </div>
+
+                <div class="subprocessors-table">
+                    <h2 style="font-size: 16px; margin-bottom: 24px;">Subprocessors</h2>
+                    <div class="sub-row">
+                        <div class="sub-logo" style="background-image: url('https://www.google.com/favicon.ico'); background-size: cover;"></div>
+                        <div class="sub-info"><h4>Google Cloud Platform</h4><p>Primary cloud hosting</p></div>
+                        <div class="sub-loc">United States, Europe</div>
+                    </div>
+                    <div class="sub-row">
+                        <div class="sub-logo" style="background-image: url('https://www.microsoft.com/favicon.ico'); background-size: cover;"></div>
+                        <div class="sub-info"><h4>Microsoft Azure</h4><p>AI Services</p></div>
+                        <div class="sub-loc">United States, Europe</div>
+                    </div>
+                </div>
+
+                <div class="faq-section">
+                    <h2 style="font-size: 16px; margin-bottom: 24px;">FAQ</h2>
+                    <div class="faq-item">
+                        <div class="faq-q">Do you use customer data for AI training? <i class="ph ph-caret-down"></i></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-q">What data do you collect? <i class="ph ph-caret-down"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer style="padding: 60px 0; text-align: center; border-top: 1px solid #F1F5F9;">
+        <p style="font-size: 12px; color: #94A3B8; font-weight: 700;">POWERED BY <span style="color: var(--trust-blue);">VANTA</span></p>
+    </footer>
+
+    <script src="../master_layout.js"></script>
+</body>
+</html>

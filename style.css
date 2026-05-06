@@ -20,6 +20,16 @@
     --glass-border: rgba(255, 255, 255, 0.2);
 }
 
+.yoodli-logo-small {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-weight: 800;
+    color: #4F46E5;
+    font-size: inherit;
+    vertical-align: middle;
+}
+
 @keyframes typing {
     from { width: 0 }
     to { width: 100% }

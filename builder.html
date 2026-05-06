@@ -101,47 +101,61 @@
             display: none;
             flex-direction: column;
             align-items: center;
-            padding-top: 60px;
-            max-width: 800px;
-            margin: 0 auto;
             width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
         }
 
-        .ai-input-state h2 {
-            font-size: 32px;
+        .ai-input-header {
+            width: 100%;
+            margin-bottom: 60px;
+        }
+
+        .back-link {
+            color: #0F172A;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .ai-input-content {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .ai-input-content h2 {
+            font-size: 28px;
             font-weight: 800;
-            color: #2563EB;
+            color: #4F46E5;
             margin-bottom: 40px;
             text-align: center;
         }
 
         .input-container-ai {
             width: 100%;
+            max-width: 850px;
             background: white;
-            border: 2px solid #E2E8F0;
-            border-radius: 24px;
+            border: 2px solid #5EEAD4;
+            border-radius: 20px;
             padding: 24px;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
-            transition: border-color 0.2s;
-        }
-
-        .input-container-ai:focus-within {
-            border-color: #3B82F6;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            margin-bottom: 40px;
         }
 
         .input-container-ai textarea {
+            width: 100%;
             border: none;
             outline: none;
-            font-size: 18px;
-            font-weight: 500;
-            color: #0F172A;
+            font-size: 16px;
+            color: #1E293B;
             resize: none;
-            min-height: 80px;
-            width: 100%;
+            min-height: 100px;
             font-family: inherit;
         }
 
@@ -149,21 +163,18 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            margin-top: 16px;
         }
 
-        .input-footer-ai .left-icons {
+        .left-icons {
             display: flex;
             gap: 16px;
-            color: #94A3B8;
-        }
-
-        .input-footer-ai .left-icons i {
+            color: #6366F1;
             font-size: 20px;
-            cursor: pointer;
         }
 
         .btn-generate-ai {
-            background: #F1F5F9;
+            background: #E2E8F0;
             color: #94A3B8;
             border: none;
             border-radius: 24px;
@@ -174,41 +185,209 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            transition: all 0.2s;
         }
 
         .btn-generate-ai.active {
-            background: linear-gradient(90deg, #3B82F6 0%, #8B5CF6 100%);
+            background: linear-gradient(90deg, #60A5FA 0%, #8B5CF6 100%);
             color: white;
             cursor: pointer;
         }
 
         .template-suggestions {
+            text-align: center;
+            width: 100%;
+        }
+
+        .template-suggestions p {
+            color: #4F46E5;
+            font-weight: 700;
+            font-size: 15px;
+            margin-bottom: 24px;
+        }
+
+        .suggestion-chips {
             display: flex;
-            gap: 12px;
-            margin-top: 40px;
-            flex-wrap: wrap;
             justify-content: center;
+            gap: 12px;
+            margin-bottom: 24px;
         }
 
         .suggestion-chip {
-            padding: 8px 16px;
-            border-radius: 20px;
-            border: 1px solid #E2E8F0;
-            background: white;
-            font-size: 13px;
+            padding: 10px 20px;
+            border-radius: 30px;
+            background: #F8FAFC;
+            border: 1px solid #F1F5F9;
+            font-size: 14px;
             font-weight: 600;
-            color: #64748B;
+            color: #475569;
             display: flex;
             align-items: center;
             gap: 8px;
             cursor: pointer;
-            transition: all 0.2s;
         }
 
-        .suggestion-chip:hover {
-            border-color: #3B82F6;
-            color: #3B82F6;
+        .view-all-link {
+            color: #6366F1;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+        }
+
+        /* All Templates Section */
+        .all-templates-section {
+            display: none;
+            margin-top: 100px;
+            width: 100%;
+            background: #FFFFFF;
+            border: 1px solid #E2E8F0;
+            border-radius: 24px;
+            padding: 40px;
+        }
+
+        .templates-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+            border-bottom: 1px solid #F1F5F9;
+            padding-bottom: 16px;
+        }
+
+        .template-tabs {
+            display: flex;
+            gap: 32px;
+        }
+
+        .template-tab {
+            color: #64748B;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 15px;
+            padding-bottom: 16px;
+            position: relative;
+        }
+
+        .template-tab.active {
+            color: #0F172A;
+        }
+
+        .template-tab.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: #1E1B4B;
+            border-radius: 3px 3px 0 0;
+        }
+
+        .template-search {
+            position: relative;
+            width: 300px;
+        }
+
+        .template-search input {
+            width: 100%;
+            padding: 10px 16px 10px 40px;
+            border-radius: 8px;
+            border: 1px solid #E2E8F0;
+            background: #F8FAFC;
+            font-size: 14px;
+        }
+
+        .template-search i {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #94A3B8;
+        }
+
+        .templates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 24px;
+        }
+
+        .template-card {
+            border: 1px solid #E2E8F0;
+            border-radius: 16px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .t-card-header {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+
+        .t-card-title-group h3 {
+            font-size: 18px;
+            font-weight: 800;
+            color: #0F172A;
+            margin-bottom: 4px;
+        }
+
+        .t-card-title-group span {
+            font-size: 12px;
+            color: #64748B;
+        }
+
+        .t-card-desc {
+            font-size: 14px;
+            color: #475569;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .t-card-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .t-tag {
+            background: #F8FAFC;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 600;
+            color: #64748B;
+        }
+
+        .t-card-footer {
+            display: flex;
+            gap: 12px;
+            margin-top: auto;
+            padding-top: 16px;
+        }
+
+        .btn-t-primary {
+            background: #FFFFFF;
+            border: 1px solid #4F46E5;
+            color: #4F46E5;
+            border-radius: 20px;
+            padding: 8px 16px;
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .btn-t-secondary {
+            background: none;
+            border: none;
+            color: #6366F1;
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
         }
 
         /* --- Loading State --- */
@@ -343,58 +522,122 @@
             gap: 24px;
         }
 
-        .explore-card {
-            background: white;
-            border-radius: 16px;
-            border: 1px solid #E2E8F0;
-            padding: 24px;
+        .card-actions {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            margin-top: auto;
+        }
+
+        .card-top-meta {
             display: flex;
             justify-content: space-between;
-            position: relative;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            overflow: hidden;
+            align-items: center;
+            margin-bottom: 16px;
         }
 
-        .explore-card:hover {
-            border-color: #3B82F6;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
-            transform: translateY(-2px);
-        }
-
-        .card-info {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            z-index: 1;
-        }
-
-        .card-tag {
+        .card-badge {
             display: flex;
             align-items: center;
             gap: 6px;
             font-size: 11px;
             font-weight: 700;
             color: #64748B;
-            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
-        .card-tag i {
+        .card-author {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            margin-bottom: 24px;
+        }
+
+        .author-name {
+            font-size: 12px;
+            font-weight: 600;
+            color: #64748B;
+        }
+
+        .author-role {
+            font-size: 11px;
+            color: #94A3B8;
+        }
+
+        .card-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-top: auto;
+        }
+
+        .btn-luyen-tap {
+            background: white;
+            color: #4F46E5;
+            border: 2px solid #E0E7FF;
+            border-radius: 24px;
+            padding: 8px 24px;
             font-size: 14px;
+            font-weight: 700;
+            transition: all 0.2s;
+        }
+
+        .btn-luyen-tap:hover {
+            background: #F5F7FF;
+            border-color: #4F46E5;
+        }
+
+        .card-avatar-circle {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            overflow: hidden;
+            position: absolute;
+            bottom: -10px;
+            right: -10px;
+            border: 4px solid white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .card-avatar-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .explore-card {
+            background: white;
+            border-radius: 20px;
+            border: 1px solid #E2E8F0;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            overflow: hidden;
+            min-height: 320px;
+        }
+
+        .explore-card:hover {
+            border-color: #4F46E5;
+            box-shadow: 0 12px 30px rgba(79, 70, 229, 0.1);
+            transform: translateY(-4px);
         }
 
         .card-title {
-            font-size: 16px;
-            font-weight: 700;
+            font-size: 18px;
+            font-weight: 800;
             color: #0F172A;
-            margin-bottom: 8px;
-            line-height: 1.4;
+            margin-bottom: 12px;
+            line-height: 1.3;
         }
 
         .card-desc {
             font-size: 13px;
             color: #64748B;
-            line-height: 1.5;
+            line-height: 1.6;
             margin-bottom: 20px;
             display: -webkit-box;
             -webkit-line-clamp: 2;
@@ -402,28 +645,493 @@
             overflow: hidden;
         }
 
-        .card-meta {
-            font-size: 12px;
-            color: #94A3B8;
-            margin-bottom: 24px;
-        }
-
         .btn-practice-small {
-            align-self: flex-start;
             background: #EEF2FF;
             color: #4F46E5;
             border: 1px solid #E0E7FF;
             border-radius: 20px;
-            padding: 6px 16px;
-            font-size: 12px;
+            padding: 8px 16px;
+            font-size: 13px;
             font-weight: 700;
             cursor: pointer;
             transition: all 0.2s;
+            text-decoration: none;
         }
 
         .btn-practice-small:hover {
             background: #4F46E5;
             color: white;
+        }
+
+        .card-avatar-circle.green { background: #BBF7D0; }
+        .card-avatar-circle.purple { background: #DDD6FE; }
+        .card-avatar-circle.blue { background: #BFDBFE; }
+        .card-avatar-circle.yellow { background: #FEF08A; }
+
+        /* Character Tab Styles */
+        .character-state {
+            display: none;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .char-create-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 40px;
+            border-bottom: 1px solid #F1F5F9;
+        }
+
+        .char-filters {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        .char-filters h2 {
+            font-size: 18px;
+            font-weight: 800;
+            color: #0F172A;
+        }
+
+        .filter-controls {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .search-input-group {
+            position: relative;
+            width: 240px;
+        }
+
+        .search-input-group input {
+            width: 100%;
+            padding: 10px 16px 10px 36px;
+            border-radius: 12px;
+            border: 1px solid #E2E8F0;
+            font-size: 13px;
+        }
+
+        .search-input-group i {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #94A3B8;
+        }
+
+        .sort-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #4F46E5;
+            font-size: 14px;
+            font-weight: 700;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .char-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .char-card {
+            background: white;
+            border: 1px solid #E2E8F0;
+            border-radius: 16px;
+            padding: 20px;
+            position: relative;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+
+        .char-card:hover {
+            border-color: #4F46E5;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .char-card-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .char-avatar-small {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .char-info-text {
+            flex: 1;
+        }
+
+        .char-name {
+            font-size: 15px;
+            font-weight: 800;
+            color: #0F172A;
+            display: block;
+        }
+
+        .char-role {
+            font-size: 12px;
+            color: #64748B;
+        }
+
+        .trait-badge {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 20px;
+            background: #EFF6FF;
+            color: #1E40AF;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .char-more {
+            color: #6366F1;
+            cursor: pointer;
+            padding: 4px;
+            border-radius: 50%;
+            transition: background 0.2s;
+        }
+
+        .char-more:hover {
+            background: #F1F5F9;
+        }
+
+        .char-card-header {
+            position: relative;
+        }
+
+        .char-dropdown {
+            position: absolute;
+            top: 30px;
+            right: 0;
+            background: white;
+            border: 1px solid #E2E8F0;
+            border-radius: 12px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            z-index: 100;
+            width: 140px;
+            padding: 8px 0;
+            display: none;
+            flex-direction: column;
+        }
+
+        .char-dropdown.show {
+            display: flex;
+        }
+
+        .char-dropdown-item {
+            padding: 10px 16px;
+            font-size: 14px;
+            color: #4F46E5;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+            text-align: left;
+            border: none;
+            background: none;
+            width: 100%;
+        }
+
+        .char-dropdown-item:hover {
+            background: #F8FAFC;
+        }
+
+        .char-dropdown-item.delete {
+            color: #6366F1; /* Matching the blue tone in image */
+        }
+
+        /* Character Editor Styles */
+        .character-editor-state {
+            display: none;
+            flex-direction: column;
+            gap: 32px;
+            max-width: 900px;
+            margin: 0 auto;
+            padding-bottom: 100px;
+        }
+
+        .editor-back-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #4F46E5;
+            font-size: 14px;
+            font-weight: 700;
+            text-decoration: none;
+            margin-bottom: 24px;
+        }
+
+        .editor-header h1 {
+            font-size: 24px;
+            font-weight: 800;
+            color: #0F172A;
+            margin-bottom: 8px;
+        }
+
+        .editor-header p {
+            color: #64748B;
+            font-size: 14px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-label {
+            font-size: 13px;
+            font-weight: 600;
+            color: #64748B;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px 16px;
+            border-radius: 12px;
+            border: 1px solid #E2E8F0;
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #4F46E5;
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+        }
+
+        .behavior-selector {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 16px;
+            background: white;
+            border: 1px solid #E2E8F0;
+            border-radius: 12px;
+            cursor: pointer;
+        }
+
+        .behavior-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .behavior-badge {
+            background: #E0F2FE;
+            color: #0369A1;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 800;
+        }
+
+        .behavior-desc {
+            font-size: 14px;
+            color: #0F172A;
+            font-weight: 500;
+        }
+
+        .section-subtitle {
+            font-size: 14px;
+            font-weight: 800;
+            color: #0F172A;
+            margin-bottom: 4px;
+        }
+
+        .section-desc {
+            font-size: 13px;
+            color: #64748B;
+            margin-bottom: 16px;
+        }
+
+        .input-with-button {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn-form-add {
+            padding: 8px 24px;
+            border-radius: 20px;
+            border: 1px solid #E2E8F0;
+            background: white;
+            color: #0F172A;
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .persona-behavior-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .btn-outline-blue {
+            padding: 6px 20px;
+            border-radius: 20px;
+            border: 1px solid #4F46E5;
+            color: #4F46E5;
+            background: white;
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .avatar-grid {
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            gap: 16px;
+            margin-bottom: 40px;
+        }
+
+        .avatar-option {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: transform 0.2s;
+            border: 2px solid transparent;
+        }
+
+        .avatar-option:hover {
+            transform: scale(1.1);
+        }
+
+        .avatar-option.active {
+            border-color: #4F46E5;
+        }
+
+        .upload-placeholder {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            border: 2px dashed #CBD5E1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            color: #6366F1;
+            font-size: 10px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .voice-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 16px;
+            background: #F8FAFC;
+            border-radius: 12px;
+            margin-bottom: 24px;
+        }
+
+        .voice-controls {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .play-msg-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 11px;
+            font-weight: 800;
+            color: #1E293B;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .voice-chips {
+            display: flex;
+            gap: 12px;
+        }
+
+        .voice-chip {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 24px;
+            background: white;
+            border: 1px solid #E2E8F0;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 700;
+            color: #0F172A;
+            cursor: pointer;
+            min-width: 220px;
+        }
+
+        .voice-chip i {
+            color: #4F46E5;
+        }
+
+        .lang-dropdown {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            background: #64748B;
+            color: white;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            width: fit-content;
+            margin-bottom: 16px;
+        }
+
+        .editor-footer {
+            display: flex;
+            justify-content: flex-end;
+            padding-top: 32px;
+            border-top: 1px solid #F1F5F9;
+            margin-top: 24px;
+        }
+
+        .btn-save-char {
+            background: #4F46E5;
+            color: white;
+            padding: 12px 40px;
+            border-radius: 24px;
+            border: none;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-save-char:hover {
+            background: #4338CA;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
         }
 
         .card-image {
@@ -453,17 +1161,263 @@
             z-index: -1;
         }
 
-        .more-options-btn {
-            position: absolute;
-            top: 16px;
-            right: 16px;
-            color: #94A3B8;
-            cursor: pointer;
-            font-size: 18px;
+        /* Preview Modal Styles */
+        .preview-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
+            z-index: 2000;
+            display: none;
+            flex-direction: column;
+            animation: slideUp 0.3s ease-out;
         }
-        
-        .more-options-btn:hover {
+
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .preview-header {
+            height: 64px;
+            border-bottom: 1px solid #E2E8F0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 40px;
+        }
+
+        .preview-title-group {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        .preview-actions-top {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn-customize-outline {
+            border: 1px solid #4F46E5;
+            color: #4F46E5;
+            padding: 6px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            background: white;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .close-preview {
+            font-size: 24px;
+            color: #64748B;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .close-preview:hover {
             color: #0F172A;
+        }
+
+        .preview-body {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: #F8FAFC;
+            padding: 40px;
+        }
+
+        .simulation-window {
+            width: 100%;
+            max-width: 900px;
+            aspect-ratio: 16 / 9;
+            background: #EEF2FF;
+            border-radius: 24px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 20px 50px rgba(79, 70, 229, 0.1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sim-top {
+            flex: 1;
+            padding: 24px;
+            position: relative;
+        }
+
+        .persona-overlay {
+            width: 140px;
+            height: 140px;
+            border-radius: 16px;
+            overflow: hidden;
+            position: relative;
+            border: 4px solid white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .persona-overlay img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .persona-tag {
+            position: absolute;
+            bottom: 8px;
+            left: 8px;
+            right: 8px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 4px 8px;
+            border-radius: 6px;
+        }
+
+        .persona-tag h5 {
+            font-size: 10px;
+            font-weight: 800;
+            color: #4F46E5;
+            margin: 0;
+        }
+
+        .persona-tag p {
+            font-size: 8px;
+            color: #64748B;
+            margin: 0;
+        }
+
+        .mic-indicator {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            background: rgba(0,0,0,0.3);
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 14px;
+        }
+
+        .voice-visualizer {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            gap: 6px;
+        }
+
+        .vis-dot {
+            width: 6px;
+            height: 6px;
+            background: #6366F1;
+            border-radius: 50%;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.3; }
+            50% { transform: scale(1.5); opacity: 1; }
+        }
+
+        .sim-bottom {
+            height: 35%;
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .timer-badge {
+            background: rgba(0,0,0,0.6);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            width: fit-content;
+        }
+
+        .user-tag {
+            align-self: flex-end;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 700;
+            color: #4F46E5;
+        }
+
+        .preview-footer {
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 24px;
+            text-align: center;
+            max-width: 800px;
+        }
+
+        .sim-controls {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .ctrl-btn {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: #F1F5F9;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #64748B;
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.2s;
+            position: relative;
+        }
+
+        .ctrl-btn:hover {
+            background: #E2E8F0;
+            color: #0F172A;
+        }
+
+        .ctrl-btn.active {
+            background: #EEF2FF;
+            color: #4F46E5;
+        }
+
+        .btn-stop {
+            background: #EF4444;
+            color: white;
+        }
+
+        .btn-stop:hover {
+            background: #DC2626;
+            color: white;
+        }
+
+        .footer-desc {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1E293B;
+            line-height: 1.5;
         }
     </style>
 </head>
@@ -475,7 +1429,6 @@
                 <a href="index.html" class="logo-small">
                     <i class="ph-fill ph-microphone-stage"></i> yoodli
                 </a>
-                <a href="#" style="color: #64748B;"><i class="ph-bold ph-caret-left"></i></a>
             </div>
             
             <div class="practice-menu-container">
@@ -495,7 +1448,7 @@
                     <a href="interview.html" class="practice-item">
                         <i class="ph-duotone ph-users-three"></i> Phỏng vấn
                     </a>
-                    <a href="#" class="practice-item">
+                    <a href="upload.html" class="practice-item">
                         <i class="ph-duotone ph-cloud-arrow-up"></i> Tải lên
                     </a>
                 </div>
@@ -508,13 +1461,13 @@
                 <a href="builder.html" class="nav-item active">
                     <i class="ph-duotone ph-magic-wand"></i> Trình tạo
                 </a>
-                <a href="#" class="nav-item">
+                <a href="dashboard-page.html" class="nav-item">
                     <i class="ph-duotone ph-chart-bar"></i> Bảng điều khiển
                 </a>
-                <a href="#" class="nav-item">
+                <a href="recordings.html" class="nav-item">
                     <i class="ph-duotone ph-video"></i> Bản ghi âm của tôi
                 </a>
-                <a href="#" class="nav-item">
+                <a href="learning.html" class="nav-item">
                     <i class="ph-duotone ph-book-open"></i> Quá trình học tập của tôi
                 </a>
             </nav>
@@ -544,104 +1497,597 @@
 
         <!-- Main Content -->
         <main class="main-content">
-            <header class="builder-header" id="main-header">
-                <h1>Trình tạo</h1>
+            <header class="builder-header" id="main-header" style="background: linear-gradient(180deg, #EDF2FF 0%, #E6E8FA 100%);">
+                <h1 style="color: #0F172A; font-weight: 800; font-size: 24px;">Trình tạo</h1>
                 <div class="builder-tabs">
                     <a href="#" class="builder-tab active" id="tab-vai-dien">Vai diễn</a>
                     <a href="#" class="builder-tab" id="tab-kham-pha">Khám phá</a>
-                    <a href="#" class="builder-tab">Cuộc phỏng vấn</a>
-                    <a href="#" class="builder-tab">Nhân vật</a>
+                    <a href="#" class="builder-tab" id="tab-phong-van">Cuộc phỏng vấn</a>
+                    <a href="#" class="builder-tab" id="tab-nhan-vat">Nhân vật</a>
                 </div>
             </header>
 
+            <div class="builder-content">
+                <!-- Roleplay State (Empty State) -->
+                <div class="empty-state" id="empty-state" style="display: flex;">
+                    <div class="empty-text">
+                        <h2 style="font-size: 20px; font-weight: 800; color: #0F172A; margin-bottom: 8px;">Tạo vai diễn</h2>
+                        <p style="font-size: 14px; color: #475569;">Xây dựng thư viện cá nhân với các bài tập vai diễn tùy chỉnh của bạn</p>
+                    </div>
+                    <button class="btn-create-new" id="show-ai-input" style="background: #4F46E5; padding: 12px 24px; border-radius: 24px;">Tạo mới</button>
+                </div>
+
+                <!-- Interview State (Empty State) -->
+                <div class="empty-state" id="interview-state" style="display: none;">
+                    <div class="empty-text">
+                        <h2 style="font-size: 20px; font-weight: 800; color: #0F172A; margin-bottom: 8px;">Tạo cuộc phỏng vấn</h2>
+                        <p style="font-size: 14px; color: #475569;">Xây dựng thư viện cá nhân với các bài tập phỏng vấn tùy chỉnh của bạn</p>
+                    </div>
+                    <button class="btn-create-new btn-create-interview" style="background: #4F46E5; padding: 12px 24px; border-radius: 24px;">Tạo mới</button>
+                </div>
+
                 <!-- Explore State -->
-                <div class="explore-state" id="explore-state">
+                <div class="explore-state" id="explore-state" style="display: none;">
                     <div class="explore-section">
                         <div class="section-header-explore">
-                            <h2>Gợi ý cho bạn</h2>
+                            <h2 style="font-size: 18px; color: #0F172A; text-transform: none; letter-spacing: normal;">Chuyên nghiệp</h2>
                         </div>
                         <div class="explore-grid">
                             <!-- Card 1 -->
                             <div class="explore-card">
-                                <i class="ph-bold ph-dots-three-vertical more-options-btn"></i>
-                                <div class="card-info">
-                                    <div class="card-tag"><i class="ph-fill ph-circles-three-plus" style="color: #3B82F6;"></i> Tư vấn viên</div>
-                                    <h3 class="card-title">AI Productivity Basics Tutorial</h3>
-                                    <p class="card-desc">Get started with our AI productivity tools and learn how to enhance your workflow...</p>
-                                    <div class="card-meta">Phác thảo • Yoodli AI</div>
-                                    <button class="btn-practice-small">Luyện tập</button>
+                                <div class="card-top-meta">
+                                    <span class="card-badge"><i class="ph-fill ph-student" style="color: #22C55E;"></i> HUẤN LUYỆN VIÊN</span>
+                                    <i class="ph-bold ph-dots-three-vertical more-options-btn"></i>
                                 </div>
-                                <div class="card-image">
-                                    <img src="https://ui-avatars.com/api/?name=AI&background=3B82F6&color=fff" alt="AI">
+                                <h3 class="card-title">AI Productivity Basics Tutorial</h3>
+                                <p class="card-desc">Learn fundamental AI tools and techniques to boost your daily...</p>
+                                <div class="card-author">
+                                    <span class="author-name">Terry Trainer, AI Productivity</span>
+                                    <span class="author-role">Specialist</span>
+                                </div>
+                                <div class="card-bottom">
+                                    <button class="btn-luyen-tap preview-trigger">Luyện tập</button>
+                                    <div class="card-avatar-circle green">
+                                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=200" alt="Avatar">
+                                    </div>
                                 </div>
                             </div>
+
                             <!-- Card 2 -->
                             <div class="explore-card">
-                                <i class="ph-bold ph-dots-three-vertical more-options-btn"></i>
-                                <div class="card-info">
-                                    <div class="card-tag"><i class="ph-fill ph-hand-eye" style="color: #8B5CF6;"></i> Khách hàng</div>
-                                    <h3 class="card-title">Walk in The Customer's Shoes</h3>
-                                    <p class="card-desc">Experience being a buyer for your product and identify pain points in your...</p>
-                                    <div class="card-meta">Phác thảo • Yoodli AI</div>
-                                    <button class="btn-practice-small">Luyện tập</button>
+                                <div class="card-top-meta">
+                                    <span class="card-badge"><i class="ph-fill ph-lightbulb" style="color: #A855F7;"></i> TÙY CHỈNH</span>
+                                    <i class="ph-bold ph-dots-three-vertical more-options-btn"></i>
                                 </div>
-                                <div class="card-image">
-                                    <img src="https://ui-avatars.com/api/?name=Customer&background=8B5CF6&color=fff" alt="Customer">
+                                <h3 class="card-title">Walk in The Customer's Shoes</h3>
+                                <p class="card-desc">Experience being a buyer for the product/service you are selling</p>
+                                <div class="card-author">
+                                    <span class="author-name">Richard, Account Executive</span>
+                                </div>
+                                <div class="card-bottom">
+                                    <button class="btn-luyen-tap preview-trigger">Luyện tập</button>
+                                    <div class="card-avatar-circle purple">
+                                        <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&q=80&w=200" alt="Avatar">
+                                    </div>
                                 </div>
                             </div>
+
                             <!-- Card 3 -->
                             <div class="explore-card">
-                                <i class="ph-bold ph-dots-three-vertical more-options-btn"></i>
-                                <div class="card-info">
-                                    <div class="card-tag"><i class="ph-fill ph-briefcase" style="color: #22C55E;"></i> Tuyển dụng</div>
-                                    <h3 class="card-title">Hiring Manager Interview</h3>
-                                    <p class="card-desc">Discuss your skills and fit for the company role with a professional hiring manager...</p>
-                                    <div class="card-meta">Phác thảo • Yoodli AI</div>
-                                    <button class="btn-practice-small">Luyện tập</button>
+                                <div class="card-top-meta">
+                                    <span class="card-badge"><i class="ph-fill ph-chat-circle-dots" style="color: #0EA5E9;"></i> PHỎNG VẤN HÀNH VI</span>
+                                    <i class="ph-bold ph-dots-three-vertical more-options-btn"></i>
                                 </div>
-                                <div class="card-image">
-                                    <img src="https://ui-avatars.com/api/?name=Hiring&background=22C55E&color=fff" alt="Hiring">
+                                <h3 class="card-title">Hiring Manager Interview</h3>
+                                <p class="card-desc">Discuss your skills and fit for a company and role</p>
+                                <div class="card-author">
+                                    <span class="author-name">Agnes Potts, Hiring Manager</span>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="explore-section">
-                        <div class="section-header-explore">
-                            <h2>Vui vẻ</h2>
-                        </div>
-                        <div class="explore-grid">
-                            <!-- Card 4 -->
-                            <div class="explore-card">
-                                <i class="ph-bold ph-dots-three-vertical more-options-btn"></i>
-                                <div class="card-info">
-                                    <div class="card-tag"><i class="ph-fill ph-smiley-wink" style="color: #F59E0B;"></i> Giải trí</div>
-                                    <h3 class="card-title">Murder at the Winry Observatory</h3>
-                                    <p class="card-desc">Put on your detective cap for a mysterious adventure at the observatory...</p>
-                                    <div class="card-meta">Phác thảo • Yoodli AI</div>
-                                    <button class="btn-practice-small">Luyện tập</button>
-                                </div>
-                                <div class="card-image">
-                                    <img src="https://ui-avatars.com/api/?name=Mystery&background=F59E0B&color=fff" alt="Mystery">
-                                </div>
-                            </div>
-                            <!-- Card 5 -->
-                            <div class="explore-card">
-                                <i class="ph-bold ph-dots-three-vertical more-options-btn"></i>
-                                <div class="card-info">
-                                    <div class="card-tag"><i class="ph-fill ph-ghost" style="color: #EF4444;"></i> Kinh dị</div>
-                                    <h3 class="card-title">Zombie Apocalypse Interview</h3>
-                                    <p class="card-desc">How will you survive the apocalypse? Convince the leader of your group...</p>
-                                    <div class="card-meta">Phác thảo • Yoodli AI</div>
-                                    <button class="btn-practice-small">Luyện tập</button>
-                                </div>
-                                <div class="card-image">
-                                    <img src="https://ui-avatars.com/api/?name=Zombie&background=EF4444&color=fff" alt="Zombie">
+                                <div class="card-bottom">
+                                    <button class="btn-luyen-tap preview-trigger">Luyện tập</button>
+                                    <div class="card-avatar-circle yellow">
+                                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=200" alt="Avatar">
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <!-- Character Editor State -->
+                <div class="character-editor-state" id="character-editor-state">
+                    <a href="#" class="editor-back-link" id="back-to-char-list">
+                        <i class="ph ph-caret-left"></i> Quay lại Trình xây dựng
+                    </a>
+
+                    <div class="editor-header">
+                        <h1>Tạo Nhân Vật</h1>
+                        <p>Xây dựng đối tác trò chơi vai AI ưa thích của bạn</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Tên</label>
+                        <input type="text" class="form-input" placeholder="Nhập tên nhân vật">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">Chức danh</label>
+                            <input type="text" class="form-input" placeholder="VD: Giám đốc bán hàng">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Công ty (tùy chọn)</label>
+                            <input type="text" class="form-input" placeholder="VD: Yoodli AI">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Cách cư xử</label>
+                        <div class="behavior-selector">
+                            <div class="behavior-info">
+                                <span class="behavior-badge">THÂN THIỆN</span>
+                                <span class="behavior-desc">Dễ tiếp cận và dễ chịu</span>
+                            </div>
+                            <i class="ph ph-caret-down"></i>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <h3 class="section-subtitle">Background (tùy chọn)</h3>
+                        <p class="section-desc">Thêm tối đa 10 đặc điểm và chi tiết nền của nhân vật. Hãy cố gắng giới hạn mỗi mục trong một dòng.</p>
+                        <div class="input-with-button">
+                            <input type="text" class="form-input" placeholder="được thăng chức">
+                            <button class="btn-form-add">Thêm</button>
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="padding-top: 24px; border-top: 1px solid #F1F5F9;">
+                        <div class="persona-behavior-header">
+                            <div>
+                                <h3 class="section-subtitle">Hành vi của Persona (tùy chọn) <i class="ph ph-info" style="font-size: 14px; color: #94A3B8;"></i></h3>
+                                <p class="section-desc" style="margin-bottom: 0;">Ngoài nền, hãy cho nhân vật biết cách cư xử cụ thể, chẳng hạn như nêu lên những phản đối hoặc những mẫu phát âm nhất định để áp dụng.</p>
+                            </div>
+                            <button class="btn-outline-blue">Thêm</button>
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="padding-top: 24px; border-top: 1px solid #F1F5F9;">
+                        <h3 class="section-subtitle">Hình đại diện</h3>
+                        <p class="section-desc">Chọn một avatar để đại diện cho cá tính của bạn. Các avatar được hoạt họa phản ứng theo thời gian thực.</p>
+                        <div class="avatar-grid">
+                            <div class="upload-placeholder">
+                                <i class="ph ph-file-plus" style="font-size: 20px;"></i>
+                                Tải lên
+                            </div>
+                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=100" class="avatar-option active" alt="Avatar">
+                            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=100" class="avatar-option" alt="Avatar">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=100" class="avatar-option" alt="Avatar">
+                            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=100" class="avatar-option" alt="Avatar">
+                            <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&q=80&w=100" class="avatar-option" alt="Avatar">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=100" class="avatar-option" alt="Avatar">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=100" class="avatar-option" alt="Avatar">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=100" class="avatar-option" alt="Avatar">
+                            <img src="https://images.unsplash.com/photo-1548142813-c348350df52b?auto=format&fit=crop&q=80&w=100" class="avatar-option" alt="Avatar">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=100" class="avatar-option" alt="Avatar">
+                            <img src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?auto=format&fit=crop&q=80&w=100" class="avatar-option" alt="Avatar">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=100" class="avatar-option" alt="Avatar">
+                            <img src="https://images.unsplash.com/photo-1463453091185-61582044d556?auto=format&fit=crop&q=80&w=100" class="avatar-option" alt="Avatar">
+                            <img src="https://images.unsplash.com/photo-1554151228-14d9def656e4?auto=format&fit=crop&q=80&w=100" class="avatar-option" alt="Avatar">
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="padding-top: 24px; border-top: 1px solid #F1F5F9;">
+                        <h3 class="section-subtitle">Giọng nói</h3>
+                        <p class="section-desc">Chọn giọng chính cho nhân vật này.</p>
+                        
+                        <div class="voice-section">
+                            <div class="voice-controls">
+                                <button class="play-msg-btn">
+                                    PHÁT LẠI TIN NHẮN <i class="ph-bold ph-waveform"></i>
+                                </button>
+                            </div>
+                            <button class="btn-outline-blue" style="border: none; background: none; font-size: 13px;">Chỉnh sửa</button>
+                        </div>
+
+                        <div class="lang-dropdown">
+                            <i class="ph ph-globe"></i> VI <i class="ph ph-caret-down"></i>
+                        </div>
+
+                        <div class="voice-chips">
+                            <button class="voice-chip">
+                                <i class="ph-fill ph-play-circle"></i> Huyen
+                            </button>
+                            <button class="voice-chip">
+                                <i class="ph-fill ph-play-circle"></i> Trung
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="editor-footer">
+                        <button class="btn-save-char" id="save-character-btn">Lưu</button>
+                    </div>
+                </div>
+
+
+                <!-- Character State -->
+                <div class="character-state" id="character-state" style="display: none;">
+                    <!-- Create Section -->
+                    <div class="char-create-section">
+                        <div class="empty-text">
+                            <h2 style="font-size: 20px; font-weight: 800; color: #0F172A; margin-bottom: 8px;">Tạo một nhân vật</h2>
+                            <p style="font-size: 14px; color: #475569;">Xây dựng đối tác AI vai diễn theo ý bạn</p>
+                        </div>
+                        <button class="btn-create-new" style="background: #4F46E5; padding: 12px 32px; border-radius: 24px;">Tạo mới</button>
+                    </div>
+
+                    <!-- Filters & Grid -->
+                    <div class="char-content-wrapper">
+                        <div class="char-filters">
+                            <h2>Nhân vật của tôi</h2>
+                            <div class="filter-controls">
+                                <button class="sort-btn">
+                                    <i class="ph-bold ph-text-indent"></i> Sắp xếp theo
+                                </button>
+                                <div class="search-input-group">
+                                    <i class="ph ph-magnifying-glass"></i>
+                                    <input type="text" placeholder="Tìm kiếm">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="char-grid">
+                            <!-- Char 1 -->
+                            <div class="char-card">
+                                <div class="char-card-header">
+                                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=100" class="char-avatar-small" alt="Avatar">
+                                    <div class="char-info-text">
+                                        <span class="char-name">Nguyễn Minh Anh</span>
+                                        <span class="char-role">Học sinh lớp 12</span>
+                                    </div>
+                                    <i class="ph-bold ph-dots-three-vertical char-more"></i>
+                                    <div class="char-dropdown">
+                                        <button class="char-dropdown-item">Chỉnh sửa</button>
+                                        <button class="char-dropdown-item delete">Xóa</button>
+                                    </div>
+                                </div>
+                                <span class="trait-badge" style="background: #E0F2FE; color: #0369A1;">TÒ MÒ</span>
+                            </div>
+
+                            <!-- Char 2 -->
+                            <div class="char-card">
+                                <div class="char-card-header">
+                                    <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=100" class="char-avatar-small" alt="Avatar">
+                                    <div class="char-info-text">
+                                        <span class="char-name">Nguyễn Minh Châu</span>
+                                        <span class="char-role">Học sinh lớp 11</span>
+                                    </div>
+                                    <i class="ph-bold ph-dots-three-vertical char-more"></i>
+                                    <div class="char-dropdown">
+                                        <button class="char-dropdown-item">Chỉnh sửa</button>
+                                        <button class="char-dropdown-item delete">Xóa</button>
+                                    </div>
+                                </div>
+                                <span class="trait-badge" style="background: #F0F9FF; color: #0EA5E9;">THOẢI MÁI</span>
+                            </div>
+
+                            <!-- Char 3 -->
+                            <div class="char-card">
+                                <div class="char-card-header">
+                                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=100" class="char-avatar-small" alt="Avatar">
+                                    <div class="char-info-text">
+                                        <span class="char-name">Linda Chen</span>
+                                        <span class="char-role">Product Manager</span>
+                                    </div>
+                                    <i class="ph-bold ph-dots-three-vertical char-more"></i>
+                                    <div class="char-dropdown">
+                                        <button class="char-dropdown-item">Chỉnh sửa</button>
+                                        <button class="char-dropdown-item delete">Xóa</button>
+                                    </div>
+                                </div>
+                                <span class="trait-badge" style="background: #E0F2FE; color: #0369A1;">TÒ MÒ</span>
+                            </div>
+
+                            <!-- Char 4 -->
+                            <div class="char-card">
+                                <div class="char-card-header">
+                                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=100" class="char-avatar-small" alt="Avatar">
+                                    <div class="char-info-text">
+                                        <span class="char-name">Agnes Potts</span>
+                                        <span class="char-role">VP of Sales</span>
+                                    </div>
+                                    <i class="ph-bold ph-dots-three-vertical char-more"></i>
+                                    <div class="char-dropdown">
+                                        <button class="char-dropdown-item">Chỉnh sửa</button>
+                                        <button class="char-dropdown-item delete">Xóa</button>
+                                    </div>
+                                </div>
+                                <span class="trait-badge" style="background: #DBEAFE; color: #1D4ED8;">NHIỆT TÌNH</span>
+                            </div>
+
+                            <!-- Char 5 -->
+                            <div class="char-card">
+                                <div class="char-card-header">
+                                    <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&q=80&w=100" class="char-avatar-small" alt="Avatar">
+                                    <div class="char-info-text">
+                                        <span class="char-name">Kevin Brown</span>
+                                        <span class="char-role">Software Engineer</span>
+                                    </div>
+                                    <i class="ph-bold ph-dots-three-vertical char-more"></i>
+                                    <div class="char-dropdown">
+                                        <button class="char-dropdown-item">Chỉnh sửa</button>
+                                        <button class="char-dropdown-item delete">Xóa</button>
+                                    </div>
+                                </div>
+                                <span class="trait-badge" style="background: #F0F9FF; color: #0EA5E9;">MẠNH MẼ</span>
+                            </div>
+
+                            <!-- Char 6 -->
+                            <div class="char-card">
+                                <div class="char-card-header">
+                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=100" class="char-avatar-small" alt="Avatar">
+                                    <div class="char-info-text">
+                                        <span class="char-name">Priya Anand</span>
+                                        <span class="char-role">CEO</span>
+                                    </div>
+                                    <i class="ph-bold ph-dots-three-vertical char-more"></i>
+                                    <div class="char-dropdown">
+                                        <button class="char-dropdown-item">Chỉnh sửa</button>
+                                        <button class="char-dropdown-item delete">Xóa</button>
+                                    </div>
+                                </div>
+                                <span class="trait-badge" style="background: #DBEAFE; color: #1D4ED8;">QUYẾT ĐOÁN</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Input State -->
+                <div class="ai-input-state" id="ai-input-state">
+                    <div class="ai-input-header">
+                        <a href="#" id="back-to-library-btn" class="back-link">
+                            <i class="ph ph-caret-left"></i> Quay lại thư viện
+                        </a>
+                    </div>
+                    
+                    <div class="ai-input-content">
+                        <h2>Bạn đang vai diễn về điều gì?</h2>
+                        
+                        <div class="input-container-ai">
+                            <textarea id="ai-textarea" placeholder="mô tả vai trò của bạn trong vài câu..."></textarea>
+                            <div class="input-footer-ai">
+                                <div class="left-icons">
+                                    <i class="ph ph-plus"></i>
+                                    <i class="ph ph-sliders"></i>
+                                </div>
+                                <button class="btn-generate-ai" id="generate-btn">
+                                    <i class="ph-fill ph-magic-wand"></i> Tạo với AI
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="template-suggestions">
+                            <p>Hoặc bắt đầu với một mẫu</p>
+                            <div class="suggestion-chips">
+                                <div class="suggestion-chip">
+                                    <i class="ph-fill ph-lightbulb" style="color: #A855F7;"></i> Tùy chỉnh
+                                </div>
+                                <a href="editor.html" class="suggestion-chip" style="text-decoration: none;">
+                                    <i class="ph-fill ph-student" style="color: #22C55E;"></i> Huấn luyện viên
+                                </a>
+                                <div class="suggestion-chip">
+                                    <i class="ph-fill ph-snowflake" style="color: #3B82F6;"></i> Cuộc gọi bán hàng lạnh
+                                </div>
+                            </div>
+                            <a href="#" id="view-all-templates" class="view-all-link">
+                                Xem tất cả mẫu <i class="ph ph-caret-down"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- All Templates Section -->
+                    <div class="all-templates-section" id="all-templates-section">
+                        <div class="templates-header">
+                            <div class="template-tabs">
+                                <a href="#" class="template-tab active">Tất cả mẫu</a>
+                                <a href="#" class="template-tab">Bán hàng</a>
+                                <a href="#" class="template-tab">Học</a>
+                                <a href="#" class="template-tab">Khác</a>
+                                <a href="#" class="template-tab">Từ tổ chức</a>
+                            </div>
+                            <div class="template-search">
+                                <i class="ph ph-magnifying-glass"></i>
+                                <input type="text" placeholder="Tìm kiếm">
+                            </div>
+                        </div>
+                        
+                        <div class="templates-grid" id="templates-grid">
+                            <!-- Bán hàng -->
+                            <div class="template-card" data-category="sales">
+                                <div class="t-card-header">
+                                    <i class="ph-fill ph-snowflake" style="color: #3B82F6; font-size: 24px;"></i>
+                                    <div class="t-card-title-group">
+                                        <h3>Gọi điện chào hàng</h3>
+                                        <span>Vai trò AI: Khách hàng tiềm năng</span>
+                                    </div>
+                                </div>
+                                <p class="t-card-desc">Thuyết phục khách hàng tiềm năng hoài nghi trong một cuộc gọi bán hàng bất ngờ.</p>
+                                <div class="t-card-tags">
+                                    <span class="t-tag">Đang mở</span>
+                                    <span class="t-tag">Độ tự tin</span>
+                                    <span class="t-tag">Trình bày giá trị</span>
+                                </div>
+                                <div class="t-card-footer">
+                                    <button class="btn-t-primary">Tùy chỉnh</button>
+                                    <button class="btn-t-secondary">Xem trước</button>
+                                </div>
+                            </div>
+
+                            <div class="template-card" data-category="sales">
+                                <div class="t-card-header">
+                                    <i class="ph-fill ph-paper-plane-tilt" style="color: #F97316; font-size: 24px;"></i>
+                                    <div class="t-card-title-group">
+                                        <h3>Tìm hiểu khách hàng inbound</h3>
+                                        <span>Vai trò AI: Khách hàng tiềm năng</span>
+                                    </div>
+                                </div>
+                                <p class="t-card-desc">Luyện tập tìm hiểu nhu cầu và thẩm định khách hàng tiềm năng quan tâm.</p>
+                                <div class="t-card-tags">
+                                    <span class="t-tag">Đặt câu hỏi</span>
+                                    <span class="t-tag">Lắng nghe tích cực</span>
+                                    <span class="t-tag">Cần phân tích</span>
+                                </div>
+                                <div class="t-card-footer">
+                                    <button class="btn-t-primary">Tùy chỉnh</button>
+                                    <button class="btn-t-secondary">Xem trước</button>
+                                </div>
+                            </div>
+
+                            <div class="template-card" data-category="sales">
+                                <div class="t-card-header">
+                                    <i class="ph-fill ph-user-circle" style="color: #D946EF; font-size: 24px;"></i>
+                                    <div class="t-card-title-group">
+                                        <h3>Xử lý phản đối</h3>
+                                        <span>Vai trò AI: Khách hàng tiềm năng</span>
+                                    </div>
+                                </div>
+                                <p class="t-card-desc">Luyện tập cách biến sự phản kháng và phản đối trong bán hàng thành những bước tiếp theo mang tính xây dựng.</p>
+                                <div class="t-card-tags">
+                                    <span class="t-tag">Thuyết phục</span>
+                                    <span class="t-tag">Thấu cảm</span>
+                                    <span class="t-tag">Phản bác</span>
+                                </div>
+                                <div class="t-card-footer">
+                                    <button class="btn-t-primary">Tùy chỉnh</button>
+                                    <button class="btn-t-secondary">Xem trước</button>
+                                </div>
+                            </div>
+
+                            <!-- Học -->
+                            <div class="template-card" data-category="learn">
+                                <div class="t-card-header">
+                                    <i class="ph-fill ph-magnifying-glass" style="color: #D946EF; font-size: 24px;"></i>
+                                    <div class="t-card-title-group">
+                                        <h3>Đánh giá hiệu suất quản lý</h3>
+                                        <span>Vai trò AI: Nhân viên</span>
+                                    </div>
+                                </div>
+                                <p class="t-card-desc">Thực hành dẫn dắt một buổi đánh giá hiệu suất có cấu trúc với phản hồi rõ ràng và các bước tiếp theo được thống nhất.</p>
+                                <div class="t-card-tags">
+                                    <span class="t-tag">Phản hồi</span>
+                                    <span class="t-tag">Huấn luyện</span>
+                                    <span class="t-tag">Đặt mục tiêu</span>
+                                </div>
+                                <div class="t-card-footer">
+                                    <button class="btn-t-primary">Tùy chỉnh</button>
+                                    <button class="btn-t-secondary">Xem trước</button>
+                                </div>
+                            </div>
+
+                            <div class="template-card" data-category="learn">
+                                <div class="t-card-header">
+                                    <i class="ph-fill ph-trophy" style="color: #22C55E; font-size: 24px;"></i>
+                                    <div class="t-card-title-group">
+                                        <h3>Huấn luyện viên</h3>
+                                        <span>Vai trò AI: Nhân viên</span>
+                                    </div>
+                                </div>
+                                <p class="t-card-desc">Luyện tập xử lý những thách thức nơi làm việc, đưa phản hồi và lên tiếng ủng hộ đội ngũ hoặc chính bạn.</p>
+                                <div class="t-card-tags">
+                                    <span class="t-tag">Huấn luyện</span>
+                                    <span class="t-tag">Ủy quyền</span>
+                                    <span class="t-tag">Giao tiếp</span>
+                                </div>
+                                <div class="t-card-footer">
+                                    <a href="editor.html" class="btn-t-primary" style="text-decoration: none; text-align: center;">Tùy chỉnh</a>
+                                    <button class="btn-t-secondary">Xem trước</button>
+                                </div>
+                            </div>
+
+                            <div class="template-card" data-category="learn">
+                                <div class="t-card-header">
+                                    <i class="ph-fill ph-wrench" style="color: #6366F1; font-size: 24px;"></i>
+                                    <div class="t-card-title-group">
+                                        <h3>Chứng nhận kỹ năng</h3>
+                                        <span>Vai trò AI: Gia sư</span>
+                                    </div>
+                                </div>
+                                <p class="t-card-desc">Thể hiện kiến thức của bạn qua các câu hỏi nhằm mục tiêu, được thiết kế để kiểm chứng một kỹ năng cụ thể.</p>
+                                <div class="t-card-tags">
+                                    <span class="t-tag">Trình diễn kỹ năng</span>
+                                    <span class="t-tag">Độ chính xác</span>
+                                </div>
+                                <div class="t-card-footer">
+                                    <button class="btn-t-primary">Tùy chỉnh</button>
+                                    <button class="btn-t-secondary">Xem trước</button>
+                                </div>
+                            </div>
+
+                            <!-- Khác -->
+                            <div class="template-card" data-category="other">
+                                <div class="t-card-header">
+                                    <i class="ph-fill ph-headset" style="color: #06B6D4; font-size: 24px;"></i>
+                                    <div class="t-card-title-group">
+                                        <h3>Hỗ trợ khách hàng</h3>
+                                        <span>Vai trò AI: Khách hàng</span>
+                                    </div>
+                                </div>
+                                <p class="t-card-desc">Luyện tập xoa dịu khách hàng bực bội và dẫn dắt cuộc trò chuyện tới kết quả rõ ràng.</p>
+                                <div class="t-card-tags">
+                                    <span class="t-tag">Đồng cảm</span>
+                                    <span class="t-tag">Giải quyết vấn đề</span>
+                                    <span class="t-tag">Độ rõ ràng</span>
+                                </div>
+                                <div class="t-card-footer">
+                                    <button class="btn-t-primary">Tùy chỉnh</button>
+                                    <button class="btn-t-secondary">Xem trước</button>
+                                </div>
+                            </div>
+
+                            <div class="template-card" data-category="other">
+                                <div class="t-card-header">
+                                    <i class="ph-fill ph-lightbulb" style="color: #A855F7; font-size: 24px;"></i>
+                                    <div class="t-card-title-group">
+                                        <h3>Tùy chỉnh</h3>
+                                        <span>Vai trò AI: Bất kỳ</span>
+                                    </div>
+                                </div>
+                                <p class="t-card-desc">Luyện tập bất kỳ cuộc trò chuyện nào không phù hợp với mẫu có sẵn.</p>
+                                <div class="t-card-footer">
+                                    <button class="btn-t-primary">Tùy chỉnh</button>
+                                    <button class="btn-t-secondary">Xem trước</button>
+                                </div>
+                            </div>
+
+                            <div class="template-card" data-category="other">
+                                <div class="t-card-header">
+                                    <i class="ph-fill ph-microphone-stage" style="color: #22C55E; font-size: 24px;"></i>
+                                    <div class="t-card-title-group">
+                                        <h3>Đào tạo truyền thông</h3>
+                                        <span>Vai trò AI: Người phỏng vấn</span>
+                                    </div>
+                                </div>
+                                <p class="t-card-desc">Xử lý những câu hỏi khó của phóng viên một cách tự tin và làm chủ tình huống.</p>
+                                <div class="t-card-tags">
+                                    <span class="t-tag">Nhắn tin</span>
+                                    <span class="t-tag">Bình tĩnh</span>
+                                    <span class="t-tag">Đoạn âm thanh</span>
+                                </div>
+                                <div class="t-card-footer">
+                                    <button class="btn-t-primary">Tùy chỉnh</button>
+                                    <button class="btn-t-secondary">Xem trước</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Empty State for Organization -->
+                        <div id="org-empty-state" style="display: none; text-align: center; padding: 60px 0;">
+                            <p style="color: #64748B; font-weight: 600; font-size: 16px;">Không tìm thấy bài tập vai</p>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
             </div>
 
             <!-- AI Floating Button -->
@@ -651,51 +2097,307 @@
         </main>
     </div>
 
+    <!-- Preview Modal -->
+    <div class="preview-modal" id="preview-modal">
+        <div class="preview-header">
+            <div class="preview-title-group">
+                <i class="ph-fill ph-student" style="color: #22C55E;"></i>
+                <span id="preview-title-text">Gia sư Mẫu</span>
+            </div>
+            <div class="preview-actions-top">
+                <a href="editor.html" class="btn-customize-outline">Tùy chỉnh</a>
+                <i class="ph ph-x close-preview" id="close-preview"></i>
+            </div>
+        </div>
+        
+        <div class="preview-body">
+            <div class="simulation-window">
+                <div class="sim-top">
+                    <div class="persona-overlay">
+                        <img src="https://ui-avatars.com/api/?name=Linda+Chen&background=EEF2FF&color=4F46E5" alt="Linda" id="preview-persona-img">
+                        <div class="mic-indicator">
+                            <i class="ph ph-microphone"></i>
+                        </div>
+                        <div class="persona-tag">
+                            <h5 id="preview-persona-name">Linda Chen</h5>
+                            <p id="preview-persona-role">Product Manager</p>
+                        </div>
+                    </div>
+                    
+                    <div class="voice-visualizer">
+                        <div class="vis-dot" style="animation-delay: 0s;"></div>
+                        <div class="vis-dot" style="animation-delay: 0.2s;"></div>
+                        <div class="vis-dot" style="animation-delay: 0.4s;"></div>
+                        <div class="vis-dot" style="animation-delay: 0.6s;"></div>
+                        <div class="vis-dot" style="animation-delay: 0.8s;"></div>
+                        <div class="vis-dot" style="animation-delay: 1.0s;"></div>
+                        <div class="vis-dot" style="animation-delay: 1.2s;"></div>
+                        <div class="vis-dot" style="animation-delay: 1.4s;"></div>
+                        <div class="vis-dot" style="animation-delay: 1.6s;"></div>
+                    </div>
+                </div>
+                
+                <div class="sim-bottom">
+                    <div class="timer-badge">00:00</div>
+                    <div class="user-tag">Ngân Lý</div>
+                </div>
+            </div>
+
+            <div class="preview-footer">
+                <div class="sim-controls">
+                    <button class="ctrl-btn"><i class="ph-fill ph-gauge"></i><span style="font-size: 10px; position: absolute; bottom: 4px; font-weight: 800;">1.1x</span></button>
+                    <button class="ctrl-btn"><i class="ph ph-closed-captioning"></i></button>
+                    <button class="ctrl-btn"><i class="ph ph-export"></i></button>
+                    <button class="ctrl-btn"><i class="ph ph-arrow-right"></i></button>
+                    <button class="ctrl-btn btn-stop" id="stop-preview"><i class="ph-fill ph-square"></i></button>
+                </div>
+                <p class="footer-desc" id="preview-footer-text">
+                    Đây là bản xem trước của bài đóng vai Gia sư, nơi bạn có thể luyện tập một chủ đề hoặc quy trình với huấn luyện và phản hồi theo thời gian thực.
+                </p>
+            </div>
+        </div>
+    </div>
+
     <script>
+        // Element Declarations
         const showAiInputBtn = document.getElementById('show-ai-input');
         const emptyState = document.getElementById('empty-state');
         const aiInputState = document.getElementById('ai-input-state');
         const mainHeader = document.getElementById('main-header');
         const aiTextarea = document.getElementById('ai-textarea');
         const generateBtn = document.getElementById('generate-btn');
-        const loadingState = document.getElementById('loading-state');
-        const previewState = document.getElementById('preview-state');
-        const backToLibrary = document.getElementById('back-to-library');
-
-        const continueBtn = document.getElementById('continue-btn');
-
         const exploreState = document.getElementById('explore-state');
         const tabVaiDien = document.getElementById('tab-vai-dien');
         const tabKhamPha = document.getElementById('tab-kham-pha');
+        const tabPhongVan = document.getElementById('tab-phong-van');
+        const tabNhanVat = document.getElementById('tab-nhan-vat');
+        const interviewState = document.getElementById('interview-state');
+        const characterState = document.getElementById('character-state');
+        const characterEditorState = document.getElementById('character-editor-state');
+        const backToCharListBtn = document.getElementById('back-to-char-list');
+        // Character Dropdown Logic
+        document.querySelectorAll('.char-more').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const dropdown = btn.nextElementSibling;
+                // Close other open dropdowns
+                document.querySelectorAll('.char-dropdown.show').forEach(d => {
+                    if (d !== dropdown) d.classList.remove('show');
+                });
+                dropdown.classList.toggle('show');
+            });
+        });
+
+        // Close dropdowns on outside click
+        window.addEventListener('click', () => {
+            document.querySelectorAll('.char-dropdown.show').forEach(d => {
+                d.classList.remove('show');
+            });
+        });
+
+        // Dropdown Action Handlers
+        document.querySelectorAll('.char-dropdown-item').forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const action = item.textContent.trim();
+                const charName = item.closest('.char-card').querySelector('.char-name').textContent;
+                
+                if (action === 'Xóa') {
+                    if (confirm(`Bạn có chắc chắn muốn xóa nhân vật "${charName}"?`)) {
+                        item.closest('.char-card').remove();
+                    }
+                } else {
+                    alert(`${action} nhân vật: ${charName}`);
+                }
+                item.closest('.char-dropdown').classList.remove('show');
+            });
+        });
+
+        const backToLibraryBtn = document.getElementById('back-to-library-btn');
+        const viewAllTemplates = document.getElementById('view-all-templates');
+        const allTemplatesSection = document.getElementById('all-templates-section');
+
+        // Tab Navigation Logic
+        const resetTabs = () => {
+            [tabVaiDien, tabKhamPha, tabPhongVan, tabNhanVat].forEach(t => t.classList.remove('active'));
+            [emptyState, exploreState, interviewState, characterState, characterEditorState, aiInputState].forEach(s => {
+                if (s) s.style.display = 'none';
+            });
+            mainHeader.classList.remove('hidden');
+        };
 
         tabVaiDien.addEventListener('click', (e) => {
             e.preventDefault();
+            resetTabs();
             tabVaiDien.classList.add('active');
-            tabKhamPha.classList.remove('active');
-            exploreState.style.display = 'none';
-            emptyState.classList.remove('hidden');
-            mainHeader.classList.remove('hidden');
-            aiInputState.style.display = 'none';
-            previewState.style.display = 'none';
+            emptyState.style.display = 'flex';
         });
 
         tabKhamPha.addEventListener('click', (e) => {
             e.preventDefault();
+            resetTabs();
             tabKhamPha.classList.add('active');
-            tabVaiDien.classList.remove('active');
-            emptyState.classList.add('hidden');
-            mainHeader.classList.remove('hidden');
-            aiInputState.style.display = 'none';
-            previewState.style.display = 'none';
-            exploreState.style.display = 'flex';
+            exploreState.style.display = 'block';
         });
 
-        showAiInputBtn.addEventListener('click', () => {
-            emptyState.classList.add('hidden');
+        tabPhongVan.addEventListener('click', (e) => {
+            e.preventDefault();
+            resetTabs();
+            tabPhongVan.classList.add('active');
+            interviewState.style.display = 'flex';
+        });
+
+        tabNhanVat.addEventListener('click', (e) => {
+            e.preventDefault();
+            resetTabs();
+            tabNhanVat.classList.add('active');
+            characterState.style.display = 'flex'; 
+        });
+
+        // AI Input Flow Logic
+        const openAiInput = () => {
+            [emptyState, exploreState, interviewState, characterState, characterEditorState].forEach(s => {
+                if (s) s.style.display = 'none';
+            });
             mainHeader.classList.add('hidden');
             aiInputState.style.display = 'flex';
+            allTemplatesSection.style.display = 'none';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+
+        const openCharEditor = () => {
+            [emptyState, exploreState, interviewState, characterState, aiInputState].forEach(s => {
+                if (s) s.style.display = 'none';
+            });
+            mainHeader.classList.add('hidden');
+            characterEditorState.style.display = 'flex';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+
+        showAiInputBtn.addEventListener('click', openAiInput);
+        
+        const btnCreateInterview = document.querySelector('.btn-create-interview');
+        if (btnCreateInterview) btnCreateInterview.addEventListener('click', openAiInput);
+
+        const btnCreateChar = characterState.querySelector('.btn-create-new');
+        if (btnCreateChar) btnCreateChar.addEventListener('click', openCharEditor);
+
+        const saveCharBtn = document.getElementById('save-character-btn');
+
+        backToCharListBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            resetTabs();
+            tabNhanVat.classList.add('active');
+            characterState.style.display = 'flex';
         });
 
+        saveCharBtn.addEventListener('click', () => {
+            alert('Nhân vật đã được lưu thành công!');
+            resetTabs();
+            tabNhanVat.classList.add('active');
+            characterState.style.display = 'flex';
+        });
+
+        backToLibraryBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            resetTabs();
+            tabVaiDien.classList.add('active');
+            emptyState.style.display = 'flex';
+            aiTextarea.value = '';
+            generateBtn.classList.remove('active');
+        });
+
+        // Template Library Logic
+        const templateTabs = document.querySelectorAll('.template-tab');
+        const templateCards = document.querySelectorAll('.template-card');
+        const orgEmptyState = document.getElementById('org-empty-state');
+        const templatesGrid = document.getElementById('templates-grid');
+
+        templateTabs.forEach(tab => {
+            tab.addEventListener('click', (e) => {
+                e.preventDefault();
+                templateTabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+
+                const category = tab.textContent.trim().toLowerCase();
+                let hasVisible = false;
+
+                templateCards.forEach(card => {
+                    const cardCategory = card.getAttribute('data-category');
+                    if (category === 'tất cả mẫu') {
+                        card.style.display = 'flex';
+                        hasVisible = true;
+                    } else if (category === 'bán hàng' && cardCategory === 'sales') {
+                        card.style.display = 'flex';
+                        hasVisible = true;
+                    } else if (category === 'học' && cardCategory === 'learn') {
+                        card.style.display = 'flex';
+                        hasVisible = true;
+                    } else if (category === 'khác' && cardCategory === 'other') {
+                        card.style.display = 'flex';
+                        hasVisible = true;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+
+                if (category === 'từ tổ chức') {
+                    templatesGrid.style.display = 'none';
+                    orgEmptyState.style.display = 'block';
+                } else {
+                    templatesGrid.style.display = 'grid';
+                    orgEmptyState.style.display = 'none';
+                }
+            });
+        });
+
+        // Preview Modal Logic (Event Delegation)
+        const previewModal = document.getElementById('preview-modal');
+        const closePreview = document.getElementById('close-preview');
+        const stopPreview = document.getElementById('stop-preview');
+
+        document.addEventListener('click', (e) => {
+            const previewBtn = e.target.closest('.btn-t-secondary');
+            if (!previewBtn) return;
+
+            const card = previewBtn.closest('.template-card');
+            if (!card) return;
+
+            const titleEl = card.querySelector('h3');
+            const personaEl = card.querySelector('span');
+            
+            if (titleEl && personaEl) {
+                const title = titleEl.textContent;
+                const persona = personaEl.textContent.replace('Vai trò AI: ', '');
+                
+                // Update modal content
+                document.getElementById('preview-title-text').textContent = title + ' Mẫu';
+                document.getElementById('preview-persona-name').textContent = persona;
+                document.getElementById('preview-persona-img').src = `https://ui-avatars.com/api/?name=${encodeURIComponent(persona)}&background=EEF2FF&color=4F46E5`;
+                
+                // Show modal
+                previewModal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            }
+        });
+
+        const hidePreview = () => {
+            if (previewModal) {
+                previewModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        };
+
+        if (closePreview) closePreview.addEventListener('click', hidePreview);
+        if (stopPreview) stopPreview.addEventListener('click', hidePreview);
+
+        viewAllTemplates.addEventListener('click', (e) => {
+            e.preventDefault();
+            allTemplatesSection.style.display = 'block';
+            allTemplatesSection.scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // Prompt Input Logic
         aiTextarea.addEventListener('input', () => {
             if (aiTextarea.value.trim().length > 0) {
                 generateBtn.classList.add('active');
@@ -706,25 +2408,6 @@
 
         generateBtn.addEventListener('click', () => {
             if (!generateBtn.classList.contains('active')) return;
-            
-            aiInputState.style.display = 'none';
-            loadingState.style.display = 'flex';
-            
-            setTimeout(() => {
-                loadingState.style.display = 'none';
-                previewState.style.display = 'block';
-            }, 2000);
-        });
-
-        backToLibrary.addEventListener('click', () => {
-            previewState.style.display = 'none';
-            emptyState.classList.remove('hidden');
-            mainHeader.classList.remove('hidden');
-            aiTextarea.value = '';
-            generateBtn.classList.remove('active');
-        });
-
-        continueBtn.addEventListener('click', () => {
             window.location.href = 'practice.html';
         });
     </script>

@@ -409,6 +409,115 @@
             font-size: 20px;
             cursor: pointer;
         }
+
+        .wn-card {
+            margin-top: 24px;
+            background: linear-gradient(135deg, #FFFFFF 0%, #F0FDF4 50%, #F5F3FF 100%);
+            border: 1px solid #E0E7FF;
+            border-radius: 16px;
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .wn-content {
+            flex: 1;
+            max-width: 500px;
+        }
+
+        .wn-content h4 {
+            font-size: 20px;
+            font-weight: 800;
+            color: #0F172A;
+            margin-bottom: 16px;
+        }
+
+        .wn-content p {
+            font-size: 15px;
+            color: #334155;
+            line-height: 1.6;
+            margin-bottom: 32px;
+        }
+
+        .btn-learn-more {
+            background: linear-gradient(90deg, #38BDF8 0%, #6366F1 100%);
+            color: white;
+            border: none;
+            padding: 12px 32px;
+            border-radius: 99px;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+        }
+
+        .wn-visual {
+            position: relative;
+            flex-shrink: 0;
+            width: 380px;
+        }
+
+        .wn-mockup {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 10px 40px rgba(99, 102, 241, 0.1);
+            position: relative;
+            z-index: 2;
+        }
+
+        .wn-mockup-title {
+            color: #3B82F6;
+            font-weight: 800;
+            font-size: 15px;
+            text-align: center;
+            margin-bottom: 16px;
+        }
+
+        .wn-mockup-input {
+            border: 1px solid #5EEAD4;
+            border-radius: 12px;
+            padding: 16px;
+            min-height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .wn-mockup-input span {
+            color: #94A3B8;
+            font-size: 11px;
+        }
+
+        .wn-mockup-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 16px;
+        }
+
+        .wn-mockup-footer i.ph-plus {
+            color: #6366F1;
+            font-weight: bold;
+        }
+
+        .wn-mockup-btn {
+            background: #4F46E5;
+            color: white;
+            border-radius: 6px;
+            padding: 6px 12px;
+            font-size: 10px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .wn-sparkle-1 { position: absolute; top: -10px; right: 20px; color: #C4B5FD; font-size: 24px; z-index: 1; }
+        .wn-sparkle-2 { position: absolute; bottom: 20px; left: -15px; color: #5EEAD4; font-size: 20px; z-index: 1; }
+        .wn-sparkle-3 { position: absolute; top: 10px; right: -5px; color: #E0E7FF; font-size: 16px; z-index: 1; }
     </style>
 </head>
 <body>
@@ -419,7 +528,6 @@
                 <a href="index.html" class="logo-small">
                     <i class="ph-fill ph-microphone-stage"></i> yoodli
                 </a>
-                <a href="#" style="color: #64748B;"><i class="ph-bold ph-caret-left"></i></a>
             </div>
             <div class="practice-menu-container">
                 <button class="btn-practice">
@@ -438,14 +546,14 @@
                     <a href="interview.html" class="practice-item">
                         <i class="ph-duotone ph-users-three"></i> Phỏng vấn
                     </a>
-                    <a href="#" class="practice-item">
+                    <a href="upload.html" class="practice-item">
                         <i class="ph-duotone ph-cloud-arrow-up"></i> Tải lên
                     </a>
                 </div>
             </div>
             
             <nav class="sidebar-nav">
-                <a href="#" class="nav-item active">
+                <a href="app.html" class="nav-item active">
                     <i class="ph-duotone ph-house"></i> Trang chủ
                 </a>
                 <a href="builder.html" class="nav-item">
@@ -539,6 +647,29 @@
                         </div>
                     </div>
                     <button class="wn-close"><i class="ph-bold ph-x"></i></button>
+                </div>
+                
+                <div class="wn-card">
+                    <div class="wn-content">
+                        <h4>Meet Your New Builder</h4>
+                        <p><strong>Roleplay Builder</strong> can now turn simple prompts into detailed roleplays. Just describe what you want, and we'll do the heavy lifting behind the scenes — personas, context, objections, and more.</p>
+                        <button class="btn-learn-more">Tìm hiểu thêm</button>
+                    </div>
+                    <div class="wn-visual">
+                        <div class="wn-mockup">
+                            <div class="wn-mockup-title">What's your roleplay about?</div>
+                            <div class="wn-mockup-input">
+                                <span>Describe your roleplay in a few sentences...</span>
+                                <div class="wn-mockup-footer">
+                                    <i class="ph ph-plus"></i>
+                                    <div class="wn-mockup-btn"><i class="ph-fill ph-magic-wand"></i> Create with AI</div>
+                                </div>
+                            </div>
+                        </div>
+                        <i class="ph-fill ph-sparkle wn-sparkle-1"></i>
+                        <i class="ph-fill ph-sparkle wn-sparkle-2"></i>
+                        <i class="ph-fill ph-sparkle wn-sparkle-3"></i>
+                    </div>
                 </div>
             </div>
         </main>

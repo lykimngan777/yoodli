@@ -31,7 +31,7 @@ const layout = {
                         <!-- GIẢI PHÁP (Mega Menu) -->
                         <div class="nav-item" style="position: relative;">
                             <a href="#" class="nav-link">GIẢI PHÁP</a>
-                            <div class="dropdown mega-menu" style="min-width: 800px; position: absolute; top: 100%; left: -200px; background: white; border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); padding: 30px; opacity: 0; visibility: hidden; transition: all 0.3s ease; transform: translateY(10px); border: 1px solid #F1F5F9; display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px;">
+                            <div class="dropdown mega-menu" style="min-width: 950px; position: absolute; top: 100%; left: -300px; background: white; border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); padding: 30px; opacity: 0; visibility: hidden; transition: all 0.3s ease; transform: translateY(10px); border: 1px solid #F1F5F9; display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px;">
                                 <div class="mega-col">
                                     <div class="mega-title" style="font-size: 11px; font-weight: 800; color: #38BDF8; letter-spacing: 0.1em; margin-bottom: 20px;">CHO ĐỘI NGŨ</div>
                                     <div style="display: flex; flex-direction: column; gap: 15px;">
@@ -55,12 +55,12 @@ const layout = {
                                 <div class="mega-col">
                                     <div class="mega-title" style="font-size: 11px; font-weight: 800; color: #38BDF8; letter-spacing: 0.1em; margin-bottom: 20px;">TRƯỜNG HỢP SỬ DỤNG</div>
                                     <div style="display: flex; flex-direction: column; gap: 15px;">
-                                        <a href="#" class="mega-link">Đào tạo Bán hàng</a>
-                                        <a href="#" class="mega-link">Đào tạo Hỗ trợ Khách hàng</a>
-                                        <a href="#" class="mega-link">Nhập môn & Chứng chỉ</a>
-                                        <a href="#" class="mega-link">Diễn thuyết Công cộng</a>
+                                        <a href="{BASE}for-business/sales-training.html" class="mega-link">Đào tạo Bán hàng</a>
+                                        <a href="{BASE}for-business/customer-support-training.html" class="mega-link">Đào tạo Hỗ trợ Khách hàng</a>
+                                        <a href="{BASE}for-business/onboarding-certification.html" class="mega-link">Nhập môn & Chứng chỉ</a>
+                                        <a href="{BASE}for-business/public-speaking.html" class="mega-link">Diễn thuyết Công cộng</a>
                                         <a href="{BASE}for-business/partner-enablement.html" class="mega-link">Hỗ trợ Đối tác</a>
-                                        <a href="#" class="mega-link">Chuẩn bị Phỏng vấn</a>
+                                        <a href="{BASE}for-business/interview-prep.html" class="mega-link">Chuẩn bị Phỏng vấn</a>
                                     </div>
                                 </div>
                             </div>
@@ -72,24 +72,24 @@ const layout = {
                         <!-- TÀI NGUYÊN -->
                         <div class="nav-item" style="position: relative;">
                             <a href="#" class="nav-link">TÀI NGUYÊN</a>
-                            <div class="dropdown" style="min-width: 220px; position: absolute; top: 100%; left: 0; background: white; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); padding: 15px; opacity: 0; visibility: hidden; transition: all 0.3s ease; transform: translateY(10px); border: 1px solid #F1F5F9;">
+                            <div class="dropdown" style="min-width: 280px; position: absolute; top: 100%; left: 0; background: white; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); padding: 15px; opacity: 0; visibility: hidden; transition: all 0.3s ease; transform: translateY(10px); border: 1px solid #F1F5F9;">
                                 <a href="{BASE}resources/blog.html" class="dropdown-link">Blog</a>
                                 <a href="{BASE}resources/feature-announcements.html" class="dropdown-link">Thông báo Tính năng</a>
                                 <a href="{BASE}resources/case-studies.html" class="dropdown-link">Câu chuyện Thành công</a>
-                                <a href="#" class="dropdown-link">Báo chí</a>
-                                <a href="#" class="dropdown-link">Trung tâm Trợ giúp</a>
-                                <a href="#" class="dropdown-link">Trung tâm Tin cậy</a>
+                                <a href="{BASE}resources/press.html" class="dropdown-link">Báo chí</a>
+                                <a href="{BASE}resources/help-center.html" class="dropdown-link">Trung tâm Trợ giúp</a>
+                                <a href="{BASE}resources/trust-center.html" class="dropdown-link">Trung tâm Tin cậy</a>
                             </div>
                         </div>
 
                         <!-- VỀ CHÚNG TÔI -->
                         <div class="nav-item" style="position: relative;">
                             <a href="#" class="nav-link">VỀ CHÚNG TÔI</a>
-                            <div class="dropdown" style="min-width: 180px; position: absolute; top: 100%; left: 0; background: white; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); padding: 15px; opacity: 0; visibility: hidden; transition: all 0.3s ease; transform: translateY(10px); border: 1px solid #F1F5F9;">
-                                <a href="#" class="dropdown-link">Đội ngũ</a>
+                            <div class="dropdown" style="min-width: 260px; position: absolute; top: 100%; left: 0; background: white; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); padding: 15px; opacity: 0; visibility: hidden; transition: all 0.3s ease; transform: translateY(10px); border: 1px solid #F1F5F9;">
+                                <a href="{BASE}about/team.html" class="dropdown-link">Đội ngũ</a>
                                 <a href="#" class="dropdown-link">Tuyển dụng</a>
-                                <a href="#" class="dropdown-link">FAQ</a>
-                                <a href="#" class="dropdown-link">Hội thảo Trực tuyến</a>
+                                <a href="{BASE}about/faq.html" class="dropdown-link">FAQ</a>
+                                <a href="{BASE}about/webinars.html" class="dropdown-link">Hội thảo Trực tuyến</a>
                             </div>
                         </div>
                     </nav>
@@ -105,7 +105,16 @@ const layout = {
     footer: `
         <footer style="background: #F5F3FF; color: #1E293B; padding: 100px 0 40px; border-top: 1px solid rgba(0,0,0,0.05); font-family: 'Inter', sans-serif;">
             <div class="container" style="max-width: 1400px; margin: 0 auto; padding: 0 40px;">
-                <div style="display: grid; grid-template-columns: repeat(6, 1fr) 1.5fr; gap: 40px; margin-bottom: 80px;">
+                <div style="display: grid; grid-template-columns: 2fr repeat(6, 1fr); gap: 40px; margin-bottom: 80px;">
+                    <!-- Logo Column -->
+                    <div class="footer-col">
+                        <div class="yoodli-logo-small" style="font-size: 24px; margin-bottom: 24px;">
+                            <i class="ph-fill ph-microphone-stage"></i> yoodli
+                        </div>
+                        <p style="font-size: 14px; line-height: 1.6; color: #64748B; margin-bottom: 24px;">
+                            Nền tảng huấn luyện nhập vai AI thực tế giúp bạn giao tiếp tự tin và hiệu quả hơn trong mọi tình huống.
+                        </p>
+                    </div>
                     <!-- Nền tảng -->
                     <div class="footer-col">
                         <h4 style="font-size: 11px; font-weight: 800; color: #64748B; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 24px;">Nền tảng</h4>
@@ -150,12 +159,12 @@ const layout = {
                     <div class="footer-col">
                         <h4 style="font-size: 11px; font-weight: 800; color: #64748B; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 24px;">Sử dụng</h4>
                         <div style="display: flex; flex-direction: column; gap: 12px;">
-                            <a href="#" class="footer-link">Đào tạo Bán hàng</a>
-                            <a href="#" class="footer-link">Hỗ trợ Khách hàng</a>
-                            <a href="#" class="footer-link">Nhập môn & Chứng chỉ</a>
-                            <a href="#" class="footer-link">Diễn thuyết</a>
+                            <a href="{BASE}for-business/sales-training.html" class="footer-link">Đào tạo Bán hàng</a>
+                            <a href="{BASE}for-business/customer-support-training.html" class="footer-link">Đào tạo Hỗ trợ Khách hàng</a>
+                            <a href="{BASE}for-business/onboarding-certification.html" class="footer-link">Nhập môn & Chứng chỉ</a>
+                            <a href="{BASE}for-business/public-speaking.html" class="footer-link">Diễn thuyết</a>
                             <a href="{BASE}for-business/partner-enablement.html" class="footer-link">Hỗ trợ Đối tác</a>
-                            <a href="#" class="footer-link">Chuẩn bị Phỏng vấn</a>
+                            <a href="{BASE}for-business/interview-prep.html" class="footer-link">Chuẩn bị Phỏng vấn</a>
                         </div>
                     </div>
 

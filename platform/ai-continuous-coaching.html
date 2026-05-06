@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,18 +22,21 @@
             background: linear-gradient(180deg, #FFFFFF 0%, #F0F9FF 100%);
             overflow: hidden;
         }
+
         .hero-grid {
             display: grid;
             grid-template-columns: 1fr 1.2fr;
             gap: 80px;
             align-items: center;
         }
+
         .hero-visual-coaching {
             position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
         }
+
         .coach-circle {
             width: 400px;
             height: 400px;
@@ -44,6 +48,7 @@
             align-items: center;
             box-shadow: 0 0 100px rgba(139, 92, 246, 0.2);
         }
+
         .coach-img {
             width: 320px;
             height: 320px;
@@ -52,24 +57,41 @@
             border: 8px solid white;
             z-index: 2;
         }
+
         .floating-badge {
             position: absolute;
             background: white;
             padding: 12px 20px;
             border-radius: 16px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
             display: flex;
             align-items: center;
             gap: 12px;
             z-index: 3;
             animation: float 4s ease-in-out infinite;
         }
-        .badge-1 { top: 20%; left: -20px; }
-        .badge-2 { bottom: 10%; right: -20px; animation-delay: 1s; }
+
+        .badge-1 {
+            top: 20%;
+            left: -20px;
+        }
+
+        .badge-2 {
+            bottom: 10%;
+            right: -20px;
+            animation-delay: 1s;
+        }
 
         @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
         }
 
         .hero-tag {
@@ -81,6 +103,7 @@
             margin-bottom: 16px;
             display: block;
         }
+
         .hero-title {
             font-size: 64px;
             font-weight: 800;
@@ -88,6 +111,7 @@
             margin-bottom: 24px;
             color: var(--coaching-blue);
         }
+
         .hero-subtitle {
             font-size: 20px;
             color: var(--text-light);
@@ -101,17 +125,20 @@
             background: white;
             text-align: center;
         }
+
         .fade-title {
             font-size: 40px;
             font-weight: 800;
             margin-bottom: 24px;
         }
+
         .fade-subtitle {
             color: var(--text-light);
             font-size: 18px;
             max-width: 800px;
             margin: 0 auto 60px;
         }
+
         .fade-list {
             display: flex;
             justify-content: center;
@@ -120,12 +147,16 @@
             list-style: none;
             font-weight: 600;
         }
+
         .fade-list li {
             display: flex;
             align-items: center;
             gap: 8px;
         }
-        .fade-list li i { color: var(--coaching-blue); }
+
+        .fade-list li i {
+            color: var(--coaching-blue);
+        }
 
         /* Dark Grid Section */
         .work-section {
@@ -134,22 +165,26 @@
             padding: 120px 0;
             border-radius: 60px 60px 0 0;
         }
+
         .work-title {
             font-size: 44px;
             font-weight: 800;
             text-align: center;
             margin-bottom: 20px;
         }
+
         .work-subtitle {
             text-align: center;
             opacity: 0.7;
             margin-bottom: 80px;
         }
+
         .work-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 24px;
         }
+
         .work-card {
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(255, 255, 255, 0.1);
@@ -157,10 +192,12 @@
             border-radius: 32px;
             transition: all 0.3s ease;
         }
+
         .work-card:hover {
             background: rgba(255, 255, 255, 0.05);
             transform: translateY(-5px);
         }
+
         .work-icon {
             font-size: 32px;
             color: var(--coaching-blue);
@@ -173,11 +210,13 @@
             justify-content: center;
             border-radius: 16px;
         }
+
         .work-card h3 {
             font-size: 20px;
             font-weight: 700;
             margin-bottom: 16px;
         }
+
         .work-card p {
             font-size: 16px;
             opacity: 0.7;
@@ -189,11 +228,13 @@
             padding: 120px 0;
             background: white;
         }
+
         .how-grid {
             display: grid;
             grid-template-columns: 1fr 1.5fr;
             gap: 60px;
         }
+
         .how-card {
             background: var(--coaching-card-bg);
             padding: 40px;
@@ -203,6 +244,7 @@
             gap: 24px;
             align-items: flex-start;
         }
+
         .how-card-icon {
             background: white;
             padding: 16px;
@@ -216,22 +258,26 @@
             padding: 120px 0;
             background: #F8FAFC;
         }
+
         .leads-grid {
             display: grid;
             grid-template-columns: 1.2fr 1fr;
             gap: 80px;
             align-items: center;
         }
+
         .dashboard-mockup {
             width: 100%;
             border-radius: 32px;
-            box-shadow: 0 40px 80px rgba(0,0,0,0.1);
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.1);
         }
+
         .slider-controls {
             display: flex;
             gap: 12px;
             margin-top: 40px;
         }
+
         .slider-dot {
             width: 60px;
             height: 4px;
@@ -239,6 +285,7 @@
             border-radius: 2px;
             cursor: pointer;
         }
+
         .slider-dot.active {
             background: var(--coaching-blue);
         }
@@ -248,6 +295,7 @@
             padding: 100px 0;
             text-align: center;
         }
+
         .check-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -256,27 +304,35 @@
             margin: 40px auto;
             text-align: left;
         }
+
         .check-item {
             display: flex;
             gap: 12px;
             font-size: 18px;
             font-weight: 500;
         }
-        .check-item i { color: #10B981; margin-top: 4px; }
+
+        .check-item i {
+            color: #10B981;
+            margin-top: 4px;
+        }
 
         /* FAQ */
         .faq-section {
             padding: 100px 0;
             background: white;
         }
+
         .faq-container {
             max-width: 800px;
             margin: 0 auto;
         }
+
         .faq-item {
             border-bottom: 1px solid #E2E8F0;
             padding: 24px 0;
         }
+
         .faq-question {
             font-size: 20px;
             font-weight: 700;
@@ -285,6 +341,7 @@
             align-items: center;
             cursor: pointer;
         }
+
         .faq-answer {
             max-height: 0;
             overflow: hidden;
@@ -292,27 +349,57 @@
             color: var(--text-light);
             margin-top: 0;
         }
+
         .faq-item.active .faq-answer {
             max-height: 200px;
             margin-top: 16px;
         }
-        .faq-item i { transition: transform 0.3s ease; }
-        .faq-item.active i { transform: rotate(45deg); }
+
+        .faq-item i {
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active i {
+            transform: rotate(45deg);
+        }
 
         @media (max-width: 992px) {
-            .hero-grid, .how-grid, .leads-grid { grid-template-columns: 1fr; text-align: center; }
-            .hero-title { font-size: 48px; }
-            .check-grid { grid-template-columns: 1fr; }
-            .hero-visual-coaching { margin-bottom: 60px; }
-            .coach-circle { width: 300px; height: 300px; }
-            .coach-img { width: 240px; height: 240px; }
+
+            .hero-grid,
+            .how-grid,
+            .leads-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-title {
+                font-size: 48px;
+            }
+
+            .check-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-visual-coaching {
+                margin-bottom: 60px;
+            }
+
+            .coach-circle {
+                width: 300px;
+                height: 300px;
+            }
+
+            .coach-img {
+                width: 240px;
+                height: 240px;
+            }
         }
 
         /* Split Wave Section */
         .split-wave-section {
             position: relative;
         }
-        
+
         .wave-top {
             background-color: #eef2f7;
             padding: 40px 20px 60px;
@@ -390,8 +477,10 @@
             display: block;
             width: 100%;
             height: auto;
-            background-color: #eef2f7; /* Match Top bg */
-            margin-top: -1px; /* prevent rendering gap */
+            background-color: #eef2f7;
+            /* Match Top bg */
+            margin-top: -1px;
+            /* prevent rendering gap */
         }
 
         .wave-divider svg {
@@ -458,45 +547,196 @@
             margin-top: 60px;
         }
 
-        /* Coaching Leader Section Overrides (Light Blue Theme) */
+        /* Leader Slider Section Refined */
         .coaching-leader-section {
             background-color: #F8FAFC !important;
-            color: #0f1b3d !important;
             padding: 120px 0;
         }
-        .coaching-leader-section .leader-header h2,
-        .coaching-leader-section .slide-text h3 {
-            color: #0f1b3d !important;
+
+        .outcome-visual {
+            height: 380px;
+            border-radius: 24px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #2563eb 0%, #06b6d4 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 20px 40px rgba(37, 99, 235, 0.2);
         }
-        .coaching-leader-section .leader-header p,
-        .coaching-leader-section .slide-text p {
-            color: #334155 !important;
+
+        /* Mockup elements */
+        .mockup-video-ui {
+            width: 80%;
+            height: 70%;
+            background: white;
+            border-radius: 16px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
-        .coaching-leader-section .nav-btn {
-            color: #0f1b3d !important;
-            border-color: rgba(15, 27, 61, 0.2) !important;
+
+        .video-avatar {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
-        .coaching-leader-section .nav-btn:hover {
-            background-color: rgba(15, 27, 61, 0.05) !important;
+
+        .badge-tag {
+            position: absolute;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
-        .coaching-leader-section .progress-segment {
-            background-color: rgba(15, 27, 61, 0.1) !important;
+
+        .tag-green {
+            background: #f0fdf4;
+            color: #16a34a;
+            border: 1px solid #dcfce7;
         }
-        .coaching-leader-section .progress-fill {
-            background-color: #4F46E5 !important;
+
+        .tag-red {
+            background: #fef2f2;
+            color: #dc2626;
+            border: 1px solid #fee2e2;
         }
-        
-        /* Remove inherited fade masks/shadows */
-        .coaching-leader-section .slider-container,
-        .coaching-leader-section .slider-track,
-        .coaching-leader-section .slide-item,
-        .coaching-leader-section .slide-text {
-            -webkit-mask-image: none !important;
-            mask-image: none !important;
-            box-shadow: none !important;
+
+        .video-controls {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 12px 20px;
+            background: rgba(255, 255, 255, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 13px;
+            font-weight: 700;
         }
-        .coaching-leader-section .visual-gradient-box {
-            box-shadow: none !important;
+
+        .btn-done-small {
+            background: #0f172a;
+            color: white;
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 12px;
+        }
+
+        .mockup-cards-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            width: 80%;
+        }
+
+        .m-card {
+            background: white;
+            padding: 16px 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .m-label {
+            font-size: 11px;
+            color: #64748b;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .m-value {
+            font-size: 16px;
+            color: #0f172a;
+            font-weight: 800;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .mockup-dash-ui {
+            width: 85%;
+            height: 75%;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 24px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .dash-main-av {
+            width: 140px;
+            height: 140px;
+            background: #4f46e5;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .dash-side-avs {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .side-av {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+        }
+
+        .mockup-analytics {
+            width: 85%;
+            background: white;
+            border-radius: 20px;
+            padding: 24px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-header {
+            font-size: 14px;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .stat-bar-box {
+            background: #f8fafc;
+            padding: 16px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+
+        .spider-chart-box {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            border: 1px solid #f1f5f9;
+            border-radius: 12px;
+        }
+
+        .slider-navigation .progress-segment {
+            background-color: #e2e8f0 !important;
+            width: 80px;
+            height: 6px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .slider-navigation .progress-fill {
+            background-color: #1e293b !important;
+            height: 100%;
+            width: 0;
         }
 
         /* How It Works Section */
@@ -577,504 +817,633 @@
                 gap: 20px;
                 padding: 0 20px;
             }
-            .wave-top h2 { font-size: 28px; }
-            .wave-bottom h2 { font-size: 26px; }
+
+            .wave-top h2 {
+                font-size: 28px;
+            }
+
+            .wave-bottom h2 {
+                font-size: 26px;
+            }
 
             .hw-grid-new {
                 grid-template-columns: 1fr;
                 gap: 40px;
             }
+
             .hw-left {
                 position: static;
             }
+
             .hw-left h2 {
                 font-size: 32px;
             }
+
             .hw-card-new {
                 flex-direction: column;
                 padding: 24px;
                 gap: 16px;
             }
         }
+
+        /* Traditional Fails Section */
+        .traditional-fails-section {
+            padding: 100px 0;
+            background-color: #f8fafc;
+        }
+
+        .traditional-fails-section h2 {
+            font-size: 36px;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 16px;
+            color: #0f1b3d;
+        }
+
+        .traditional-fails-section p {
+            text-align: center;
+            color: #475569;
+            max-width: 800px;
+            margin: 0 auto 60px;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .fails-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .fail-card {
+            background: white;
+            padding: 32px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            transition: transform 0.3s ease;
+        }
+
+        .fail-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .fail-card i {
+            font-size: 24px;
+            color: #ef4444;
+            background: #fee2e2;
+            padding: 16px;
+            border-radius: 12px;
+            flex-shrink: 0;
+        }
+
+        .fail-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1e293b;
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        /* How It Works Section Refined - Matching Reference */
+        .hiw-section {
+            padding: 120px 0;
+            background: white;
+        }
+
+        .hiw-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.8fr;
+            gap: 100px;
+            align-items: start;
+        }
+
+        .hiw-content h2 {
+            font-size: 48px;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+        }
+
+        .hiw-content p {
+            font-size: 20px;
+            color: #475569;
+            line-height: 1.6;
+            max-width: 350px;
+        }
+
+        .hiw-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .hiw-card-new {
+            background: linear-gradient(90deg, #e0f2fe 0%, #eef2ff 100%);
+            padding: 40px;
+            border-radius: 24px;
+            display: flex;
+            gap: 32px;
+            align-items: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hiw-card-new:hover {
+            transform: scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+        }
+
+        .hiw-icon-wrapper {
+            background: transparent;
+            color: #4f46e5;
+            font-size: 48px;
+            flex-shrink: 0;
+        }
+
+        .hiw-card-content h3 {
+            font-size: 24px;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 12px;
+            letter-spacing: -0.01em;
+        }
+
+        .hiw-card-content p {
+            font-size: 17px;
+            color: #334155;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        @media (max-width: 992px) {
+            .hiw-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .hiw-content p {
+                max-width: none;
+            }
+
+            .hiw-card-new {
+                padding: 24px;
+                gap: 20px;
+            }
+
+            .hiw-icon-wrapper {
+                font-size: 36px;
+            }
+        }
     </style>
 </head>
+
 <body>
-    <header class="navbar">
-        <div class="container">
-            <a href="../index.html" class="logo">
-                <i class="ph-fill ph-microphone-stage"></i> yoodli
-            </a>
-            <nav class="nav-links">
-                <div class="nav-item">
-                    <a href="#">Nền tảng <i class="ph ph-caret-down"></i></a>
-                    <div class="dropdown">
-                        <a href="ai-roleplays.html" class="dropdown-item">
-                            <span class="title">Nhập vai AI</span>
-                            <span class="desc">Luyện tập với các Persona thực tế</span>
-                        </a>
-                        <a href="ai-tutor.html" class="dropdown-item">
-                            <span class="title">Gia sư AI</span>
-                            <span class="desc">Học kỹ năng giao tiếp 1-1</span>
-                        </a>
-                        <a href="ai-continuous-coaching.html" class="dropdown-item">
-                            <span class="title">Huấn luyện AI Liên tục</span>
-                            <span class="desc">Cải thiện kỹ năng mỗi ngày</span>
-                        </a>
-                        <a href="#" class="dropdown-item">
-                            <span class="title">Học tập Trải nghiệm</span>
-                            <span class="desc">Học thông qua thực hành thực tế</span>
-                        </a>
-                        <a href="#" class="dropdown-item">
-                            <span class="title">Phản hồi Cá nhân hóa</span>
-                            <span class="desc">Nhận đánh giá chi tiết từ AI</span>
-                        </a>
-                        <a href="#" class="dropdown-item">
-                            <span class="title">Phân tích & Báo cáo</span>
-                            <span class="desc">Đo lường hiệu quả đội ngũ</span>
-                        </a>
-                        <a href="#" class="dropdown-item">
-                            <span class="title">Tích hợp & MCP</span>
-                            <span class="desc">Kết nối hệ sinh thái của bạn</span>
-                        </a>
+    <!-- Header and Banner will be injected by master_layout.js -->
+
+    <!-- Hero Section -->
+    <section class="hero-coaching"
+        style="padding: 120px 0 100px; background: radial-gradient(circle at 80% 30%, rgba(99, 102, 241, 0.08) 0%, transparent 50%), linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);">
+        <div class="container hero-grid"
+            style="display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 80px; align-items: center;">
+            <div class="hero-visual-coaching" style="position: relative; display: flex; justify-content: center;">
+                <div style="position: relative; width: 400px; height: 400px;">
+                    <div
+                        style="width: 380px; height: 380px; border-radius: 50%; background: #000; display: flex; align-items: center; justify-content: center; position: relative; z-index: 1; overflow: hidden; border: 8px solid white; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800"
+                            alt="AI Continuous Coaching"
+                            style="width: 100%; height: 100%; object-fit: cover; scale: 1.1;">
+                    </div>
+
+                    <!-- Floating Badges -->
+                    <div class="floating-badge"
+                        style="position: absolute; top: 15%; left: -40px; background: white; padding: 12px 20px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); display: flex; align-items: center; gap: 12px; z-index: 5;">
+                        <i class="ph-fill ph-check-circle" style="color: #22C55E; font-size: 20px;"></i>
+                        <div style="font-size: 13px; font-weight: 700;">Tốt lắm, bạn đang đạt mục tiêu!</div>
+                    </div>
+
+                    <div class="floating-badge"
+                        style="position: absolute; bottom: 20%; right: -40px; background: white; padding: 12px 20px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); display: flex; align-items: center; gap: 12px; z-index: 5;">
+                        <i class="ph-fill ph-trend-up" style="color: #6366F1; font-size: 20px;"></i>
+                        <div style="font-size: 13px; font-weight: 700;">+32% Tự tin</div>
+                    </div>
+
+                    <!-- Decorative Shapes -->
+                    <div
+                        style="position: absolute; top: 5%; right: 10%; width: 40px; height: 40px; background: #FBBF24; clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);">
                     </div>
                 </div>
-
-                <div class="nav-item">
-                    <a href="#">Giải pháp <i class="ph ph-caret-down"></i></a>
-                    <div class="dropdown mega-menu">
-                        <div class="mega-col">
-                            <div class="mega-col-title">DÀNH CHO ĐỘI NGŨ</div>
-                            <div class="mega-links">
-                                <a href="../for-business/revenue-teams.html">Đội ngũ Doanh thu</a>
-                                <a href="../for-business/sales-enablement.html">Hỗ trợ Bán hàng</a>
-                                <a href="../for-business/learning-and-development.html">Học tập & Phát triển (L&D)</a>
-                                <a href="../for-business/executive-coaching.html">Huấn luyện Điều hành</a>
-                            </div>
-                        </div>
-                        <div class="mega-col">
-                            <div class="mega-col-title">NGÀNH NGHỀ</div>
-                            <div class="mega-links">
-                                <a href="../industries/tech-saas.html">Công nghệ & SaaS</a>
-                                <a href="../industries/financial-services.html">Dịch vụ Tài chính</a>
-                                <a href="#">Y tế & Chăm sóc Sức khỏe</a>
-                                <a href="../industries/education.html">Giáo dục</a>
-                                <a href="../industries/professional-services.html">Dịch vụ Chuyên nghiệp</a>
-                                <a href="../industries/retail-hospitality.html">Bán lẻ & Khách sạn</a>
-                            </div>
-                        </div>
-                        <div class="mega-col">
-                            <div class="mega-col-title">TRƯỜNG HỢP SỬ DỤNG</div>
-                            <div class="mega-links">
-                                <a href="#">Đào tạo Bán hàng</a>
-                                <a href="#">Đào tạo Hỗ trợ Khách hàng</a>
-                                <a href="#">Nhập môn & Chứng chỉ</a>
-                                <a href="#">Diễn thuyết Công chúng</a>
-                                <a href="#">Hỗ trợ Đối tác</a>
-                                <a href="#">Chuẩn bị Phỏng vấn</a>
-                            </div>
-                        </div>
-                    </div>
+            </div>
+            <div class="hero-content">
+                <span class="hero-tag"
+                    style="font-size: 11px; font-weight: 800; color: var(--rp-indigo); text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 16px; display: inline-block;">CỦNG
+                    CỐ KỸ NĂNG, DUY TRÌ HIỆU SUẤT</span>
+                <h1
+                    style="font-size: 72px; font-weight: 800; line-height: 1; margin-bottom: 24px; letter-spacing: -0.04em; color: var(--coaching-blue);">
+                    Huấn luyện AI Liên tục</h1>
+                <p style="font-size: 18px; color: var(--text-light); margin-bottom: 32px; line-height: 1.6;">Buổi đào
+                    tạo kết thúc lúc 5 giờ chiều. Nhưng hiệu suất thì không. Yoodli giúp đội ngũ của bạn không ngừng cải
+                    thiện sau khi buổi học kết thúc bằng việc củng cố kỹ năng mỗi ngày.</p>
+                <div style="display: flex; gap: 16px;">
+                    <a href="../app.html" class="btn btn-primary" style="padding: 18px 40px; font-size: 18px;">Xem thực
+                        tế ngay</a>
                 </div>
-
-                <div class="nav-item"><a href="../pricing.html">Bảng giá</a></div>
-
-                <div class="nav-item">
-                    <a href="#">Tài nguyên <i class="ph ph-caret-down"></i></a>
-                    <div class="dropdown">
-                        <a href="../resources/blog.html" class="dropdown-item"><span class="title">Blog</span></a>
-                        <a href="../resources/feature-announcements.html" class="dropdown-item"><span class="title">Thông báo Tính năng</span></a>
-                        <a href="../resources/case-studies.html" class="dropdown-item"><span class="title">Câu chuyện Thành công</span></a>
-                        <a href="#" class="dropdown-item"><span class="title">Báo chí</span></a>
-                        <a href="#" class="dropdown-item"><span class="title">Trung tâm Trợ giúp</span></a>
-                    </div>
-                </div>
-
-                <div class="nav-item">
-                    <a href="#">Về chúng tôi <i class="ph ph-caret-down"></i></a>
-                    <div class="dropdown">
-                        <a href="#" class="dropdown-item"><span class="title">Đội ngũ của Chúng tôi</span></a>
-                        <a href="#" class="dropdown-item"><span class="title">Tuyển dụng</span></a>
-                        <a href="#" class="dropdown-item"><span class="title">Hội thảo Trực tuyến</span></a>
-                    </div>
-                </div>
-            </nav>
-            <div class="nav-actions">
-                <a href="#" class="login-link">Đăng nhập</a>
-                <a href="../app.html" class="btn btn-outline-pill">Dùng thử Yoodli</a>
-                <a href="../app.html" class="btn btn-primary-pill">Nhận Demo</a>
             </div>
         </div>
-    </header>
-        <!-- Hero Section -->
-        <section class="hero-coaching" style="padding: 120px 0 100px; background: radial-gradient(circle at 80% 30%, rgba(99, 102, 241, 0.08) 0%, transparent 50%), linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);">
-            <div class="container hero-grid" style="display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 80px; align-items: center;">
-                <div class="hero-visual-coaching" style="position: relative; display: flex; justify-content: center;">
-                    <div style="position: relative; width: 400px; height: 400px;">
-                        <!-- Main Avatar -->
-                        <div style="width: 380px; height: 380px; border-radius: 50%; background: linear-gradient(135deg, #E0E7FF 0%, #F3E8FF 100%); display: flex; align-items: center; justify-content: center; position: relative; z-index: 1;">
-                            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=1000" alt="AI Coach" style="width: 320px; height: 320px; border-radius: 50%; object-fit: cover; border: 8px solid white; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
-                        </div>
-                        
-                        <!-- Floating Badges -->
-                        <div class="floating-badge" style="position: absolute; top: 15%; left: -40px; background: white; padding: 12px 20px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); display: flex; align-items: center; gap: 12px; z-index: 5;">
-                            <i class="ph-fill ph-check-circle" style="color: #22C55E; font-size: 20px;"></i>
-                            <div style="font-size: 13px; font-weight: 700;">Tốt lắm, bạn đang đạt mục tiêu!</div>
-                        </div>
-                        
-                        <div class="floating-badge" style="position: absolute; bottom: 20%; right: -40px; background: white; padding: 12px 20px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); display: flex; align-items: center; gap: 12px; z-index: 5;">
-                            <i class="ph-fill ph-trend-up" style="color: #6366F1; font-size: 20px;"></i>
-                            <div style="font-size: 13px; font-weight: 700;">+32% Tự tin</div>
-                        </div>
-                        
-                        <!-- Decorative Shapes -->
-                        <div style="position: absolute; top: 5%; right: 10%; width: 40px; height: 40px; background: #FBBF24; clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);"></div>
-                    </div>
-                </div>
-                <div class="hero-content">
-                    <span class="hero-tag" style="font-size: 11px; font-weight: 800; color: var(--rp-indigo); text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 16px; display: inline-block;">CỦNG CỐ KỸ NĂNG, DUY TRÌ HIỆU SUẤT</span>
-                    <h1 style="font-size: 72px; font-weight: 800; line-height: 1; margin-bottom: 24px; letter-spacing: -0.04em; color: var(--coaching-blue);">Huấn luyện AI Liên tục</h1>
-                    <p style="font-size: 18px; color: var(--text-light); margin-bottom: 32px; line-height: 1.6;">Buổi đào tạo kết thúc lúc 5 giờ chiều. Nhưng hiệu suất thì không. Yoodli giúp đội ngũ của bạn không ngừng cải thiện sau khi buổi học kết thúc bằng việc củng cố kỹ năng mỗi ngày.</p>
-                    <div style="display: flex; gap: 16px;">
-                        <a href="../app.html" class="btn btn-primary" style="padding: 18px 40px; font-size: 18px;">Xem thực tế ngay</a>
-                    </div>
-                </div>
+    </section>
+
+    <!-- Split Wave Section -->
+    <section class="split-wave-section">
+        <!-- Top Wave Divider (Dome curve up into hero) -->
+        <div class="wave-divider-top">
+            <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
+                style="display:block; width:100%; height:60px;">
+                <path fill="#eef2f7" d="M0,60 C480,0 960,0 1440,60 L1440,60 L0,60 Z"></path>
+            </svg>
+        </div>
+
+        <!-- Top Section (Light) -->
+        <div class="wave-top">
+            <div class="container">
+                <h2>Tại sao kỹ năng bị mai một nếu không được củng cố</h2>
+                <p class="subtext">Hầu hết các chương trình đào tạo chỉ diễn ra trong thời gian ngắn.<br>Đội ngũ tham
+                    gia huấn luyện, thực hành qua loa, và sau đó sự tập trung lại quay về với công việc hàng ngày.</p>
+
+                <p style="color: #5b6b8c; font-size: 16px; margin-bottom: 16px;">Theo thời gian:</p>
+                <ul class="bullet-list">
+                    <li>Kỹ năng phai nhạt</li>
+                    <li>Thông điệp đi chệch hướng</li>
+                    <li>Sự tự tin sụt giảm</li>
+                    <li>Hiệu suất không đồng đều giữa các quản lý hay khu vực</li>
+                </ul>
+
+                <p class="highlight-line">Nếu không được củng cố liên tục, những cải thiện sẽ rất khó để duy trì.</p>
             </div>
-        </section>
+        </div>
 
-        <!-- Split Wave Section -->
-        <section class="split-wave-section">
-            <!-- Top Wave Divider (Dome curve up into hero) -->
-            <div class="wave-divider-top">
-                <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="display:block; width:100%; height:60px;">
-                    <path fill="#eef2f7" d="M0,60 C480,0 960,0 1440,60 L1440,60 L0,60 Z"></path>
-                </svg>
-            </div>
+        <!-- Wave Divider -->
+        <div class="wave-divider">
+            <svg viewBox="0 0 1440 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
+                style="display:block; width:100%; height:60px;">
+                <path fill="#0b1b3f" d="M0,0 C480,100 960,100 1440,0 L1440,100 L0,100 Z"></path>
+            </svg>
+        </div>
 
-            <!-- Top Section (Light) -->
-            <div class="wave-top">
-                <div class="container">
-                    <h2>Tại sao kỹ năng bị mai một nếu không được củng cố</h2>
-                    <p class="subtext">Hầu hết các chương trình đào tạo chỉ diễn ra trong thời gian ngắn.<br>Đội ngũ tham gia huấn luyện, thực hành qua loa, và sau đó sự tập trung lại quay về với công việc hàng ngày.</p>
-                    
-                    <p style="color: #5b6b8c; font-size: 16px; margin-bottom: 16px;">Theo thời gian:</p>
-                    <ul class="bullet-list">
-                        <li>Kỹ năng phai nhạt</li>
-                        <li>Thông điệp đi chệch hướng</li>
-                        <li>Sự tự tin sụt giảm</li>
-                        <li>Hiệu suất không đồng đều giữa các quản lý hay khu vực</li>
-                    </ul>
-                    
-                    <p class="highlight-line">Nếu không được củng cố liên tục, những cải thiện sẽ rất khó để duy trì.</p>
-                </div>
-            </div>
+        <!-- Bottom Section (Dark) -->
+        <div class="wave-bottom">
+            <div class="container">
+                <h2>Huấn luyện liên tục được tích hợp vào cách đội ngũ làm việc</h2>
+                <p class="subtext">Huấn luyện liên tục AI mở rộng việc học tập ra ngoài các chương trình chính thức.</p>
 
-            <!-- Wave Divider -->
-            <div class="wave-divider">
-                <svg viewBox="0 0 1440 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="display:block; width:100%; height:60px;">
-                    <path fill="#0b1b3f" d="M0,0 C480,100 960,100 1440,0 L1440,100 L0,100 Z"></path>
-                </svg>
-            </div>
-
-            <!-- Bottom Section (Dark) -->
-            <div class="wave-bottom">
-                <div class="container">
-                    <h2>Huấn luyện liên tục được tích hợp vào cách đội ngũ làm việc</h2>
-                    <p class="subtext">Huấn luyện liên tục AI mở rộng việc học tập ra ngoài các chương trình chính thức.</p>
-                    
-                    <div class="wave-grid">
-                        <!-- Card 1 -->
-                        <div class="wave-card">
-                            <div class="wave-card-icon">
-                                <i class="ph ph-git-branch"></i>
-                            </div>
-                            <p>Thúc đẩy thực hành liên tục phù hợp với các ưu tiên đang thay đổi</p>
-                        </div>
-                        
-                        <!-- Card 2 -->
-                        <div class="wave-card">
-                            <div class="wave-card-icon">
-                                <i class="ph ph-arrows-clockwise"></i>
-                            </div>
-                            <p>Củng cố các hành vi cốt lõi thông qua việc lặp lại</p>
-                        </div>
-                        
-                        <!-- Card 3 -->
-                        <div class="wave-card">
-                            <div class="wave-card-icon">
-                                <i class="ph ph-lightning"></i>
-                            </div>
-                            <p>Đảm bảo phản hồi luôn nhất quán, khách quan và có tính thực thi</p>
-                        </div>
-                    </div>
-
-                    <p class="wave-bottom-statement">Thay vì phụ thuộc vào trí nhớ, đội ngũ xây dựng những thói quen bền vững thông qua việc củng cố thường xuyên. Đây là cách giúp kỹ năng được lưu giữ.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- How it works -->
-        <section class="hw-section-new">
-            <div class="hw-grid-new">
-                <div class="hw-left">
-                    <h2>Cách thức hoạt động</h2>
-                    <p>Không còn phụ thuộc vào thời gian rảnh của quản lý. Không còn những can thiệp chỉ diễn ra một lần. Chỉ có sự cải thiện đều đặn theo thời gian.</p>
-                </div>
-                
-                <div class="hw-right">
+                <div class="wave-grid">
                     <!-- Card 1 -->
-                    <div class="hw-card-new">
-                        <div class="hw-card-icon-new">
-                            <i class="ph ph-play-circle"></i>
+                    <div class="wave-card">
+                        <div class="wave-card-icon">
+                            <i class="ph ph-git-branch"></i>
                         </div>
-                        <div class="hw-card-content-new">
-                            <h3>Thực hành có mục tiêu liên tục</h3>
-                            <p>Người học nhận được các cơ hội thực hành có cấu trúc phù hợp với các ưu tiên, thông điệp hoặc các khoảng trống hiệu suất hiện tại.</p>
-                        </div>
+                        <p>Thúc đẩy thực hành liên tục phù hợp với các ưu tiên đang thay đổi</p>
                     </div>
-                    
+
                     <!-- Card 2 -->
-                    <div class="hw-card-new">
-                        <div class="hw-card-icon-new">
+                    <div class="wave-card">
+                        <div class="wave-card-icon">
+                            <i class="ph ph-arrows-clockwise"></i>
+                        </div>
+                        <p>Củng cố các hành vi cốt lõi thông qua việc lặp lại</p>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="wave-card">
+                        <div class="wave-card-icon">
                             <i class="ph ph-lightning"></i>
                         </div>
-                        <div class="hw-card-content-new">
-                            <h3>Phản hồi ngay lập tức, khách quan</h3>
-                            <p>Mỗi tương tác đều được đánh giá dựa trên các tiêu chuẩn đã xác định để hướng dẫn cải thiện.</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Card 3 -->
-                    <div class="hw-card-new">
-                        <div class="hw-card-icon-new">
-                            <i class="ph ph-arrow-clockwise"></i>
-                        </div>
-                        <div class="hw-card-content-new">
-                            <h3>Củng cố theo thời gian</h3>
-                            <p>Huấn luyện tiếp tục vượt ra ngoài các sự kiện chứng nhận hoặc đào tạo, đảm bảo các kỹ năng vẫn nhất quán và có thể đo lường được.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Leader Slider Section -->
-        <section class="rp-leader-section coaching-leader-section">
-            <div class="container">
-                <div class="leader-header">
-                    <h2>Tại sao Yoodli dẫn đầu trong huấn luyện liên tục</h2>
-                    <p>Thực hành làm thay đổi hành vi. Yoodli giúp việc thực hành có thể nhân rộng.</p>
-                </div>
-
-                <div class="slider-container">
-                    <div class="slider-track" id="leaderSliderTrack">
-                        
-                        <!-- Slide 1 -->
-                        <div class="slide-item active">
-                            <div class="slide-visual">
-                                <div class="visual-gradient-box">
-                                    <div class="ui-mockup-stack">
-                                        <div class="ui-card">
-                                            <div class="ui-label">Chủ đề</div>
-                                            <div class="ui-value">Tại sao chúng tôi nên mua sản phẩm của bạn?</div>
-                                        </div>
-                                        <div class="ui-card">
-                                            <div class="ui-label">Đối tác hội thoại</div>
-                                            <div class="ui-value">Khách hàng <i class="ph ph-magnifying-glass" style="float: right; color: #94a3b8;"></i></div>
-                                        </div>
-                                        <div class="ui-card">
-                                            <div class="ui-label">Chân dung</div>
-                                            <div class="ui-value">Hoài nghi <i class="ph ph-caret-down" style="float: right; color: #94a3b8;"></i></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="slide-text">
-                                <h3>Cảm giác chân thực</h3>
-                                <p>Các cuộc hội thoại động có khả năng phản biện, thích ứng và phản ánh áp lực thực tế, giúp việc thực hành dễ dàng áp dụng vào cuộc gọi thực.</p>
-                            </div>
-                        </div>
-
-                        <!-- Slide 2 -->
-                        <div class="slide-item">
-                            <div class="slide-visual">
-                                <div class="visual-gradient-box">
-                                    <div class="ui-mockup-video">
-                                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400" alt="Video">
-                                        <div class="ui-tag tag-red"><i class="ph-fill ph-flag"></i> Chậm lại!</div>
-                                        <div class="ui-tag tag-green"><i class="ph-fill ph-thumbs-up"></i> Ngôn ngữ súc tích</div>
-                                        <div class="ui-controls">
-                                            <span>00:12</span>
-                                            <i class="ph-fill ph-pause"></i>
-                                            <div class="btn-done">Hoàn thành <i class="ph-bold ph-check"></i></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="slide-text">
-                                <h3>Mở rộng quy mô không giới hạn</h3>
-                                <p>Mọi nhân viên đều nhận được thực hành và phản hồi chất lượng cao, không phụ thuộc vào thời gian rảnh của quản lý.</p>
-                            </div>
-                        </div>
-
-                        <!-- Slide 3 -->
-                        <div class="slide-item">
-                            <div class="slide-visual">
-                                <div class="visual-gradient-box">
-                                    <div class="ui-mockup-dash">
-                                        <div class="dash-top">
-                                            <div class="avatar">DJ</div>
-                                            <div class="info">
-                                                <div class="name">David James</div>
-                                                <div class="status">Hoạt động hôm nay</div>
-                                            </div>
-                                            <div class="stat">40 Yoodlis</div>
-                                        </div>
-                                        <div class="dash-bottom">
-                                            <div class="dash-card">
-                                                <div class="d-header">Lan man <span class="trend"><i class="ph-bold ph-arrow-up"></i> 4% tuần này</span></div>
-                                                <div class="d-chart"></div>
-                                            </div>
-                                            <div class="dash-card">
-                                                <div class="d-header">Kịch bản</div>
-                                                <div class="d-donut">
-                                                    <div class="donut-circle"></div>
-                                                    <div class="donut-text"><strong>3/10</strong><br>Hoàn thành</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="slide-text">
-                                <h3>Thúc đẩy sự sẵn sàng có thể đo lường</h3>
-                                <p>Lãnh đạo thấy được ai đã sẵn sàng, lỗ hổng ở đâu và thời gian huấn luyện nào thực sự hiệu quả.</p>
-                            </div>
-                        </div>
-
+                        <p>Đảm bảo phản hồi luôn nhất quán, khách quan và có tính thực thi</p>
                     </div>
                 </div>
 
-                <!-- Slider Controls -->
-                <div class="slider-navigation">
-                    <button class="nav-btn" onclick="prevSlide()"><i class="ph-bold ph-caret-left"></i></button>
-                    <div class="progress-track-container">
-                        <div class="progress-segment" onclick="goToSlide(0)">
-                            <div class="progress-fill" id="fill-0"></div>
-                        </div>
-                        <div class="progress-segment" onclick="goToSlide(1)">
-                            <div class="progress-fill" id="fill-1"></div>
-                        </div>
-                        <div class="progress-segment" onclick="goToSlide(2)">
-                            <div class="progress-fill" id="fill-2"></div>
-                        </div>
+                <p class="wave-bottom-statement">Thay vì phụ thuộc vào trí nhớ, đội ngũ xây dựng những thói quen bền
+                    vững thông qua việc củng cố thường xuyên. Đây là cách giúp kỹ năng được lưu giữ.</p>
+            </div>
+        </div>
+    </section>
+    <!-- How It Works Section -->
+    <section class="rp-how-it-works">
+        <div class="container hw-grid">
+            <div class="hw-left">
+                <h2 class="hw-title">How it works</h2>
+                <p class="hw-desc">
+                    Learners improve through targeted repetition, not one-time training.
+                    No scheduling. No manager bottlenecks. No guesswork.
+                </p>
+            </div>
+            <div class="hw-right">
+                <!-- Step 1 -->
+                <div class="hw-card">
+                    <div class="hw-card-icon">
+                        <i class="ph ph-play-circle"></i>
                     </div>
-                    <button class="nav-btn" onclick="nextSlide()"><i class="ph-bold ph-caret-right"></i></button>
+                    <div class="hw-card-content">
+                        <h4>Practice real scenarios</h4>
+                        <p>Launch AI roleplays aligned to the conversations your teams actually have.</p>
+                    </div>
                 </div>
-            </div>
-        </section>
 
-        <!-- Enterprise -->
-        <section class="container" style="padding: 120px 0; text-align: center;">
-            <h2 style="font-size: 44px; font-weight: 800; margin-bottom: 24px;">Sẵn sàng cho Doanh nghiệp & Tăng trưởng</h2>
-            <div class="check-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 900px; margin: 40px auto; text-align: left;">
-                <div class="check-item" style="display: flex; align-items: center; gap: 16px; font-size: 18px; font-weight: 600;">
-                    <i class="ph-fill ph-check-circle" style="color: #22C55E; font-size: 24px;"></i> Bảo mật và tuân thủ tiêu chuẩn cao nhất
+                <!-- Step 2 -->
+                <div class="hw-card">
+                    <div class="hw-card-icon">
+                        <i class="ph ph-lightning"></i>
+                    </div>
+                    <div class="hw-card-content">
+                        <h4>Get instant feedback</h4>
+                        <p>Yoodli analyzes delivery, clarity, pacing, and effectiveness—consistently, every time.</p>
+                    </div>
                 </div>
-                <div class="check-item" style="display: flex; align-items: center; gap: 16px; font-size: 18px; font-weight: 600;">
-                    <i class="ph-fill ph-check-circle" style="color: #22C55E; font-size: 24px;"></i> Phân tích và báo cáo chi tiết cho lãnh đạo
-                </div>
-                <div class="check-item" style="display: flex; align-items: center; gap: 16px; font-size: 18px; font-weight: 600;">
-                    <i class="ph-fill ph-check-circle" style="color: #22C55E; font-size: 24px;"></i> Tích hợp mượt mà với quy trình đào tạo
-                </div>
-                <div class="check-item" style="display: flex; align-items: center; gap: 16px; font-size: 18px; font-weight: 600;">
-                    <i class="ph-fill ph-check-circle" style="color: #22C55E; font-size: 24px;"></i> Khả năng mở rộng không giới hạn
-                </div>
-            </div>
-            <p style="margin: 40px 0; font-weight: 600; font-size: 18px; color: var(--text-light);">Hỗ trợ phát triển năng lực nhất quán mà không tăng thêm chi phí vận hành.</p>
-            <a href="../app.html" class="btn btn-primary" style="padding: 20px 48px; font-size: 18px; border-radius: 100px;">Xem Yoodli trong thực tế</a>
-        </section>
 
-        <!-- FAQ -->
-        <section class="faq-section" style="padding: 120px 0; max-width: 900px; margin: 0 auto;">
-            <h2 style="text-align:center; margin-bottom:60px; font-size:36px; font-weight:800;">Câu hỏi Thường gặp về Huấn luyện AI Liên tục</h2>
-            <div class="faq-list">
-                <div class="faq-item">
-                    <div class="faq-question">Huấn luyện AI Liên tục là gì? <i class="ph ph-plus"></i></div>
-                    <div class="faq-answer">Đó là một hệ thống sử dụng AI để nhắc nhở, kịch bản thực hành và phản hồi tự động cho nhân viên một cách thường xuyên, đảm bảo các kỹ năng được duy trì và phát triển theo thời gian thay vì bị quên lãng sau các buổi đào tạo.</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">Nó khác gì với đào tạo một lần? <i class="ph ph-plus"></i></div>
-                    <div class="faq-answer">Đào tạo một lần thường cung cấp lượng kiến thức lớn trong thời gian ngắn nhưng tỷ lệ ghi nhớ thấp. Huấn luyện liên tục chia nhỏ việc học thành các tương tác hàng ngày, xây dựng thói quen và kỹ năng thực tế.</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">Huấn luyện AI có thay thế quản lý không? <i class="ph ph-plus"></i></div>
-                    <div class="faq-answer">Không, Yoodli hỗ trợ quản lý bằng cách xử lý các phản hồi kỹ thuật lặp đi lặp lại. Điều này giúp quản lý có nhiều thời gian hơn để tập trung vào việc cố vấn chiến lược và phát triển con người ở cấp độ cao hơn.</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">Huấn luyện AI thích ứng với các ưu tiên thay đổi như thế nào? <i class="ph ph-plus"></i></div>
-                    <div class="faq-answer">Quản lý có thể cập nhật các kịch bản và mục tiêu huấn luyện chỉ trong vài phút. AI sẽ ngay lập tức điều chỉnh các lời nhắc và phản hồi để phù hợp với thông điệp hoặc chiến lược mới nhất của công ty.</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">Làm thế nào để lãnh đạo đo lường tác động? <i class="ph ph-plus"></i></div>
-                    <div class="faq-answer">Yoodli cung cấp bảng điều khiển chi tiết hiển thị mức độ tham gia, điểm số kỹ năng và biểu đồ tiến bộ của từng cá nhân cũng như toàn đội ngũ, giúp lãnh đạo đưa ra các quyết định dựa trên dữ liệu.</div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer" style="background: #F1F5F9; padding: 80px 0 40px; margin-top: 100px;">
-        <div class="container">
-            <div class="footer-grid" style="display: grid; grid-template-columns: 2fr repeat(4, 1fr); gap: 40px;">
-                <div class="footer-col">
-                    <a href="../index.html" class="logo" style="margin-bottom: 24px; display: inline-block;">
-                        <i class="ph-fill ph-microphone-stage"></i> yoodli
-                    </a>
-                    <p style="color: var(--text-light); font-size: 14px;">Làm chủ nghệ thuật giao tiếp với AI. Nền tảng hàng đầu thế giới về huấn luyện diễn thuyết và nhập vai.</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Nền tảng</h4>
-                    <a href="ai-roleplays.html">Nhập vai AI</a>
-                    <a href="ai-tutor.html">Gia sư AI</a>
-                    <a href="ai-continuous-coaching.html">Huấn luyện AI</a>
-                    <a href="ai-experiential-learning.html">Học tập trải nghiệm</a>
-                    <a href="ai-feedback.html">Phản hồi cá nhân hóa</a>
-                    <a href="ai-analytics-reporting.html">Phân tích & báo cáo</a>
-                    <a href="ai-integrations-mcp.html">Tích hợp & MCP</a>
-                </div>
-                <div class="footer-col">
-                    <h4>Giải pháp</h4>
-                    <a href="../for-business/sales.html">Bán hàng</a>
-                    <a href="#">Hỗ trợ</a>
-                    <a href="#">Lãnh đạo</a>
-                </div>
-                <div class="footer-col">
-                    <h4>Công ty</h4>
-                    <a href="#">Về chúng tôi</a>
-                    <a href="#">Tuyển dụng</a>
-                    <a href="#">Blog</a>
-                </div>
-                <div class="footer-col">
-                    <h4>Hỗ trợ</h4>
-                    <a href="#">Trung tâm trợ giúp</a>
-                    <a href="#">Liên hệ</a>
-                    <a href="#">Bảo mật</a>
-                </div>
-            </div>
-            <div style="border-top: 1px solid #CBD5E1; margin-top: 60px; padding-top: 24px; display: flex; justify-content: space-between; font-size: 14px; color: var(--text-light);">
-                <p>&copy; 2024 Yoodli Clone Vietnam. Tất cả quyền được bảo lưu.</p>
-                <div style="display: flex; gap: 24px;">
-                    <a href="#"><i class="ph ph-linkedin-logo"></i></a>
-                    <a href="#"><i class="ph ph-twitter-logo"></i></a>
-                    <a href="#"><i class="ph ph-youtube-logo"></i></a>
+                <!-- Step 3 -->
+                <div class="hw-card">
+                    <div class="hw-card-icon">
+                        <i class="ph ph-arrows-clockwise"></i>
+                    </div>
+                    <div class="hw-card-content">
+                        <h4>Repeat until ready</h4>
+                        <p>Build confidence and skill through targeted repetition until performance meets the standard.
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
-    </footer>
+    </section>
+    <!-- Leader Slider Section -->
+    <section class="rp-leader-section">
+        <div class="container">
+            <div class="leader-header">
+                <h2>Why Yoodli is the leader in AI roleplays</h2>
+                <p>Practice changes behavior. Yoodli makes practice scalable.</p>
+            </div>
+
+            <div class="slider-container">
+                <div class="slider-track" id="leaderSliderTrack">
+
+                    <!-- Slide 1 -->
+                    <div class="slide-item active">
+                        <div class="slide-visual">
+                            <div class="visual-gradient-box">
+                                <div class="ui-mockup-stack">
+                                    <div class="ui-card">
+                                        <div class="ui-label">Topic</div>
+                                        <div class="ui-value">Why should we buy your product?</div>
+                                    </div>
+                                    <div class="ui-card">
+                                        <div class="ui-label">Conversation Partner</div>
+                                        <div class="ui-value">Client <i class="ph ph-magnifying-glass"
+                                                style="float: right; color: #94a3b8;"></i></div>
+                                    </div>
+                                    <div class="ui-card">
+                                        <div class="ui-label">Persona</div>
+                                        <div class="ui-value">Skeptical <i class="ph ph-caret-down"
+                                                style="float: right; color: #94a3b8;"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slide-text">
+                            <h3>It feels real</h3>
+                            <p>Dynamic conversations that push back, adapt, and reflect real-world pressure, so practice
+                                transfers to live calls.</p>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="slide-item">
+                        <div class="slide-visual">
+                            <div class="visual-gradient-box">
+                                <div class="ui-mockup-video">
+                                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400"
+                                        alt="Video">
+                                    <div class="ui-tag tag-red"><i class="ph-fill ph-flag"></i> Slow down!</div>
+                                    <div class="ui-tag tag-green"><i class="ph-fill ph-thumbs-up"></i> Concise language
+                                    </div>
+                                    <div class="ui-controls">
+                                        <span>00:12</span>
+                                        <i class="ph-fill ph-pause"></i>
+                                        <div class="btn-done">Done <i class="ph-bold ph-check"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slide-text">
+                            <h3>It scales without tradeoffs</h3>
+                            <p>Every rep gets high-quality practice and feedback, without relying on manager
+                                availability.</p>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="slide-item">
+                        <div class="slide-visual">
+                            <div class="visual-gradient-box">
+                                <div class="ui-mockup-dash">
+                                    <div class="dash-top">
+                                        <div class="avatar">DJ</div>
+                                        <div class="info">
+                                            <div class="name">David James</div>
+                                            <div class="status">Active today</div>
+                                        </div>
+                                        <div class="stat">40 Yoodlis</div>
+                                    </div>
+                                    <div class="dash-bottom">
+                                        <div class="dash-card">
+                                            <div class="d-header">Rambling <span class="trend"><i
+                                                        class="ph-bold ph-arrow-up"></i> 4% this week</span></div>
+                                            <div class="d-chart"></div>
+                                        </div>
+                                        <div class="dash-card">
+                                            <div class="d-header">Scenarios</div>
+                                            <div class="d-donut">
+                                                <div class="donut-circle"></div>
+                                                <div class="donut-text"><strong>3/10</strong><br>Complete</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slide-text">
+                            <h3>It drives measurable readiness</h3>
+                            <p>Leaders see who's ready, where gaps exist, and where coaching time actually matters.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Slider Controls -->
+            <div class="slider-navigation">
+                <button class="nav-btn" onclick="prevSlide()"><i class="ph-bold ph-caret-left"></i></button>
+                <div class="progress-track-container">
+                    <div class="progress-segment" onclick="goToSlide(0)">
+                        <div class="progress-fill" id="fill-0"></div>
+                    </div>
+                    <div class="progress-segment" onclick="goToSlide(1)">
+                        <div class="progress-fill" id="fill-1"></div>
+                    </div>
+                    <div class="progress-segment" onclick="goToSlide(2)">
+                        <div class="progress-fill" id="fill-2"></div>
+                    </div>
+                </div>
+                <button class="nav-btn" onclick="nextSlide()"><i class="ph-bold ph-caret-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slider Script -->
+    <script>
+        let currentSlide = 0;
+        const totalSlides = 3;
+        const slideDuration = 5000; // 5 seconds per slide
+        let slideInterval;
+        let progressStartTime;
+
+        function updateSlider() {
+            const track = document.getElementById('leaderSliderTrack');
+            track.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+            // Update active classes
+            document.querySelectorAll('.slide-item').forEach((slide, index) => {
+                slide.classList.toggle('active', index === currentSlide);
+            });
+
+            // Reset all progress bars
+            document.querySelectorAll('.progress-fill').forEach((fill, index) => {
+                fill.style.transition = 'none';
+                if (index < currentSlide) {
+                    fill.style.width = '100%';
+                } else if (index > currentSlide) {
+                    fill.style.width = '0%';
+                } else {
+                    fill.style.width = '0%';
+                    // Trigger reflow
+                    void fill.offsetWidth;
+                    fill.style.transition = `width ${slideDuration}ms linear`;
+                    fill.style.width = '100%';
+                }
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateSlider();
+            resetInterval();
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateSlider();
+            resetInterval();
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateSlider();
+            resetInterval();
+        }
+
+        function resetInterval() {
+            clearInterval(slideInterval);
+            slideInterval = setInterval(nextSlide, slideDuration);
+        }
+
+        // Initialize
+        setTimeout(() => {
+            updateSlider();
+            resetInterval();
+        }, 100);
+    </script>
+
+    <!-- Enterprise -->
+    <section class="container" style="padding: 120px 0; text-align: center;">
+        <h2 style="font-size: 44px; font-weight: 800; margin-bottom: 24px;">Sẵn sàng cho Doanh nghiệp & Tăng trưởng</h2>
+        <div class="check-grid"
+            style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 900px; margin: 40px auto; text-align: left;">
+            <div class="check-item"
+                style="display: flex; align-items: center; gap: 16px; font-size: 18px; font-weight: 600;">
+                <i class="ph-fill ph-check-circle" style="color: #22C55E; font-size: 24px;"></i> Bảo mật và tuân thủ
+                tiêu chuẩn cao nhất
+            </div>
+            <div class="check-item"
+                style="display: flex; align-items: center; gap: 16px; font-size: 18px; font-weight: 600;">
+                <i class="ph-fill ph-check-circle" style="color: #22C55E; font-size: 24px;"></i> Phân tích và báo cáo
+                chi tiết cho lãnh đạo
+            </div>
+            <div class="check-item"
+                style="display: flex; align-items: center; gap: 16px; font-size: 18px; font-weight: 600;">
+                <i class="ph-fill ph-check-circle" style="color: #22C55E; font-size: 24px;"></i> Tích hợp mượt mà với
+                quy trình đào tạo
+            </div>
+            <div class="check-item"
+                style="display: flex; align-items: center; gap: 16px; font-size: 18px; font-weight: 600;">
+                <i class="ph-fill ph-check-circle" style="color: #22C55E; font-size: 24px;"></i> Khả năng mở rộng không
+                giới hạn
+            </div>
+        </div>
+        <p style="margin: 40px 0; font-weight: 600; font-size: 18px; color: var(--text-light);">Hỗ trợ phát triển năng
+            lực nhất quán mà không tăng thêm chi phí vận hành.</p>
+        <a href="../app.html" class="btn btn-primary"
+            style="padding: 20px 48px; font-size: 18px; border-radius: 100px;">Xem Yoodli trong thực tế</a>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section" style="padding: 120px 0; max-width: 900px; margin: 0 auto;">
+        <h2 style="text-align:center; margin-bottom:60px; font-size:36px; font-weight:800;">Câu hỏi Thường gặp về Huấn
+            luyện AI Liên tục</h2>
+        <div class="faq-list">
+            <div class="faq-item">
+                <div class="faq-question">Huấn luyện AI Liên tục là gì? <i class="ph ph-plus"></i></div>
+                <div class="faq-answer">Đó là một hệ thống sử dụng AI để nhắc nhở, kịch bản thực hành và phản hồi tự
+                    động cho nhân viên một cách thường xuyên, đảm bảo các kỹ năng được duy trì và phát triển theo thời
+                    gian thay vì bị quên lãng sau các buổi đào tạo.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Nó khác gì với đào tạo một lần? <i class="ph ph-plus"></i></div>
+                <div class="faq-answer">Đào tạo một lần thường cung cấp lượng kiến thức lớn trong thời gian ngắn nhưng
+                    tỷ lệ ghi nhớ thấp. Huấn luyện liên tục chia nhỏ việc học thành các tương tác hàng ngày, xây dựng
+                    thói quen và kỹ năng thực tế.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Huấn luyện AI có thay thế quản lý không? <i class="ph ph-plus"></i></div>
+                <div class="faq-answer">Không, Yoodli hỗ trợ quản lý bằng cách xử lý các phản hồi kỹ thuật lặp đi lặp
+                    lại. Điều này giúp quản lý có nhiều thời gian hơn để tập trung vào việc cố vấn chiến lược và phát
+                    triển con người ở cấp độ cao hơn.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Huấn luyện AI thích ứng với các ưu tiên thay đổi như thế nào? <i
+                        class="ph ph-plus"></i></div>
+                <div class="faq-answer">Quản lý có thể cập nhật các kịch bản và mục tiêu huấn luyện chỉ trong vài phút.
+                    AI sẽ ngay lập tức điều chỉnh các lời nhắc và phản hồi để phù hợp với thông điệp hoặc chiến lược mới
+                    nhất của công ty.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Làm thế nào để lãnh đạo đo lường tác động? <i class="ph ph-plus"></i></div>
+                <div class="faq-answer">Yoodli cung cấp bảng điều khiển chi tiết hiển thị mức độ tham gia, điểm số kỹ
+                    năng và biểu đồ tiến bộ của từng cá nhân cũng như toàn đội ngũ, giúp lãnh đạo đưa ra các quyết định
+                    dựa trên dữ liệu.</div>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <!-- Footer will be injected by master_layout.js -->
+    <script src="../master_layout.js"></script>
+
 
     <script>
         // Slider Logic
         let currentSlide = 0;
-        const totalSlides = 3;
+        const totalSlides = 4;
         const slideDuration = 5000;
         let slideInterval;
 
@@ -1082,7 +1451,7 @@
             const track = document.getElementById('leaderSliderTrack');
             if (track) {
                 track.style.transform = `translateX(-${currentSlide * 100}%)`;
-                
+
                 document.querySelectorAll('.slide-item').forEach((slide, index) => {
                     slide.classList.toggle('active', index === currentSlide);
                 });
@@ -1140,4 +1509,5 @@
         });
     </script>
 </body>
+
 </html>

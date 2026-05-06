@@ -11,8 +11,8 @@
     <style>
         .analytics-hero {
             padding: 120px 0 100px;
-            background: radial-gradient(circle at 80% 30%, rgba(99, 102, 241, 0.08) 0%, transparent 50%), 
-                        linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
+            background: radial-gradient(circle at 80% 30%, rgba(99, 102, 241, 0.08) 0%, transparent 50%),
+                linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
         }
 
         .hexagon-visual {
@@ -24,7 +24,7 @@
             align-items: center;
             justify-content: center;
             position: relative;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.05);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
             overflow: visible;
         }
 
@@ -45,7 +45,7 @@
             background: white;
             padding: 12px 20px;
             border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             display: flex;
             align-items: center;
             gap: 12px;
@@ -64,106 +64,48 @@
         .measure-card:hover {
             transform: translateY(-5px);
             background: white;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
         }
 
         .insight-section {
             background: #F0F4FF;
-            padding: 120px 0;
-            border-radius: 100px;
-            margin: 40px 20px;
+            padding: 100px 80px;
+            border-radius: 50% / 150px; /* Ultra-wide flattened oval */
+            margin: 80px 0;
+            width: 100%;
         }
 
         .insight-visual {
             background: white;
             padding: 40px;
             border-radius: 32px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.05);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
         }
     </style>
 </head>
 
 <body>
-    <!-- Navbar -->
-    <header class="navbar">
-        <div class="container">
-            <a href="../index.html" class="logo">
-                <i class="ph-fill ph-microphone-stage"></i> yoodli
-            </a>
-            <nav class="nav-links">
-                <div class="nav-item">
-                    <a href="#">Nền tảng <i class="ph ph-caret-down"></i></a>
-                    <div class="dropdown">
-                        <a href="ai-roleplays.html" class="dropdown-item">
-                            <span class="title">Nhập vai AI</span>
-                            <span class="desc">Luyện tập với các Persona thực tế</span>
-                        </a>
-                        <a href="ai-tutor.html" class="dropdown-item">
-                            <span class="title">Gia sư AI</span>
-                            <span class="desc">Học kỹ năng giao tiếp 1-1</span>
-                        </a>
-                        <a href="ai-continuous-coaching.html" class="dropdown-item">
-                            <span class="title">Huấn luyện AI Liên tục</span>
-                            <span class="desc">Cải thiện kỹ năng mỗi ngày</span>
-                        </a>
-                        <a href="ai-experiential-learning.html" class="dropdown-item">
-                            <span class="title">Học tập qua Trải nghiệm</span>
-                            <span class="desc">Biến kiến thức thành phản xạ</span>
-                        </a>
-                        <a href="ai-feedback.html" class="dropdown-item">
-                            <span class="title">Phản hồi Cá nhân hóa</span>
-                            <span class="desc">Nhận đánh giá chi tiết từ AI</span>
-                        </a>
-                        <a href="ai-analytics-reporting.html" class="dropdown-item">
-                            <span class="title">Phân tích & Báo cáo</span>
-                            <span class="desc">Đo lường hiệu quả đội ngũ</span>
-                        </a>
-                        <a href="ai-integrations-mcp.html" class="dropdown-item">
-                            <span class="title">Tích hợp & MCP</span>
-                            <span class="desc">Kết nối hệ sinh thái của bạn</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="nav-item">
-                    <a href="#">Giải pháp <i class="ph ph-caret-down"></i></a>
-                    <div class="dropdown mega-menu">
-                        <div class="mega-col">
-                            <div class="mega-col-title">Dành cho Đội ngũ</div>
-                            <div class="mega-links">
-                                <a href="#" class="dropdown-item"><span class="title">Đội ngũ Doanh thu</span></a>
-                                <a href="#" class="dropdown-item"><span class="title">Hỗ trợ Bán hàng</span></a>
-                            </div>
-                        </div>
-                        <div class="mega-col">
-                            <div class="mega-col-title">Ngành nghề</div>
-                            <div class="mega-links">
-                                <a href="#" class="dropdown-item"><span class="title">Công nghệ & SaaS</span></a>
-                                <a href="#" class="dropdown-item"><span class="title">Dịch vụ Tài chính</span></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="nav-item"><a href="../pricing.html">Bảng giá</a></div>
-                <div class="nav-item"><a href="#">Tài nguyên <i class="ph ph-caret-down"></i></a></div>
-                <div class="nav-item"><a href="#">Về chúng tôi <i class="ph ph-caret-down"></i></a></div>
-            </nav>
-            <div class="nav-actions">
-                <a href="../app.html" class="btn btn-text">Đăng nhập</a>
-                <a href="../app.html" class="btn btn-primary">Dùng thử Yoodli</a>
-            </div>
-        </div>
-    </header>
+    <!-- Header and Banner will be injected by master_layout.js -->
+
 
     <main>
         <!-- Hero Section -->
         <section class="analytics-hero">
-            <div class="container hero-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
+            <div class="container hero-grid"
+                style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
                 <div class="hero-content">
-                    <span class="hero-tag" style="font-size: 11px; font-weight: 800; color: var(--rp-indigo); text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 16px; display: inline-block;">DỮ LIỆU MINH BẠCH, HIỆU SUẤT VƯỢT TRỘI</span>
-                    <h1 style="font-size: 72px; font-weight: 800; line-height: 1; margin-bottom: 24px; letter-spacing: -0.04em;">Phân tích & Báo cáo</h1>
-                    <p style="font-size: 18px; color: var(--text-light); margin-bottom: 32px; line-height: 1.6;">Yoodli cung cấp các mô-đun phân tích và báo cáo toàn diện để bạn có thể theo dõi tiến độ, xác định cơ hội phát triển và xác thực mức độ sẵn sàng thực hiện của đội ngũ.</p>
+                    <span class="hero-tag"
+                        style="font-size: 11px; font-weight: 800; color: var(--rp-indigo); text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 16px; display: inline-block;">DỮ
+                        LIỆU MINH BẠCH, HIỆU SUẤT VƯỢT TRỘI</span>
+                    <h1
+                        style="font-size: 72px; font-weight: 800; line-height: 1; margin-bottom: 24px; letter-spacing: -0.04em;">
+                        Phân tích & Báo cáo</h1>
+                    <p style="font-size: 18px; color: var(--text-light); margin-bottom: 32px; line-height: 1.6;">Yoodli
+                        cung cấp các mô-đun phân tích và báo cáo toàn diện để bạn có thể theo dõi tiến độ, xác định cơ
+                        hội phát triển và xác thực mức độ sẵn sàng thực hiện của đội ngũ.</p>
                     <div style="display: flex; gap: 16px;">
-                        <a href="../app.html" class="btn btn-primary" style="padding: 18px 40px; font-size: 18px;">Xem báo cáo mẫu</a>
+                        <a href="../app.html" class="btn btn-primary" style="padding: 18px 40px; font-size: 18px;">Xem
+                            báo cáo mẫu</a>
                     </div>
                 </div>
                 <div class="hero-visual" style="display: flex; justify-content: center; perspective: 1000px;">
@@ -173,21 +115,30 @@
                         </div>
                         <!-- Metric Cards -->
                         <div class="metric-card" style="top: 10%; left: -30px;">
-                            <div style="width: 40px; height: 40px; background: #DCFCE7; color: #166534; border-radius: 10px; display: flex; align-items: center; justify-content: center;"><i class="ph-fill ph-check"></i></div>
+                            <div
+                                style="width: 40px; height: 40px; background: #DCFCE7; color: #166534; border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+                                <i class="ph-fill ph-check"></i>
+                            </div>
                             <div>
                                 <div style="font-weight: 800; font-size: 16px;">89%</div>
                                 <div style="font-size: 11px; color: #64748B;">Sẵn sàng thực tế</div>
                             </div>
                         </div>
                         <div class="metric-card" style="bottom: 20%; right: -40px;">
-                            <div style="width: 40px; height: 40px; background: #DBEAFE; color: #1E40AF; border-radius: 10px; display: flex; align-items: center; justify-content: center;"><i class="ph-fill ph-users"></i></div>
+                            <div
+                                style="width: 40px; height: 40px; background: #DBEAFE; color: #1E40AF; border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+                                <i class="ph-fill ph-users"></i>
+                            </div>
                             <div>
                                 <div style="font-weight: 800; font-size: 16px;">+15%</div>
                                 <div style="font-size: 11px; color: #64748B;">Cải thiện đội ngũ</div>
                             </div>
                         </div>
                         <div class="metric-card" style="top: 50%; right: -20px;">
-                            <div style="width: 40px; height: 40px; background: #FEF3C7; color: #92400E; border-radius: 10px; display: flex; align-items: center; justify-content: center;"><i class="ph-fill ph-star"></i></div>
+                            <div
+                                style="width: 40px; height: 40px; background: #FEF3C7; color: #92400E; border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+                                <i class="ph-fill ph-star"></i>
+                            </div>
                             <div>
                                 <div style="font-weight: 800; font-size: 16px;">4.8/5</div>
                                 <div style="font-size: 11px; color: #64748B;">Điểm trung bình</div>
@@ -199,89 +150,113 @@
         </section>
 
         <!-- Measure what matters -->
-        <section class="container" style="padding: 120px 0; text-align: center;">
-            <h2 style="font-size: 44px; font-weight: 800; margin-bottom: 24px;">Đo lường những gì quan trọng</h2>
-            <p style="color: var(--text-light); font-size: 18px; max-width: 800px; margin: 0 auto 60px;">Yoodli mang đến cho các nhà lãnh đạo một cái nhìn toàn diện về mức độ sẵn sàng trong toàn bộ tổ chức.</p>
-            
+        <section class="container" style="padding: 100px 0; text-align: center;">
+            <h2 style="font-size: 36px; font-weight: 850; margin-bottom: 16px; color: #050A30;">Đo lường những gì quan
+                trọng</h2>
+            <p style="color: #475569; font-size: 16px; max-width: 800px; margin: 0 auto 60px;">Yoodli mang đến cho các
+                nhà lãnh đạo một cái nhìn toàn diện về mức độ sẵn sàng trong toàn bộ tổ chức.</p>
+
             <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-bottom: 24px;">
-                <div class="measure-card">
-                    <i class="ph-bold ph-chart-line-up" style="font-size: 28px; color: var(--rp-indigo); margin-bottom: 20px;"></i>
-                    <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 12px;">Tiến bộ cá nhân</h3>
-                    <p style="color: var(--text-light); font-size: 14px; line-height: 1.6;">Theo dõi sự cải thiện kỹ năng của từng cá nhân theo thời gian với dữ liệu lịch sử.</p>
+                <div class="measure-card"
+                    style="background: #E0F2FE; border: none; padding: 40px 32px; border-radius: 24px;">
+                    <i class="ph-bold ph-chart-line-up"
+                        style="font-size: 32px; color: #6366F1; margin-bottom: 24px; display: block; margin-left: auto; margin-right: auto;"></i>
+                    <p style="font-size: 16px; font-weight: 700; color: #050A30; line-height: 1.4;">Tiến bộ kỹ năng cá
+                        nhân theo thời gian</p>
                 </div>
-                <div class="measure-card">
-                    <i class="ph-bold ph-users-three" style="font-size: 28px; color: var(--rp-indigo); margin-bottom: 20px;"></i>
-                    <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 12px;">Xu hướng đội ngũ</h3>
-                    <p style="color: var(--text-light); font-size: 14px; line-height: 1.6;">Phân tích hiệu suất theo vai trò, khu vực và các nhóm làm việc khác nhau.</p>
+                <div class="measure-card"
+                    style="background: #E0F2FE; border: none; padding: 40px 32px; border-radius: 24px;">
+                    <i class="ph-bold ph-users-three"
+                        style="font-size: 32px; color: #6366F1; margin-bottom: 24px; display: block; margin-left: auto; margin-right: auto;"></i>
+                    <p style="font-size: 16px; font-weight: 700; color: #050A30; line-height: 1.4;">Xu hướng đội ngũ
+                        theo vai trò và khu vực</p>
                 </div>
-                <div class="measure-card">
-                    <i class="ph-bold ph-certificate" style="font-size: 28px; color: var(--rp-indigo); margin-bottom: 20px;"></i>
-                    <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 12px;">Trạng thái chứng chỉ</h3>
-                    <h4 style="font-size: 12px; color: var(--rp-indigo); margin-bottom: 8px;">XÁC THỰC NĂNG LỰC</h4>
-                    <p style="color: var(--text-light); font-size: 14px; line-height: 1.6;">Biết chính xác ai đã hoàn thành chương trình và sẵn sàng thực chiến.</p>
+                <div class="measure-card"
+                    style="background: #E0F2FE; border: none; padding: 40px 32px; border-radius: 24px;">
+                    <i class="ph-bold ph-certificate"
+                        style="font-size: 32px; color: #6366F1; margin-bottom: 24px; display: block; margin-left: auto; margin-right: auto;"></i>
+                    <p style="font-size: 16px; font-weight: 700; color: #050A30; line-height: 1.4;">Trạng thái chứng chỉ
+                        và sẵn sàng thực tế</p>
                 </div>
-                <div class="measure-card">
-                    <i class="ph-bold ph-user-circle-plus" style="font-size: 28px; color: var(--rp-indigo); margin-bottom: 20px;"></i>
-                    <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 12px;">Chỉ số tham gia</h3>
-                    <p style="color: var(--text-light); font-size: 14px; line-height: 1.6;">Đo lường mức độ áp dụng và tương tác của nhân viên với nền tảng.</p>
+                <div class="measure-card"
+                    style="background: #E0F2FE; border: none; padding: 40px 32px; border-radius: 24px;">
+                    <i class="ph-bold ph-user-circle-plus"
+                        style="font-size: 32px; color: #6366F1; margin-bottom: 24px; display: block; margin-left: auto; margin-right: auto;"></i>
+                    <p style="font-size: 16px; font-weight: 700; color: #050A30; line-height: 1.4;">Chỉ số tham gia và
+                        mức độ áp dụng</p>
                 </div>
             </div>
-            <div style="display: flex; justify-content: center;">
-                <div class="measure-card" style="max-width: 300px;">
-                    <i class="ph-bold ph-warning-circle" style="font-size: 28px; color: var(--rp-indigo); margin-bottom: 20px;"></i>
-                    <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 12px;">Khoảng trống kỹ năng</h3>
-                    <p style="color: var(--text-light); font-size: 14px; line-height: 1.6;">Xác định rõ ràng các kỹ năng còn thiếu để tập trung đào tạo đúng trọng tâm.</p>
+
+            <div style="display: flex; justify-content: center; margin-bottom: 60px;">
+                <div class="measure-card"
+                    style="background: #E0F2FE; border: none; padding: 40px 32px; border-radius: 24px; width: calc(25% - 18px); max-width: 300px;">
+                    <i class="ph-bold ph-warning-circle"
+                        style="font-size: 32px; color: #6366F1; margin-bottom: 24px; display: block; margin-left: auto; margin-right: auto;"></i>
+                    <p style="font-size: 16px; font-weight: 700; color: #050A30; line-height: 1.4;">Xác định rõ ràng các
+                        khoảng trống kỹ năng</p>
                 </div>
             </div>
+
+            <p style="font-size: 16px; font-weight: 800; color: #050A30; letter-spacing: -0.01em;">Mỗi phiên luyện tập
+                đều góp phần tạo nên một bức tranh hiệu suất có thể đo lường được.</p>
         </section>
 
         <!-- Turn insight into action -->
         <section class="insight-section">
-            <div class="container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
-                <div class="insight-visual">
-                    <img src="https://images.unsplash.com/photo-1551288049-bbbda536339a?auto=format&fit=crop&q=80&w=1000" alt="Actionable Insights" style="width: 100%; border-radius: 16px;">
+            <div class="container" style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px; align-items: center; padding: 0 40px;">
+                <div class="insight-visual" style="background: white; padding: 40px; border-radius: 24px; box-shadow: 0 20px 50px rgba(0,0,0,0.05);">
+                    <img src="https://images.unsplash.com/photo-1551288049-bbbda536339a?auto=format&fit=crop&q=80&w=1000" alt="Analytics Dashboard" style="width: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
                 </div>
-                <div>
-                    <h2 style="font-size: 44px; font-weight: 800; margin-bottom: 24px;">Biến thông tin thành hành động</h2>
-                    <p style="font-size: 18px; color: var(--text-light); margin-bottom: 32px;">Báo cáo của chúng tôi không chỉ là những con số. Chúng được thiết kế để hỗ trợ các quyết định thực tế.</p>
-                    <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 20px;">
-                        <li style="display: flex; align-items: flex-start; gap: 16px;">
-                            <i class="ph-fill ph-check-circle" style="color: var(--rp-indigo); font-size: 24px; margin-top: 4px;"></i>
-                            <div>
-                                <h4 style="font-size: 18px; font-weight: 700; margin-bottom: 4px;">Cải thiện thông điệp bán hàng</h4>
-                                <p style="font-size: 14px; color: var(--text-light);">Nhận diện những thông điệp nào đang mang lại hiệu quả cao nhất trong thực tế.</p>
-                            </div>
+                <div style="text-align: left;">
+                    <h2 style="font-size: 40px; font-weight: 850; margin-bottom: 20px; color: #050A30;">Biến thông tin thành hành động</h2>
+                    <p style="font-size: 18px; color: #475569; margin-bottom: 32px; line-height: 1.6;">Phân tích được xây dựng để hỗ trợ các quyết định thực tế.</p>
+                    
+                    <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 16px; margin-bottom: 32px;">
+                        <li style="display: flex; align-items: center; gap: 12px; font-size: 16px; color: #050A30; font-weight: 600;">
+                            <div style="width: 8px; height: 8px; background: #6366F1; border-radius: 50%;"></div> Xuất báo cáo sẵn sàng cho cấp điều hành
                         </li>
-                        <li style="display: flex; align-items: flex-start; gap: 16px;">
-                            <i class="ph-fill ph-check-circle" style="color: var(--rp-indigo); font-size: 24px; margin-top: 4px;"></i>
-                            <div>
-                                <h4 style="font-size: 18px; font-weight: 700; margin-bottom: 4px;">Tối ưu hóa quy trình huấn luyện</h4>
-                                <p style="font-size: 14px; color: var(--text-light);">Tập trung thời gian huấn luyện trực tiếp vào những nhân sự cần hỗ trợ nhất.</p>
-                            </div>
+                        <li style="display: flex; align-items: center; gap: 12px; font-size: 16px; color: #050A30; font-weight: 600;">
+                            <div style="width: 8px; height: 8px; background: #6366F1; border-radius: 50%;"></div> Xác định những nhân sự xuất sắc và ưu tiên huấn luyện
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 12px; font-size: 16px; color: #050A30; font-weight: 600;">
+                            <div style="width: 8px; height: 8px; background: #6366F1; border-radius: 50%;"></div> Đo lường tác động của các chương trình hoặc thông điệp mới
+                        </li>
+                        <li style="display: flex; align-items: center; gap: 12px; font-size: 16px; color: #050A30; font-weight: 600;">
+                            <div style="width: 8px; height: 8px; background: #6366F1; border-radius: 50%;"></div> Theo dõi sự cải thiện dựa trên các rubric đã xác định
                         </li>
                     </ul>
+                    
+                    <p style="font-size: 16px; font-weight: 800; color: #050A30; margin-top: 24px; border-top: 1px solid rgba(0,0,0,0.05); padding-top: 24px;">Hiệu suất được chứng minh, theo dõi và không ngừng củng cố.</p>
                 </div>
             </div>
         </section>
 
         <!-- Built for Enterprise -->
         <section class="container" style="padding: 120px 0; text-align: center;">
-            <h2 style="font-size: 44px; font-weight: 800; margin-bottom: 60px;">Xây dựng cho các đội ngũ doanh nghiệp</h2>
-            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; max-width: 900px; margin: 0 auto; text-align: left;">
+            <h2 style="font-size: 44px; font-weight: 800; margin-bottom: 60px;">Xây dựng cho các đội ngũ doanh nghiệp
+            </h2>
+            <div
+                style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; max-width: 900px; margin: 0 auto; text-align: left;">
                 <div style="display: flex; align-items: center; gap: 16px; font-size: 18px; font-weight: 600;">
-                    <i class="ph-fill ph-check-circle" style="color: #22C55E; font-size: 24px;"></i> Bảng điều khiển dành riêng cho quản trị viên
+                    <i class="ph-fill ph-check-circle" style="color: #22C55E; font-size: 24px;"></i> Bảng điều khiển
+                    dành riêng cho quản trị viên
                 </div>
                 <div style="display: flex; align-items: center; gap: 16px; font-size: 18px; font-weight: 600;">
-                    <i class="ph-fill ph-check-circle" style="color: #22C55E; font-size: 24px;"></i> Phân quyền và truy cập dựa trên vai trò
+                    <i class="ph-fill ph-check-circle" style="color: #22C55E; font-size: 24px;"></i> Phân quyền và truy
+                    cập dựa trên vai trò
                 </div>
                 <div style="display: flex; align-items: center; gap: 16px; font-size: 18px; font-weight: 600;">
-                    <i class="ph-fill ph-check-circle" style="color: #22C55E; font-size: 24px;"></i> Bảo mật, tuân thủ và có khả năng kiểm chứng
+                    <i class="ph-fill ph-check-circle" style="color: #22C55E; font-size: 24px;"></i> Bảo mật, tuân thủ
+                    và có khả năng kiểm chứng
                 </div>
                 <div style="display: flex; align-items: center; gap: 16px; font-size: 18px; font-weight: 600;">
-                    <i class="ph-fill ph-check-circle" style="color: #22C55E; font-size: 24px;"></i> Tích hợp với kho dữ liệu BI của bạn
+                    <i class="ph-fill ph-check-circle" style="color: #22C55E; font-size: 24px;"></i> Tích hợp với kho dữ
+                    liệu BI của bạn
                 </div>
             </div>
-            <a href="../app.html" class="btn btn-primary" style="margin-top: 60px; padding: 20px 48px; font-size: 18px; border-radius: 100px;">Trải nghiệm Yoodli Analytics</a>
+            <a href="../app.html" class="btn btn-primary"
+                style="margin-top: 60px; padding: 20px 48px; font-size: 18px; border-radius: 100px;">Trải nghiệm Yoodli
+                Analytics</a>
         </section>
 
         <!-- FAQ -->
@@ -290,76 +265,42 @@
             <div class="faq-list">
                 <div class="faq-item">
                     <div class="faq-question">Yoodli cung cấp loại phân tích nào? <i class="ph ph-plus"></i></div>
-                    <div class="faq-answer">Yoodli cung cấp phân tích chi tiết về sự tiến bộ của kỹ năng giao tiếp, mức độ tham gia của đội ngũ, sự sẵn sàng cho các tình huống thực tế và các xu hướng hiệu suất theo thời gian.</div>
+                    <div class="faq-answer">Yoodli cung cấp phân tích chi tiết về sự tiến bộ của kỹ năng giao tiếp, mức
+                        độ tham gia của đội ngũ, sự sẵn sàng cho các tình huống thực tế và các xu hướng hiệu suất theo
+                        thời gian.</div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">Báo cáo có thể xuất ra được không? <i class="ph ph-plus"></i></div>
-                    <div class="faq-answer">Hoàn toàn có. Bạn có thể xuất các báo cáo dưới định dạng CSV, PDF hoặc tích hợp trực tiếp dữ liệu vào hệ thống BI của doanh nghiệp thông qua API.</div>
+                    <div class="faq-answer">Hoàn toàn có. Bạn có thể xuất các báo cáo dưới định dạng CSV, PDF hoặc tích
+                        hợp trực tiếp dữ liệu vào hệ thống BI của doanh nghiệp thông qua API.</div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">Yoodli giúp xác định khoảng trống kỹ năng như thế nào? <i class="ph ph-plus"></i></div>
-                    <div class="faq-answer">Bằng cách so sánh hiệu suất thực tế của đội ngũ với các rubric tiêu chuẩn của doanh nghiệp, AI sẽ chỉ ra những kỹ năng nào đang yếu và cần được tập trung đào tạo thêm.</div>
+                    <div class="faq-question">Yoodli giúp xác định khoảng trống kỹ năng như thế nào? <i
+                            class="ph ph-plus"></i></div>
+                    <div class="faq-answer">Bằng cách so sánh hiệu suất thực tế của đội ngũ với các rubric tiêu chuẩn
+                        của doanh nghiệp, AI sẽ chỉ ra những kỹ năng nào đang yếu và cần được tập trung đào tạo thêm.
+                    </div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">Lãnh đạo có thể theo dõi sự sẵn sàng giữa các đội ngũ không? <i class="ph ph-plus"></i></div>
-                    <div class="faq-answer">Có, quản trị viên có thể so sánh dữ liệu hiệu suất giữa các phòng ban, khu vực hoặc các nhóm theo vai trò để có cái nhìn tổng thể về năng lực của tổ chức.</div>
+                    <div class="faq-question">Lãnh đạo có thể theo dõi sự sẵn sàng giữa các đội ngũ không? <i
+                            class="ph ph-plus"></i></div>
+                    <div class="faq-answer">Có, quản trị viên có thể so sánh dữ liệu hiệu suất giữa các phòng ban, khu
+                        vực hoặc các nhóm theo vai trò để có cái nhìn tổng thể về năng lực của tổ chức.</div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">Báo cáo kết nối như thế nào với kết quả kinh doanh? <i class="ph ph-plus"></i></div>
-                    <div class="faq-answer">Bằng cách cải thiện kỹ năng giao tiếp và sự tự tin, Yoodli trực tiếp tác động đến tỷ lệ chốt đơn, sự hài lòng của khách hàng và hiệu quả làm việc nhóm, tất cả đều được phản ánh qua các chỉ số tiến bộ.</div>
+                    <div class="faq-question">Báo cáo kết nối như thế nào với kết quả kinh doanh? <i
+                            class="ph ph-plus"></i></div>
+                    <div class="faq-answer">Bằng cách cải thiện kỹ năng giao tiếp và sự tự tin, Yoodli trực tiếp tác
+                        động đến tỷ lệ chốt đơn, sự hài lòng của khách hàng và hiệu quả làm việc nhóm, tất cả đều được
+                        phản ánh qua các chỉ số tiến bộ.</div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="footer" style="background: #F1F5F9; padding: 80px 0 40px; margin-top: 100px;">
-        <div class="container">
-            <div class="footer-grid" style="display: grid; grid-template-columns: 2fr repeat(4, 1fr); gap: 40px;">
-                <div class="footer-col">
-                    <a href="../index.html" class="logo" style="margin-bottom: 24px; display: inline-block;">
-                        <i class="ph-fill ph-microphone-stage"></i> yoodli
-                    </a>
-                    <p style="color: var(--text-light); font-size: 14px;">Làm chủ nghệ thuật giao tiếp với AI. Nền tảng hàng đầu thế giới về huấn luyện diễn thuyết và nhập vai.</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Nền tảng</h4>
-                    <a href="ai-roleplays.html">Nhập vai AI</a>
-                    <a href="ai-tutor.html">Gia sư AI</a>
-                    <a href="ai-continuous-coaching.html">Huấn luyện AI</a>
-                    <a href="ai-experiential-learning.html">Học tập trải nghiệm</a>
-                    <a href="ai-feedback.html">Phản hồi cá nhân hóa</a>
-                    <a href="ai-analytics-reporting.html">Phân tích & báo cáo</a>
-                    <a href="ai-integrations-mcp.html">Tích hợp & MCP</a>
-                </div>
-                <div class="footer-col">
-                    <h4>Giải pháp</h4>
-                    <a href="#">Bán hàng</a>
-                    <a href="#">Hỗ trợ</a>
-                    <a href="#">Lãnh đạo</a>
-                </div>
-                <div class="footer-col">
-                    <h4>Công ty</h4>
-                    <a href="#">Về chúng tôi</a>
-                    <a href="#">Tuyển dụng</a>
-                    <a href="#">Blog</a>
-                </div>
-                <div class="footer-col">
-                    <h4>Hỗ trợ</h4>
-                    <a href="#">Trung tâm trợ giúp</a>
-                    <a href="#">Liên hệ</a>
-                    <a href="#">Bảo mật</a>
-                </div>
-            </div>
-            <div style="border-top: 1px solid #CBD5E1; margin-top: 60px; padding-top: 24px; display: flex; justify-content: space-between; font-size: 14px; color: var(--text-light);">
-                <p>&copy; 2024 Yoodli Clone Vietnam. Tất cả quyền được bảo lưu.</p>
-                <div style="display: flex; gap: 24px;">
-                    <a href="#"><i class="ph ph-linkedin-logo"></i></a>
-                    <a href="#"><i class="ph ph-twitter-logo"></i></a>
-                    <a href="#"><i class="ph ph-youtube-logo"></i></a>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <!-- Footer will be injected by master_layout.js -->
+    <script src="../master_layout.js"></script>
+
 
     <script>
         // FAQ Toggle

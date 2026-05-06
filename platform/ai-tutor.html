@@ -49,18 +49,27 @@
             position: absolute;
             animation: pulse 2s infinite alternate;
         }
+
         .sparkle-blue {
             top: 15%;
             right: 5%;
         }
+
         .sparkle-yellow {
             bottom: 20%;
             left: 5%;
         }
-        
+
         @keyframes pulse {
-            0% { transform: scale(1); opacity: 0.8; }
-            100% { transform: scale(1.2); opacity: 1; }
+            0% {
+                transform: scale(1);
+                opacity: 0.8;
+            }
+
+            100% {
+                transform: scale(1.2);
+                opacity: 1;
+            }
         }
 
         /* Stacked Cards */
@@ -156,7 +165,7 @@
             border-bottom: 1px solid #F1F5F9;
             border-right: 1px solid #F1F5F9;
             z-index: -1;
-            box-shadow: 6px 6px 10px rgba(0,0,0,0.02);
+            box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.02);
         }
 
         /* Right Column */
@@ -228,23 +237,29 @@
                 text-align: center;
                 gap: 40px;
             }
+
             .tutor-hero-visual {
                 justify-content: center;
                 margin-bottom: 20px;
             }
+
             .tutor-hero-content {
                 text-align: center;
             }
+
             .tutor-body {
                 margin: 0 auto 24px;
             }
+
             .tutor-headline {
                 font-size: 56px;
             }
+
             .bubble-tail {
                 left: 50%;
                 margin-left: -12px;
             }
+
             .tutor-circle-bg {
                 width: 340px;
                 height: 340px;
@@ -332,6 +347,7 @@
             font-size: 24px;
             color: var(--rp-indigo);
         }
+
         /* Unlock Potential Section */
         .tutor-unlock-section {
             background: #050A30;
@@ -393,14 +409,37 @@
             background: rgba(99, 102, 241, 0.4);
         }
 
-        .wave-1 { height: 100px; }
-        .wave-2 { height: 180px; }
-        .wave-3 { height: 260px; }
-        .wave-4 { height: 340px; }
-        .wave-5 { height: 300px; }
-        .wave-6 { height: 220px; }
-        .wave-7 { height: 140px; }
-        .wave-8 { height: 80px; }
+        .wave-1 {
+            height: 100px;
+        }
+
+        .wave-2 {
+            height: 180px;
+        }
+
+        .wave-3 {
+            height: 260px;
+        }
+
+        .wave-4 {
+            height: 340px;
+        }
+
+        .wave-5 {
+            height: 300px;
+        }
+
+        .wave-6 {
+            height: 220px;
+        }
+
+        .wave-7 {
+            height: 140px;
+        }
+
+        .wave-8 {
+            height: 80px;
+        }
 
         /* Main Portrait Circle */
         .portrait-circle {
@@ -435,7 +474,7 @@
             display: flex;
             align-items: center;
             gap: 16px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             z-index: 3;
             font-weight: 700;
             font-size: 14px;
@@ -483,16 +522,37 @@
                 grid-template-columns: 1fr;
                 text-align: center;
             }
+
             .tutor-unlock-visual {
                 order: -1;
                 margin-bottom: 40px;
             }
-            .badge-positive { left: 10%; top: 0; }
-            .badge-warning { right: 10%; bottom: 20px; }
-            .soundwaves { gap: 12px; }
-            .wave { width: 8px; border-radius: 4px; }
-            .portrait-circle { width: 300px; height: 300px; }
+
+            .badge-positive {
+                left: 10%;
+                top: 0;
+            }
+
+            .badge-warning {
+                right: 10%;
+                bottom: 20px;
+            }
+
+            .soundwaves {
+                gap: 12px;
+            }
+
+            .wave {
+                width: 8px;
+                border-radius: 4px;
+            }
+
+            .portrait-circle {
+                width: 300px;
+                height: 300px;
+            }
         }
+
         /* How It Works Section */
         .hiw-section {
             padding: 120px 0;
@@ -550,7 +610,7 @@
             justify-content: center;
             color: #4F46E5;
         }
-        
+
         .hiw-icon-wrapper i {
             font-size: 32px;
             stroke-width: 2;
@@ -575,9 +635,11 @@
                 grid-template-columns: 1fr;
                 gap: 60px;
             }
+
             .hiw-content {
                 text-align: center;
             }
+
             .hiw-card-new {
                 padding: 32px 24px;
                 flex-direction: column;
@@ -585,44 +647,197 @@
                 text-align: center;
             }
         }
-        /* Tutor Leader Section Overrides (Light Blue Theme) */
+
+        /* Leader Slider Section Refined */
         .tutor-leader-section {
-            background-color: #F0F9FF !important; /* Light blue */
-            color: #050A30 !important;
+            background-color: #F0F9FF !important;
+            padding: 120px 0;
         }
-        .tutor-leader-section .leader-header h2,
-        .tutor-leader-section .slide-text h3 {
-            color: #050A30 !important;
+
+        .outcome-visual {
+            height: 380px;
+            border-radius: 24px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #2563eb 0%, #06b6d4 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 20px 40px rgba(37, 99, 235, 0.2);
         }
-        .tutor-leader-section .leader-header p,
-        .tutor-leader-section .slide-text p {
-            color: #475569 !important;
+
+        /* Mockup elements */
+        .mockup-video-ui {
+            width: 80%;
+            height: 70%;
+            background: white;
+            border-radius: 16px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
-        .tutor-leader-section .nav-btn {
-            color: #050A30 !important;
-            border-color: rgba(5, 10, 48, 0.2) !important;
+
+        .video-avatar {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
-        .tutor-leader-section .nav-btn:hover {
-            background-color: rgba(5, 10, 48, 0.05) !important;
+
+        .badge-tag {
+            position: absolute;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
-        .tutor-leader-section .progress-segment {
-            background-color: rgba(5, 10, 48, 0.1) !important;
+
+        .tag-green {
+            background: #f0fdf4;
+            color: #16a34a;
+            border: 1px solid #dcfce7;
         }
-        .tutor-leader-section .progress-fill {
-            background-color: #4F46E5 !important;
+
+        .tag-red {
+            background: #fef2f2;
+            color: #dc2626;
+            border: 1px solid #fee2e2;
         }
-        
-        /* Remove any inherited fade masks or shadows from slider */
-        .tutor-leader-section .slider-container,
-        .tutor-leader-section .slider-track,
-        .tutor-leader-section .slide-item,
-        .tutor-leader-section .slide-text {
-            -webkit-mask-image: none !important;
-            mask-image: none !important;
-            box-shadow: none !important;
+
+        .video-controls {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 12px 20px;
+            background: rgba(255, 255, 255, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 13px;
+            font-weight: 700;
         }
-        .tutor-leader-section .visual-gradient-box {
-            box-shadow: none !important;
+
+        .btn-done-small {
+            background: #0f172a;
+            color: white;
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 12px;
+        }
+
+        .mockup-cards-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            width: 80%;
+        }
+
+        .m-card {
+            background: white;
+            padding: 16px 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .m-label {
+            font-size: 11px;
+            color: #64748b;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .m-value {
+            font-size: 16px;
+            color: #0f172a;
+            font-weight: 800;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .mockup-dash-ui {
+            width: 85%;
+            height: 75%;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 24px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .dash-main-av {
+            width: 140px;
+            height: 140px;
+            background: #4f46e5;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .dash-side-avs {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .side-av {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+        }
+
+        .mockup-analytics {
+            width: 85%;
+            background: white;
+            border-radius: 20px;
+            padding: 24px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-header {
+            font-size: 14px;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .stat-bar-box {
+            background: #f8fafc;
+            padding: 16px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+
+        .spider-chart-box {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            border: 1px solid #f1f5f9;
+            border-radius: 12px;
+        }
+
+        .slider-navigation .progress-segment {
+            background-color: #e2e8f0 !important;
+            width: 80px;
+            height: 6px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .slider-navigation .progress-fill {
+            background-color: #1e293b !important;
+            height: 100%;
+            width: 0;
         }
 
         /* Bottom CTA Section */
@@ -631,10 +846,12 @@
             text-align: center;
             background: #FFFFFF;
         }
+
         .bottom-cta-container {
             max-width: 900px;
             margin: 0 auto;
         }
+
         .bottom-cta h2 {
             font-size: 36px;
             font-weight: 800;
@@ -642,12 +859,14 @@
             margin-bottom: 24px;
             letter-spacing: -0.02em;
         }
+
         .bottom-cta p {
             font-size: 16px;
             color: #475569;
             margin-bottom: 48px;
             line-height: 1.6;
         }
+
         .bottom-cta .btn-cta {
             display: inline-block;
             background: linear-gradient(90deg, #2D9CDB, #6F5CF1);
@@ -659,6 +878,7 @@
             text-decoration: none;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
+
         .bottom-cta .btn-cta:hover {
             transform: translateY(-2px);
             box-shadow: 0 10px 20px rgba(111, 92, 241, 0.3);
@@ -668,9 +888,11 @@
             .bottom-cta {
                 padding: 80px 20px;
             }
+
             .bottom-cta h2 {
                 font-size: 36px;
             }
+
             .bottom-cta p {
                 font-size: 18px;
             }
@@ -679,6 +901,8 @@
 </head>
 
 <body>
+    <!-- Header and Banner will be injected by master_layout.js -->
+
     <main>
         <!-- Hero Section -->
         <section class="tutor-hero">
@@ -687,24 +911,33 @@
                 <div class="tutor-hero-visual">
                     <div class="tutor-circle-bg">
                         <!-- Decorative sparkles -->
-                        <svg class="sparkle sparkle-blue" width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="#2D9CDB"/>
+                        <svg class="sparkle sparkle-blue" width="40" height="40" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"
+                                fill="#2D9CDB" />
                         </svg>
-                        <svg class="sparkle sparkle-yellow" width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="#FBBF24"/>
+                        <svg class="sparkle sparkle-yellow" width="40" height="40" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"
+                                fill="#FBBF24" />
                         </svg>
-                        
+
                         <!-- Stacked Cards -->
                         <div class="card-stack">
                             <div class="card-layer card-layer-3"></div>
                             <div class="card-layer card-layer-2"></div>
                             <div class="card-layer card-layer-1">
                                 <div class="coach-bubble-card">
-                                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=100" alt="Avatar" class="coach-avatar">
+                                    <div class="coach-avatar"
+                                        style="width: 52px; height: 52px; border-radius: 50%; overflow: hidden; background: #f0f0f0; border: 2px solid white; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+                                        <img src="../male_ai_tutor_portrait_1777984037006.png" alt="AI Coach"
+                                            style="width: 100%; height: 100%; object-fit: cover;">
+                                    </div>
                                     <div class="coach-bubble-content">
                                         <div class="coach-label">YOODLI AI COACH</div>
                                         <div class="coach-message">
-                                            You have a new roleplay available! Let's work on <span class="highlight-blue">objection handling</span>
+                                            You have a new roleplay available! Let's work on <span
+                                                class="highlight-blue">objection handling</span>
                                         </div>
                                     </div>
                                     <div class="bubble-tail"></div>
@@ -716,45 +949,55 @@
 
                 <!-- Right Column (Content) -->
                 <div class="tutor-hero-content">
-                    <span class="tutor-eyebrow">PERSONALIZED COACHING AT SCALE AND ON DEMAND</span>
-                    <h1 class="tutor-headline">AI Tutor</h1>
+                    <span class="tutor-eyebrow">HUẤN LUYỆN CÁ NHÂN HÓA Ở QUY MÔ LỚN VÀ THEO YÊU CẦU</span>
+                    <h1 class="tutor-headline">Gia sư AI</h1>
                     <p class="tutor-body">
-                        With Yoodli's AI Tutor, your teams get a 24/7, always-on coach that adapts to their unique needs, guides practice, and builds real skills.
+                        Với Gia sư AI của Yoodli, đội ngũ của bạn sẽ có một huấn luyện viên luôn sẵn sàng 24/7, thích
+                        ứng với nhu cầu độc đáo của họ, hướng dẫn thực hành và xây dựng kỹ năng thực tế.
                     </p>
                     <p class="tutor-body">
-                        No generic modules. No one-size-fits-all content. <strong>Just targeted coaching that accelerates true readiness, when and where it matters.</strong>
+                        Không còn các mô-đun chung chung. Không còn nội dung áp dụng cho tất cả. <strong>Chỉ có sự huấn
+                            luyện mục tiêu giúp tăng tốc sự sẵn sàng thực sự, bất cứ khi nào và bất cứ đâu cần
+                            thiết.</strong>
                     </p>
-                    <a href="../app.html" class="btn-gradient-pill">See it in action</a>
+                    <a href="../app.html" class="btn-gradient-pill">Xem hoạt động</a>
                 </div>
+
             </div>
         </section>
 
         <!-- Scale Section -->
         <section class="container" style="padding: 120px 0;">
             <div style="text-align: center; max-width: 800px; margin: 0 auto 80px;">
-                <h2 style="font-size: 28px; font-weight: 800; margin-bottom: 24px;">Giúp quy mô hóa huấn luyện trong toàn đội ngũ</h2>
-                <p style="color: var(--text-light); font-size: 18px;">Giúp việc huấn luyện không còn là rào cản để mọi người đều có thể học tập và cải thiện một cách nhất quán.</p>
+                <h2 style="font-size: 28px; font-weight: 800; margin-bottom: 24px;">Giúp quy mô hóa huấn luyện trong
+                    toàn đội ngũ</h2>
+                <p style="color: var(--text-light); font-size: 18px;">Giúp việc huấn luyện không còn là rào cản để mọi
+                    người đều có thể học tập và cải thiện một cách nhất quán.</p>
             </div>
             <div class="tutor-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;">
                 <div class="hw-card" style="flex-direction: column; align-items: flex-start; text-align: left;">
                     <div class="hw-icon" style="margin-bottom: 24px;"><i class="ph-bold ph-chart-line-up"></i></div>
                     <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 12px;">Quy mô hóa việc học</h3>
-                    <p style="color: var(--text-light); font-size: 14px; line-height: 1.6;">Huấn luyện cá nhân hóa cho toàn bộ tổ chức của bạn mà không cần tăng thêm nhân sự đào tạo.</p>
+                    <p style="color: var(--text-light); font-size: 14px; line-height: 1.6;">Huấn luyện cá nhân hóa cho
+                        toàn bộ tổ chức của bạn mà không cần tăng thêm nhân sự đào tạo.</p>
                 </div>
                 <div class="hw-card" style="flex-direction: column; align-items: flex-start; text-align: left;">
                     <div class="hw-icon" style="margin-bottom: 24px;"><i class="ph-bold ph-users-three"></i></div>
                     <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 12px;">Hỗ trợ quản lý</h3>
-                    <p style="color: var(--text-light); font-size: 14px; line-height: 1.6;">Quản lý không thể luôn có mặt cho mọi cuộc gọi. Gia sư AI lấp đầy khoảng trống đó 24/7.</p>
+                    <p style="color: var(--text-light); font-size: 14px; line-height: 1.6;">Quản lý không thể luôn có
+                        mặt cho mọi cuộc gọi. Gia sư AI lấp đầy khoảng trống đó 24/7.</p>
                 </div>
                 <div class="hw-card" style="flex-direction: column; align-items: flex-start; text-align: left;">
                     <div class="hw-icon" style="margin-bottom: 24px;"><i class="ph-bold ph-gauge"></i></div>
                     <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 12px;">Đo lường tiến độ</h3>
-                    <p style="color: var(--text-light); font-size: 14px; line-height: 1.6;">Tiến độ học tập có thể đo lường được ở cấp độ đội ngũ với các dữ liệu khách quan.</p>
+                    <p style="color: var(--text-light); font-size: 14px; line-height: 1.6;">Tiến độ học tập có thể đo
+                        lường được ở cấp độ đội ngũ với các dữ liệu khách quan.</p>
                 </div>
                 <div class="hw-card" style="flex-direction: column; align-items: flex-start; text-align: left;">
                     <div class="hw-icon" style="margin-bottom: 24px;"><i class="ph-bold ph-clock-countdown"></i></div>
                     <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 12px;">Sẵn sàng mọi lúc</h3>
-                    <p style="color: var(--text-light); font-size: 14px; line-height: 1.6;">Giúp các đội ngũ bận rộn không bỏ lỡ các cơ hội quan trọng vì thiếu sự chuẩn bị.</p>
+                    <p style="color: var(--text-light); font-size: 14px; line-height: 1.6;">Giúp các đội ngũ bận rộn
+                        không bỏ lỡ các cơ hội quan trọng vì thiếu sự chuẩn bị.</p>
                 </div>
             </div>
         </section>
@@ -765,11 +1008,15 @@
                 <!-- Content -->
                 <div class="tutor-unlock-content">
                     <h2>Gia sư AI giúp khai phá tiềm năng đội ngũ của bạn</h2>
-                    <p>Yoodli biến việc học thành một hành trình chủ động với sự huấn luyện năng động, cá nhân hóa cho từng cá nhân.</p>
-                    <p>Người học được thực hành tương tác thực tế, không phải những bài học thụ động. Gia sư AI phân tích từng phiên, chỉ ra những điểm cần phát triển và đề xuất thử thách tốt nhất tiếp theo. Xây dựng kỹ năng từng bước một.</p>
-                    <p><strong>Đây không chỉ là đào tạo. Đây là thực hành, phản hồi và cải thiện có thể đo lường được tích hợp ngay trong luồng công việc của bạn.</strong></p>
+                    <p>Yoodli biến việc học thành một hành trình chủ động với sự huấn luyện năng động, cá nhân hóa cho
+                        từng cá nhân.</p>
+                    <p>Người học được thực hành tương tác thực tế, không phải những bài học thụ động. Gia sư AI phân
+                        tích từng phiên, chỉ ra những điểm cần phát triển và đề xuất thử thách tốt nhất tiếp theo. Xây
+                        dựng kỹ năng từng bước một.</p>
+                    <p><strong>Đây không chỉ là đào tạo. Đây là thực hành, phản hồi và cải thiện có thể đo lường được
+                            tích hợp ngay trong luồng công việc của bạn.</strong></p>
                 </div>
-                
+
                 <!-- Visuals -->
                 <div class="tutor-unlock-visual">
                     <!-- Soundwaves Background -->
@@ -783,20 +1030,26 @@
                         <div class="wave wave-7"></div>
                         <div class="wave wave-8"></div>
                     </div>
-                    
+
                     <!-- Sparkles -->
-                    <svg class="sparkle" style="top: -20px; right: 20px;" width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="#FBBF24"/>
+                    <svg class="sparkle" style="top: -20px; right: 20px;" width="40" height="40" viewBox="0 0 24 24"
+                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"
+                            fill="#FBBF24" />
                     </svg>
-                    <svg class="sparkle" style="bottom: 10px; left: 10px;" width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" fill="#3B82F6"/>
+                    <svg class="sparkle" style="bottom: 10px; left: 10px;" width="30" height="30" viewBox="0 0 24 24"
+                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z"
+                            fill="#3B82F6" />
                     </svg>
-                    
+
                     <!-- Portrait -->
-                    <div class="portrait-circle">
-                        <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=800" alt="Professional" class="portrait-img">
+                    <div class="portrait-circle" style="background: #000;">
+                        <iframe width="100%" height="100%"
+                            src="https://www.youtube-nocookie.com/embed/ZeK1RCgWcCw?rel=0&autoplay=1&mute=1&loop=1"
+                            frameborder="0" style="scale: 1.5;"></iframe>
                     </div>
-                    
+
                     <!-- Floating Badges -->
                     <div class="tutor-badge badge-positive">
                         <div class="icon-wrapper">
@@ -804,7 +1057,7 @@
                         </div>
                         <div class="badge-text">Tuyệt vời, bạn đã nói<br>đủ các ý chính!</div>
                     </div>
-                    
+
                     <div class="tutor-badge badge-warning">
                         <div class="icon-wrapper">
                             <i class="ph-bold ph-flag"></i>
@@ -815,7 +1068,10 @@
             </div>
         </section>
 
-        <!-- How It Works Section -->
+
+
+
+
         <section class="hiw-section">
             <div class="container hiw-grid">
                 <!-- Left Content -->
@@ -823,7 +1079,7 @@
                     <h2>Cách thức hoạt động</h2>
                     <p>Không còn phỏng đoán. Không còn ùn tắc quản lý. Không ai bị bỏ lại phía sau.</p>
                 </div>
-                
+
                 <!-- Right Cards -->
                 <div class="hiw-cards">
                     <div class="hiw-card-new">
@@ -832,7 +1088,8 @@
                         </div>
                         <div class="hiw-card-content">
                             <h3>Luyện tập mục tiêu, thích ứng</h3>
-                            <p>Triển khai các phiên tập trung phù hợp với những lỗ hổng kỹ năng và yêu cầu công việc của từng học viên.</p>
+                            <p>Triển khai các phiên tập trung phù hợp với những lỗ hổng kỹ năng và yêu cầu công việc của
+                                từng học viên.</p>
                         </div>
                     </div>
 
@@ -842,7 +1099,8 @@
                         </div>
                         <div class="hiw-card-content">
                             <h3>Phản hồi khách quan, tức thì</h3>
-                            <p>Gia sư AI cung cấp những hiểu biết dựa trên dữ liệu về điểm mạnh và những lĩnh vực cần cải thiện sau mỗi lần thực hành.</p>
+                            <p>Gia sư AI cung cấp những hiểu biết dựa trên dữ liệu về điểm mạnh và những lĩnh vực cần
+                                cải thiện sau mỗi lần thực hành.</p>
                         </div>
                     </div>
 
@@ -852,104 +1110,164 @@
                         </div>
                         <div class="hiw-card-content">
                             <h3>Làm chủ thông qua sự lặp lại</h3>
-                            <p>Người học tiến bộ bằng cách thực hành các kỹ năng cốt lõi, không chỉ một lần, mà cho đến khi họ thực sự sẵn sàng.</p>
+                            <p>Người học tiến bộ bằng cách thực hành các kỹ năng cốt lõi, không chỉ một lần, mà cho đến
+                                khi họ thực sự sẵn sàng.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Leader Slider Section (Copied from Roleplays) -->
+        <!-- Leader Slider Section -->
         <section class="rp-leader-section tutor-leader-section">
             <div class="container">
-                <div class="leader-header">
-                    <h2>Tại sao Yoodli dẫn đầu về Đóng vai AI</h2>
-                    <p>Luyện tập thay đổi hành vi. Yoodli giúp mở rộng quy mô luyện tập.</p>
+                <div class="leader-header" style="text-align: center; margin-bottom: 80px;">
+                    <h2
+                        style="font-size: 56px; font-weight: 800; color: #050a30; margin-bottom: 16px; letter-spacing: -0.04em;">
+                        Why Yoodli leads in AI Tutoring</h2>
+                    <p style="font-size: 20px; color: #475569; max-width: 800px; margin: 0 auto; line-height: 1.6;">
+                        Personalized AI coaching that adapts to every learner's needs and pace.</p>
                 </div>
 
                 <div class="slider-container">
-                    <div class="slider-track" id="leaderSliderTrack">
-                        
-                        <!-- Slide 1 -->
+                    <div class="slider-track" id="leaderSliderTrack"
+                        style="transition: transform 0.6s cubic-bezier(0.65, 0, 0.35, 1);">
+
+                        <!-- Slide 1: Active Engagement -->
                         <div class="slide-item active">
-                            <div class="slide-visual">
-                                <div class="visual-gradient-box">
-                                    <div class="ui-mockup-stack">
-                                        <div class="ui-card">
-                                            <div class="ui-label">Chủ đề</div>
-                                            <div class="ui-value">Tại sao chúng tôi nên mua sản phẩm?</div>
+                            <div class="outcome-grid"
+                                style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 100px; align-items: center; max-width: 1100px; margin: 0 auto;">
+                                <div class="outcome-visual">
+                                    <div class="mockup-video-ui">
+                                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400"
+                                            class="video-avatar" alt="Video">
+                                        <div class="badge-tag tag-green" style="top: 60%; left: 10%;">
+                                            <i class="ph-fill ph-thumbs-up"></i> Concise language
                                         </div>
-                                        <div class="ui-card">
-                                            <div class="ui-label">Đối tác trò chuyện</div>
-                                            <div class="ui-value">Khách hàng <i class="ph ph-magnifying-glass" style="float: right; color: #94a3b8;"></i></div>
+                                        <div class="badge-tag tag-red" style="top: 20%; right: 10%;">
+                                            <i class="ph-fill ph-flag"></i> Slow down!
                                         </div>
-                                        <div class="ui-card">
-                                            <div class="ui-label">Tính cách</div>
-                                            <div class="ui-value">Hoài nghi <i class="ph ph-caret-down" style="float: right; color: #94a3b8;"></i></div>
+                                        <div class="video-controls">
+                                            <div style="display: flex; gap: 12px; align-items: center;">
+                                                <span>00:12</span>
+                                                <i class="ph-fill ph-pause"></i>
+                                            </div>
+                                            <div class="btn-done-small">Done <i class="ph-bold ph-check"></i></div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="slide-text">
-                                <h3>Cảm giác chân thực</h3>
-                                <p>Các cuộc trò chuyện động có thể phản bác, thích ứng và phản ánh áp lực thực tế, giúp việc luyện tập dễ dàng chuyển hóa vào các cuộc gọi thật.</p>
+                                <div class="outcome-text" style="text-align: left;">
+                                    <h3
+                                        style="font-size: 36px; font-weight: 800; color: #050a30; margin-bottom: 24px; letter-spacing: -0.02em;">
+                                        Active engagement</h3>
+                                    <p style="font-size: 22px; color: #475569; line-height: 1.5;">Learners speak,
+                                        respond, and adapt under realistic pressure instead of clicking through modules.
+                                    </p>
+                                </div>
                             </div>
                         </div>
 
-                        <!-- Slide 2 -->
+                        <!-- Slide 2: Personalized Development -->
                         <div class="slide-item">
-                            <div class="slide-visual">
-                                <div class="visual-gradient-box">
-                                    <div class="ui-mockup-video">
-                                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400" alt="Video">
-                                        <div class="ui-tag tag-red"><i class="ph-fill ph-flag"></i> Chậm lại!</div>
-                                        <div class="ui-tag tag-green"><i class="ph-fill ph-thumbs-up"></i> Ngôn từ súc tích</div>
-                                        <div class="ui-controls">
-                                            <span>00:12</span>
-                                            <i class="ph-fill ph-pause"></i>
-                                            <div class="btn-done">Xong <i class="ph-bold ph-check"></i></div>
+                            <div class="outcome-grid"
+                                style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 100px; align-items: center; max-width: 1100px; margin: 0 auto;">
+                                <div class="outcome-visual">
+                                    <div class="mockup-cards-stack">
+                                        <div class="m-card">
+                                            <div class="m-label">Topic</div>
+                                            <div class="m-value">Why should we buy your product?</div>
+                                        </div>
+                                        <div class="m-card">
+                                            <div class="m-label">Conversation Partner</div>
+                                            <div class="m-value">Client <i class="ph ph-magnifying-glass"
+                                                    style="font-size: 18px; color: #94a3b8;"></i></div>
+                                        </div>
+                                        <div class="m-card">
+                                            <div class="m-label">Persona</div>
+                                            <div class="m-value">Skeptical <i class="ph ph-caret-down"
+                                                    style="font-size: 18px; color: #94a3b8;"></i></div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="slide-text">
-                                <h3>Mở rộng quy mô không thỏa hiệp</h3>
-                                <p>Mỗi nhân viên đều nhận được sự thực hành và phản hồi chất lượng cao, không bị phụ thuộc vào thời gian của quản lý.</p>
+                                <div class="outcome-text" style="text-align: left;">
+                                    <h3
+                                        style="font-size: 36px; font-weight: 800; color: #050a30; margin-bottom: 24px; letter-spacing: -0.02em;">
+                                        Personalized development</h3>
+                                    <p style="font-size: 22px; color: #475569; line-height: 1.5;">The AI Tutor ensures
+                                        practice is aligned to each individual's needs.</p>
+                                </div>
                             </div>
                         </div>
 
-                        <!-- Slide 3 -->
+                        <!-- Slide 3: Continuous Reinforcement -->
                         <div class="slide-item">
-                            <div class="slide-visual">
-                                <div class="visual-gradient-box">
-                                    <div class="ui-mockup-dash">
-                                        <div class="dash-top">
-                                            <div class="avatar">DJ</div>
-                                            <div class="info">
-                                                <div class="name">David James</div>
-                                                <div class="status">Hoạt động hôm nay</div>
+                            <div class="outcome-grid"
+                                style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 100px; align-items: center; max-width: 1100px; margin: 0 auto;">
+                                <div class="outcome-visual">
+                                    <div class="mockup-dash-ui">
+                                        <div
+                                            style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative;">
+                                            <div class="dash-main-av">
+                                                <i class="ph-fill ph-user" style="font-size: 60px; color: white;"></i>
                                             </div>
-                                            <div class="stat">40 Yoodlis</div>
+                                            <div class="badge-tag tag-green"
+                                                style="position: absolute; bottom: 10px; left: -20px; font-size: 11px;">
+                                                Concise language</div>
+                                            <div class="badge-tag tag-red"
+                                                style="position: absolute; bottom: -20px; left: -10px; font-size: 11px;">
+                                                Clearer transitions</div>
                                         </div>
-                                        <div class="dash-bottom">
-                                            <div class="dash-card">
-                                                <div class="d-header">Nói dài dòng <span class="trend"><i class="ph-bold ph-arrow-up"></i> 4% tuần này</span></div>
-                                                <div class="d-chart"></div>
+                                        <div class="dash-side-avs" style="justify-content: center;">
+                                            <div class="side-av"></div>
+                                            <div class="side-av"></div>
+                                            <div class="side-av"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="outcome-text" style="text-align: left;">
+                                    <h3
+                                        style="font-size: 36px; font-weight: 800; color: #050a30; margin-bottom: 24px; letter-spacing: -0.02em;">
+                                        Continuous reinforcement</h3>
+                                    <p style="font-size: 22px; color: #475569; line-height: 1.5;">AI Continuous Coaching
+                                        keeps improvement ongoing, not just once in a while.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 4: Measurable Readiness -->
+                        <div class="slide-item">
+                            <div class="outcome-grid"
+                                style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 100px; align-items: center; max-width: 1100px; margin: 0 auto;">
+                                <div class="outcome-visual">
+                                    <div class="mockup-analytics">
+                                        <div class="stat-bar-box">
+                                            <div
+                                                style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                                                <span style="font-weight: 700; font-size: 13px;">Rambling</span>
+                                                <span style="color: #10b981; font-size: 11px;"><i
+                                                        class="ph-bold ph-arrow-down"></i> 2% this week</span>
                                             </div>
-                                            <div class="dash-card">
-                                                <div class="d-header">Kịch bản</div>
-                                                <div class="d-donut">
-                                                    <div class="donut-circle"></div>
-                                                    <div class="donut-text"><strong>3/10</strong><br>Hoàn thành</div>
+                                            <div
+                                                style="width: 100%; height: 8px; background: #e2e8f0; border-radius: 4px;">
+                                                <div
+                                                    style="width: 30%; height: 100%; background: #6366f1; border-radius: 4px;">
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="stat-header">Rubric</div>
+                                        <div class="spider-chart-box">
+                                            <img src="https://img.icons8.com/ios/100/6366F1/pentagon.png"
+                                                style="width: 80px; opacity: 0.5;" alt="chart">
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="slide-text">
-                                <h3>Thúc đẩy sự sẵn sàng có thể đo lường</h3>
-                                <p>Các nhà lãnh đạo nhìn thấy ai đã sẵn sàng, lỗ hổng ở đâu và thời gian huấn luyện nào thực sự quan trọng.</p>
+                                <div class="outcome-text" style="text-align: left;">
+                                    <h3
+                                        style="font-size: 36px; font-weight: 800; color: #050a30; margin-bottom: 24px; letter-spacing: -0.02em;">
+                                        Measurable readiness</h3>
+                                    <p style="font-size: 22px; color: #475569; line-height: 1.5;">Leaders gain
+                                        visibility into demonstrated skill, not just content completion.</p>
+                                </div>
                             </div>
                         </div>
 
@@ -957,9 +1275,10 @@
                 </div>
 
                 <!-- Slider Controls -->
-                <div class="slider-navigation">
+                <div class="slider-navigation"
+                    style="margin-top: 60px; display: flex; align-items: center; justify-content: center; gap: 40px;">
                     <button class="nav-btn" onclick="prevSlide()"><i class="ph-bold ph-caret-left"></i></button>
-                    <div class="progress-track-container">
+                    <div class="progress-track-container" style="display: flex; gap: 12px;">
                         <div class="progress-segment" onclick="goToSlide(0)">
                             <div class="progress-fill" id="fill-0"></div>
                         </div>
@@ -968,6 +1287,9 @@
                         </div>
                         <div class="progress-segment" onclick="goToSlide(2)">
                             <div class="progress-fill" id="fill-2"></div>
+                        </div>
+                        <div class="progress-segment" onclick="goToSlide(3)">
+                            <div class="progress-fill" id="fill-3"></div>
                         </div>
                     </div>
                     <button class="nav-btn" onclick="nextSlide()"><i class="ph-bold ph-caret-right"></i></button>
@@ -978,15 +1300,14 @@
         <!-- Slider Script -->
         <script>
             let currentSlide = 0;
-            const totalSlides = 3;
+            const totalSlides = 4;
             const slideDuration = 5000; // 5 seconds per slide
             let slideInterval;
-            let progressStartTime;
 
             function updateSlider() {
                 const track = document.getElementById('leaderSliderTrack');
                 track.style.transform = `translateX(-${currentSlide * 100}%)`;
-                
+
                 // Update active classes
                 document.querySelectorAll('.slide-item').forEach((slide, index) => {
                     slide.classList.toggle('active', index === currentSlide);
@@ -1043,7 +1364,9 @@
         <section class="bottom-cta">
             <div class="bottom-cta-container">
                 <h2>Việc học tập nên thích ứng nhanh như doanh nghiệp của bạn</h2>
-                <p>Chiến lược, kỹ năng và thị trường không ngừng phát triển. Yoodli mang đến cho đội ngũ của bạn sự huấn luyện cá nhân hóa để thích ứng, phát triển và thể hiện xuất sắc, bất kể điều gì xảy ra tiếp theo.</p>
+                <p>Chiến lược, kỹ năng và thị trường không ngừng phát triển. Yoodli mang đến cho đội ngũ của bạn sự huấn
+                    luyện cá nhân hóa để thích ứng, phát triển và thể hiện xuất sắc, bất kể điều gì xảy ra tiếp theo.
+                </p>
                 <a href="#" class="btn-cta">Khám phá Yoodli ngay</a>
             </div>
         </section>
@@ -1051,4 +1374,5 @@
 
     <script src="../master_layout.js"></script>
 </body>
+
 </html>

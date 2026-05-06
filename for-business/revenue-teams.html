@@ -10,84 +10,605 @@
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <style>
         .revenue-hero {
-            padding: 120px 0 100px;
-            background: radial-gradient(circle at 80% 30%, rgba(99, 102, 241, 0.08) 0%, transparent 50%), 
-                        linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
+            padding: 100px 0 120px;
+            background: white;
+            overflow: hidden;
         }
 
-        .chat-visual {
+        .visual-stack {
+            position: relative;
+            height: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .glow-bg {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
+            filter: blur(40px);
+            z-index: 1;
+        }
+
+        .v-card {
             background: white;
-            padding: 30px;
-            border-radius: 32px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.05);
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            position: absolute;
+            z-index: 2;
             border: 1px solid #F1F5F9;
+        }
+
+        .chat-v-card {
+            top: 15%;
+            left: 5%;
+            width: 320px;
+            padding: 20px;
+            display: flex;
+            gap: 12px;
+            border-radius: 20px 20px 20px 4px;
+        }
+
+        .mic-box {
+            width: 44px;
+            height: 44px;
+            background: #4F46E5;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            flex-shrink: 0;
+            font-size: 20px;
+        }
+
+        .chat-v-card p {
+            font-size: 13px;
+            font-weight: 700;
+            color: #050A30;
+            line-height: 1.4;
+            margin: 0;
+        }
+
+        .wave-v-card {
+            top: 45%;
+            right: 5%;
+            width: 280px;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border-radius: 16px;
+        }
+
+        .wave-bars {
+            display: flex;
+            align-items: center;
+            gap: 3px;
+            flex-grow: 1;
+        }
+
+        .wave-bars span {
+            width: 3px;
+            background: #CBD5E1;
+            border-radius: 10px;
+        }
+
+        .avatar-circle {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid white;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            position: absolute;
+            right: -20px;
+            top: -10px;
+        }
+
+        .avatar-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .feedback-tags {
+            position: absolute;
+            bottom: 10%;
+            left: 10%;
+            display: flex;
+            gap: 12px;
+            z-index: 3;
+        }
+
+        .tag-item {
+            background: white;
+            padding: 10px 16px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+            border: 1px solid #F1F5F9;
+        }
+
+        .tag-green {
+            color: #10B981;
+        }
+
+        .tag-orange {
+            color: #F59E0B;
+        }
+
+        .revenue-gradient-text {
+            background: linear-gradient(90deg, #38BDF8 0%, #818CF8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 64px;
+            font-weight: 850;
+        }
+
+        .btn-rev-gradient {
+            background: linear-gradient(90deg, #38BDF8 0%, #818CF8 100%);
+            color: white;
+            padding: 16px 36px;
+            border-radius: 100px;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(56, 189, 248, 0.2);
+        }
+
+        .btn-rev-gradient:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(56, 189, 248, 0.3);
+        }
+
+        /* Split Wave Section */
+        .split-wave-section {
             position: relative;
         }
 
-        .logo-ticker {
-            padding: 60px 0;
-            border-top: 1px solid #F1F5F9;
-            border-bottom: 1px solid #F1F5F9;
+        .wave-top {
+            background-color: #eef2f7;
+            padding: 80px 20px 100px;
             text-align: center;
         }
 
-        .logo-grid {
-            display: flex;
-            justify-content: center;
-            gap: 60px;
-            align-items: center;
-            flex-wrap: wrap;
-            opacity: 0.6;
-            filter: grayscale(1);
+        .wave-divider-top {
+            display: block;
+            width: 100%;
+            height: auto;
+            background-color: transparent;
+            margin-top: -59px;
+            position: relative;
+            z-index: 10;
         }
 
-        .gtm-section {
-            background: #F0F4FF;
-            padding: 120px 0;
-            border-radius: 100px;
-            margin: 40px 20px;
+        .wave-divider-top svg {
+            display: block;
+            width: 100%;
+            height: auto;
         }
 
-        .revenue-dark {
-            background: #0B0E23;
-            color: white;
-            padding: 120px 0;
-            text-align: center;
+        .wave-top h2 {
+            font-size: 38px;
+            font-weight: 850;
+            color: #0f1b3d;
+            margin-bottom: 24px;
         }
 
-        .rev-card {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 40px;
-            border-radius: 24px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+        .wave-top .subtext {
+            font-size: 18px;
+            color: #5b6b8c;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto 32px;
+        }
+
+        .wave-top .bullet-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 auto;
+            max-width: 500px;
+            display: inline-block;
             text-align: left;
-            transition: all 0.3s ease;
         }
 
-        .rev-card:hover {
-            background: rgba(255, 255, 255, 0.08);
+        .wave-top .bullet-list li {
+            font-size: 16px;
+            color: #5b6b8c;
+            margin-bottom: 16px;
+            position: relative;
+            padding-left: 28px;
+            font-weight: 500;
+        }
+
+        .wave-top .bullet-list li::before {
+            content: '\25CF';
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #3b82f6;
+            font-size: 12px;
+        }
+
+        .wave-top .highlight-line {
+            font-size: 18px;
+            font-weight: 700;
+            color: #0f1b3d;
+            margin-top: 32px;
+        }
+
+        .wave-divider {
+            display: block;
+            width: 100%;
+            height: auto;
+            background-color: #eef2f7;
+            margin-top: -1px;
+        }
+
+        .wave-divider svg {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .wave-bottom {
+            background-color: #0b1b3f;
+            padding: 60px 20px 120px;
+            text-align: center;
+        }
+
+        .wave-bottom h2 {
+            font-size: 36px;
+            font-weight: 850;
+            color: #ffffff;
+            margin-bottom: 16px;
+        }
+
+        .wave-bottom .subtext {
+            font-size: 16px;
+            color: #c7d2fe;
+            margin-bottom: 60px;
+        }
+
+        .wave-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .wave-card {
+            background: linear-gradient(180deg, #eef2ff 0%, #f1f5f9 100%);
+            border-radius: 20px;
+            padding: 32px;
+            text-align: left;
+            transition: transform 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .wave-card:hover {
             transform: translateY(-5px);
         }
 
-        .stats-grid {
+        .wave-card-icon {
+            margin-bottom: 20px;
+        }
+
+        .wave-card-icon i {
+            font-size: 32px;
+            color: #4f46e5;
+        }
+
+        .wave-card p {
+            font-size: 16px;
+            font-weight: 700;
+            color: #0f1b3d;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        /* Leader Slider Section Refined */
+        .coaching-leader-section {
+            background-color: #F8FAFC !important;
+            padding: 120px 0;
+        }
+
+        .leader-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .leader-header h2 {
+            font-size: 48px;
+            font-weight: 850;
+            color: #0f1b3d;
+            margin-bottom: 20px;
+        }
+
+        .leader-header p {
+            font-size: 18px;
+            color: #64748b;
+        }
+
+        .slider-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slider-track {
+            display: flex;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .slide-item {
+            min-width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            padding: 20px;
+            opacity: 0.3;
+            transition: opacity 0.6s ease;
+        }
+
+        .slide-item.active {
+            opacity: 1;
+        }
+
+        .slide-visual {
+            height: 400px;
+            background: linear-gradient(135deg, #4f46e5 0%, #0ea5e9 100%);
+            border-radius: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 20px 40px rgba(79, 70, 229, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slide-text h3 {
+            font-size: 32px;
+            font-weight: 850;
+            color: #0f1b3d;
+            margin-bottom: 20px;
+        }
+
+        .slide-text p {
+            font-size: 18px;
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        .slider-navigation {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 24px;
+            margin-top: 60px;
+        }
+
+        .progress-track-container {
+            display: flex;
+            gap: 12px;
+        }
+
+        .progress-segment {
+            background-color: #e2e8f0 !important;
+            width: 80px;
+            height: 6px;
+            border-radius: 3px;
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            background-color: #1e293b !important;
+            height: 100%;
+            width: 0;
+        }
+
+        .nav-btn {
+            background: white;
+            border: 1px solid #e2e8f0;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .nav-btn:hover {
+            border-color: #4f46e5;
+            color: #4f46e5;
+        }
+
+        /* Mockup elements */
+        .ui-mockup-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            width: 80%;
+        }
+
+        .ui-card {
+            background: white;
+            padding: 16px 20px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .ui-label {
+            font-size: 10px;
+            font-weight: 800;
+            color: #94a3b8;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        .ui-value {
+            font-size: 15px;
+            font-weight: 700;
+            color: #0f172a;
+        }
+
+        .ui-mockup-video {
+            width: 85%;
+            height: 75%;
+            background: white;
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .ui-mockup-video img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .ui-tag {
+            position: absolute;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .tag-red {
+            top: 20px;
+            right: 20px;
+            background: #fef2f2;
+            color: #dc2626;
+        }
+
+        .tag-green {
+            bottom: 80px;
+            left: 20px;
+            background: #f0fdf4;
+            color: #16a34a;
+        }
+
+        .ui-controls {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 15px 20px;
+            background: rgba(255, 255, 255, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .btn-done {
+            background: #0f172a;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .ui-mockup-dash {
+            width: 85%;
+            background: white;
+            border-radius: 20px;
+            padding: 24px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+        }
+        /* Enterprise & Impact Sections */
+        .enterprise-section {
+            background-color: #050A30;
+            padding: 100px 0;
+            text-align: center;
+            color: white;
+        }
+
+        .enterprise-section h2 {
+            font-size: 42px;
+            font-weight: 850;
+            margin-bottom: 24px;
+        }
+
+        .enterprise-section p {
+            font-size: 18px;
+            color: #94a3b8;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+        }
+
+        .impact-section {
+            background-color: #ffffff;
+            padding: 120px 0;
+        }
+
+        .impact-container {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .impact-title h2 {
+            font-size: 36px;
+            font-weight: 850;
+            color: #050A30;
+            line-height: 1.2;
+        }
+
+        .impact-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 40px;
-            padding: 80px 0;
-            text-align: center;
         }
 
-        .stat-item h3 {
-            font-size: 56px;
+        .metric-item {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .metric-label {
+            font-size: 11px;
             font-weight: 800;
-            color: var(--rp-indigo);
-            margin-bottom: 8px;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
         }
 
-        .stat-item p {
-            font-size: 16px;
-            color: var(--text-light);
-            font-weight: 600;
+        .metric-value {
+            font-size: 52px;
+            font-weight: 850;
+            color: #38BDF8;
+            line-height: 1;
+        }
+
+        .metric-sub {
+            font-size: 15px;
+            font-weight: 700;
+            color: #050A30;
+            line-height: 1.4;
         }
     </style>
 </head>
@@ -96,161 +617,252 @@
     <main>
         <!-- Hero Section -->
         <section class="revenue-hero">
-            <div class="container hero-grid" style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 80px; align-items: center;">
-                <div class="hero-content">
-                    <span class="hero-tag" style="font-size: 11px; font-weight: 800; color: var(--rp-indigo); text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 16px; display: inline-block;">DÀNH CHO ĐỘI NGŨ DOANH THU</span>
-                    <h1 style="font-size: 72px; font-weight: 800; line-height: 1; margin-bottom: 24px; letter-spacing: -0.04em;">Đội ngũ Doanh thu</h1>
-                    <p style="font-size: 20px; color: var(--text-light); margin-bottom: 32px; line-height: 1.6;">Thống nhất thông điệp, quy mô hóa việc huấn luyện và thúc đẩy hiệu suất nhất quán trên toàn bộ hành trình của khách hàng.</p>
-                    <a href="../app.html" class="btn btn-primary" style="padding: 18px 40px; font-size: 18px;">Xem Yoodli trong thực tế</a>
-                </div>
+            <div class="container"
+                style="display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 60px; align-items: center;">
+                <!-- Visual Column (Left) -->
                 <div class="hero-visual">
-                    <div class="chat-visual">
-                        <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid #F1F5F9;">
-                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=100" alt="Avatar" style="width: 48px; height: 48px; border-radius: 50%; object-fit: cover;">
-                            <div>
-                                <div style="font-weight: 700;">Persona: Khách hàng khó tính</div>
-                                <div style="font-size: 12px; color: #22C55E;">Đang hoạt động...</div>
+                    <div class="visual-stack">
+                        <div class="glow-bg"></div>
+
+                        <!-- Chat Card -->
+                        <div class="v-card chat-v-card">
+                            <div class="mic-box">
+                                <i class="ph-fill ph-microphone-stage"></i>
+                            </div>
+                            <p>How does your pricing structure work, and what are the potential additional costs we
+                                should be aware of?</p>
+                        </div>
+                        <!-- Waveform Card -->
+                        <div class="v-card wave-v-card">
+                            <div class="wave-bars">
+                                <span style="height: 12px;"></span>
+                                <span style="height: 24px;"></span>
+                                <span style="height: 32px; background: #6366F1;"></span>
+                                <span style="height: 20px;"></span>
+                                <span style="height: 28px; background: #6366F1;"></span>
+                                <span style="height: 14px;"></span>
+                                <span style="height: 10px;"></span>
+                            </div>
+                            <div class="avatar-circle">
+                                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=200"
+                                    alt="Team Lead">
                             </div>
                         </div>
-                        <div style="background: #F8FAFC; padding: 16px; border-radius: 12px; margin-bottom: 16px;">
-                            <p style="font-size: 14px; color: var(--text-light);">"Giải pháp của bạn có gì khác biệt so với các đối thủ cạnh tranh hiện tại trên thị trường?"</p>
-                        </div>
-                        <div style="display: flex; gap: 8px; align-items: center; color: var(--rp-indigo);">
-                            <i class="ph-fill ph-waveform" style="font-size: 32px;"></i>
-                            <i class="ph-fill ph-waveform" style="font-size: 24px; opacity: 0.5;"></i>
-                            <span style="font-size: 12px; font-weight: 600; margin-left: auto;">Đang ghi âm...</span>
+
+                        <!-- Feedback Tags -->
+                        <div class="feedback-tags">
+                            <div class="tag-item tag-green">
+                                <i class="ph-fill ph-thumbs-up"></i> Concise language
+                            </div>
+                            <div class="tag-item tag-orange">
+                                <i class="ph-fill ph-flag"></i> Clearer transitions
+                            </div>
                         </div>
                     </div>
+                </div>
+
+                <!-- Content Column (Right) -->
+                <div class="hero-content" style="text-align: left;">
+                    <span
+                        style="font-size: 12px; font-weight: 800; color: #050A30; letter-spacing: 0.1em; display: block; margin-bottom: 20px;">
+                        SCALE PRACTICE. ALIGN EXECUTION. DRIVE CONSISTENT PERFORMANCE.
+                    </span>
+                    <h1 class="revenue-gradient-text" style="margin-bottom: 24px;">Revenue Teams</h1>
+
+                    <p style="font-size: 18px; font-weight: 700; color: #050A30; margin-bottom: 16px;">
+                        Revenue performance starts with how your teams show up in conversation.
+                    </p>
+                    <p
+                        style="font-size: 16px; color: #475569; line-height: 1.6; margin-bottom: 24px; max-width: 600px;">
+                        Yoodli giúp đội ngũ doanh thu và go-to-market (GTM) thực hành các kịch bản thực tế, thống nhất
+                        thông điệp và xây dựng sự sẵn sàng có thể đo lường được.
+                    </p>
+                    <p style="font-size: 16px; font-weight: 800; color: #050A30; margin-bottom: 40px;">
+                        Thông điệp thống nhất. Chốt deal mạnh mẽ. Hiệu suất vượt trội.
+                    </p>
+
+                    <a href="#" class="btn-rev-gradient">See Yoodli in action</a>
                 </div>
             </div>
         </section>
 
-        <!-- Logo Ticker -->
-        <section class="logo-ticker">
+        <!-- Trusted By Logos -->
+        <section class="logos-section" style="background: white; border-bottom: 1px solid #F1F5F9;">
             <div class="container">
-                <p style="font-size: 14px; font-weight: 700; color: var(--text-light); margin-bottom: 32px; text-transform: uppercase; letter-spacing: 0.1em;">Được tin dùng bởi các công ty hàng đầu thế giới</p>
-                <div class="logo-grid">
-                    <span>SAP</span>
-                    <span>Salesforce</span>
-                    <span>BDO</span>
-                    <span>Google Cloud</span>
-                    <span>Snowflake</span>
-                    <span>HubSpot</span>
+                <p>ĐƯỢC TIN DÙNG BỞI CÁC TỔ CHỨC HÀNG ĐẦU THẾ GIỚI</p>
+                <div class="logos-marquee">
+                    <div class="marquee-content" style="filter: grayscale(1); opacity: 0.5;">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
+                            alt="Google">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Salesforce.com_logo.svg"
+                            alt="Salesforce">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg"
+                            alt="Microsoft">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Cisco_logo_blue_2016.svg"
+                            alt="Cisco">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/59/SAP_2011_logo.svg" alt="SAP">
+                        <!-- Duplicate for loop -->
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
+                            alt="Google">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Salesforce.com_logo.svg"
+                            alt="Salesforce">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg"
+                            alt="Microsoft">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Cisco_logo_blue_2016.svg"
+                            alt="Cisco">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/59/SAP_2011_logo.svg" alt="SAP">
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Use Cases -->
-        <section class="container" style="padding: 120px 0;">
-            <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px; align-items: center;">
-                <div>
-                    <h2 style="font-size: 44px; font-weight: 800; margin-bottom: 24px;">Cách các đội ngũ Doanh thu và GTM sử dụng Yoodli</h2>
-                    <p style="color: var(--text-light); font-size: 18px;">Chúng tôi giúp bạn thu hẹp khoảng cách giữa chiến lược và thực thi.</p>
+        <section class="hiw-section">
+            <div class="container hiw-grid">
+                <div class="hiw-content">
+                    <h2 style="font-size: 36px; font-weight: 850; margin-bottom: 16px;">Cách các đội ngũ GTM sử dụng
+                        Yoodli</h2>
+                    <p>Thu hẹp khoảng cách giữa chiến lược và thực thi thông qua việc luyện tập có hệ thống.</p>
                 </div>
-                <div class="hw-card-list">
-                    <div class="hw-card" style="background: #EEF2FF; border: none;">
-                        <div class="hw-icon" style="background: white;"><i class="ph-bold ph-arrows-merge"></i></div>
-                        <div>
-                            <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 12px;">Thống nhất thông điệp</h3>
-                            <p style="color: var(--text-light); font-size: 15px;">Đảm bảo mọi nhân viên đều trình bày đúng giá trị cốt lõi và xử lý phản đối nhất quán.</p>
+                <div class="hiw-cards">
+                    <div class="hiw-card-new">
+                        <div class="hiw-icon-wrapper"><i class="ph ph-arrows-merge"></i></div>
+                        <div class="hiw-card-content">
+                            <h3>Thống nhất thông điệp</h3>
+                            <p>Đảm bảo mọi nhân viên đều trình bày đúng giá trị cốt lõi và xử lý phản đối nhất quán.</p>
                         </div>
                     </div>
-                    <div class="hw-card" style="background: #EEF2FF; border: none;">
-                        <div class="hw-icon" style="background: white;"><i class="ph-bold ph-users-three"></i></div>
-                        <div>
-                            <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 12px;">Củng cố giao tiếp</h3>
-                            <p style="color: var(--text-light); font-size: 15px;">Nâng cao khả năng thuyết phục và xây dựng lòng tin với khách hàng trong mọi tình huống.</p>
+                    <div class="hiw-card-new">
+                        <div class="hiw-icon-wrapper"><i class="ph ph-users-three"></i></div>
+                        <div class="hiw-card-content">
+                            <h3>Củng cố giao tiếp</h3>
+                            <p>Nâng cao khả năng thuyết phục và xây dựng lòng tin với khách hàng trong mọi tình huống.
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- GTM Section -->
-        <section class="gtm-section">
-            <div class="container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
-                <div>
-                    <h2 style="font-size: 44px; font-weight: 800; margin-bottom: 24px;">Biến chiến lược GTM thành việc thực thi nhất quán</h2>
-                    <p style="font-size: 18px; color: var(--text-light); margin-bottom: 32px; line-height: 1.6;">Đừng chỉ hy vọng đội ngũ của bạn sẽ làm đúng. Hãy xác nhận điều đó thông qua việc thực hành kịch bản và đo lường mức độ sẵn sàng thực tế.</p>
-                    <div style="background: white; padding: 24px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); display: flex; align-items: center; gap: 20px; width: fit-content;">
-                        <div style="text-align: center;">
-                            <div style="font-size: 32px; font-weight: 800; color: var(--rp-indigo);">94%</div>
-                            <div style="font-size: 12px; color: var(--text-light);">Điểm sẵn sàng</div>
+        <!-- Split Wave Section -->
+        <section class="split-wave-section">
+            <div class="wave-divider-top">
+                <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
+                    style="display:block; width:100%; height:60px;">
+                    <path fill="#eef2f7" d="M0,60 C480,0 960,0 1440,60 L1440,60 L0,60 Z"></path>
+                </svg>
+            </div>
+
+            <div class="wave-top">
+                <div class="container">
+                    <h2>Tại sao việc đào tạo GTM truyền thống thường thất bại</h2>
+                    <p class="subtext">Các buổi workshop một lần không thay đổi được thói quen. Hầu hết kiến thức đào
+                        tạo doanh thu bị lãng quên chỉ sau vài tuần.</p>
+
+                    <ul class="bullet-list">
+                        <li>Thông điệp bị "trôi dạt" không nhất quán giữa các thành viên</li>
+                        <li>Thiếu sự chuẩn bị cho các tình huống phản biện thực tế</li>
+                        <li>Quản lý không có đủ thời gian để huấn luyện trực tiếp cho mọi người</li>
+                        <li>Chu kỳ bán hàng bị đình trệ do kỹ năng khám phá nhu cầu yếu</li>
+                    </ul>
+
+                    <p class="highlight-line">Thực hành liên tục là cách duy nhất để xây dựng một cỗ máy doanh thu đẳng
+                        cấp thế giới.</p>
+                </div>
+            </div>
+
+            <div class="wave-divider">
+                <svg viewBox="0 0 1440 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
+                    style="display:block; width:100%; height:60px;">
+                    <path fill="#0b1b3f" d="M0,0 C480,100 960,100 1440,0 L1440,100 L0,100 Z"></path>
+                </svg>
+            </div>
+
+            <div class="wave-bottom">
+                <div class="container">
+                    <h2>Đo lường sự sẵn sàng cho mọi giai đoạn của phễu doanh thu</h2>
+                    <p class="subtext">Yoodli cung cấp khả năng hiển thị chi tiết về cách đội ngũ của bạn thực sự thể
+                        hiện trong các cuộc hội thoại.</p>
+
+                    <div class="wave-grid">
+                        <div class="wave-card">
+                            <div class="wave-card-icon"><i class="ph-fill ph-target"></i></div>
+                            <p>Xử lý từ chối về giá và cạnh tranh một cách sắc bén.</p>
                         </div>
-                        <div style="width: 1px; height: 40px; background: #E2E8F0;"></div>
-                        <div>
-                            <div style="font-weight: 700;">Đội ngũ Bán hàng US</div>
-                            <div style="font-size: 12px; color: #22C55E;">Vượt mục tiêu 15%</div>
+                        <div class="wave-card">
+                            <div class="wave-card-icon"><i class="ph-fill ph-megaphone"></i></div>
+                            <p>Thống nhất thông điệp sản phẩm mới trên toàn bộ đội ngũ GTM.</p>
+                        </div>
+                        <div class="wave-card">
+                            <div class="wave-card-icon"><i class="ph-fill ph-chart-line-up"></i></div>
+                            <p>Tăng tốc thời gian onboarding cho nhân sự mới lên đến 40%.</p>
                         </div>
                     </div>
-                </div>
-                <div style="background: white; padding: 40px; border-radius: 32px; box-shadow: 0 20px 50px rgba(0,0,0,0.05);">
-                    <img src="https://images.unsplash.com/photo-1551288049-bbbda536339a?auto=format&fit=crop&q=80&w=1000" alt="Dashboard" style="width: 100%; border-radius: 16px;">
                 </div>
             </div>
         </section>
 
-        <!-- Modern Revenue Org -->
-        <section class="revenue-dark">
+        <!-- Snowflake Video Section -->
+        <section class="rp-video-section">
+            <div class="video-bg-pattern">
+                <div class="stripe s1"></div>
+                <div class="stripe s2"></div>
+                <div class="stripe s3"></div>
+                <div class="stripe s4"></div>
+                <div class="stripe s5"></div>
+                <div class="stripe s6"></div>
+            </div>
+            <div class="container" style="position: relative; z-index: 2;">
+                <div class="video-header">
+                    <h2>Snowflake's AI Roleplay Results</h2>
+                    <p>1,200+ Manager hours saved per quarter through practice at scale</p>
+                </div>
+
+                <div class="video-container">
+                    <iframe src="https://www.youtube-nocookie.com/embed/Qc35QTbQvWY?rel=0" title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- Enterprise Section -->
+        <section class="enterprise-section">
             <div class="container">
-                <h2 style="font-size: 44px; font-weight: 800; margin-bottom: 60px;">Xây dựng cho các tổ chức doanh thu hiện đại</h2>
-                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;">
-                    <div class="rev-card">
-                        <i class="ph ph-user-focus" style="font-size: 32px; color: #818CF8; margin-bottom: 24px;"></i>
-                        <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 12px;">Persona tùy chỉnh</h3>
-                        <p style="opacity: 0.7; font-size: 14px; line-height: 1.6;">Luyện tập với các chân dung khách hàng lý tưởng (ICP) cụ thể của bạn.</p>
-                    </div>
-                    <div class="rev-card">
-                        <i class="ph ph-lightning" style="font-size: 32px; color: #818CF8; margin-bottom: 24px;"></i>
-                        <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 12px;">Huấn luyện quy mô</h3>
-                        <p style="opacity: 0.7; font-size: 14px; line-height: 1.6;">Cung cấp phản hồi cá nhân hóa cho hàng ngàn nhân viên cùng lúc.</p>
-                    </div>
-                    <div class="rev-card">
-                        <i class="ph ph-chart-pie" style="font-size: 32px; color: #818CF8; margin-bottom: 24px;"></i>
-                        <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 12px;">Thông tin từ AI</h3>
-                        <p style="opacity: 0.7; font-size: 14px; line-height: 1.6;">Phát hiện các xu hướng và kỹ năng then chốt dẫn đến thành công.</p>
-                    </div>
-                    <div class="rev-card">
-                        <i class="ph ph-browsers" style="font-size: 32px; color: #818CF8; margin-bottom: 24px;"></i>
-                        <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 12px;">Bảng điều khiển</h3>
-                        <p style="opacity: 0.7; font-size: 14px; line-height: 1.6;">Theo dõi mức độ sẵn sàng của toàn đội ngũ một cách tự động.</p>
-                    </div>
-                </div>
+                <h2>Bảo mật, sẵn sàng cho doanh nghiệp và khả năng mở rộng tối đa</h2>
+                <p>Triển khai trên toàn bộ đội ngũ doanh thu và GTM toàn cầu một cách tự tin. Tích hợp với CRM, LMS, các công cụ cộng tác và hệ thống dữ liệu hiện có của bạn. Duy trì các tiêu chuẩn nhất quán khi tổ chức của bạn phát triển.</p>
+                <a href="#" class="btn-rev-gradient">Xem Yoodli hoạt động</a>
             </div>
         </section>
 
-        <!-- Snowflake Case Study -->
-        <section class="container" style="padding: 120px 0; text-align: center;">
-            <h2 style="font-size: 44px; font-weight: 800; margin-bottom: 24px;">Kết quả Nhập vai AI của Snowflake</h2>
-            <p style="color: var(--text-light); font-size: 18px; margin-bottom: 60px;">Snowflake sử dụng Yoodli để chuẩn bị cho đội ngũ bán hàng toàn cầu của họ.</p>
-            <div style="position: relative; max-width: 1000px; margin: 0 auto; border-radius: 32px; overflow: hidden; box-shadow: 0 40px 100px rgba(0,0,0,0.1);">
-                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=2000" alt="Case Study" style="width: 100%; display: block;">
-                <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center;">
-                    <div style="width: 80px; height: 80px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; color: var(--rp-indigo); cursor: pointer;"><i class="ph-fill ph-play"></i></div>
+        <!-- Impact Section -->
+        <section class="impact-section">
+            <div class="container impact-container">
+                <div class="impact-title">
+                    <h2>Tác động của Nhập vai AI Yoodli</h2>
                 </div>
-                <div style="position: absolute; bottom: 40px; left: 40px; text-align: left; color: white;">
-                    <div style="font-size: 40px; font-weight: 800; margin-bottom: 8px;">1,215 Giờ</div>
-                    <div style="font-size: 18px; opacity: 0.9;">Thời gian huấn luyện được tiết kiệm</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Stats Impact -->
-        <section style="background: #F8FAFC; padding: 100px 0;">
-            <div class="container">
-                <h2 style="text-align: center; font-size: 44px; font-weight: 800; margin-bottom: 60px;">Tác động của Nhập vai AI Yoodli</h2>
-                <div class="stats-grid">
-                    <div class="stat-item">
-                        <h3>92%</h3>
-                        <p>Điểm CSAT (Sự hài lòng của khách hàng)</p>
+                <div class="impact-grid">
+                    <!-- Metric 1 -->
+                    <div class="metric-item">
+                        <span class="metric-label">ĐẠT CHỈ TIÊU (QUOTA)</span>
+                        <div class="metric-value">92%</div>
+                        <p class="metric-sub">CSAT (Mức độ hài lòng của khách hàng)</p>
                     </div>
-                    <div class="stat-item">
-                        <h3>20%</h3>
-                        <p>Tỷ lệ thắng trung bình cao hơn</p>
+                    <!-- Metric 2 -->
+                    <div class="metric-item">
+                        <span class="metric-label">HOÀN THÀNH ĐÀO TẠO</span>
+                        <div class="metric-value">20%</div>
+                        <p class="metric-sub">cao hơn so với các buổi workshop trung bình</p>
                     </div>
-                    <div class="stat-item">
-                        <h3>44%</h3>
-                        <p>Cải thiện thời gian thích nghi (Time to ramp)</p>
+                    <!-- Metric 3 -->
+                    <div class="metric-item">
+                        <span class="metric-label">HIỆU QUẢ VẬN HÀNH</span>
+                        <div class="metric-value">44%</div>
+                        <p class="metric-sub">cải thiện (tiết kiệm thời gian, hậu cần)</p>
                     </div>
                 </div>
             </div>
@@ -261,25 +873,63 @@
             <h2 style="text-align:center; margin-bottom:60px; font-size:36px; font-weight:800;">Câu hỏi thường gặp</h2>
             <div class="faq-list">
                 <div class="faq-item">
-                    <div class="faq-question">Sự khác biệt giữa đội ngũ Doanh thu và GTM là gì? <i class="ph ph-plus"></i></div>
-                    <div class="faq-answer">Đội ngũ Doanh thu tập trung vào việc tạo ra doanh thu từ khách hàng hiện có và mới, trong khi GTM bao bao gồm cả chiến lược đưa sản phẩm ra thị trường.</div>
+                    <div class="faq-question">Sự khác biệt giữa đội ngũ Doanh thu và GTM là gì? <i
+                            class="ph ph-plus"></i></div>
+                    <div class="faq-answer">Đội ngũ Doanh thu tập trung vào việc tạo ra doanh thu từ khách hàng hiện có
+                        và mới, trong khi GTM bao bao gồm cả chiến lược đưa sản phẩm ra thị trường.</div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-question">Làm thế nào để đo lường tác động? <i class="ph ph-plus"></i></div>
-                    <div class="faq-answer">Yoodli cung cấp các chỉ số về mức độ sẵn sàng, sự cải thiện kỹ năng và sự tự tin của nhân viên.</div>
+                    <div class="faq-answer">Yoodli cung cấp các chỉ số về mức độ sẵn sàng, sự cải thiện kỹ năng và sự tự
+                        tin của nhân viên.</div>
                 </div>
             </div>
         </section>
     </main>
 
+    <!-- Footer will be injected by master_layout.js -->
     <script src="../master_layout.js"></script>
+
     <script>
-        document.querySelectorAll('.faq-question').forEach(q => {
-            q.addEventListener('click', () => {
-                const item = q.parentElement;
-                item.classList.toggle('active');
+        let currentSlide = 0;
+        const totalSlides = 3;
+        const slideDuration = 5000;
+        let slideInterval;
+
+        function updateSlider() {
+            const track = document.getElementById('leaderSliderTrack');
+            if (!track) return;
+            track.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+            document.querySelectorAll('.slide-item').forEach((slide, index) => {
+                slide.classList.toggle('active', index === currentSlide);
             });
+
+            document.querySelectorAll('.progress-fill').forEach((fill, index) => {
+                fill.style.transition = 'none';
+                if (index < currentSlide) {
+                    fill.style.width = '100%';
+                } else if (index > currentSlide) {
+                    fill.style.width = '0%';
+                } else {
+                    fill.style.width = '0%';
+                    void fill.offsetWidth;
+                    fill.style.transition = `width ${slideDuration}ms linear`;
+                    fill.style.width = '100%';
+                }
+            });
+        }
+
+        function nextSlide() { currentSlide = (currentSlide + 1) % totalSlides; updateSlider(); resetInterval(); }
+        function prevSlide() { currentSlide = (currentSlide - 1 + totalSlides) % totalSlides; updateSlider(); resetInterval(); }
+        function goToSlide(index) { currentSlide = index; updateSlider(); resetInterval(); }
+        function resetInterval() { clearInterval(slideInterval); slideInterval = setInterval(nextSlide, slideDuration); }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            updateSlider();
+            resetInterval();
         });
     </script>
 </body>
+
 </html>

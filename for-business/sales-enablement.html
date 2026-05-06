@@ -9,392 +9,1446 @@
     <link rel="stylesheet" href="../roleplay.css">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <style>
-        .enablement-hero {
-            padding: 120px 0 100px;
-            background: radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.05) 0%, transparent 40%),
-                        linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
+        /* New Hero Styles */
+        .enablement-hero-new {
+            background: #f5f7fb;
+            padding: 100px 0;
+            overflow: hidden;
         }
 
-        .hex-frame {
-            width: 280px;
+        .hero-split {
+            display: grid;
+            grid-template-columns: 45% 55%;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .visual-side {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Avatar & Decorations */
+        .avatar-group {
+            position: relative;
+            width: 320px;
             height: 320px;
-            background: white;
-            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
-            position: relative;
         }
 
-        .hex-frame img {
-            width: 90%;
-            height: 90%;
-            object-fit: cover;
-            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-        }
-
-        .feature-grid-3 {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            margin: 60px 0;
-        }
-
-        .enable-card {
-            background: #F0F4FF;
-            padding: 40px;
-            border-radius: 32px;
-            text-align: left;
-            transition: transform 0.3s ease;
-        }
-
-        .enable-card:hover {
-            transform: translateY(-8px);
-        }
-
-        .security-badge {
-            background: white;
-            padding: 40px;
-            border-radius: 48px;
+        .waveform-bg {
+            position: absolute;
             display: flex;
+            gap: 10px;
             align-items: center;
-            gap: 40px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-            margin-bottom: 40px;
+            z-index: 1;
         }
 
-        .case-story-card {
-            background: white;
-            border-radius: 24px;
+        .wave-bar {
+            width: 8px;
+            background: #6366f1;
+            border-radius: 4px;
+            opacity: 0.15;
+        }
+
+        .avatar-circle {
+            width: 240px;
+            height: 240px;
+            background: #e6e9f5;
+            border-radius: 50%;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            transition: all 0.3s ease;
-            text-align: left;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+            position: relative;
+            z-index: 2;
         }
 
-        .case-story-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-
-        .case-story-img {
-            height: 200px;
+        .avatar-circle img {
             width: 100%;
+            height: 100%;
             object-fit: cover;
+            filter: grayscale(0.4);
         }
 
-        .case-story-content {
-            padding: 24px;
-        }
-
-        .how-works-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .how-works-list li {
+        /* Floating Cards */
+        .floating-card {
+            position: absolute;
             background: white;
-            padding: 24px;
-            border-radius: 20px;
-            margin-bottom: 16px;
+            padding: 12px 16px;
+            border-radius: 14px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06);
             display: flex;
             align-items: center;
-            gap: 20px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
-            border: 1px solid #F1F5F9;
+            gap: 12px;
+            z-index: 10;
+            font-size: 13px;
+            font-weight: 700;
+            white-space: nowrap;
         }
 
-        .how-works-list i {
-            color: var(--rp-indigo);
-            font-size: 24px;
+        .card-top {
+            top: 20px;
+            left: -60px;
+            border-left: 4px solid #10B981;
+        }
+
+        .card-bottom {
+            bottom: 40px;
+            right: -40px;
+            border-left: 4px solid #F59E0B;
+        }
+
+        .card-icon {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Sparkles */
+        .sparkle {
+            position: absolute;
+            font-size: 20px;
+            z-index: 5;
+        }
+
+        /* Content Side */
+        .eyebrow {
+            font-size: 13px;
+            font-weight: 800;
+            color: #5b6b8c;
+            letter-spacing: 0.2em;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .hero-title-gradient {
+            font-size: 56px;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            background: linear-gradient(90deg, #3b82f6 0%, #6366f1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.03em;
+        }
+
+        .hero-p {
+            font-size: 18px;
+            color: #5b6b8c;
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+
+        .highlight-statement {
+            font-size: 18px;
+            font-weight: 700;
+            color: #0F172A;
+            margin-bottom: 32px;
+        }
+
+        .pill-cta {
+            background: linear-gradient(90deg, #3b82f6 0%, #6366f1 100%);
+            color: white;
+            padding: 16px 36px;
+            border-radius: 100px;
+            font-weight: 700;
+            font-size: 17px;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 10px 25px rgba(99, 102, 241, 0.25);
+            transition: all 0.3s;
+        }
+
+        .pill-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(99, 102, 241, 0.35);
+            filter: brightness(1.1);
+        }
+
+        @media (max-width: 992px) {
+            .hero-split {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 80px;
+            }
+
+            .visual-side {
+                order: -1;
+            }
+
+            .hero-title-gradient {
+                font-size: 40px;
+            }
+
+            .card-top {
+                left: 0;
+            }
+
+            .card-bottom {
+                right: 0;
+            }
+        }
+
+        .enablement-hero {
+            display: none;
+            /* Hide old hero */
+        }
+
+        /* Tab Bar Refinement */
+        .tab-btn {
+            position: relative;
+            background: none !important;
+            border: none !important;
+            border-bottom: 4px solid transparent !important;
+            border-radius: 0 !important;
+            outline: none !important;
+            box-shadow: none !important;
+            padding: 24px 0 !important;
+            font-family: inherit;
+            transition: all 0.3s ease !important;
+        }
+
+        .tab-btn.active {
+            border-bottom-color: #000235 !important;
+            color: #000235 !important;
+        }
+
+        .tab-btn::after,
+        .tab-btn::before {
+            content: none !important;
+            display: none !important;
         }
     </style>
 </head>
 
 <body>
-    <!-- Navbar -->
-    <!-- Navbar will be injected by master_layout.js -->
-
     <main>
-        <!-- Hero Section -->
-        <section class="enablement-hero">
-            <div class="container hero-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
-                <div class="hero-content">
-                    <span class="hero-tag" style="background: #EEF2FF; color: var(--rp-indigo); padding: 8px 16px; border-radius: 100px; font-size: 14px; font-weight: 700; margin-bottom: 24px; display: inline-block;">HỖ TRỢ BÁN HÀNG & GTM</span>
-                    <h1 style="font-size: 64px; font-weight: 800; line-height: 1.1; margin-bottom: 24px;">Hỗ trợ Bán hàng và GTM</h1>
-                    <p style="font-size: 20px; color: var(--text-light); margin-bottom: 32px; line-height: 1.6;">Huấn luyện và thống nhất đội ngũ bán hàng & GTM ở quy mô lớn. Tăng tốc thời gian hòa nhập, cải thiện tỷ lệ thắng và đảm bảo mọi người đều nói cùng một ngôn ngữ giá trị.</p>
-                    <a href="../app.html" class="btn btn-primary" style="padding: 18px 40px; font-size: 18px;">Dùng thử Yoodli miễn phí</a>
+        <!-- New Hero Section -->
+        <section class="enablement-hero-new">
+            <div class="container hero-split">
+
+                <!-- Left Column: Visual -->
+                <div class="visual-side">
+                    <div class="avatar-group">
+                        <!-- Waveform Decorations -->
+                        <div class="waveform-bg">
+                            <div class="wave-bar" style="height: 100px;"></div>
+                            <div class="wave-bar" style="height: 180px;"></div>
+                            <div class="wave-bar" style="height: 140px;"></div>
+                            <div class="wave-bar" style="height: 220px;"></div>
+                            <div class="wave-bar" style="height: 160px;"></div>
+                            <div class="wave-bar" style="height: 120px;"></div>
+                        </div>
+
+                        <!-- Sparkles -->
+                        <i class="ph-fill ph-sparkle sparkle" style="top: 20%; right: 10%; color: #FCD34D;"></i>
+                        <i class="ph-fill ph-sparkle sparkle" style="bottom: 15%; left: 15%; color: #60A5FA;"></i>
+
+                        <!-- Avatar -->
+                        <div class="avatar-circle">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400"
+                                alt="Enablement Specialist">
+                        </div>
+
+                        <!-- Floating Cards -->
+                        <div class="floating-card card-top">
+                            <div class="card-icon" style="background: #D1FAE5;"><i class="ph-fill ph-thumbs-up"
+                                    style="color: #10B981;"></i></div>
+                            <span>Great job, you hit all your talking points!</span>
+                        </div>
+
+                        <div class="floating-card card-bottom">
+                            <div class="card-icon" style="background: #FEF3C7;"><i class="ph-fill ph-flag"
+                                    style="color: #F59E0B;"></i></div>
+                            <span>Clearer transitions</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="hero-visual" style="display: flex; justify-content: center;">
-                    <div class="hex-frame">
-                        <img src="https://images.unsplash.com/photo-1519085185758-2ed980ba3373?auto=format&fit=crop&q=80&w=400" alt="Enablement Leader">
-                        <div style="position: absolute; bottom: 10px; right: -20px; background: white; padding: 12px 20px; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); border: 1px solid #F1F5F9;">
-                            <div style="display: flex; gap: 8px; align-items: center;">
-                                <i class="ph-fill ph-check-circle" style="color: #22C55E;"></i>
-                                <span style="font-weight: 700;">Đã sẵn sàng</span>
+
+                <!-- Right Column: Content -->
+                <div class="content-side">
+                    <div class="eyebrow">SCALE PRACTICE. STANDARDIZE EXECUTION. PROVE READINESS.</div>
+                    <h1 class="hero-title-gradient">Sales and GTM Enablement</h1>
+                    <p class="hero-p">Yoodli gives Sales and GTM enablement teams a scalable way to turn training into
+                        measurable execution. Teams practice real conversations, align to your methodology, and build
+                        readiness you can see across the organization.</p>
+                    <div class="highlight-statement">No manual roleplays. No guesswork. Just consistent execution at
+                        scale.</div>
+                    <a href="../app.html" class="pill-cta">See Yoodli in action</a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Trusted By Logos -->
+        <section class="logos-section">
+            <div class="container">
+                <p>ĐƯỢC TIN DÙNG BỞI CÁC TỔ CHỨC HÀNG ĐẦU THẾ GIỚI</p>
+                <div class="logos-marquee">
+                    <div class="marquee-content">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
+                            alt="Google">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Salesforce.com_logo.svg"
+                            alt="Salesforce">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg"
+                            alt="Microsoft">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Cisco_logo_blue_2016.svg"
+                            alt="Cisco">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/59/SAP_2011_logo.svg" alt="SAP">
+                        <!-- Duplicate for loop -->
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
+                            alt="Google">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Salesforce.com_logo.svg"
+                            alt="Salesforce">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg"
+                            alt="Microsoft">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Cisco_logo_blue_2016.svg"
+                            alt="Cisco">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/59/SAP_2011_logo.svg" alt="SAP">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Leader Slider Section -->
+        <section class="rp-leader-section tutor-leader-section">
+            <div class="container">
+                <div class="leader-header">
+                    <h2>Đẩy nhanh quá trình phát triển kỹ năng</h2>
+                    <p>Phản hồi tức thì giúp củng cố hành vi tích cực và sửa lỗi ngay lập tức, rút ngắn đáng kể chu kỳ
+                        học tập.</p>
+                </div>
+
+                <div class="slider-container">
+                    <div class="slider-track" id="fbSliderTrack">
+
+                        <!-- Slide 1 -->
+                        <div class="slide-item active">
+                            <div class="slide-visual">
+                                <div class="visual-gradient-box"
+                                    style="background: linear-gradient(135deg, #38BDF8 0%, #3B82F6 100%); padding: 0;">
+                                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800"
+                                        alt="Analytics"
+                                        style="width: 100%; height: 100%; object-fit: cover; border-radius: 16px; mix-blend-mode: luminosity; opacity: 0.8;">
+
+                                    <!-- UI Overlay elements to make it look like the Yoodli UI mockups -->
+                                    <div class="ui-mockup-video"
+                                        style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80%; box-shadow: 0 20px 40px rgba(0,0,0,0.2);">
+                                        <div class="ui-tag tag-green"
+                                            style="position: absolute; top: 20px; left: -20px;"><i
+                                                class="ph-fill ph-check-circle"></i> Tốc độ nói lý tưởng</div>
+                                        <div class="ui-tag tag-red"
+                                            style="position: absolute; bottom: 40px; right: -20px;"><i
+                                                class="ph-fill ph-warning-circle"></i> Tránh dùng từ đệm</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slide-text">
+                                <h3>Phát triển kỹ năng nhanh hơn</h3>
+                                <p>Phản hồi tức thì giúp củng cố hành vi tích cực và sửa lỗi ngay khi chúng xảy ra, rút
+                                    ngắn chu kỳ học tập. Không cần đợi đến đợt đánh giá tiếp theo.</p>
                             </div>
                         </div>
+
+                        <!-- Slide 2 -->
+                        <div class="slide-item">
+                            <div class="slide-visual">
+                                <div class="visual-gradient-box"
+                                    style="background: linear-gradient(135deg, #10B981 0%, #059669 100%);">
+                                    <div class="ui-mockup-dash">
+                                        <div class="dash-top">
+                                            <div class="avatar" style="background: #D1FAE5; color: #065F46;">SC</div>
+                                            <div class="info">
+                                                <div class="name">Sarah Chen</div>
+                                                <div class="status">Cập nhật hôm nay</div>
+                                            </div>
+                                            <div class="stat" style="color: #059669;">Điểm: 92/100</div>
+                                        </div>
+                                        <div class="dash-bottom">
+                                            <div class="dash-card">
+                                                <div class="d-header">Sự tự tin <span class="trend"
+                                                        style="color: #10B981;"><i class="ph-bold ph-arrow-up"></i>
+                                                        8%</span></div>
+                                                <div class="d-chart" style="background: #D1FAE5;"></div>
+                                            </div>
+                                            <div class="dash-card">
+                                                <div class="d-header">Giao tiếp bằng mắt</div>
+                                                <div class="d-donut">
+                                                    <div class="donut-circle"
+                                                        style="border-color: #34D399; border-top-color: #E5E7EB;"></div>
+                                                    <div class="donut-text"><strong>Tuyệt vời</strong></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slide-text">
+                                <h3>Đánh giá khách quan, dựa trên dữ liệu</h3>
+                                <p>Loại bỏ định kiến con người. AI phân tích các chỉ số cụ thể như tốc độ nói, ngôn ngữ
+                                    cơ thể và cấu trúc luận điểm để mang lại đánh giá công bằng tuyệt đối.</p>
+                            </div>
+                        </div>
+
+                        <!-- Slide 3 -->
+                        <div class="slide-item">
+                            <div class="slide-visual">
+                                <div class="visual-gradient-box"
+                                    style="background: linear-gradient(135deg, #F43F5E 0%, #E11D48 100%);">
+                                    <div class="ui-mockup-stack">
+                                        <div class="ui-card">
+                                            <div class="ui-label">Tiêu chí 1</div>
+                                            <div class="ui-value">Khả năng xử lý từ chối <i
+                                                    class="ph-fill ph-check-circle"
+                                                    style="float: right; color: #10B981;"></i></div>
+                                        </div>
+                                        <div class="ui-card">
+                                            <div class="ui-label">Tiêu chí 2</div>
+                                            <div class="ui-value">Trình bày giá trị cốt lõi <i
+                                                    class="ph-fill ph-check-circle"
+                                                    style="float: right; color: #10B981;"></i></div>
+                                        </div>
+                                        <div class="ui-card">
+                                            <div class="ui-label">Tiêu chí 3</div>
+                                            <div class="ui-value">Đặt câu hỏi mở <i class="ph-fill ph-warning-circle"
+                                                    style="float: right; color: #F59E0B;"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slide-text">
+                                <h3>Rubric đánh giá tùy chỉnh hoàn toàn</h3>
+                                <p>Thiết lập tiêu chuẩn riêng cho tổ chức của bạn. Đo lường chính xác các kỹ năng cốt
+                                    lõi và phương pháp luận độc quyền mà doanh nghiệp bạn đang áp dụng.</p>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
-            </div>
-        </section>
 
-        <!-- Trusted By -->
-        <section style="padding: 60px 0; border-bottom: 1px solid #F1F5F9;">
-            <div class="container" style="text-align: center;">
-                <p style="font-size: 13px; font-weight: 700; color: #94A3B8; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 40px;">Hơn 200,000 chuyên gia bán hàng sử dụng Yoodli để chiến thắng</p>
-                <div style="display: flex; justify-content: center; gap: 60px; filter: grayscale(1); opacity: 0.5; flex-wrap: wrap;">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" style="height: 24px;">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Salesforce.com_logo.svg" alt="Salesforce" style="height: 24px;">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/59/SAP_2011_logo.svg" alt="SAP" style="height: 24px;">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft" style="height: 24px;">
-                </div>
-            </div>
-        </section>
-
-        <!-- How it works -->
-        <section class="container" style="padding: 120px 0; text-align: center;">
-            <h2 style="font-size: 44px; font-weight: 800; margin-bottom: 60px;">Cách các đội ngũ Hỗ trợ sử dụng Yoodli</h2>
-            <div class="feature-grid-3">
-                <div class="enable-card">
-                    <i class="ph-bold ph-arrows-merge" style="font-size: 32px; color: var(--rp-indigo); margin-bottom: 24px;"></i>
-                    <h3 style="font-size: 22px; font-weight: 700; margin-bottom: 16px;">Thống nhất thông điệp</h3>
-                    <p style="color: var(--text-light); line-height: 1.6;">Đảm bảo mọi nhân viên mới đều trình bày đúng thông điệp sản phẩm và giá trị cốt lõi ngay từ ngày đầu.</p>
-                </div>
-                <div class="enable-card">
-                    <i class="ph-bold ph-lightning" style="font-size: 32px; color: var(--rp-indigo); margin-bottom: 24px;"></i>
-                    <h3 style="font-size: 22px; font-weight: 700; margin-bottom: 16px;">Huấn luyện Nhập vai quy mô</h3>
-                    <p style="color: var(--text-light); line-height: 1.6;">Tự động hóa các buổi nhập vai (Roleplay) mà không cần sự can thiệp trực tiếp của quản lý, tiết kiệm hàng trăm giờ mỗi tháng.</p>
-                </div>
-                <div class="enable-card">
-                    <i class="ph-bold ph-chart-line-up" style="font-size: 32px; color: var(--rp-indigo); margin-bottom: 24px;"></i>
-                    <h3 style="font-size: 22px; font-weight: 700; margin-bottom: 16px;">Đo lường mức độ sẵn sàng</h3>
-                    <p style="color: var(--text-light); line-height: 1.6;">Xác nhận kỹ năng của đội ngũ thông qua dữ liệu khách quan thay vì chỉ dựa vào cảm nhận cá nhân.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Build for how it works -->
-        <section style="background: #F8FAFC; padding: 120px 0;">
-            <div class="container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
-                <div>
-                    <h2 style="font-size: 44px; font-weight: 800; margin-bottom: 24px;">Xây dựng cho cách thức hoạt động thực tế của Enablement</h2>
-                    <p style="font-size: 18px; color: var(--text-light); margin-bottom: 40px;">Yoodli không thay thế quy trình hiện có của bạn. Chúng tôi nâng tầm nó bằng cách mang lại khả năng luyện tập có cấu trúc.</p>
-                    <ul class="how-works-list">
-                        <li><i class="ph-fill ph-check-circle"></i> <span>Thư viện Persona khách hàng tùy chỉnh</span></li>
-                        <li><i class="ph-fill ph-check-circle"></i> <span>Phản hồi AI theo bộ kỹ năng (Scorecards)</span></li>
-                        <li><i class="ph-fill ph-check-circle"></i> <span>Bảng điều khiển phân tích tổng hợp</span></li>
-                        <li><i class="ph-fill ph-check-circle"></i> <span>Tích hợp sâu với LMS và CRM</span></li>
-                    </ul>
-                </div>
-                <div>
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1000" alt="Enablement Dashboard" style="width: 100%; border-radius: 32px; box-shadow: 0 30px 60px rgba(0,0,0,0.1);">
-                </div>
-            </div>
-        </section>
-
-        <!-- Success Stories -->
-        <section class="container" style="padding: 120px 0; text-align: center;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 60px;">
-                <h2 style="font-size: 44px; font-weight: 800; text-align: left;">Câu chuyện thành công</h2>
-                <a href="#" style="color: var(--rp-indigo); font-weight: 700; text-decoration: none;">Xem tất cả bài học <i class="ph-bold ph-arrow-right"></i></a>
-            </div>
-            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;">
-                <div class="case-story-card">
-                    <img src="https://images.unsplash.com/photo-1551288049-bbbda536339a?auto=format&fit=crop&q=80&w=600" alt="Snowflake" class="case-story-img">
-                    <div class="case-story-content">
-                        <div style="text-transform: uppercase; font-size: 11px; font-weight: 800; color: #22C55E; margin-bottom: 12px;">Bán hàng & Doanh thu</div>
-                        <h3 style="font-size: 18px; font-weight: 800; margin-bottom: 12px;">Snowflake tiết kiệm 700,000 USD chi phí đào tạo</h3>
-                        <a href="#" style="color: var(--rp-indigo); font-size: 14px; font-weight: 700; text-decoration: none;">Đọc chi tiết →</a>
-                    </div>
-                </div>
-                <div class="case-story-card">
-                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=600" alt="Google Cloud" class="case-story-img">
-                    <div class="case-story-content">
-                        <div style="text-transform: uppercase; font-size: 11px; font-weight: 800; color: #22C55E; margin-bottom: 12px;">Đào tạo nội bộ</div>
-                        <h3 style="font-size: 18px; font-weight: 800; margin-bottom: 12px;">Google Cloud chuẩn hóa kỹ năng cho 1,200+ nhân viên</h3>
-                        <a href="#" style="color: var(--rp-indigo); font-size: 14px; font-weight: 700; text-decoration: none;">Đọc chi tiết →</a>
-                    </div>
-                </div>
-                <div class="case-story-card">
-                    <img src="https://images.unsplash.com/photo-1521791136064-7986c2923216?auto=format&fit=crop&q=80&w=600" alt="Korn Ferry" class="case-story-img">
-                    <div class="case-story-content">
-                        <div style="text-transform: uppercase; font-size: 11px; font-weight: 800; color: #22C55E; margin-bottom: 12px;">Phát triển Lãnh đạo</div>
-                        <h3 style="font-size: 18px; font-weight: 800; margin-bottom: 12px;">Korn Ferry tiết kiệm 1,200+ giờ huấn luyện hàng tháng</h3>
-                        <a href="#" style="color: var(--rp-indigo); font-size: 14px; font-weight: 700; text-decoration: none;">Đọc chi tiết →</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Compliance -->
-        <section class="container" style="padding: 120px 0; text-align: center;">
-            <div class="security-badge">
-                <div style="width: 80px; height: 80px; background: #EEF2FF; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; color: var(--rp-indigo);">
-                    <i class="ph-fill ph-shield-check"></i>
-                </div>
-                <div style="text-align: left;">
-                    <h3 style="font-size: 24px; font-weight: 800; margin-bottom: 8px;">Tuân thủ tiêu chuẩn SOC2 Type 2 & GDPR</h3>
-                    <p style="color: var(--text-light); max-width: 600px;">Dữ liệu của bạn được bảo mật ở mức độ cao nhất. Chúng tôi không sử dụng dữ liệu của bạn để huấn luyện các mô hình AI công khai.</p>
-                </div>
-            </div>
-            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 60px;">
-                <div>
-                    <i class="ph-fill ph-check-circle" style="color: #22C55E; font-size: 24px; margin-bottom: 12px;"></i>
-                    <h4 style="font-weight: 800;">Mã hóa dữ liệu</h4>
-                    <p style="font-size: 14px; color: var(--text-light);">Bảo vệ dữ liệu cả khi lưu trữ và truyền tải.</p>
-                </div>
-                <div>
-                    <i class="ph-fill ph-check-circle" style="color: #22C55E; font-size: 24px; margin-bottom: 12px;"></i>
-                    <h4 style="font-weight: 800;">Riêng tư tuyệt đối</h4>
-                    <p style="font-size: 14px; color: var(--text-light);">Bạn có toàn quyền kiểm soát dữ liệu huấn luyện.</p>
-                </div>
-                <div>
-                    <i class="ph-fill ph-check-circle" style="color: #22C55E; font-size: 24px; margin-bottom: 12px;"></i>
-                    <h4 style="font-weight: 800;">Sẵn sàng cho Doanh nghiệp</h4>
-                    <p style="font-size: 14px; color: var(--text-light);">Hỗ trợ SSO (Okta, Azure) và quản lý người dùng tập trung.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- CTA -->
-        <section class="revenue-dark" style="margin-top: 100px;">
-            <div class="container">
-                <h2 style="font-size: 56px; font-weight: 800; margin-bottom: 24px;">Sẵn sàng cho mọi cuộc đối thoại</h2>
-                <p style="font-size: 20px; opacity: 0.8; margin-bottom: 40px; max-width: 800px; margin-left: auto; margin-right: auto;">Tham gia cùng hàng ngàn đội ngũ hỗ trợ bán hàng đang nâng tầm hiệu suất với Yoodli.</p>
-                <a href="../app.html" class="btn btn-primary" style="background: white; color: #0B0E23; padding: 20px 48px; font-size: 20px;">Dùng thử Yoodli ngay</a>
-            </div>
-        </section>
-
-        <!-- Who is your coach? Tabbed Section -->
-        <section style="background: #F8FAFC; padding: 120px 0;">
-            <div class="container">
-                <h2 style="text-align: center; font-size: 44px; font-weight: 800; margin-bottom: 60px;">Huấn luyện viên của bạn là ai?</h2>
-                
-                <div style="background: white; border-radius: 32px; padding: 40px; box-shadow: 0 20px 40px rgba(0,0,0,0.05); display: grid; grid-template-columns: 1fr 1.5fr; gap: 60px; align-items: center;">
-                    <div style="display: flex; flex-direction: column; gap: 12px;">
-                        <div class="inner-tab active" data-coach="sales" style="padding: 20px; border-radius: 16px; cursor: pointer; transition: all 0.3s; border: 1px solid transparent;">
-                            <h4 style="font-size: 18px; font-weight: 800; margin-bottom: 4px;">Huấn luyện bán hàng</h4>
-                            <p style="font-size: 14px; color: var(--text-light);">Cải thiện tỷ lệ thắng và xử lý phản đối.</p>
+                <!-- Slider Controls -->
+                <div class="slider-navigation">
+                    <button class="nav-btn" onclick="prevFbSlide()"><i class="ph-bold ph-caret-left"></i></button>
+                    <div class="progress-track-container">
+                        <div class="progress-segment" onclick="goToFbSlide(0)">
+                            <div class="progress-fill" id="fbFill0" style="width: 100%;"></div>
                         </div>
-                        <div class="inner-tab" data-coach="leadership" style="padding: 20px; border-radius: 16px; cursor: pointer; transition: all 0.3s; border: 1px solid transparent;">
-                            <h4 style="font-size: 18px; font-weight: 800; margin-bottom: 4px;">Huấn luyện lãnh đạo</h4>
-                            <p style="font-size: 14px; color: var(--text-light);">Truyền cảm hứng và dẫn dắt đội ngũ.</p>
+                        <div class="progress-segment" onclick="goToFbSlide(1)">
+                            <div class="progress-fill" id="fbFill1" style="width: 0%;"></div>
                         </div>
-                        <div class="inner-tab" data-coach="presentation" style="padding: 20px; border-radius: 16px; cursor: pointer; transition: all 0.3s; border: 1px solid transparent;">
-                            <h4 style="font-size: 18px; font-weight: 800; margin-bottom: 4px;">Huấn luyện thuyết trình</h4>
-                            <p style="font-size: 14px; color: var(--text-light);">Làm chủ sân khấu và nội dung.</p>
-                        </div>
-                        <div class="inner-tab" data-coach="interview" style="padding: 20px; border-radius: 16px; cursor: pointer; transition: all 0.3s; border: 1px solid transparent;">
-                            <h4 style="font-size: 18px; font-weight: 800; margin-bottom: 4px;">Chuẩn bị phỏng vấn</h4>
-                            <p style="font-size: 14px; color: var(--text-light);">Tự tin chinh phục mọi vị trí.</p>
+                        <div class="progress-segment" onclick="goToFbSlide(2)">
+                            <div class="progress-fill" id="fbFill2" style="width: 0%;"></div>
                         </div>
                     </div>
-                    
-                    <div id="coach-display" style="display: flex; gap: 40px; align-items: center; background: #EEF2FF; padding: 40px; border-radius: 24px;">
-                        <div style="flex: 1;">
-                            <h3 id="coach-title" style="font-size: 28px; font-weight: 800; margin-bottom: 20px;">Sẵn sàng cho mọi cuộc đối thoại bán hàng</h3>
-                            <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 16px;" id="coach-features">
-                                <li style="display: flex; gap: 12px; align-items: center;"><i class="ph-fill ph-check-circle" style="color: var(--rp-indigo);"></i> <span>Luyện tập xử lý phản đối theo thời gian thực</span></li>
-                                <li style="display: flex; gap: 12px; align-items: center;"><i class="ph-fill ph-check-circle" style="color: var(--rp-indigo);"></i> <span>Nhận phản hồi về giọng điệu và sự tự tin</span></li>
-                                <li style="display: flex; gap: 12px; align-items: center;"><i class="ph-fill ph-check-circle" style="color: var(--rp-indigo);"></i> <span>Chuẩn bị cho các tình huống thương thảo khó khăn</span></li>
-                            </ul>
-                        </div>
-                        <div style="width: 200px; height: 200px; border-radius: 50%; overflow: hidden; border: 4px solid white; box-shadow: 0 10px 25px rgba(0,0,0,0.1);">
-                            <img id="coach-img" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400" alt="Coach" style="width: 100%; height: 100%; object-fit: cover;">
-                        </div>
-                    </div>
+                    <button class="nav-btn" onclick="nextFbSlide()"><i class="ph-bold ph-caret-right"></i></button>
                 </div>
             </div>
         </section>
 
-        <style>
-            .inner-tab.active {
-                background: #F1F5F9;
-                border-color: #CBD5E1 !important;
-            }
-            .inner-tab:hover:not(.active) {
-                background: #F8FAFC;
-            }
-        </style>
-
+        <!-- Slider Script -->
         <script>
-            const coaches = {
-                sales: {
-                    title: "Sẵn sàng cho mọi cuộc đối thoại bán hàng",
-                    img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400",
-                    features: ["Luyện tập xử lý phản đối theo thời gian thực", "Nhận phản hồi về giọng điệu và sự tự tin", "Chuẩn bị cho các tình huống thương thảo khó khăn"]
-                },
-                leadership: {
-                    title: "Dẫn dắt với tầm ảnh hưởng tuyệt đối",
-                    img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400",
-                    features: ["Mô phỏng các cuộc họp 1-1 khó khăn", "Cải thiện khả năng truyền đạt tầm nhìn", "Huấn luyện kỹ năng phản hồi nhân viên"]
-                },
-                presentation: {
-                    title: "Làm chủ bài thuyết trình tiếp theo",
-                    img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=400",
-                    features: ["Phân tích tốc độ nói và từ thừa", "Đo lường sự lôi cuốn trong diễn đạt", "Tối ưu hóa cấu trúc nội dung bài nói"]
-                },
-                interview: {
-                    title: "Chinh phục nhà tuyển dụng tiềm năng",
-                    img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=400",
-                    features: ["Mô phỏng phỏng vấn theo vị trí cụ thể", "Luyện tập trả lời các câu hỏi tình huống", "Cải thiện ngôn ngữ cơ thể qua video"]
-                }
-            };
+            let currentFbSlide = 0;
+            const totalFbSlides = 3;
+            let fbSlideInterval;
 
-            document.querySelectorAll('.inner-tab').forEach(tab => {
-                tab.addEventListener('click', () => {
-                    const type = tab.getAttribute('data-coach');
-                    document.querySelectorAll('.inner-tab').forEach(t => t.classList.remove('active'));
-                    tab.classList.add('active');
-                    
-                    const data = coaches[type];
-                    document.getElementById('coach-title').textContent = data.title;
-                    document.getElementById('coach-img').src = data.img;
-                    
-                    const featuresList = document.getElementById('coach-features');
-                    featuresList.innerHTML = data.features.map(f => `
-                        <li style="display: flex; gap: 12px; align-items: center;">
-                            <i class="ph-fill ph-check-circle" style="color: var(--rp-indigo);"></i> 
-                            <span>${f}</span>
-                        </li>
-                    `).join('');
+            function updateFbSlider() {
+                const track = document.getElementById('fbSliderTrack');
+                if (!track) return;
+
+                track.style.transform = `translateX(-${currentFbSlide * 100}%)`;
+
+                const slides = track.querySelectorAll('.slide-item');
+                slides.forEach((slide, index) => {
+                    if (index === currentFbSlide) {
+                        slide.classList.add('active');
+                    } else {
+                        slide.classList.remove('active');
+                    }
                 });
+
+                for (let i = 0; i < totalFbSlides; i++) {
+                    const fill = document.getElementById(`fbFill${i}`);
+                    if (fill) {
+                        if (i < currentFbSlide) {
+                            fill.style.width = '100%';
+                        } else if (i === currentFbSlide) {
+                            fill.style.width = '100%';
+                        } else {
+                            fill.style.width = '0%';
+                        }
+                    }
+                }
+            }
+
+            function nextFbSlide() {
+                currentFbSlide = (currentFbSlide + 1) % totalFbSlides;
+                updateFbSlider();
+                resetFbInterval();
+            }
+
+            function prevFbSlide() {
+                currentFbSlide = (currentFbSlide - 1 + totalFbSlides) % totalFbSlides;
+                updateFbSlider();
+                resetFbInterval();
+            }
+
+            function goToFbSlide(index) {
+                currentFbSlide = index;
+                updateFbSlider();
+                resetFbInterval();
+            }
+
+            function resetFbInterval() {
+                clearInterval(fbSlideInterval);
+                fbSlideInterval = setInterval(nextFbSlide, 5000);
+            }
+
+            document.addEventListener('DOMContentLoaded', () => {
+                if (document.getElementById('fbSliderTrack')) {
+                    resetFbInterval();
+                    updateFbSlider();
+                }
             });
         </script>
 
-        <!-- FAQ -->
-        <section class="faq-section" style="padding: 120px 0; max-width: 900px; margin: 0 auto;">
-            <h2 style="text-align:center; margin-bottom:60px; font-size:36px; font-weight:800;">Câu hỏi thường gặp về Sales Enablement</h2>
-            <div class="faq-list">
-                <div class="faq-item">
-                    <div class="faq-question">Yoodli có thay thế các buổi huấn luyện trực tiếp không? <i class="ph ph-plus"></i></div>
-                    <div class="faq-answer">Không, Yoodli bổ trợ cho các buổi huấn luyện trực tiếp bằng cách cung cấp môi trường luyện tập an toàn, giúp nhân viên sẵn sàng hơn trước khi gặp quản lý hoặc khách hàng thực tế.</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">Chúng tôi có thể tùy chỉnh các tiêu chí đánh giá không? <i class="ph ph-plus"></i></div>
-                    <div class="faq-answer">Hoàn toàn có thể. Bạn có thể thiết lập các Scorecard riêng dựa trên bộ kỹ năng bán hàng cụ thể của doanh nghiệp (ví dụ: MEDDIC, SPIN, Challenger).</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">Yoodli bảo mật dữ liệu khách hàng như thế nào? <i class="ph ph-plus"></i></div>
-                    <div class="faq-answer">Chúng tôi tuân thủ nghiêm ngặt SOC2 và GDPR. Mọi dữ liệu luyện tập đều được mã hóa và chỉ có những người được cấp quyền trong tổ chức của bạn mới có thể truy cập.</div>
+
+        <!-- How enablement teams use Yoodli (Cards) -->
+        <section style="padding: 100px 0; background: white;">
+            <div class="container">
+                <h2
+                    style="text-align: center; font-size: 44px; font-weight: 850; margin-bottom: 60px; color: #0f172a; letter-spacing: -0.02em;">
+                    How enablement teams use Yoodli</h2>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;">
+
+                    <!-- Card 1 -->
+                    <div
+                        style="background: linear-gradient(180deg, #E0F2FE 0%, #F5F3FF 100%); padding: 56px 36px; border-radius: 28px; text-align: left; transition: transform 0.3s ease;">
+                        <i class="ph-bold ph-megaphone"
+                            style="font-size: 40px; color: #6366f1; margin-bottom: 32px; display: block;"></i>
+                        <h3
+                            style="font-size: 24px; font-weight: 800; margin-bottom: 20px; color: #0f172a; line-height: 1.2;">
+                            Reinforce messaging and methodology</h3>
+                        <p style="font-size: 16px; color: #475569; line-height: 1.6; opacity: 0.9;">Align roleplays to
+                            your personas, frameworks, and standards so every rep practices against the same bar.</p>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div
+                        style="background: linear-gradient(180deg, #E0F2FE 0%, #F5F3FF 100%); padding: 56px 36px; border-radius: 28px; text-align: left; transition: transform 0.3s ease;">
+                        <i class="ph-bold ph-arrows-out-line-horizontal"
+                            style="font-size: 40px; color: #6366f1; margin-bottom: 32px; display: block;"></i>
+                        <h3
+                            style="font-size: 24px; font-weight: 800; margin-bottom: 20px; color: #0f172a; line-height: 1.2;">
+                            Scale certification and onboarding</h3>
+                        <p style="font-size: 16px; color: #475569; line-height: 1.6; opacity: 0.9;">Replace manual
+                            roleplays with consistent AI-driven practice and objective evaluation.</p>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div
+                        style="background: linear-gradient(180deg, #E0F2FE 0%, #F5F3FF 100%); padding: 56px 36px; border-radius: 28px; text-align: left; transition: transform 0.3s ease;">
+                        <i class="ph-bold ph-arrows-clockwise"
+                            style="font-size: 40px; color: #6366f1; margin-bottom: 32px; display: block;"></i>
+                        <h3
+                            style="font-size: 24px; font-weight: 800; margin-bottom: 20px; color: #0f172a; line-height: 1.2;">
+                            Drive continuous improvement</h3>
+                        <p style="font-size: 16px; color: #475569; line-height: 1.6; opacity: 0.9;">Focus practice where
+                            gaps exist and reinforce skills beyond one-time training events.</p>
+                    </div>
+
                 </div>
             </div>
         </section>
-    </main>
 
-    <!-- Footer -->
-    <!-- Footer will be injected by master_layout.js -->
-    <script src="../master_layout.js"></script>
+        <!-- Close the gap section -->
+        <section style="padding: 100px 0; background: #f8fafc;">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 80px;">
+                    <h2
+                        style="font-size: 48px; font-weight: 850; margin-bottom: 16px; color: #0f172a; letter-spacing: -0.02em;">
+                        Close the gap between <span
+                            style="background: linear-gradient(90deg, #0ea5e9, #3b82f6); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">training</span>
+                        and <span
+                            style="background: linear-gradient(90deg, #6366f1, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">performance</span>
+                    </h2>
+                    <p style="font-size: 20px; color: #475569; font-weight: 600;">Content doesn't guarantee execution.
+                    </p>
+                </div>
 
-    <script>
-        document.querySelectorAll('.faq-question').forEach(q => {
-            q.addEventListener('click', () => {
-                q.parentElement.classList.toggle('active');
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;">
+
+                    <!-- Card 1: Batting Cage -->
+                    <div
+                        style="background: white; border-radius: 28px; padding: 56px 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.04); text-align: center; border: 1px solid #f1f5f9;">
+                        <div
+                            style="height: 220px; margin-bottom: 40px; display: flex; align-items: center; justify-content: center; position: relative;">
+                            <!-- Batting cage abstract icon -->
+                            <svg width="140" height="140" viewBox="0 0 140 140" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" style="opacity: 0.8;">
+                                <path d="M20 20H120V120H20V20Z" stroke="#3b82f6" stroke-width="3" />
+                                <path d="M20 20L50 50M120 20L90 50M20 120L50 90M120 120L90 90" stroke="#3b82f6"
+                                    stroke-width="3" />
+                                <rect x="50" y="50" width="40" height="40" stroke="#3b82f6" stroke-width="3" />
+                            </svg>
+                            <!-- Floating tags -->
+                            <div
+                                style="position: absolute; top: 25%; right: 5%; background: white; padding: 12px 18px; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.08); border-left: 5px solid #f97316; display: flex; align-items: center; gap: 8px;">
+                                <i class="ph-fill ph-flag-banner" style="color: #f97316;"></i>
+                                <span
+                                    style="font-size: 13px; font-weight: 800; color: #0f172a; white-space: nowrap;">Book
+                                    a follow-up</span>
+                            </div>
+                            <div
+                                style="position: absolute; bottom: 20%; left: 5%; background: white; padding: 12px 18px; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.08); border-left: 5px solid #10b981; display: flex; align-items: center; gap: 8px;">
+                                <i class="ph-fill ph-thumbs-up" style="color: #10b981;"></i>
+                                <span
+                                    style="font-size: 13px; font-weight: 800; color: #0f172a; white-space: nowrap;">Objection
+                                    handling</span>
+                            </div>
+                        </div>
+                        <h3
+                            style="font-size: 24px; font-weight: 850; margin-bottom: 18px; color: #0f172a; line-height: 1.2;">
+                            Step into the batting cage</h3>
+                        <p style="font-size: 16px; color: #64748b; line-height: 1.6;">Get unlimited reps with realistic
+                            AI simulations that mimic real-world scenarios</p>
+                    </div>
+
+                    <!-- Card 2: Execution Gap -->
+                    <div
+                        style="background: white; border-radius: 28px; padding: 56px 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.04); text-align: center; border: 1px solid #f1f5f9;">
+                        <div
+                            style="height: 220px; margin-bottom: 40px; display: flex; align-items: center; justify-content: center; position: relative;">
+                            <!-- Checklist Visual -->
+                            <svg width="150" height="180" viewBox="0 0 150 180" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" style="opacity: 0.8;">
+                                <rect x="30" y="30" width="90" height="120" rx="10" stroke="#6366f1" stroke-width="4" />
+                                <line x1="50" y1="70" x2="100" y2="70" stroke="#6366f1" stroke-width="4"
+                                    stroke-linecap="round" />
+                                <line x1="50" y1="100" x2="100" y2="100" stroke="#6366f1" stroke-width="4"
+                                    stroke-linecap="round" />
+                                <line x1="50" y1="130" x2="100" y2="130" stroke="#6366f1" stroke-width="4"
+                                    stroke-linecap="round" />
+                            </svg>
+                            <!-- Feedback bubbles -->
+                            <div
+                                style="position: absolute; top: 15%; left: 0%; background: white; padding: 10px 14px; border-radius: 10px; box-shadow: 0 8px 20px rgba(0,0,0,0.08); display: flex; align-items: center; gap: 8px; border: 1px solid #e2e8f0;">
+                                <div
+                                    style="width: 28px; height: 28px; background: #6366f1; border-radius: 6px; display: flex; align-items: center; justify-content: center; color: white; font-size: 14px;">
+                                    <i class="ph-fill ph-quotes"></i>
+                                </div>
+                                <span style="font-size: 11px; font-weight: 700; color: #0f172a;">Topic: What's your
+                                    pricing?</span>
+                            </div>
+                            <div
+                                style="position: absolute; top: 40%; right: 0%; background: white; padding: 10px 14px; border-radius: 10px; box-shadow: 0 8px 20px rgba(0,0,0,0.08); display: flex; align-items: center; gap: 8px; border: 1px solid #e2e8f0;">
+                                <i class="ph-fill ph-check-circle" style="color: #10b981; font-size: 20px;"></i>
+                                <span style="font-size: 11px; font-weight: 700; color: #0f172a;">5 talking points
+                                    hit</span>
+                            </div>
+                            <div
+                                style="position: absolute; bottom: 15%; left: 10%; background: white; padding: 10px 14px; border-radius: 10px; box-shadow: 0 8px 20px rgba(0,0,0,0.08); display: flex; align-items: center; gap: 8px; border: 1px solid #e2e8f0;">
+                                <i class="ph-fill ph-lightning" style="color: #f59e0b; font-size: 20px;"></i>
+                                <span style="font-size: 11px; font-weight: 700; color: #0f172a;">Use BANT
+                                    framework</span>
+                            </div>
+                        </div>
+                        <h3
+                            style="font-size: 24px; font-weight: 850; margin-bottom: 18px; color: #0f172a; line-height: 1.2;">
+                            The execution gap</h3>
+                        <p style="font-size: 16px; color: #64748b; line-height: 1.6;">Reps attend training and complete
+                            certifications, yet performance still varies by manager, region, or tenure.</p>
+                    </div>
+
+                    <!-- Card 3: Practice Readiness -->
+                    <div
+                        style="background: white; border-radius: 28px; padding: 56px 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.04); text-align: center; border: 1px solid #f1f5f9;">
+                        <div
+                            style="height: 220px; margin-bottom: 40px; display: flex; align-items: center; justify-content: center; position: relative;">
+                            <!-- Video UI Visual -->
+                            <div
+                                style="width: 200px; height: 130px; border-radius: 16px; background: #e2e8f0; overflow: hidden; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400"
+                                    style="width: 100%; height: 100%; object-fit: cover;">
+                                <div
+                                    style="position: absolute; bottom: 10px; left: 10px; background: rgba(0,0,0,0.5); padding: 4px 8px; border-radius: 4px; color: white; font-size: 10px;">
+                                    00:12</div>
+                            </div>
+                            <!-- Radial waves -->
+                            <div
+                                style="position: absolute; width: 180px; height: 180px; border: 2px solid #6366f1; border-radius: 50%; opacity: 0.1;">
+                            </div>
+                            <div
+                                style="position: absolute; width: 220px; height: 220px; border: 2px solid #6366f1; border-radius: 50%; opacity: 0.05;">
+                            </div>
+                        </div>
+                        <h3
+                            style="font-size: 24px; font-weight: 850; margin-bottom: 18px; color: #0f172a; line-height: 1.2;">
+                            Practice proves readiness</h3>
+                        <p style="font-size: 16px; color: #64748b; line-height: 1.6;">Yoodli ensures skills are
+                            practiced, reinforced, and demonstrated before they show up in live conversations.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- Snowflake Video Results Section -->
+        <section
+            style="position: relative; padding: 120px 0; background-color: #f5f7ff; overflow: hidden; display: flex; justify-content: center; align-items: center; text-align: center;">
+            <!-- Background Stripes from Roleplays page -->
+            <div
+                style="position: absolute; top: 0; right: 0; width: 50%; height: 100%; z-index: 1; pointer-events: none; overflow: hidden;">
+                <div
+                    style="position: absolute; background: rgba(220, 225, 255, 0.7); border-radius: 9999px; width: 28px; transform: rotate(35deg); height: 120%; top: -10%; right: 5%;">
+                </div>
+                <div
+                    style="position: absolute; background: rgba(220, 225, 255, 0.7); border-radius: 9999px; width: 28px; transform: rotate(35deg); height: 140%; top: -20%; right: 15%;">
+                </div>
+                <div
+                    style="position: absolute; background: rgba(220, 225, 255, 0.7); border-radius: 9999px; width: 28px; transform: rotate(35deg); height: 160%; top: -30%; right: 25%;">
+                </div>
+                <div
+                    style="position: absolute; background: rgba(220, 225, 255, 0.7); border-radius: 9999px; width: 28px; transform: rotate(35deg); height: 140%; top: -10%; right: 35%;">
+                </div>
+                <div
+                    style="position: absolute; background: rgba(220, 225, 255, 0.7); border-radius: 9999px; width: 28px; transform: rotate(35deg); height: 100%; top: 10%; right: 45%;">
+                </div>
+                <div
+                    style="position: absolute; background: rgba(220, 225, 255, 0.7); border-radius: 9999px; width: 28px; transform: rotate(35deg); height: 80%; top: 30%; right: 55%;">
+                </div>
+            </div>
+
+            <div class="container" style="position: relative; z-index: 2; text-align: center;">
+                <div style="margin-bottom: 48px;">
+                    <h2
+                        style="font-size: 38px; font-weight: 850; color: #0f1b3d; margin-bottom: 12px; letter-spacing: -0.02em;">
+                        Snowflake's AI Roleplay Results</h2>
+                    <p style="font-size: 18px; color: #334155; font-weight: 500;">1,200+ Manager hours saved per quarter
+                        through practice at scale</p>
+                </div>
+
+                <div
+                    style="position: relative; width: 100%; max-width: 850px; margin: 0 auto; aspect-ratio: 16/9; border-radius: 20px; overflow: hidden; box-shadow: 0 24px 48px rgba(0, 0, 10, 0.15); background: #000;">
+                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/DJlYLmGjyuM?autoplay=0&rel=0"
+                        title="Snowflake's AI Roleplay Results" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen style="position: absolute; top: 0; left: 0;">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- Impact Section -->
+        <section style="padding: 100px 0; background: white;">
+            <div class="container"
+                style="display: grid; grid-template-columns: 1.2fr 1fr 1fr 1.2fr; gap: 40px; align-items: start;">
+                <div>
+                    <h2 style="font-size: 36px; font-weight: 850; color: #0f172a; line-height: 1.2;">Tác động
+                        của<br>Nhập vai AI Yoodli</h2>
+                </div>
+
+                <!-- Stat 1 -->
+                <div>
+                    <div
+                        style="font-size: 11px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 20px;">
+                        ĐẠT CHỈ TIÊU (QUOTA)</div>
+                    <div
+                        style="font-size: 64px; font-weight: 850; color: #38bdf8; line-height: 1; margin-bottom: 16px;">
+                        3.3X</div>
+                    <div style="font-size: 18px; font-weight: 700; color: #0f172a;">cải thiện</div>
+                </div>
+
+                <!-- Stat 2 -->
+                <div>
+                    <div
+                        style="font-size: 11px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 20px;">
+                        HOÀN THÀNH ĐÀO TẠO</div>
+                    <div
+                        style="font-size: 64px; font-weight: 850; color: #38bdf8; line-height: 1; margin-bottom: 16px;">
+                        20%</div>
+                    <div style="font-size: 18px; font-weight: 700; color: #0f172a; line-height: 1.4;">cao hơn mức trung
+                        bình của workshop</div>
+                </div>
+
+                <!-- Stat 3 -->
+                <div>
+                    <div
+                        style="font-size: 11px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 20px;">
+                        HIỆU QUẢ VẬN HÀNH</div>
+                    <div
+                        style="font-size: 64px; font-weight: 850; color: #38bdf8; line-height: 1; margin-bottom: 16px;">
+                        44%</div>
+                    <div style="font-size: 18px; font-weight: 700; color: #0f172a; line-height: 1.4;">cải thiện (tiết
+                        kiệm thời gian, hậu cần)</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Enablement Workflow Section -->
+        <section style="padding: 100px 0; background: white;">
+            <div class="container"
+                style="display: grid; grid-template-columns: 1fr 1.5fr; gap: 100px; align-items: start;">
+                <div>
+                    <h2
+                        style="font-size: 48px; font-weight: 850; color: #0f172a; margin-bottom: 24px; line-height: 1.1;">
+                        Xây dựng cho quy trình hỗ trợ thực tế</h2>
+                    <p style="font-size: 20px; color: #64748b; line-height: 1.6;">Tiêu chuẩn của bạn. Được thực hành
+                        nhất quán mọi nơi.</p>
+                </div>
+
+                <div style="display: flex; flex-direction: column; gap: 20px;">
+                    <!-- Feature Card 1 -->
+                    <div
+                        style="background: linear-gradient(90deg, #e0f2fe 0%, #eef2ff 100%); padding: 32px 40px; border-radius: 24px; display: flex; align-items: center; gap: 32px;">
+                        <div style="color: #4f46e5; font-size: 32px; display: flex; align-items: center;"><i
+                                class="ph ph-list-checks"></i></div>
+                        <div style="font-size: 20px; font-weight: 700; color: #0f172a;">Tùy chỉnh chân dung, kịch bản và
+                            tiêu chí đánh giá</div>
+                    </div>
+
+                    <!-- Feature Card 2 -->
+                    <div
+                        style="background: linear-gradient(90deg, #dcfce7 0%, #f0fdf4 100%); padding: 32px 40px; border-radius: 24px; display: flex; align-items: center; gap: 32px; background: linear-gradient(90deg, #e0f2fe 0%, #eef2ff 100%);">
+                        <div style="color: #4f46e5; font-size: 32px; display: flex; align-items: center;"><i
+                                class="ph ph-target"></i></div>
+                        <div style="font-size: 20px; font-weight: 700; color: #0f172a;">Đồng nhất với phương pháp bán
+                            hàng của bạn</div>
+                    </div>
+
+                    <!-- Feature Card 3 -->
+                    <div
+                        style="background: linear-gradient(90deg, #e0f2fe 0%, #eef2ff 100%); padding: 32px 40px; border-radius: 24px; display: flex; align-items: center; gap: 32px;">
+                        <div style="color: #4f46e5; font-size: 32px; display: flex; align-items: center;"><i
+                                class="ph ph-play-circle"></i></div>
+                        <div style="font-size: 20px; font-weight: 700; color: #0f172a;">Nhập vai AI với nội dung hình
+                            ảnh tùy chọn</div>
+                    </div>
+
+                    <!-- Feature Card 4 -->
+                    <div
+                        style="background: linear-gradient(90deg, #e0f2fe 0%, #eef2ff 100%); padding: 32px 40px; border-radius: 24px; display: flex; align-items: center; gap: 32px;">
+                        <div style="color: #4f46e5; font-size: 32px; display: flex; align-items: center;"><i
+                                class="ph ph-users-three"></i></div>
+                        <div style="font-size: 20px; font-weight: 700; color: #0f172a;">Kịch bản đa nhân vật cho các
+                            giao dịch phức tạp</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Case Studies Section (identical to homepage) -->
+        <section class="case-studies-section" style="padding: 100px 0;">
+            <div class="container">
+                <div class="case-section-header">
+                    <h2>Xem các câu chuyện thành công</h2>
+                    <a href="../resources/case-studies.html" class="see-all">Xem tất cả <i
+                            class="ph ph-caret-right"></i></a>
+                </div>
+                <div class="case-studies-grid">
+                    <!-- Case Study 1 -->
+                    <a href="../resources/google-cloud-case-study.html" class="case-card">
+                        <div class="case-image"
+                            style="aspect-ratio: 16/9; background: #000; overflow: hidden; position: relative;">
+                            <iframe width="100%" height="100%"
+                                src="https://www.youtube-nocookie.com/embed/ZeK1RCgWcCw?rel=0" frameborder="0"
+                                allowfullscreen style="position: absolute; top: 0; left: 0;"></iframe>
+                            <div class="case-logo-overlay">
+                                <div class="overlay-inner">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
+                                        alt="Google">
+                                    <span class="plus">+</span>
+                                    <span class="yoodli-logo-small" style="color: #000235; font-size: 16px;"><i class="ph-fill ph-microphone-stage"></i> yoodli</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="case-content">
+                            <h3>Google Cloud đã sử dụng Yoodli AI như thế nào để triển khai chứng nhận bài thuyết trình
+                                GTM mới cho...</h3>
+                            <div class="case-tags">
+                                <span class="tag tag-orange">Đào tạo nội bộ</span>
+                                <span class="tag tag-yellow">Chứng nhận Pitching</span>
+                                <span class="tag tag-green">Hỗ trợ bán hàng</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Case Study 2 -->
+                    <a href="../resources/snowflake-case-study.html" class="case-card">
+                        <div class="case-image"
+                            style="aspect-ratio: 16/9; background: #000; overflow: hidden; position: relative;">
+                            <iframe width="100%" height="100%"
+                                src="https://www.youtube-nocookie.com/embed/r-I93iXfL-8?rel=0" frameborder="0"
+                                allowfullscreen style="position: absolute; top: 0; left: 0;"></iframe>
+                            <div class="case-logo-overlay">
+                                <div class="overlay-inner">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/ff/Snowflake_Logo.svg"
+                                        alt="Snowflake">
+                                    <span class="plus">+</span>
+                                    <span class="yoodli-logo-small" style="color: #000235; font-size: 16px;"><i class="ph-fill ph-microphone-stage"></i> yoodli</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="case-content">
+                            <h3>Snowflake đã tiết kiệm hơn 1.200 giờ huấn luyện của quản lý mỗi quý với...</h3>
+                            <div class="case-tags">
+                                <span class="tag tag-blue">Hỗ trợ GTM</span>
+                                <span class="tag tag-purple">Huấn luyện Quản lý</span>
+                                <span class="tag tag-green">Hỗ trợ bán hàng</span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Case Study 3 -->
+                    <a href="../resources/harness-case-study.html" class="case-card">
+                        <div class="case-image"
+                            style="aspect-ratio: 16/9; background: #000; overflow: hidden; position: relative;">
+                            <iframe width="100%" height="100%"
+                                src="https://www.youtube-nocookie.com/embed/Qc35QTbQvWY?rel=0" frameborder="0"
+                                allowfullscreen style="position: absolute; top: 0; left: 0;"></iframe>
+                            <div class="case-logo-overlay">
+                                <div class="overlay-inner">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Cisco_logo_blue_2016.svg"
+                                        alt="Cisco">
+                                    <span class="plus">+</span>
+                                    <span class="yoodli-logo-small" style="color: #000235; font-size: 16px;"><i class="ph-fill ph-microphone-stage"></i> yoodli</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="case-content">
+                            <h3>Harness đã giảm 75% thời gian đánh giá đào tạo bán hàng với Yoodli AI...</h3>
+                            <div class="case-tags">
+                                <span class="tag tag-orange">Đào tạo nội bộ</span>
+                                <span class="tag tag-yellow">Chứng nhận Pitching</span>
+                                <span class="tag tag-green">Hỗ trợ bán hàng</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Secure and Compliant Section -->
+        <section style="padding: 100px 0; background: white; text-align: center;">
+            <div class="container" style="max-width: 1000px;">
+                <h2
+                    style="font-size: 36px; font-weight: 850; color: #0f172a; margin-bottom: 60px; letter-spacing: -0.01em;">
+                    Bảo mật và Tuân thủ</h2>
+
+                <!-- SOC 2 Badge Row -->
+                <div
+                    style="display: flex; align-items: center; justify-content: center; gap: 40px; margin-bottom: 80px;">
+                    <!-- AICPA SOC Badge -->
+                    <div
+                        style="width: 120px; height: 120px; border-radius: 50%; overflow: hidden; background: linear-gradient(135deg, #38bdf8 0%, #6366f1 100%); display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 30px rgba(99,102,241,0.25); flex-shrink: 0;">
+                        <div style="text-align: center; color: white; line-height: 1.2;">
+                            <div style="font-size: 11px; font-weight: 800; letter-spacing: 0.05em;">AICPA</div>
+                            <div style="font-size: 22px; font-weight: 900;">SOC</div>
+                            <div style="font-size: 9px; font-weight: 600; opacity: 0.9;">aicpa.org/soc4so</div>
+                        </div>
+                    </div>
+
+                    <div style="text-align: left;">
+                        <h3 style="font-size: 20px; font-weight: 800; color: #0f172a; margin-bottom: 8px;">Yoodli đạt
+                            chứng nhận SOC 2 Loại 2</h3>
+                        <p style="font-size: 16px; color: #475569; line-height: 1.6;">
+                            Truy cập <a href="#" style="color: #6366f1; font-weight: 700; text-decoration: none;">Trung
+                                tâm Tin cậy</a><br>của chúng tôi để tìm hiểu thêm
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 3-Column Feature Grid -->
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px;">
+                    <!-- Column 1 -->
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 20px;">
+                        <div
+                            style="width: 64px; height: 64px; border-radius: 50%; background: linear-gradient(135deg, #818cf8 0%, #6366f1 100%); display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 25px rgba(99,102,241,0.3);">
+                            <i class="ph-bold ph-check" style="color: white; font-size: 28px;"></i>
+                        </div>
+                        <div>
+                            <h4 style="font-size: 18px; font-weight: 800; color: #0f172a; margin-bottom: 10px;">Chứng
+                                nhận cho doanh nghiệp</h4>
+                            <p
+                                style="font-size: 15px; color: #64748b; line-height: 1.6; max-width: 240px; margin: 0 auto;">
+                                Lưu trữ dữ liệu tự động, tuân thủ SOC 2 Loại 2</p>
+                        </div>
+                    </div>
+
+                    <!-- Column 2 -->
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 20px;">
+                        <div
+                            style="width: 64px; height: 64px; border-radius: 50%; background: linear-gradient(135deg, #818cf8 0%, #6366f1 100%); display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 25px rgba(99,102,241,0.3);">
+                            <i class="ph-bold ph-check" style="color: white; font-size: 28px;"></i>
+                        </div>
+                        <div>
+                            <h4 style="font-size: 18px; font-weight: 800; color: #0f172a; margin-bottom: 10px;">Ưu tiên
+                                quyền riêng tư</h4>
+                            <p
+                                style="font-size: 15px; color: #64748b; line-height: 1.6; max-width: 240px; margin: 0 auto;">
+                                Các bản ghi là riêng tư theo mặc định và được mã hóa</p>
+                        </div>
+                    </div>
+
+                    <!-- Column 3 -->
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 20px;">
+                        <div
+                            style="width: 64px; height: 64px; border-radius: 50%; background: linear-gradient(135deg, #818cf8 0%, #6366f1 100%); display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 25px rgba(99,102,241,0.3);">
+                            <i class="ph-bold ph-check" style="color: white; font-size: 28px;"></i>
+                        </div>
+                        <div>
+                            <h4 style="font-size: 18px; font-weight: 800; color: #0f172a; margin-bottom: 10px;">Loại trừ
+                                khỏi mô hình AI</h4>
+                            <p
+                                style="font-size: 15px; color: #64748b; line-height: 1.6; max-width: 240px; margin: 0 auto;">
+                                Dữ liệu của bạn không được dùng để huấn luyện mô hình AI</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Final CTA -->
+        <section
+            style="background: #0b0e23; padding: 100px 0; text-align: center; position: relative; overflow: hidden;">
+            <!-- Subtle glow -->
+            <div
+                style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 600px; height: 300px; background: radial-gradient(ellipse, rgba(99,102,241,0.15) 0%, transparent 70%); pointer-events: none;">
+            </div>
+
+            <div class="container" style="position: relative; z-index: 2; max-width: 780px;">
+                <h2
+                    style="font-size: 40px; font-weight: 800; color: white; margin-bottom: 20px; letter-spacing: -0.02em; line-height: 1.2;">
+                    An toàn, sẵn sàng cho doanh nghiệp và được xây dựng cho các đội ngũ toàn cầu</h2>
+                <p style="font-size: 18px; color: #94a3b8; margin-bottom: 44px; line-height: 1.7;">Đảm bảo thực thi nhất
+                    quán, mức độ sẵn sàng rõ ràng và khả năng hỗ trợ có thể mở rộng trên toàn bộ tổ chức của bạn.</p>
+                <a href="../demo.html"
+                    style="display: inline-block; background: linear-gradient(135deg, #6366f1 0%, #38bdf8 100%); color: white; padding: 16px 40px; border-radius: 100px; font-weight: 700; font-size: 16px; text-decoration: none; box-shadow: 0 8px 30px rgba(99,102,241,0.4); transition: all 0.3s; letter-spacing: 0.01em;">Xem
+                    Yoodli hoạt động thực tế</a>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section" style="padding: 100px 0; background: #fff;">
+            <div class="container" style="max-width: 800px;">
+                <h2
+                    style="font-size: 36px; font-weight: 850; color: #0f172a; text-align: center; margin-bottom: 50px; letter-spacing: -0.01em;">
+                    Câu hỏi thường gặp về Yoodli</h2>
+
+                <div class="faq-list">
+                    <!-- FAQ Item 1 -->
+                    <div class="faq-item" style="border-bottom: 1px solid #e2e8f0; padding: 24px 0;">
+                        <div class="faq-question"
+                            style="display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-size: 18px; font-weight: 700; color: #0f172a;">
+                            <span>Yoodli hỗ trợ các đội ngũ GTM như thế nào?</span>
+                            <i class="ph ph-plus" style="color: #6366f1; transition: transform 0.3s;"></i>
+                        </div>
+                        <div class="faq-answer"
+                            style="display: none; padding-top: 16px; color: #475569; line-height: 1.6; font-size: 16px;">
+                            Yoodli cung cấp một nền tảng hỗ trợ bởi AI để nhập vai quy mô lớn, huấn luyện thời gian thực
+                            và đánh giá mức độ sẵn sàng khách quan, cho phép các đội ngũ hỗ trợ cấp chứng chỉ cho lực
+                            lượng bán hàng lớn mà không gặp nút thắt thủ công của việc huấn luyện 1:1 truyền thống.
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 2 -->
+                    <div class="faq-item" style="border-bottom: 1px solid #e2e8f0; padding: 24px 0;">
+                        <div class="faq-question"
+                            style="display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-size: 18px; font-weight: 700; color: #0f172a;">
+                            <span>Yoodli có thể thay thế các bài nhập vai thủ công để cấp chứng chỉ không?</span>
+                            <i class="ph ph-plus" style="color: #6366f1; transition: transform 0.3s;"></i>
+                        </div>
+                        <div class="faq-answer"
+                            style="display: none; padding-top: 16px; color: #475569; line-height: 1.6; font-size: 16px;">
+                            Mặc dù nhập vai thủ công vẫn có giá trị cho các bước kiểm tra cuối cùng quan trọng, Yoodli
+                            tự động hóa 90% giai đoạn thực hành và cấp chứng chỉ ban đầu, đảm bảo nhân viên đã sẵn sàng
+                            hoàn toàn trước khi họ nói chuyện với quản lý hoặc đồng nghiệp.
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 3 -->
+                    <div class="faq-item" style="border-bottom: 1px solid #e2e8f0; padding: 24px 0;">
+                        <div class="faq-question"
+                            style="display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-size: 18px; font-weight: 700; color: #0f172a;">
+                            <span>Yoodli phù hợp với phương pháp bán hàng của chúng tôi như thế nào?</span>
+                            <i class="ph ph-plus" style="color: #6366f1; transition: transform 0.3s;"></i>
+                        </div>
+                        <div class="faq-answer"
+                            style="display: none; padding-top: 16px; color: #475569; line-height: 1.6; font-size: 16px;">
+                            AI của chúng tôi có thể được huấn luyện tùy chỉnh trên bất kỳ phương pháp nào (MEDDIC,
+                            Challenger, v.v.) để đảm bảo rằng phản hồi và điểm số hoàn toàn đồng nhất với các tài liệu
+                            nội bộ và phong cách thương hiệu cụ thể của bạn.
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 4 -->
+                    <div class="faq-item" style="border-bottom: 1px solid #e2e8f0; padding: 24px 0;">
+                        <div class="faq-question"
+                            style="display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-size: 18px; font-weight: 700; color: #0f172a;">
+                            <span>Yoodli giúp ích gì cho quá trình nhập môn (onboarding)?</span>
+                            <i class="ph ph-plus" style="color: #6366f1; transition: transform 0.3s;"></i>
+                        </div>
+                        <div class="faq-answer"
+                            style="display: none; padding-top: 16px; color: #475569; line-height: 1.6; font-size: 16px;">
+                            Nhân viên mới có thể thực hành các cuộc gọi khai phá và trình bày trong một môi trường an
+                            toàn do AI dẫn dắt, nhận được phản hồi tức thì. Điều này làm giảm đáng kể "thời gian chốt
+                            đơn đầu tiên" bằng cách cung cấp thực hành lặp đi lặp lại có cấu trúc theo yêu cầu.
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 5 -->
+                    <div class="faq-item" style="border-bottom: 1px solid #e2e8f0; padding: 24px 0;">
+                        <div class="faq-question"
+                            style="display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-size: 18px; font-weight: 700; color: #0f172a;">
+                            <span>Làm thế nào để các lãnh đạo đo lường tác động?</span>
+                            <i class="ph ph-plus" style="color: #6366f1; transition: transform 0.3s;"></i>
+                        </div>
+                        <div class="faq-answer"
+                            style="display: none; padding-top: 16px; color: #475569; line-height: 1.6; font-size: 16px;">
+                            Yoodli cung cấp các bảng điều khiển chi tiết với dữ liệu khách quan về hiệu suất của nhân
+                            viên, xu hướng cải thiện theo thời gian và điểm số mức độ sẵn sàng của tổ chức, cho phép các
+                            nhà lãnh đạo liên kết trực tiếp hoạt động đào tạo với kỹ năng bán hàng thực tế.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- Use Cases Tabbed Section -->
+        <section class="use-cases-section" style="padding: 100px 0; background: #fff;">
+            <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 24px;">
+
+                <!-- Section Header -->
+                <div style="text-align: center; margin-bottom: 50px;">
+                    <h2 style="font-size: 32px; font-weight: 800; color: #000235;">Bạn sẽ sử dụng Yoodli như thế nào?
+                    </h2>
+                </div>
+
+                <!-- Tabs Container (Card) -->
+                <div
+                    style="background: #F8FAFF; border-radius: 24px; box-shadow: 0 20px 50px rgba(0,0,0,0.03); min-height: 400px; position: relative; overflow: hidden; border: 1px solid #F1F5F9;">
+
+                    <!-- Tabs Navigation -->
+                    <div
+                        style="display: flex; justify-content: center; gap: 40px; border-bottom: 1px solid #E2E8F0; background: transparent; padding: 0 20px;">
+                        <button onclick="switchTab(1)" id="tab-btn-1" class="tab-btn active"
+                            style="padding: 20px 0; font-size: 16px; font-weight: 700; color: #4F46E5; background: none; border: none; border-bottom: 3px solid #4F46E5; cursor: pointer; transition: all 0.3s;">Hỗ
+                            trợ GTM</button>
+                        <button onclick="switchTab(2)" id="tab-btn-2" class="tab-btn"
+                            style="padding: 20px 0; font-size: 16px; font-weight: 700; color: #64748B; background: none; border: none; border-bottom: 3px solid transparent; cursor: pointer; transition: all 0.3s;">Học
+                            tập & Phát triển</button>
+                        <button onclick="switchTab(3)" id="tab-btn-3" class="tab-btn"
+                            style="padding: 20px 0; font-size: 16px; font-weight: 700; color: #64748B; background: none; border: none; border-bottom: 3px solid transparent; cursor: pointer; transition: all 0.3s;">Hỗ
+                            trợ Đối tác</button>
+                        <button onclick="switchTab(4)" id="tab-btn-4" class="tab-btn"
+                            style="padding: 20px 0; font-size: 16px; font-weight: 700; color: #64748B; background: none; border: none; border-bottom: 3px solid transparent; cursor: pointer; transition: all 0.3s;">Truyền
+                            thông Doanh nghiệp</button>
+                    </div>
+
+                    <!-- Tabs Content Wrapper -->
+                    <div style="padding: 60px;">
+                        <!-- Tab 1: GTM Enablement -->
+                        <div id="tab-content-1" class="tab-content active"
+                            style="display: grid; grid-template-columns: 1.4fr 1fr; gap: 80px; align-items: center;">
+                            <div>
+                                <ul
+                                    style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 24px; margin-bottom: 40px;">
+                                    <li style="display: flex; gap: 16px; align-items: flex-start;">
+                                        <i class="ph-fill ph-check-circle"
+                                            style="color: #000235; font-size: 24px; margin-top: 2px;"></i>
+                                        <p style="font-size: 16px; color: #475569; line-height: 1.5; font-weight: 500;">
+                                            Tải lên nội dung tùy chỉnh, các phương pháp tốt nhất và quy trình của bạn
+                                        </p>
+                                    </li>
+                                    <li style="display: flex; gap: 16px; align-items: flex-start;">
+                                        <i class="ph-fill ph-check-circle"
+                                            style="color: #000235; font-size: 24px; margin-top: 2px;"></i>
+                                        <p style="font-size: 16px; color: #475569; line-height: 1.5; font-weight: 500;">
+                                            Đào tạo và cấp chứng chỉ cho nhân viên với các tình huống nhập vai thực tế
+                                        </p>
+                                    </li>
+                                    <li style="display: flex; gap: 16px; align-items: flex-start;">
+                                        <i class="ph-fill ph-check-circle"
+                                            style="color: #000235; font-size: 24px; margin-top: 2px;"></i>
+                                        <p style="font-size: 16px; color: #475569; line-height: 1.5; font-weight: 500;">
+                                            Định lượng hiệu suất, xuất báo cáo và theo dõi tiến độ theo thời gian</p>
+                                    </li>
+                                </ul>
+                                <a href="for-business/sales-enablement.html"
+                                    style="color: #4F46E5; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">Tìm
+                                    hiểu thêm</a>
+                            </div>
+                            <div style="position: relative; display: flex; justify-content: center;">
+                                <div
+                                    style="width: 280px; height: 280px; border-radius: 50%; overflow: hidden; position: relative;">
+                                    <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=400"
+                                        style="width: 100%; height: 100%; object-fit: cover;">
+                                    <div
+                                        style="position: absolute; inset: 0; background: linear-gradient(to right, rgba(79, 70, 229, 0.4), transparent);">
+                                    </div>
+                                </div>
+                                <!-- UI Elements -->
+                                <div
+                                    style="position: absolute; right: -20px; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 10px;">
+                                    <div
+                                        style="background: white; padding: 12px 16px; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); display: flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 800; color: #000235; border: 1px solid #F1F5F9;">
+                                        <i class="ph-fill ph-snowflake" style="color: #3B82F6;"></i> Gọi lạnh
+                                    </div>
+                                    <div
+                                        style="background: white; padding: 12px 16px; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); display: flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 800; color: #000235; border: 1px solid #F1F5F9;">
+                                        <i class="ph-fill ph-fire" style="color: #F97316;"></i> Khách hàng đến
+                                    </div>
+                                    <div
+                                        style="background: white; padding: 12px 16px; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); display: flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 800; color: #000235; border: 1px solid #F1F5F9;">
+                                        <i class="ph-fill ph-magnifying-glass" style="color: #A855F7;"></i> Khai phá
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tab 2: Learning & Development -->
+                        <div id="tab-content-2" class="tab-content"
+                            style="display: none; grid-template-columns: 1.4fr 1fr; gap: 80px; align-items: center;">
+                            <div>
+                                <ul
+                                    style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 24px; margin-bottom: 40px;">
+                                    <li style="display: flex; gap: 16px; align-items: flex-start;">
+                                        <i class="ph-fill ph-check-circle"
+                                            style="color: #000235; font-size: 24px; margin-top: 2px;"></i>
+                                        <p style="font-size: 16px; color: #475569; line-height: 1.5; font-weight: 500;">
+                                            Thiết lập tiêu chuẩn với phân tích lời nói định lượng như tốc độ, sự súc
+                                            tích và cách mở đầu câu</p>
+                                    </li>
+                                    <li style="display: flex; gap: 16px; align-items: flex-start;">
+                                        <i class="ph-fill ph-check-circle"
+                                            style="color: #000235; font-size: 24px; margin-top: 2px;"></i>
+                                        <p style="font-size: 16px; color: #475569; line-height: 1.5; font-weight: 500;">
+                                            Tùy chỉnh các kịch bản để thực hành nhập vai</p>
+                                    </li>
+                                    <li style="display: flex; gap: 16px; align-items: flex-start;">
+                                        <i class="ph-fill ph-check-circle"
+                                            style="color: #000235; font-size: 24px; margin-top: 2px;"></i>
+                                        <p style="font-size: 16px; color: #475569; line-height: 1.5; font-weight: 500;">
+                                            Theo dõi tiến độ theo thời gian, tổng hợp theo từng nhóm học viên</p>
+                                    </li>
+                                </ul>
+                                <a href="for-business/learning-and-development.html"
+                                    style="color: #4F46E5; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">Tìm
+                                    hiểu thêm</a>
+                            </div>
+                            <div style="position: relative; display: flex; justify-content: center;">
+                                <div
+                                    style="width: 280px; height: 280px; border-radius: 50%; overflow: hidden; position: relative;">
+                                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=400"
+                                        style="width: 100%; height: 100%; object-fit: cover;">
+                                    <div
+                                        style="position: absolute; inset: 0; background: linear-gradient(to right, rgba(37, 99, 235, 0.4), transparent);">
+                                    </div>
+                                </div>
+                                <!-- Analytics Visual -->
+                                <div
+                                    style="position: absolute; left: -30px; bottom: 20px; background: white; padding: 15px; border-radius: 12px; box-shadow: 0 15px 35px rgba(0,0,0,0.08); width: 180px; border: 1px solid #F1F5F9;">
+                                    <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                                        <span style="font-size: 11px; font-weight: 700; color: #64748B;">Tốc độ</span>
+                                        <span style="font-size: 11px; font-weight: 700; color: #10B981;">Nhanh hơn
+                                            4%</span>
+                                    </div>
+                                    <div
+                                        style="height: 40px; width: 100%; background: #F8FAFF; border-radius: 6px; position: relative; overflow: hidden;">
+                                        <svg width="100%" height="100%" viewBox="0 0 100 40" preserveAspectRatio="none">
+                                            <path d="M0 30 Q 25 10, 50 25 T 100 15" fill="none" stroke="#F97316"
+                                                stroke-width="2" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tab 3: Partner Enablement -->
+                        <div id="tab-content-3" class="tab-content"
+                            style="display: none; grid-template-columns: 1.4fr 1fr; gap: 80px; align-items: center;">
+                            <div>
+                                <ul
+                                    style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 24px; margin-bottom: 40px;">
+                                    <li style="display: flex; gap: 16px; align-items: flex-start;">
+                                        <i class="ph-fill ph-check-circle"
+                                            style="color: #000235; font-size: 24px; margin-top: 2px;"></i>
+                                        <p style="font-size: 16px; color: #475569; line-height: 1.5; font-weight: 500;">
+                                            Tải lên nội dung tùy chỉnh và bộ tiêu chí đánh giá chứng chỉ của bạn</p>
+                                    </li>
+                                    <li style="display: flex; gap: 16px; align-items: flex-start;">
+                                        <i class="ph-fill ph-check-circle"
+                                            style="color: #000235; font-size: 24px; margin-top: 2px;"></i>
+                                        <p style="font-size: 16px; color: #475569; line-height: 1.5; font-weight: 500;">
+                                            Mô phỏng các bài kiểm tra và cấp chứng nhận thông qua nhập vai thực tế</p>
+                                    </li>
+                                    <li style="display: flex; gap: 16px; align-items: flex-start;">
+                                        <i class="ph-fill ph-check-circle"
+                                            style="color: #000235; font-size: 24px; margin-top: 2px;"></i>
+                                        <p style="font-size: 16px; color: #475569; line-height: 1.5; font-weight: 500;">
+                                            Định lượng hiệu suất, xuất báo cáo và theo dõi tiến độ theo thời gian</p>
+                                    </li>
+                                </ul>
+                                <a href="for-business/partner-enablement.html"
+                                    style="color: #4F46E5; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">Tìm
+                                    hiểu thêm</a>
+                            </div>
+                            <div style="position: relative; display: flex; justify-content: center;">
+                                <div
+                                    style="width: 280px; height: 280px; border-radius: 50%; overflow: hidden; position: relative;">
+                                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=400"
+                                        style="width: 100%; height: 100%; object-fit: cover;">
+                                    <div
+                                        style="position: absolute; inset: 0; background: linear-gradient(to right, rgba(168, 85, 247, 0.4), transparent);">
+                                    </div>
+                                </div>
+                                <!-- Feedback UI -->
+                                <div
+                                    style="position: absolute; right: -40px; bottom: 30px; background: white; padding: 12px 16px; border-radius: 12px; box-shadow: 0 15px 35px rgba(0,0,0,0.08); width: 220px; border: 1px solid #F1F5F9; font-size: 12px;">
+                                    <div
+                                        style="display: flex; align-items: center; gap: 8px; color: #4F46E5; font-weight: 700; margin-bottom: 4px;">
+                                        <i class="ph-fill ph-thumbs-up"></i> Tuyệt vời!
+                                    </div>
+                                    <div style="color: #475569; font-weight: 500;">Bạn không sử dụng ngôn ngữ thiếu bao
+                                        hàm nào</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Tab 4: Corporate Communications -->
+                        <div id="tab-content-4" class="tab-content"
+                            style="display: none; grid-template-columns: 1.4fr 1fr; gap: 80px; align-items: center;">
+                            <div>
+                                <ul
+                                    style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 24px; margin-bottom: 40px;">
+                                    <li style="display: flex; gap: 16px; align-items: flex-start;">
+                                        <i class="ph-fill ph-check-circle"
+                                            style="color: #000235; font-size: 24px; margin-top: 2px;"></i>
+                                        <p style="font-size: 16px; color: #475569; line-height: 1.5; font-weight: 500;">
+                                            Tải lên hướng dẫn thương hiệu, các điểm thảo luận và nội dung tùy chỉnh của
+                                            bạn</p>
+                                    </li>
+                                    <li style="display: flex; gap: 16px; align-items: flex-start;">
+                                        <i class="ph-fill ph-check-circle"
+                                            style="color: #000235; font-size: 24px; margin-top: 2px;"></i>
+                                        <p style="font-size: 16px; color: #475569; line-height: 1.5; font-weight: 500;">
+                                            Mô phỏng nhập vai AI thực tế (đào tạo truyền thông, giao tiếp điều hành)</p>
+                                    </li>
+                                    <li style="display: flex; gap: 16px; align-items: flex-start;">
+                                        <i class="ph-fill ph-check-circle"
+                                            style="color: #000235; font-size: 24px; margin-top: 2px;"></i>
+                                        <p style="font-size: 16px; color: #475569; line-height: 1.5; font-weight: 500;">
+                                            Theo dõi tiến độ của bạn theo thời gian</p>
+                                    </li>
+                                </ul>
+                                <a href="for-business/executive-coaching.html"
+                                    style="color: #4F46E5; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">Tìm
+                                    hiểu thêm</a>
+                            </div>
+                            <div style="position: relative; display: flex; justify-content: center;">
+                                <div
+                                    style="width: 280px; height: 280px; border-radius: 50%; overflow: hidden; position: relative;">
+                                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400"
+                                        style="width: 100%; height: 100%; object-fit: cover;">
+                                    <div
+                                        style="position: absolute; inset: 0; background: linear-gradient(to right, rgba(249, 115, 22, 0.4), transparent);">
+                                    </div>
+                                </div>
+                                <!-- Talking Points Card -->
+                                <div
+                                    style="position: absolute; right: -20px; bottom: 20px; background: white; padding: 15px; border-radius: 12px; box-shadow: 0 15px 35px rgba(0,0,0,0.08); width: 180px; border: 1px solid #F1F5F9;">
+                                    <div
+                                        style="display: flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 700; color: #10B981; margin-bottom: 8px;">
+                                        <i class="ph-fill ph-check-circle"></i> 5 ý chính đã đạt
+                                    </div>
+                                    <div
+                                        style="display: flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 700; color: #10B981;">
+                                        <i class="ph-fill ph-thumbs-up"></i> Ngôn ngữ súc tích
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Tab Content Wrapper -->
+                    </div>
+                    <!-- End Tab Container -->
+                </div>
+                <!-- End Container -->
+        </section>
+
+
+        <!-- Footer -->
+        <!-- Footer will be injected by master_layout.js -->
+        <script src="../master_layout.js"></script>
+
+        <script>
+            function switchTab(tabId) {
+                // Hide all contents
+                document.querySelectorAll('.tab-content').forEach(content => {
+                    content.style.display = 'none';
+                    content.classList.remove('active');
+                });
+                // Reset all buttons
+                document.querySelectorAll('.tab-btn').forEach(btn => {
+                    btn.style.color = '#64748B';
+                    btn.style.borderBottomColor = 'transparent';
+                    btn.classList.remove('active');
+                });
+
+                // Show active content
+                const activeContent = document.getElementById(`tab-content-${tabId}`);
+                if (activeContent) {
+                    activeContent.style.display = 'grid';
+                    activeContent.classList.add('active');
+                }
+
+                // Set active button
+                const activeBtn = document.getElementById(`tab-btn-${tabId}`);
+                if (activeBtn) {
+                    activeBtn.style.color = '#000235';
+                    activeBtn.style.borderBottomColor = '#000235';
+                    activeBtn.classList.add('active');
+                }
+            }
+
+            document.querySelectorAll('.faq-question').forEach(q => {
+                q.addEventListener('click', () => {
+                    const item = q.parentElement;
+                    const answer = q.nextElementSibling;
+                    const icon = q.querySelector('i');
+
+                    const isActive = item.classList.contains('active');
+
+                    // Close others
+                    document.querySelectorAll('.faq-item').forEach(otherItem => {
+                        otherItem.classList.remove('active');
+                        otherItem.querySelector('.faq-answer').style.display = 'none';
+                        otherItem.querySelector('i').classList.replace('ph-minus', 'ph-plus');
+                    });
+
+                    if (!isActive) {
+                        item.classList.add('active');
+                        answer.style.display = 'block';
+                        icon.classList.replace('ph-plus', 'ph-minus');
+                    }
+                });
             });
-        });
-    </script>
+        </script>
 </body>
+
+
+
 
 </html>

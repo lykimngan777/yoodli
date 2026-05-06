@@ -1,0 +1,1700 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diễn thuyết Công cộng | Yoodli AI</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        :root {
+            --primary-blue: #3B82F6;
+            --navy-dark: #0B0F2F;
+            --bg-light: #F8FAFC;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #1E293B;
+            background: white;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Hero Section */
+        .speaking-hero {
+            padding: 140px 0 100px;
+            background: white;
+            overflow: hidden;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .hero-content .eyebrow {
+            font-size: 12px;
+            font-weight: 800;
+            color: #64748B;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .hero-content h1 {
+            font-size: 56px;
+            font-weight: 850;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            color: var(--navy-dark);
+        }
+
+        .hero-content p {
+            font-size: 18px;
+            color: #475569;
+            margin-bottom: 32px;
+            line-height: 1.6;
+            max-width: 480px;
+        }
+
+        .hero-visual {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .visual-avatar {
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            background: #eef2ff;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+        }
+
+        .visual-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .floating-card {
+            position: absolute;
+            background: white;
+            padding: 16px 20px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        /* Intro Section */
+        .intro-section {
+            padding: 80px 0;
+            text-align: center;
+            background: white;
+        }
+
+        .intro-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .intro-content h2 {
+            font-size: 40px;
+            font-weight: 850;
+            margin-bottom: 24px;
+            color: var(--navy-dark);
+        }
+
+        .intro-content p {
+            font-size: 20px;
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        /* How it works (Stack) */
+        .how-works {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .work-block {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 80px;
+            align-items: center;
+            margin-bottom: 100px;
+        }
+
+        .work-block:nth-child(even) {
+            grid-template-columns: 0.9fr 1.1fr;
+        }
+
+        .work-block:nth-child(even) .work-visual {
+            order: 2;
+        }
+
+        .work-block:nth-child(even) .work-text {
+            order: 1;
+        }
+
+        .work-visual {
+            background: #f8fafc;
+            border-radius: 24px;
+            padding: 40px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.03);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .ui-mockup {
+            width: 100%;
+            border-radius: 12px;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        /* How to use AI (2-col + vertical cards) */
+        .use-ai {
+            padding: 100px 0;
+            background: #f8fafc;
+        }
+
+        .use-ai-grid {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 80px;
+            align-items: start;
+        }
+
+        .v-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .v-card {
+            background: #eff6ff;
+            padding: 24px 32px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            transition: all 0.3s;
+        }
+
+        .v-card:hover {
+            transform: translateX(10px);
+            background: white;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+        }
+
+        .v-card i {
+            font-size: 24px;
+            color: var(--primary-blue);
+        }
+
+        /* Snowflake Video Section */
+        .rp-video-section {
+            position: relative;
+            padding: 100px 0;
+            background-color: #F5F7FF;
+            /* Light Lavender Tint */
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .video-bg-pattern {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .stripe {
+            position: absolute;
+            background: rgba(220, 225, 255, 0.7);
+            border-radius: 9999px;
+            /* Rounded ends */
+            width: 28px;
+            transform: rotate(35deg);
+        }
+
+        .s1 {
+            height: 120%;
+            top: -10%;
+            right: 5%;
+        }
+
+        .s2 {
+            height: 140%;
+            top: -20%;
+            right: 15%;
+        }
+
+        .s3 {
+            height: 160%;
+            top: -30%;
+            right: 25%;
+        }
+
+        .s4 {
+            height: 140%;
+            top: -10%;
+            right: 35%;
+        }
+
+        .s5 {
+            height: 100%;
+            top: 10%;
+            right: 45%;
+        }
+
+        .s6 {
+            height: 80%;
+            top: 30%;
+            right: 55%;
+        }
+
+        .video-header {
+            margin-bottom: 48px;
+        }
+
+        .video-header h2 {
+            font-size: 38px;
+            font-weight: 850;
+            color: #0F1B3D;
+            margin-bottom: 12px;
+        }
+
+        .video-header p {
+            font-size: 18px;
+            color: #334155;
+            font-weight: 500;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            aspect-ratio: 16/9;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 24px 48px rgba(0, 0, 10, 0.15);
+            background: #000;
+        }
+
+        .video-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        @media (max-width: 768px) {
+            .video-header h2 {
+                font-size: 28px;
+            }
+
+            .video-header p {
+                font-size: 16px;
+            }
+
+            .rp-video-section {
+                padding: 60px 20px;
+            }
+        }
+
+        /* Dark Feature V2 */
+        .dark-feature-v2 {
+            padding: 120px 0;
+            background: #050a30;
+            color: white;
+            text-align: center;
+        }
+
+        .dark-feature-v2 .container {
+            max-width: 1000px;
+        }
+
+        .dark-feature-v2 h2 {
+            font-size: 48px;
+            font-weight: 850;
+            margin-bottom: 32px;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+        }
+
+        .dark-feature-v2 p {
+            font-size: 20px;
+            opacity: 0.9;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
+        .dark-feature-v2 .bullet-list-wrapper {
+            display: inline-block;
+            text-align: left;
+            margin: 40px auto;
+        }
+
+        .dark-feature-v2 .bullet-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .dark-feature-v2 .bullet-item::before {
+            content: "";
+            width: 8px;
+            height: 8px;
+            background: #6366f1;
+            border-radius: 50%;
+            flex-shrink: 0;
+            box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+        }
+
+        .dark-feature-v2 .sub-bullet {
+            margin-left: 36px;
+            opacity: 0.8;
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        .dark-feature-v2 .sub-bullet::before {
+            background: #818cf8;
+            width: 6px;
+            height: 6px;
+        }
+
+        @media (max-width: 768px) {
+            .dark-feature-v2 h2 {
+                font-size: 32px;
+            }
+
+            .dark-feature-v2 p {
+                font-size: 18px;
+            }
+
+            .dark-feature-v2 .bullet-item {
+                font-size: 17px;
+            }
+        }
+
+        /* Org Grid Section */
+        .org-grid-section {
+            padding: 100px 0;
+            background: #ffffff;
+            text-align: center;
+        }
+
+        .org-grid-section h2 {
+            font-size: 42px;
+            font-weight: 850;
+            color: #0f172a;
+            margin-bottom: 60px;
+            letter-spacing: -0.02em;
+        }
+
+        .org-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .org-card {
+            background: linear-gradient(180deg, #f0f7ff 0%, #f8faff 100%);
+            padding: 40px 24px;
+            border-radius: 24px;
+            text-align: left;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(79, 70, 229, 0.05);
+            min-height: 240px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .org-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(79, 70, 229, 0.08);
+        }
+
+        .org-card i {
+            font-size: 36px;
+            color: #4F46E5;
+            margin-bottom: 24px;
+            display: block;
+        }
+
+        .org-card h4 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #0f172a;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        .org-footer-text {
+            margin-top: 64px;
+            font-size: 16px;
+            font-weight: 850;
+            color: #0f172a;
+            text-transform: none;
+        }
+
+        /* Complexity Tabs Section */
+        .rp-complexity-section {
+            padding: 100px 0;
+            background: #FFFFFF;
+        }
+
+        .complexity-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .complexity-header h2 {
+            font-size: 42px;
+            font-weight: 850;
+            color: #0F1B3D;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+
+        .complexity-header p {
+            font-size: 18px;
+            color: #475569;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .complexity-tabs-wrapper {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 48px;
+        }
+
+        .complexity-tabs {
+            display: inline-flex;
+            background: #FFFFFF;
+            border: 1px solid #CBD5E1;
+            border-radius: 999px;
+            padding: 4px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .tab-btn {
+            background: transparent;
+            border: none;
+            padding: 14px 32px;
+            font-size: 16px;
+            font-weight: 700;
+            color: #0F1B3D;
+            border-radius: 999px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .tab-btn:hover {
+            color: #4F46E5;
+        }
+
+        .tab-btn.active {
+            background: linear-gradient(90deg, #e0f2fe 0%, #f5f3ff 100%);
+            color: #4F46E5;
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+        }
+
+        .complexity-content-area {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .tab-content {
+            display: none;
+            text-align: left;
+            max-width: 650px;
+            margin: 0 auto;
+            animation: fadeIn 0.4s ease forwards;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .tab-content h3 {
+            font-size: 24px;
+            font-weight: 800;
+            color: #0F1B3D;
+            margin-bottom: 16px;
+        }
+
+        .tab-content p {
+            font-size: 18px;
+            color: #475569;
+            line-height: 1.6;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .org-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 992px) {
+            .complexity-tabs {
+                flex-direction: column;
+                border-radius: 20px;
+                width: 100%;
+            }
+
+            .tab-btn {
+                text-align: center;
+                padding: 16px;
+            }
+
+            .complexity-header h2 {
+                font-size: 32px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .org-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .org-grid-section h2 {
+                font-size: 32px;
+            }
+        }
+
+        /* Celebrity Speeches Section */
+        .celebrity-speeches-section {
+            padding: 100px 0;
+            background: #ffffff;
+        }
+
+        .speeches-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .speeches-visual {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .podium-mockup {
+            background: #f8faff;
+            border-radius: 40px;
+            padding: 80px;
+            width: 100%;
+            max-width: 500px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.02);
+        }
+
+        .podium-icon {
+            font-size: 140px;
+            color: #818cf8;
+            opacity: 0.3;
+        }
+
+        .filler-tag {
+            position: absolute;
+            top: 25%;
+            left: -5%;
+            background: white;
+            padding: 14px 28px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 15px 35px rgba(79, 70, 229, 0.15);
+            border: 1px solid rgba(79, 70, 229, 0.1);
+            animation: float-speeches 3s ease-in-out infinite;
+            z-index: 5;
+        }
+
+        .filler-tag i {
+            width: 36px;
+            height: 36px;
+            background: #4F46E5;
+            color: white;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+        .filler-tag span {
+            font-weight: 800;
+            color: #0f172a;
+            font-size: 18px;
+        }
+
+        .speeches-content {
+            text-align: left;
+        }
+
+        .speeches-content .subtitle {
+            font-size: 13px;
+            font-weight: 800;
+            color: #4F46E5;
+            letter-spacing: 0.1em;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+        }
+
+        .celebrity-list h2 {
+            font-size: 32px;
+            font-weight: 850;
+            color: #050a30;
+            margin-bottom: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            letter-spacing: -0.01em;
+        }
+
+        .celebrity-list h2:hover {
+            color: #4F46E5;
+            transform: translateX(10px);
+        }
+
+        .view-more-link {
+            font-size: 20px;
+            font-weight: 850;
+            color: #050a30;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 24px;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid #050a30;
+            padding-bottom: 2px;
+        }
+
+        .view-more-link:hover {
+            color: #4F46E5;
+            border-bottom-color: #4F46E5;
+            transform: translateX(10px);
+        }
+
+        @keyframes float-speeches {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(-2deg); }
+        }
+
+        @media (max-width: 992px) {
+            .speeches-grid { grid-template-columns: 1fr; gap: 80px; }
+            .speeches-content { text-align: center; }
+            .celebrity-list h2 { font-size: 36px; }
+            .celebrity-list h2:hover { transform: none; }
+            .view-more-link { font-size: 24px; }
+            .view-more-link:hover { transform: none; }
+            .filler-tag { left: 50%; transform: translateX(-50%); top: -30px; }
+        }
+
+        @media (max-width: 640px) {
+            .celebrity-list h2 { font-size: 32px; }
+        }
+
+        /* Social Proof */
+        .social-proof {
+            padding: 100px 0;
+            background: #f8fafc;
+        }
+
+        .sp-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .sp-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .sp-name {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--navy-dark);
+            opacity: 0.8;
+        }
+
+        /* CTA */
+        .cta-box {
+            padding: 120px 0;
+            background: linear-gradient(135deg, #0B0F2F 0%, #1E1B4B 100%);
+            color: white;
+            text-align: center;
+        }
+
+        /* FAQ */
+        .faq-section {
+            padding: 100px 0;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border: 1px solid #f1f5f9;
+            border-radius: 16px;
+            margin-bottom: 12px;
+            padding: 24px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .faq-item:hover {
+            border-color: var(--primary-blue);
+        }
+
+        .faq-q {
+            font-weight: 800;
+            font-size: 18px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-a {
+            padding-top: 16px;
+            color: #64748b;
+            line-height: 1.6;
+            display: none;
+        }
+
+        /* How to use AI V2 */
+        .use-ai-v2 {
+            padding: 120px 0;
+            background: #f8fafc;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .use-ai-v2-grid {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 80px;
+            align-items: start;
+        }
+
+        .use-ai-v2-content h2 {
+            font-size: 44px;
+            font-weight: 850;
+            color: var(--navy-dark);
+            margin-bottom: 24px;
+            line-height: 1.1;
+        }
+
+        .use-ai-v2-content p {
+            font-size: 19px;
+            color: #64748b;
+            line-height: 1.7;
+        }
+
+        .feature-cards-v-list {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .feature-card-v {
+            background: linear-gradient(135deg, #f0f7ff 0%, #e0eaff 100%);
+            padding: 40px;
+            border-radius: 30px;
+            display: flex;
+            gap: 32px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .feature-card-v:hover {
+            transform: translateX(15px);
+            background: white;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.06);
+        }
+
+        .feature-card-v i {
+            font-size: 32px;
+            color: #4f46e5;
+            flex-shrink: 0;
+            padding-top: 6px;
+        }
+
+        .feature-card-v h3 {
+            font-size: 24px;
+            font-weight: 850;
+            color: var(--navy-dark);
+            margin-bottom: 12px;
+        }
+
+        .feature-card-v p {
+            font-size: 17px;
+            color: #475569;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        @media (max-width: 992px) {
+            .use-ai-v2-grid {
+                grid-template-columns: 1fr;
+                gap: 60px;
+                text-align: center;
+            }
+
+            .feature-card-v {
+                flex-direction: column;
+                text-align: center;
+                align-items: center;
+                padding: 30px;
+            }
+
+            .feature-card-v:hover {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Split Wave Section - Public Speaking */
+        .split-wave-section {
+            position: relative;
+            background-color: #ffffff;
+        }
+
+        .wave-divider-top {
+            display: block;
+            width: 100%;
+            height: auto;
+            background-color: #ffffff;
+            margin-bottom: -2px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .wave-divider-top svg {
+            display: block;
+            width: 100%;
+            height: 60px;
+        }
+
+        .wave-top {
+            background-color: #eef2f7;
+            padding: 60px 0 100px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .wave-top h2 {
+            font-size: 44px;
+            font-weight: 850;
+            color: var(--navy-dark);
+            margin-bottom: 32px;
+        }
+
+        .wave-top .intro-box {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .wave-top p {
+            font-size: 18px;
+            color: #475569;
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+
+        .wave-top .highlight-text {
+            font-weight: 800;
+            color: var(--primary-blue);
+        }
+
+        .wave-bottom {
+            padding: 100px 0;
+            background: white;
+            position: relative;
+            z-index: 1;
+        }
+
+        .wave-bottom-eyebrow {
+            text-align: center;
+            font-size: 13px;
+            font-weight: 800;
+            color: #64748b;
+            margin-bottom: 80px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .step-block {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 100px;
+            align-items: center;
+            margin-bottom: 120px;
+        }
+
+        .step-block:nth-child(even) {
+            direction: rtl;
+        }
+
+        .step-block:nth-child(even) .step-content {
+            direction: ltr;
+            text-align: left;
+        }
+
+        .step-block:last-child {
+            margin-bottom: 0;
+        }
+
+        .step-content h3 {
+            font-size: 36px;
+            font-weight: 850;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .step-content h3::before {
+            content: "";
+            width: 4px;
+            height: 32px;
+            background: var(--primary-blue);
+            border-radius: 2px;
+        }
+
+        .step-content p {
+            font-size: 18px;
+            color: #475569;
+            line-height: 1.7;
+        }
+
+        /* Visual Components */
+        .visual-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Audience Visual */
+        .audience-card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+            width: 280px;
+            overflow: hidden;
+            border: 1px solid #f1f5f9;
+        }
+
+        .audience-header {
+            padding: 16px 20px;
+            border-bottom: 1px solid #f1f5f9;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .audience-header span {
+            font-size: 10px;
+            font-weight: 800;
+            color: #94a3b8;
+            text-transform: uppercase;
+        }
+
+        .audience-header i {
+            font-size: 16px;
+            color: #94a3b8;
+        }
+
+        .audience-val {
+            padding: 12px 20px;
+            font-weight: 800;
+            font-size: 18px;
+            color: var(--navy-dark);
+            border-bottom: 2px solid var(--primary-blue);
+        }
+
+        .audience-list {
+            padding: 8px 0;
+        }
+
+        .audience-item {
+            padding: 12px 20px;
+            font-size: 16px;
+            font-weight: 700;
+            color: #475569;
+        }
+
+        .audience-item:first-child {
+            background: #f8fafc;
+        }
+
+        /* Recording Visual */
+        .recording-card {
+            background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 100%);
+            padding: 32px;
+            border-radius: 24px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .avatar-silhouette {
+            width: 80px;
+            height: 80px;
+            background: #c7d2fe;
+            border-radius: 50%;
+            margin: 0 auto 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            color: white;
+            position: relative;
+            z-index: 2;
+        }
+
+        .waveform-bg {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 40px;
+            display: flex;
+            align-items: flex-end;
+            gap: 4px;
+            padding: 0 20px;
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        .waveform-bg div {
+            flex: 1;
+            background: var(--primary-blue);
+            border-radius: 2px;
+        }
+
+        .rec-controls {
+            background: linear-gradient(90deg, #3b82f6, #6366f1);
+            border-radius: 30px;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            color: white;
+            font-weight: 700;
+            font-size: 15px;
+            box-shadow: 0 15px 30px rgba(59, 130, 246, 0.4);
+            margin: 0 auto;
+            width: fit-content;
+            position: relative;
+            z-index: 2;
+        }
+
+        .rec-controls .pulse {
+            width: 10px;
+            height: 10px;
+            background: white;
+            border-radius: 50%;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.3;
+                transform: scale(0.8);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Feedback Visual */
+        .feedback-visual-card {
+            background: white;
+            padding: 40px;
+            border-radius: 24px;
+            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.12);
+            width: 240px;
+            text-align: center;
+            border: 1px solid #f1f5f9;
+            position: relative;
+        }
+
+        .trophy-icon {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            color: white;
+            font-size: 32px;
+            box-shadow: 0 15px 30px rgba(245, 158, 11, 0.3);
+        }
+
+        .filler-label {
+            font-size: 11px;
+            font-weight: 800;
+            color: #94a3b8;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            letter-spacing: 0.05em;
+        }
+
+        .filler-val {
+            font-size: 56px;
+            font-weight: 850;
+            color: var(--navy-dark);
+            margin-bottom: 16px;
+            line-height: 1;
+        }
+
+        .trend-tag {
+            background: #3b82f6;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+        }
+
+        /* Striped Background Visual */
+        .stripes-bg {
+            position: absolute;
+            top: -50px;
+            left: -100px;
+            width: 300px;
+            height: 300px;
+            opacity: 0.1;
+            pointer-events: none;
+        }
+
+        .stripes-bg div {
+            width: 10px;
+            height: 100%;
+            background: var(--primary-blue);
+            transform: rotate(30deg);
+            display: inline-block;
+            margin-right: 15px;
+            border-radius: 5px;
+        }
+
+        .btn-gradient-pill {
+            background: linear-gradient(90deg, #0ea5e9, #6366f1);
+            color: white !important;
+            padding: 18px 48px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 850;
+            display: inline-block;
+            text-decoration: none;
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-gradient-pill:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(59, 130, 246, 0.4);
+            filter: brightness(1.1);
+        }
+
+        /* Decorative Blobs */
+
+        /* Decorative Blobs */
+        .blob {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.12;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .blob-1 {
+            background: #3b82f6;
+            top: 20%;
+            right: -10%;
+        }
+
+        .blob-2 {
+            background: #6366f1;
+            bottom: 20%;
+            left: -10%;
+        }
+
+        /* Scroll Animations */
+        [data-aos] {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        [data-aos].aos-animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+    </style>
+</head>
+
+<body>
+    <main>
+        <!-- Hero Section -->
+        <section class="speaking-hero">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <span class="eyebrow">MASTER THE STAGE. COMMAND THE ROOM.</span>
+                    <h1>Public <br><span style="color: var(--primary-blue);">Speaking</span></h1>
+                    <p>Whether it's a keynote address, a board presentation, or a media interview, Yoodli helps you
+                        practice your delivery and receive instant, AI-powered feedback on your presence and impact.</p>
+                    <a href="../app.html" class="btn btn-primary-pill"
+                        style="background: var(--primary-blue); padding: 18px 40px; font-size: 18px;">Start practicing
+                        now</a>
+                </div>
+                <div class="hero-visual">
+                    <div class="visual-avatar">
+                        <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?q=80&w=800&auto=format&fit=crop"
+                            alt="Speaker">
+                    </div>
+                    <div class="floating-card" style="top: 20px; right: -20px;">
+                        <i class="ph-fill ph-chart-bar" style="color: #3b82f6;"></i>
+                        <span>Score: 92%</span>
+                    </div>
+                    <div class="floating-card" style="bottom: 40px; left: -40px;">
+                        <i class="ph-fill ph-lightning" style="color: #f59e0b;"></i>
+                        <span>Pacing: Balanced</span>
+                    </div>
+                    <div class="floating-card" style="top: 140px; left: -60px; background: #f0fdf4; color: #166534;">
+                        <i class="ph-fill ph-eye"></i>
+                        <span>Great Eye Contact</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Split Wave Section -->
+        <section class="split-wave-section">
+            <!-- Wave Divider at the Top -->
+            <div class="wave-divider-top">
+                <svg viewBox="0 0 1440 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+                    <path fill="#eef2f7" d="M0,100 C480,0 960,0 1440,100 L1440,100 L0,100 Z"></path>
+                </svg>
+            </div>
+
+            <!-- Top Section (Light Blue) -->
+            <div class="wave-top">
+                <div class="container intro-box">
+                    <h2>What is AI-powered public speaking training?</h2>
+                    <p>AI-powered public speaking training helps individuals improve delivery through realistic practice
+                        and structured feedback.</p>
+                    <p>With Yoodli, leaders and professionals rehearse presentations, keynotes, board updates, investor
+                        briefings, and internal communications. Each session is evaluated against defined standards,
+                        providing objective insight into pacing, clarity, filler words, structure, and overall presence.
+                    </p>
+                    <p class="highlight-text">The result is clearer communication and stronger executive confidence.</p>
+                </div>
+            </div>
+
+            <!-- Bottom Section (White) -->
+            <div class="wave-bottom">
+                <div class="blob blob-1"></div>
+                <div class="blob blob-2"></div>
+                <div class="container">
+                    <p class="wave-bottom-eyebrow">HOW YOODLI WORKS</p>
+
+                    <!-- Step 1 -->
+                    <div class="step-block" data-aos="fade-up">
+                        <div class="visual-container">
+                            <div class="stripes-bg">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                            <div class="audience-card">
+                                <div class="audience-header">
+                                    <span>Audience</span>
+                                    <i class="ph ph-magnifying-glass"></i>
+                                </div>
+                                <div class="audience-val">Peers</div>
+                                <div class="audience-list">
+                                    <div class="audience-item">Behavioral</div>
+                                    <div class="audience-item">Technical</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="step-content">
+                            <h3>Choose your audience</h3>
+                            <p>Nhấn mạnh khả năng cá nhân hóa đối tượng cho bài thuyết trình của bạn (đồng nghiệp, kỹ
+                                thuật, kinh doanh...). Chuẩn bị kỹ lưỡng cho mọi bối cảnh giao tiếp thực tế.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="step-block" data-aos="fade-up">
+                        <div class="visual-container">
+                            <div class="recording-card">
+                                <div class="avatar-silhouette">
+                                    <i class="ph-fill ph-user"></i>
+                                </div>
+                                <div class="rec-controls">
+                                    <div class="pulse"></div>
+                                    <span>00:12</span>
+                                    <i class="ph-fill ph-pause"></i>
+                                    <i class="ph-fill ph-stop"></i>
+                                </div>
+                                <div class="waveform-bg">
+                                    <div style="height: 60%;"></div>
+                                    <div style="height: 80%;"></div>
+                                    <div style="height: 40%;"></div>
+                                    <div style="height: 100%;"></div>
+                                    <div style="height: 70%;"></div>
+                                    <div style="height: 50%;"></div>
+                                    <div style="height: 90%;"></div>
+                                    <div style="height: 60%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="step-content">
+                            <h3>Practice your speech</h3>
+                            <p>Hãy luyện tập bài diễn thuyết của bạn một cách tự nhiên. Sau khi kết thúc, bạn có thể lựa
+                                chọn nhận các câu hỏi theo dõi thông minh từ AI để rèn luyện khả năng ứng biến.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="step-block" data-aos="fade-up">
+                        <div class="visual-container">
+                            <div class="feedback-visual-card">
+                                <div class="trophy-icon">
+                                    <i class="ph-fill ph-trophy"></i>
+                                </div>
+                                <div class="filler-label">FILLER WORDS</div>
+                                <div class="filler-val">2%</div>
+                                <div class="trend-tag">
+                                    <i class="ph-fill ph-arrow-down"></i> Lower than last week
+                                </div>
+                            </div>
+                        </div>
+                        <div class="step-content">
+                            <h3>Receive instant feedback</h3>
+                            <p>Hệ thống tự động tạo báo cáo phân tích chi tiết về nhịp độ, độ rõ ràng, các từ thừa và
+                                cung cấp những gợi ý hành động cụ thể để bạn cải thiện ngay lập tức.</p>
+                        </div>
+                    </div>
+
+                    <!-- Centered CTA Button -->
+                    <div style="text-align: center; margin-top: 100px;" data-aos="fade-up">
+                        <a href="../app.html" class="btn-gradient-pill">Get started for free</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How to use AI V2 -->
+        <section class="use-ai-v2">
+            <div class="container use-ai-v2-grid">
+                <div class="use-ai-v2-content" data-aos="fade-right">
+                    <h2>How to use AI for public speaking and leadership development</h2>
+                    <p>Organizations use AI in leadership and communication development in three primary ways:</p>
+                </div>
+                <div class="feature-cards-v-list">
+                    <!-- Card 1 -->
+                    <div class="feature-card-v" data-aos="fade-left">
+                        <i class="ph-bold ph-play-circle"></i>
+                        <div class="feature-card-v-text">
+                            <h3>Rehearse high-stakes presentations</h3>
+                            <p>Executives and managers practice real presentations before delivering them live.
+                                Messaging is refined and delivery strengthened through repetition.</p>
+                        </div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="feature-card-v" data-aos="fade-left" style="transition-delay: 0.1s;">
+                        <i class="ph-bold ph-lightning"></i>
+                        <div class="feature-card-v-text">
+                            <h3>Receive structured, objective feedback</h3>
+                            <p>After each session, speakers receive feedback on pacing, tone, clarity, and effectiveness
+                                aligned to organizational expectations.</p>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="feature-card-v" data-aos="fade-left" style="transition-delay: 0.2s;">
+                        <i class="ph-bold ph-arrow-counter-clockwise"></i>
+                        <div class="feature-card-v-text">
+                            <h3>Reinforce development over time</h3>
+                            <p>Leaders continue practicing between coaching sessions to build lasting communication
+                                habits. This creates a consistent system for leadership communication development, not a
+                                one-time workshop.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Snowflake Video Section -->
+        <section class="rp-video-section">
+            <div class="video-bg-pattern">
+                <div class="stripe s1"></div>
+                <div class="stripe s2"></div>
+                <div class="stripe s3"></div>
+                <div class="stripe s4"></div>
+                <div class="stripe s5"></div>
+                <div class="stripe s6"></div>
+            </div>
+            <div class="container" style="position: relative; z-index: 2;">
+                <div class="video-header">
+                    <h2>Snowflake's AI Roleplay Results</h2>
+                    <p>1,200+ Manager hours saved per quarter through practice at scale</p>
+                </div>
+
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/DJlYLmGjyuM?si=Jt9z0M2QcOQY2S2e"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Roleplays Dark Section -->
+        <section class="dark-feature-v2">
+            <div class="container" data-aos="fade-up">
+                <h2>AI roleplays for public speaking and executive presence</h2>
+                <p>AI roleplays provide realistic preparation for complex speaking environments.</p>
+                <p style="opacity: 0.7;">Yoodli enables teams to:</p>
+
+                <div class="bullet-list-wrapper">
+                    <div class="bullet-item">Practice board presentations and executive reviews</div>
+                    <div class="bullet-item sub-bullet">Rehearse earnings calls and investor updates</div>
+                    <div class="bullet-item">Prepare for internal town halls and company meetings</div>
+                    <div class="bullet-item sub-bullet">Simulate Q&A with challenging stakeholders</div>
+                    <div class="bullet-item sub-bullet">Strengthen storytelling and message clarity</div>
+                </div>
+
+                <p style="margin-top: 20px; opacity: 0.9; max-width: 800px; margin-left: auto; margin-right: auto;">
+                    Each session is evaluated using defined criteria so improvement is measurable and visible over time.
+                </p>
+            </div>
+        </section>
+
+        <!-- Built for Leadership Grid Section -->
+        <section class="org-grid-section">
+            <div class="container">
+                <h2 data-aos="fade-up">Built for leadership and enterprise environments</h2>
+                <div class="org-grid">
+                    <div class="org-card" data-aos="fade-up" data-aos-delay="100">
+                        <i class="ph-bold ph-target"></i>
+                        <h4>Custom scenarios aligned to company strategy and messaging</h4>
+                    </div>
+                    <div class="org-card" data-aos="fade-up" data-aos-delay="200">
+                        <i class="ph-bold ph-list-checks"></i>
+                        <h4>Structured evaluation aligned to leadership standards</h4>
+                    </div>
+                    <div class="org-card" data-aos="fade-up" data-aos-delay="300">
+                        <i class="ph-bold ph-chart-bar"></i>
+                        <h4>Admin visibility into progress and development trends</h4>
+                    </div>
+                    <div class="org-card" data-aos="fade-up" data-aos-delay="400">
+                        <i class="ph-bold ph-shield-check"></i>
+                        <h4>Secure, enterprise-ready deployment</h4>
+                    </div>
+                </div>
+                <p class="org-footer-text" data-aos="fade-up">Communication development becomes structured and scalable.
+                </p>
+            </div>
+        </section>
+
+
+        <!-- CTA Section -->
+        <section class="cta-box">
+            <div class="container">
+                <h2 style="font-size: 44px; font-weight: 850; margin-bottom: 24px;">Ready to own the stage?</h2>
+                <p style="font-size: 18px; opacity: 0.8; margin-bottom: 40px; max-width: 600px; margin: 0 auto;">Join
+                    thousands of speakers who are using Yoodli to elevate their communication skills.</p>
+                <a href="../app.html" class="btn btn-primary-pill"
+                    style="background: white; color: var(--navy-dark); padding: 18px 40px; font-size: 18px; font-weight: 800;">Get
+                    started for free</a>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="container">
+                <h2 style="text-align: center; font-size: 40px; font-weight: 850; margin-bottom: 60px;">Câu hỏi thường
+                    gặp</h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-q">Yoodli có giúp tôi bớt run không? <i class="ph ph-caret-down"></i></div>
+                        <div class="faq-a">Chắc chắn. Nỗi sợ hãi thường đến từ sự không chắc chắn. Bằng cách luyện tập
+                            nhiều lần với AI và thấy được điểm số của mình cải thiện, bạn sẽ cảm thấy tự tin hơn nhiều
+                            khi bước lên sân khấu thật.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-q">Tôi có thể luyện tập bài nói dài bao lâu? <i class="ph ph-caret-down"></i>
+                        </div>
+                        <div class="faq-a">Yoodli hỗ trợ ghi âm các bài nói từ vài phút đến hơn một tiếng đồng hồ, phù
+                            hợp cho cả các buổi thuyết trình ngắn và các bài keynote dài.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-q">AI có đánh giá được sự hài hước không? <i class="ph ph-caret-down"></i></div>
+                        <div class="faq-a">Yoodli có thể phân tích phản ứng và tông giọng của bạn, nhưng quan trọng hơn
+                            là nó giúp bạn đảm bảo các câu nói hài hước được đưa ra với tốc độ và sự nhấn nhá chính xác
+                            nhất.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Celebrity Speeches Section -->
+        <section class="celebrity-speeches-section">
+            <div class="container speeches-grid">
+                <div class="speeches-visual" data-aos="fade-right">
+                    <div class="podium-mockup">
+                        <i class="ph-bold ph-microphone-stage podium-icon"></i>
+                        <div class="filler-tag">
+                            <i class="ph-bold ph-waveform"></i>
+                            <span>5% filler words</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="speeches-content" data-aos="fade-left">
+                    <p class="subtitle">SEE SAMPLE SPEECHES FROM FAMOUS CELEBRITIES</p>
+                    <div class="celebrity-list">
+                        <h2>Kim Kardashian</h2>
+                        <h2>Barack Obama</h2>
+                        <h2>Steve Jobs</h2>
+                        <a href="#" class="view-more-link">View more</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="../master_layout.js"></script>
+    <script>
+        // FAQ Toggle
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const a = item.querySelector('.faq-a');
+                const icon = item.querySelector('.ph');
+                const isOpen = a.style.display === 'block';
+
+                document.querySelectorAll('.faq-a').forEach(oa => oa.style.display = 'none');
+                document.querySelectorAll('.ph-caret-up').forEach(oi => { oi.classList.replace('ph-caret-up', 'ph-caret-down'); });
+
+                if (!isOpen) {
+                    a.style.display = 'block';
+                    icon.classList.replace('ph-caret-down', 'ph-caret-up');
+                }
+            });
+        });
+
+        // Simple Intersection Observer for Animations
+        const observerOptions = { threshold: 0.2 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('aos-animate');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('[data-aos]').forEach(el => observer.observe(el));
+
+        // Complexity Tabs Logic
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active from all tabs
+                document.querySelectorAll('.tab-btn').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+
+                // Add active to clicked
+                btn.classList.add('active');
+                const target = document.getElementById(btn.getAttribute('data-target'));
+                target.classList.add('active');
+            });
+        });
+    </script>
+</body>
+
+</html>

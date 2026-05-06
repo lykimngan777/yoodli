@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Training | Yoodli AI</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        :root {
+            --primary-blue: #3B82F6;
+            --secondary-grad: linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%);
+            --navy-dark: #0B0F2F;
+            --bg-light: #F8FAFC;
+            --radius-xl: 24px;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #1E293B;
+            background: white;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Hero Section */
+        .sales-hero {
+            padding: 140px 0 100px;
+            background: #ffffff;
+            overflow: hidden;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .eyebrow {
+            font-size: 13px;
+            font-weight: 700;
+            color: #64748B;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 24px;
+            display: block;
+        }
+
+        .hero-title {
+            font-size: 56px;
+            font-weight: 850;
+            line-height: 1.1;
+            margin-bottom: 32px;
+            color: var(--navy-dark);
+        }
+
+        .hero-p {
+            font-size: 20px;
+            color: #475569;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .hero-visual {
+            position: relative;
+            z-index: 1;
+        }
+
+        .mockup-main {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 40px 100px rgba(0, 0, 0, 0.1);
+            padding: 24px;
+            border: 1px solid #f1f5f9;
+        }
+
+        .floating-card {
+            position: absolute;
+            background: white;
+            padding: 16px;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        /* Use Case Section */
+        .use-case-section {
+            padding: 100px 0;
+            background: var(--bg-light);
+        }
+
+        .use-case-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 100px;
+            align-items: flex-start;
+        }
+
+        .stacked-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .uc-card {
+            background: white;
+            padding: 32px;
+            border-radius: 24px;
+            display: flex;
+            gap: 24px;
+            align-items: flex-start;
+            transition: transform 0.3s ease;
+            border: 1px solid #f1f5f9;
+        }
+
+        .uc-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .uc-icon {
+            width: 56px;
+            height: 56px;
+            background: #eff6ff;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .uc-icon i {
+            font-size: 24px;
+            color: var(--primary-blue);
+        }
+
+        /* Split Wave Section */
+        .split-wave-section {
+            position: relative;
+        }
+
+        .wave-top {
+            background-color: #eef2f7;
+            padding: 40px 20px 60px;
+            text-align: center;
+        }
+
+        .wave-divider-top {
+            display: block;
+            width: 100%;
+            height: auto;
+            background-color: transparent;
+            margin-top: -59px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .wave-divider-top svg {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .wave-top h2 {
+            font-size: 38px;
+            font-weight: 800;
+            color: #0f1b3d;
+            margin-bottom: 24px;
+        }
+
+        .wave-top .subtext {
+            font-size: 18px;
+            color: #5b6b8c;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto 32px;
+        }
+
+        .wave-top .bullet-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 auto;
+            max-width: 400px;
+            display: inline-block;
+            text-align: left;
+        }
+
+        .wave-top .bullet-list li {
+            font-size: 16px;
+            color: #5b6b8c;
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 20px;
+            font-weight: 500;
+        }
+
+        .wave-top .bullet-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 6px;
+            height: 6px;
+            background-color: #3b82f6;
+            border-radius: 50%;
+        }
+
+        .wave-top .highlight-line {
+            font-size: 18px;
+            font-weight: 700;
+            color: #0f1b3d;
+            margin-top: 32px;
+        }
+
+        .wave-divider {
+            display: block;
+            width: 100%;
+            height: auto;
+            background-color: #eef2f7;
+            /* Match Top bg */
+            margin-top: -1px;
+            /* prevent rendering gap */
+        }
+
+        .wave-divider svg {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .wave-bottom {
+            background-color: #0b1b3f;
+            padding: 40px 20px 100px;
+            text-align: center;
+        }
+
+        .wave-bottom h2 {
+            font-size: 36px;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 16px;
+        }
+
+        .wave-bottom .subtext {
+            font-size: 16px;
+            color: #c7d2fe;
+            margin-bottom: 60px;
+        }
+
+        .wave-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .wave-card {
+            background: linear-gradient(180deg, #dbeafe 0%, #e0e7ff 100%);
+            border-radius: 20px;
+            padding: 28px;
+            text-align: left;
+        }
+
+        .wave-card-icon {
+            margin-bottom: 16px;
+        }
+
+        .wave-card-icon i {
+            font-size: 28px;
+            color: #4f46e5;
+        }
+
+        .wave-card p {
+            font-size: 16px;
+            font-weight: 600;
+            color: #0f1b3d;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        .wave-bottom-statement {
+            font-size: 16px;
+            color: #e5e7eb;
+            font-weight: 500;
+            margin-top: 60px;
+        }
+
+        /* Leader Slider Section Refined */
+        .coaching-leader-section {
+            background-color: #F8FAFC !important;
+            padding: 120px 0;
+        }
+
+        .outcome-visual {
+            height: 380px;
+            border-radius: 24px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #2563eb 0%, #06b6d4 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 20px 40px rgba(37, 99, 235, 0.2);
+        }
+
+        /* Mockup elements */
+        .mockup-video-ui {
+            width: 80%;
+            height: 70%;
+            background: white;
+            border-radius: 16px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .video-avatar {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .badge-tag {
+            position: absolute;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .tag-green {
+            background: #f0fdf4;
+            color: #16a34a;
+            border: 1px solid #dcfce7;
+        }
+
+        .tag-red {
+            background: #fef2f2;
+            color: #dc2626;
+            border: 1px solid #fee2e2;
+        }
+
+        .video-controls {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 12px 20px;
+            background: rgba(255, 255, 255, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .btn-done-small {
+            background: #0f172a;
+            color: white;
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 12px;
+        }
+
+        .mockup-cards-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            width: 80%;
+        }
+
+        .m-card {
+            background: white;
+            padding: 16px 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .m-label {
+            font-size: 11px;
+            color: #64748b;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .m-value {
+            font-size: 16px;
+            color: #0f172a;
+            font-weight: 800;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .mockup-dash-ui {
+            width: 85%;
+            height: 75%;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 24px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .dash-main-av {
+            width: 140px;
+            height: 140px;
+            background: #4f46e5;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .dash-side-avs {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .side-av {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+        }
+
+        .mockup-analytics {
+            width: 85%;
+            background: white;
+            border-radius: 20px;
+            padding: 24px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-header {
+            font-size: 14px;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .stat-bar-box {
+            background: #f8fafc;
+            padding: 16px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+
+        .spider-chart-box {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            border: 1px solid #f1f5f9;
+            border-radius: 12px;
+        }
+
+        .slider-navigation .progress-segment {
+            background-color: #e2e8f0 !important;
+            width: 80px;
+            height: 6px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .slider-navigation .progress-fill {
+            background-color: #1e293b !important;
+            height: 100%;
+            width: 0;
+        }
+
+
+
+
+
+        /* Feature List Section */
+        .feature-split {
+            padding: 120px 0;
+            background: var(--bg-light);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 100px;
+            align-items: center;
+        }
+
+        .feature-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .feat-item {
+            background: white;
+            padding: 24px 32px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-weight: 700;
+            color: #475569;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 1px solid transparent;
+        }
+
+        .feat-item:hover,
+        .feat-item.active {
+            color: var(--primary-blue);
+            background: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border-color: #dbeafe;
+        }
+
+        .feat-item i {
+            font-size: 24px;
+        }
+
+        /* Video Section Snowflake Style */
+        .rp-video-section {
+            padding: 100px 0;
+            position: relative;
+            background: #ffffff;
+            overflow: hidden;
+        }
+
+        .video-bg-pattern {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40%;
+            height: 100%;
+            display: flex;
+            gap: 20px;
+            transform: skewX(-20deg) translateX(100px);
+            z-index: 1;
+            opacity: 0.15;
+        }
+
+        .video-bg-pattern .stripe {
+            width: 40px;
+            height: 100%;
+            background: var(--primary-blue);
+            border-radius: 20px;
+        }
+
+        .video-bg-pattern .stripe.s2 {
+            height: 80%;
+            margin-top: 10%;
+        }
+
+        .video-bg-pattern .stripe.s3 {
+            height: 60%;
+            margin-top: 20%;
+            background: #8B5CF6;
+        }
+
+        .video-bg-pattern .stripe.s4 {
+            height: 90%;
+            margin-top: 5%;
+        }
+
+        .video-bg-pattern .stripe.s5 {
+            height: 70%;
+            margin-top: 15%;
+            background: #8B5CF6;
+        }
+
+        .video-header {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .video-header h2 {
+            font-size: 40px;
+            font-weight: 850;
+            color: var(--navy-dark);
+            margin-bottom: 16px;
+        }
+
+        .video-header p {
+            font-size: 18px;
+            color: #64748b;
+        }
+
+        .video-container-new {
+            max-width: 900px;
+            margin: 0 auto;
+            border-radius: 32px;
+            overflow: hidden;
+            box-shadow: 0 40px 80px rgba(11, 15, 47, 0.15);
+            aspect-ratio: 16/9;
+            background: #000;
+            position: relative;
+            z-index: 2;
+            border: 8px solid white;
+        }
+
+        .video-container-new iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* CTA Section */
+        .cta-dark {
+            padding: 120px 0;
+            background: linear-gradient(135deg, #0B0F2F 0%, #1E1B4B 100%);
+            color: white;
+            text-align: center;
+        }
+
+        /* FAQ */
+        .faq-section {
+            padding: 120px 0;
+            background: white;
+        }
+
+        .faq-list {
+            max-width: 800px;
+            margin: 60px auto 0;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #e2e8f0;
+            padding: 24px 0;
+        }
+
+        .faq-q {
+            font-weight: 800;
+            font-size: 18px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-a {
+            padding-top: 16px;
+            color: #64748b;
+            line-height: 1.6;
+            display: none;
+        }
+
+        @media (max-width: 992px) {
+
+            .hero-grid,
+            .use-case-grid,
+            .roleplay-grid,
+            .feature-grid {
+                grid-template-columns: 1fr;
+                gap: 60px;
+                text-align: center;
+            }
+
+            .comp-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .btn-group {
+                justify-content: center;
+            }
+
+            .uc-card {
+                text-align: left;
+            }
+
+            .wave-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                padding: 0 20px;
+            }
+
+            .wave-top h2 {
+                font-size: 28px;
+            }
+
+            .wave-bottom h2 {
+                font-size: 26px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <!-- Hero Section -->
+        <section class="sales-hero">
+            <div class="container hero-grid">
+                <div class="hero-content">
+                    <span class="eyebrow">TAKE SALES TRAINING INTO HIGH-VALUE PERFORMANCE</span>
+                    <h1 class="hero-title">Turn Knowledge Into <span
+                            style="color: var(--primary-blue);">Execution</span></h1>
+                    <p class="hero-p">Most sales training stops at knowledge transfer. Yoodli ensures that knowledge
+                        leads to action through AI-powered practice, instant feedback, and objective measurements.</p>
+                    <div class="btn-group">
+                        <a href="../app.html" class="btn btn-primary-pill"
+                            style="background: var(--primary-blue); padding: 18px 40px; font-size: 18px;">See Yoodli in
+                            action</a>
+                        <a href="../app.html" class="btn btn-secondary-pill"
+                            style="padding: 18px 40px; font-size: 18px; border: 1px solid #e2e8f0;">Try for free</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="mockup-main">
+                        <img src="https://yoodli.ai/images/dashboard-hero.png" alt="Yoodli Dashboard"
+                            style="width: 100%; border-radius: 12px;">
+                    </div>
+                    <div class="floating-card" style="top: -20px; right: -40px;">
+                        <i class="ph-fill ph-chat-circle-dots" style="color: #3b82f6;"></i>
+                        <span>Objection Handled</span>
+                    </div>
+                    <div class="floating-card" style="bottom: 40px; left: -60px;">
+                        <i class="ph-fill ph-waveform" style="color: #8b5cf6;"></i>
+                        <span>Tone: Confident</span>
+                    </div>
+                    <div class="floating-card"
+                        style="top: 140px; left: -40px; background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0;">
+                        <i class="ph-fill ph-check-circle"></i>
+                        <span>Concise Language</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Use Case Section -->
+        <section class="use-case-section">
+            <div class="container use-case-grid">
+                <div class="uc-content">
+                    <h2 class="section-title" style="font-size: 44px; font-weight: 850; margin-bottom: 24px;">Scale your
+                        sales training with AI</h2>
+                    <p style="font-size: 18px; color: #64748b; line-height: 1.6;">Move from passive learning to active
+                        mastery. Yoodli provides a safe space for reps to practice and refine their skills until they're
+                        client-ready.</p>
+                </div>
+                <div class="stacked-cards">
+                    <div class="uc-card">
+                        <div class="uc-icon"><i class="ph ph-users-three"></i></div>
+                        <div>
+                            <h3 style="font-size: 20px; font-weight: 800; margin-bottom: 12px;">AI roleplays for
+                                realistic practice</h3>
+                            <p style="color: #64748b; line-height: 1.6;">Reps practice with AI personas that react like
+                                real prospects, allowing them to handle objections and refine messaging.</p>
+                        </div>
+                    </div>
+                    <div class="uc-card">
+                        <div class="uc-icon"><i class="ph ph-lightning"></i></div>
+                        <div>
+                            <h3 style="font-size: 20px; font-weight: 800; margin-bottom: 12px;">Immediate, personalized
+                                feedback</h3>
+                            <p style="color: #64748b; line-height: 1.6;">No more waiting for manager reviews. AI
+                                provides instant metrics on filler words, pacing, and message clarity.</p>
+                        </div>
+                    </div>
+                    <div class="uc-card">
+                        <div class="uc-icon"><i class="ph ph-arrows-clockwise"></i></div>
+                        <div>
+                            <h3 style="font-size: 20px; font-weight: 800; margin-bottom: 12px;">Continuous reinforcement
+                            </h3>
+                            <p style="color: #64748b; line-height: 1.6;">Keep skills sharp with daily practice sessions
+                                and automatic certification workflows for new product launches.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Split Wave Section -->
+        <section class="split-wave-section">
+            <!-- Top Wave Divider (Dome curve up into hero) -->
+            <div class="wave-divider-top">
+                <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
+                    style="display:block; width:100%; height:60px;">
+                    <path fill="#eef2f7" d="M0,60 C480,0 960,0 1440,60 L1440,60 L0,60 Z"></path>
+                </svg>
+            </div>
+
+            <!-- Top Section (Light) -->
+            <div class="wave-top">
+                <div class="container">
+                    <h2>Tại sao kỹ năng bị mai một nếu không được củng cố</h2>
+                    <p class="subtext">Hầu hết các chương trình đào tạo chỉ diễn ra trong thời gian ngắn.<br>Đội ngũ tham
+                        gia huấn luyện, thực hành qua loa, và sau đó sự tập trung lại quay về với công việc hàng ngày.</p>
+
+                    <p style="color: #5b6b8c; font-size: 16px; margin-bottom: 16px;">Theo thời gian:</p>
+                    <ul class="bullet-list">
+                        <li>Kỹ năng phai nhạt</li>
+                        <li>Thông điệp đi chệch hướng</li>
+                        <li>Sự tự tin sụt giảm</li>
+                        <li>Hiệu suất không đồng đều giữa các quản lý hay khu vực</li>
+                    </ul>
+
+                    <p class="highlight-line">Nếu không được củng cố liên tục, những cải thiện sẽ rất khó để duy trì.</p>
+                </div>
+            </div>
+
+            <!-- Wave Divider -->
+            <div class="wave-divider">
+                <svg viewBox="0 0 1440 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
+                    style="display:block; width:100%; height:60px;">
+                    <path fill="#0b1b3f" d="M0,0 C480,100 960,100 1440,0 L1440,100 L0,100 Z"></path>
+                </svg>
+            </div>
+
+            <!-- Bottom Section (Dark) -->
+            <div class="wave-bottom">
+                <div class="container">
+                    <h2>Huấn luyện liên tục được tích hợp vào cách đội ngũ làm việc</h2>
+                    <p class="subtext">Huấn luyện liên tục AI mở rộng việc học tập ra ngoài các chương trình chính thức.</p>
+
+                    <div class="wave-grid">
+                        <!-- Card 1 -->
+                        <div class="wave-card">
+                            <div class="wave-card-icon">
+                                <i class="ph ph-git-branch"></i>
+                            </div>
+                            <p>Thúc đẩy thực hành liên tục phù hợp với các ưu tiên đang thay đổi</p>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="wave-card">
+                            <div class="wave-card-icon">
+                                <i class="ph ph-arrows-clockwise"></i>
+                            </div>
+                            <p>Củng cố các hành vi cốt lõi thông qua việc lặp lại</p>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="wave-card">
+                            <div class="wave-card-icon">
+                                <i class="ph ph-lightning"></i>
+                            </div>
+                            <p>Đảm bảo phản hồi luôn nhất quán, khách quan và có tính thực thi</p>
+                        </div>
+                    </div>
+
+                    <p class="wave-bottom-statement">Thay vì phụ thuộc vào trí nhớ, đội ngũ xây dựng những thói quen bền
+                        vững thông qua việc củng cố thường xuyên. Đây là cách giúp kỹ năng được lưu giữ.</p>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+        <!-- Snowflake Video Section -->
+        <section class="rp-video-section">
+            <div class="video-bg-pattern">
+                <div class="stripe s1"></div>
+                <div class="stripe s2"></div>
+                <div class="stripe s3"></div>
+                <div class="stripe s4"></div>
+                <div class="stripe s5"></div>
+                <div class="stripe s6"></div>
+            </div>
+            <div class="container">
+                <div class="video-header">
+                    <h2>Snowflake's AI Roleplay Results</h2>
+                    <p>1,200+ Manager hours saved per quarter through practice at scale</p>
+                </div>
+
+                <div class="video-container-new">
+                    <iframe src="https://www.youtube.com/embed/DJlYLmGjyuM?si=Jt9z0M2QcOQY2S2e"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feature List Section -->
+        <section class="feature-split">
+            <div class="container feature-grid">
+                <div class="feature-stack">
+                    <div class="feat-item active">
+                        <i class="ph ph-user-focus"></i>
+                        <span>Custom Personas</span>
+                    </div>
+                    <div class="feat-item">
+                        <i class="ph ph-map-trifold"></i>
+                        <span>Methodology Mapping</span>
+                    </div>
+                    <div class="feat-item">
+                        <i class="ph ph-certificate"></i>
+                        <span>Certification Workflows</span>
+                    </div>
+                    <div class="feat-item">
+                        <i class="ph ph-presentation-chart"></i>
+                        <span>Team Dashboards</span>
+                    </div>
+                    <div class="feat-item">
+                        <i class="ph ph-plugs-connected"></i>
+                        <span>Sales Stack Integrations</span>
+                    </div>
+                </div>
+                <div class="feat-content">
+                    <h2 style="font-size: 44px; font-weight: 850; margin-bottom: 24px;">Built for modern sales
+                        organizations</h2>
+                    <p style="font-size: 18px; color: #64748b; line-height: 1.7;">Yoodli doesn't just provide AI; we
+                        provide a platform that integrates into your existing sales methodology, whether it's MEDDIC,
+                        Challenger, or Sandler.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-dark">
+            <div class="container">
+                <h2 style="font-size: 48px; font-weight: 850; margin-bottom: 32px;">Transform sales training with AI</h2>
+                <div style="max-width: 850px; margin: 0 auto 48px;">
+                    <p style="font-size: 20px; opacity: 0.9; margin-bottom: 24px; font-weight: 500;">AI sales training isn't about replacing managers. It's about amplifying them.</p>
+                    <p style="font-size: 20px; opacity: 0.9; margin-bottom: 24px; font-weight: 500;">Yoodli gives every rep access to structured, realistic practice and objective feedback, while leaders gain visibility into readiness across the organization.</p>
+                    <p style="font-size: 20px; opacity: 0.9; font-weight: 500;">If performance in live conversations drives revenue, practice must come first.</p>
+                </div>
+                <a href="../app.html" class="btn btn-primary-pill"
+                    style="background: linear-gradient(90deg, #38bdf8 0%, #6366f1 100%); color: white; padding: 20px 48px; font-size: 20px; font-weight: 800; border: none;">See Yoodli in action</a>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="container">
+                <h2 style="text-align: center; font-size: 40px; font-weight: 850;">Frequently asked questions about AI
+                    sales training</h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-q">What is AI sales training? <i class="ph ph-plus"></i></div>
+                        <div class="faq-a">AI sales training uses artificial intelligence to simulate real sales
+                            conversations, providing a safe and scalable environment for reps to practice, receive
+                            feedback, and improve their skills without needing a human coach for every session.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-q">What is the ROI of AI sales training? <i class="ph ph-plus"></i></div>
+                        <div class="faq-a">Companies using Yoodli report faster ramp times for new hires, higher quota
+                            attainment, and thousands of hours saved in manager coaching time.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-q">Are AI roleplays effective for sales training? <i class="ph ph-plus"></i>
+                        </div>
+                        <div class="faq-a">Yes, research shows that active practice is significantly more effective than
+                            passive learning. Yoodli's AI provides realistic, high-fidelity simulations that mirror
+                            actual client interactions.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-q">Does AI sales training replace human managers? <i class="ph ph-plus"></i>
+                        </div>
+                        <div class="faq-a">No, it empowers them. By handling the routine practice and basic feedback, AI
+                            allows managers to focus their high-value coaching time on strategic deal reviews and
+                            nuanced skill development.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-q">How do we measure ROI from AI sales training? <i class="ph ph-plus"></i>
+                        </div>
+                        <div class="faq-a">Yoodli provides detailed analytics on skill improvement, practice frequency,
+                            and certification completion, which can be correlated with sales performance data in your
+                            CRM.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="../master_layout.js"></script>
+    <script>
+        // FAQ Toggle
+        document.querySelectorAll('.faq-q').forEach(q => {
+            q.addEventListener('click', () => {
+                const item = q.parentElement;
+                const a = item.querySelector('.faq-a');
+                const icon = q.querySelector('i');
+
+                const isOpen = a.style.display === 'block';
+
+                // Close all others
+                document.querySelectorAll('.faq-a').forEach(otherA => otherA.style.display = 'none');
+                document.querySelectorAll('.faq-q i').forEach(otherI => {
+                    otherI.classList.remove('ph-minus');
+                    otherI.classList.add('ph-plus');
+                });
+
+                if (!isOpen) {
+                    a.style.display = 'block';
+                    icon.classList.remove('ph-plus');
+                    icon.classList.add('ph-minus');
+                }
+            });
+        });
+
+        // Feature tabs simulation
+        document.querySelectorAll('.feat-item').forEach(item => {
+            item.addEventListener('click', () => {
+                document.querySelectorAll('.feat-item').forEach(i => i.classList.remove('active'));
+                item.classList.add('active');
+            });
+        });
+    </script>
+</body>
+
+</html>

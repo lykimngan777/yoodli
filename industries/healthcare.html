@@ -10,25 +10,97 @@
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <style>
         :root {
-            --health-blue: #0EA5E9;
-            --health-navy: #0F172A;
-            --health-bg: #F0F9FF;
+            --health-navy: #000235;
+            --health-blue-start: #2D9CDB;
+            --health-purple-end: #6F5CF1;
+            --health-text: #475569;
         }
 
-        .health-hero {
-            padding: 140px 0 100px;
-            background: radial-gradient(circle at 90% 10%, rgba(14, 165, 233, 0.1) 0%, transparent 40%),
-                        linear-gradient(180deg, #FFFFFF 0%, #F0F9FF 100%);
+        .health-hero-new {
+            padding: 80px 0 140px;
+            background: #F8FAFC;
+            position: relative;
+            overflow: hidden;
+            border-radius: 0 0 50% 50% / 0 0 80px 80px;
         }
 
-        .hero-image-wrapper {
+        .health-hero-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .hero-visual-left {
             position: relative;
         }
 
-        .hero-image-wrapper img {
+        .hero-visual-left img {
             width: 100%;
-            border-radius: 32px;
-            box-shadow: 0 30px 60px rgba(14, 165, 233, 0.15);
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+            display: block;
+        }
+
+        .hero-content-right {
+            text-align: left;
+        }
+
+        .health-headline {
+            font-size: 64px;
+            font-weight: 850;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            color: var(--health-navy);
+            letter-spacing: -0.02em;
+        }
+
+        .gradient-text-health {
+            background: linear-gradient(135deg, var(--health-blue-start) 0%, var(--health-purple-end) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: block;
+        }
+
+        .health-body-text {
+            font-size: 20px;
+            color: var(--health-text);
+            line-height: 1.6;
+            margin-bottom: 40px;
+            max-width: 540px;
+        }
+
+        .btn-health-gradient {
+            display: inline-block;
+            padding: 18px 42px;
+            background: linear-gradient(135deg, var(--health-blue-start) 0%, var(--health-purple-end) 100%);
+            color: white;
+            border-radius: 100px;
+            font-weight: 700;
+            font-size: 18px;
+            text-decoration: none;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 10px 25px rgba(111, 92, 241, 0.3);
+        }
+
+        .btn-health-gradient:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 35px rgba(111, 92, 241, 0.4);
+        }
+
+        .trust-indicator-health {
+            margin-top: 24px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #94A3B8;
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        .trust-indicator-health i {
+            color: #64748B;
+            font-size: 18px;
         }
 
         .section-title {
@@ -51,7 +123,7 @@
             padding: 48px 40px;
             border-radius: 32px;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
             border: 1px solid #E0F2FE;
             transition: all 0.3s ease;
         }
@@ -84,10 +156,10 @@
         }
 
         .trust-cat-item {
-            background: rgba(255,255,255,0.05);
+            background: rgba(255, 255, 255, 0.05);
             padding: 32px;
             border-radius: 24px;
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             transition: all 0.3s;
         }
 
@@ -110,7 +182,7 @@
         .ui-mockup {
             background: white;
             border-radius: 24px;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
             width: 100%;
             max-width: 400px;
             padding: 30px;
@@ -170,8 +242,18 @@
         }
 
         @media (max-width: 992px) {
-            .hero-grid, .impact-row { grid-template-columns: 1fr; gap: 60px; text-align: center; }
-            .health-card-grid, .trust-category-grid { grid-template-columns: 1fr; }
+
+            .hero-grid,
+            .impact-row {
+                grid-template-columns: 1fr;
+                gap: 60px;
+                text-align: center;
+            }
+
+            .health-card-grid,
+            .trust-category-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -181,17 +263,33 @@
     <!-- Navbar will be injected by master_layout.js -->
 
     <main>
-        <!-- Hero Section -->
-        <section class="health-hero">
-            <div class="container hero-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
-                <div class="hero-image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=1000" alt="Healthcare professionals consulting">
-                </div>
-                <div class="hero-content">
-                    <h1 class="section-title">Yoodli dành cho <br><span style="color: var(--health-blue);">Y tế & Chăm sóc Sức khỏe</span></h1>
-                    <p style="font-size: 20px; color: #64748B; margin-bottom: 32px; line-height: 1.6;">Cải thiện kết quả bệnh nhân thông qua giao tiếp thấu cảm. Chuẩn hóa các tương tác quan trọng giữa bác sĩ và bệnh nhân với sự hỗ trợ của AI.</p>
-                    <a href="../app.html" class="btn btn-primary-pill" style="padding: 18px 40px; font-size: 18px; background: var(--health-blue);">Bắt đầu miễn phí</a>
-                    <p style="font-size: 14px; color: #94A3B8; margin-top: 24px; font-weight: 500;">Được tin dùng bởi các tổ chức y tế hàng đầu thế giới</p>
+        <!-- High-Fidelity Hero Section: Healthcare -->
+        <section class="health-hero-new">
+            <div class="container">
+                <div class="health-hero-grid">
+                    <!-- Left: Lifestyle Image -->
+                    <div class="hero-visual-left">
+                        <img src="../healthcare_doctor_patient_1778043880650.png" alt="Healthcare Team Collaboration">
+                    </div>
+
+                    <!-- Right: Content -->
+                    <div class="hero-content-right">
+                        <h1 class="health-headline">
+                            Yoodli for <br>
+                            <span class="gradient-text-health">Healthcare</span>
+                        </h1>
+                        <p class="health-body-text">
+                            Empower your healthcare teams with AI-powered communication training. Build confidence in
+                            patient interactions, difficult conversations, and team collaboration.
+                        </p>
+
+                        <a href="#" class="btn-health-gradient">Get Yoodli for your team</a>
+
+                        <div class="trust-indicator-health">
+                            <i class="ph-fill ph-check-circle"></i>
+                            <span>SOC 2 Type 2 certified and GDPR compliant</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -203,17 +301,20 @@
                 <div class="health-card">
                     <i class="ph-fill ph-stethoscope"></i>
                     <h3 style="font-size: 22px; font-weight: 700; margin-bottom: 16px;">Nhập vai Bác sĩ - Bệnh nhân</h3>
-                    <p style="color: #64748B; line-height: 1.6;">Luyện tập giải thích các chẩn đoán phức tạp và tin tức khó khăn một cách thấu cảm và rõ ràng.</p>
+                    <p style="color: #64748B; line-height: 1.6;">Luyện tập giải thích các chẩn đoán phức tạp và tin tức
+                        khó khăn một cách thấu cảm và rõ ràng.</p>
                 </div>
                 <div class="health-card">
                     <i class="ph-fill ph-heartbeat"></i>
                     <h3 style="font-size: 22px; font-weight: 700; margin-bottom: 16px;">Đào tạo Kỹ năng Lâm sàng</h3>
-                    <p style="color: #64748B; line-height: 1.6;">Chuẩn hóa quy trình giao tiếp trong các tình huống khẩn cấp và áp lực cao để đảm bảo an toàn.</p>
+                    <p style="color: #64748B; line-height: 1.6;">Chuẩn hóa quy trình giao tiếp trong các tình huống khẩn
+                        cấp và áp lực cao để đảm bảo an toàn.</p>
                 </div>
                 <div class="health-card">
                     <i class="ph-fill ph-first-aid-kit"></i>
                     <h3 style="font-size: 22px; font-weight: 700; margin-bottom: 16px;">Chăm sóc Khách hàng Y tế</h3>
-                    <p style="color: #64748B; line-height: 1.6;">Nâng cao trải nghiệm bệnh nhân từ lúc tiếp đón đến khi xuất viện thông qua sự thấu hiểu.</p>
+                    <p style="color: #64748B; line-height: 1.6;">Nâng cao trải nghiệm bệnh nhân từ lúc tiếp đón đến khi
+                        xuất viện thông qua sự thấu hiểu.</p>
                 </div>
             </div>
         </section>
@@ -242,79 +343,226 @@
                 </div>
             </div>
         </section>
+        <!-- Scroll-driven Sticky Section: How Yoodli AI Roleplays work -->
+        <!-- Scroll-driven Sticky Section: How Yoodli AI Roleplays work -->
+        <section class="how-it-works-sticky" style="height: 300vh; position: relative;">
+            <div class="sticky-inner"
+                style="position: sticky; top: 0; height: 100vh; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #F3F4FA; padding: 10px 0 60px; border-radius: 0 0 50% 50% / 0 0 100px 100px; overflow: hidden;">
 
-        <!-- How it works -->
-        <section style="padding: 120px 0; background: white;">
-            <div class="container" style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 80px; align-items: center;">
-                <div class="ui-mockup-wrapper">
-                    <div class="ui-mockup">
-                        <div style="border-bottom: 1px solid #F1F5F9; padding-bottom: 20px; margin-bottom: 20px;">
-                            <div style="font-weight: 800; color: var(--health-blue);">Kịch bản: Tư vấn Phẫu thuật</div>
-                            <div style="font-size: 14px; color: #64748B;">Bệnh nhân: Lo lắng về thời gian hồi phục</div>
-                        </div>
-                        <div style="background: #F8FAFC; padding: 20px; border-radius: 12px; margin-bottom: 16px;">
-                            <div style="font-size: 12px; color: #94A3B8; margin-bottom: 8px;">CHỈ SỐ THẤU CẢM</div>
-                            <div style="font-weight: 600; color: #059669;">92/100 - "Rất thấu hiểu"</div>
-                        </div>
-                        <div style="display: flex; gap: 10px;">
-                            <div style="flex: 1; height: 8px; background: #E2E8F0; border-radius: 4px; overflow: hidden;">
-                                <div style="width: 92%; height: 100%; background: #10B981;"></div>
+                <!-- 1. Header (Top Center) -->
+                <div style="text-align: center; width: 100%; margin-bottom: 10px;">
+                    <div
+                        style="font-size: 13px; font-weight: 800; color: #4F46E5; letter-spacing: 2px; margin-bottom: 4px;">
+                        CÁCH THỨC HOẠT ĐỘNG</div>
+                    <h2 style="font-size: 32px; font-weight: 800; color: #000235; margin: 0;">Cách thức hoạt động của
+                        Nhập vai AI Yoodli</h2>
+                </div>
+
+                <div class="container"
+                    style="max-width: 1200px; margin: 0 auto; padding: 0 24px; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: center; width: 100%; position: relative;">
+
+                    <!-- 2. Left: Interactive Mockup -->
+                    <div class="mockup-side"
+                        style="position: relative; height: 420px; background: white; border-radius: 24px; display: flex; align-items: center; justify-content: center; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.05); border: 1px solid #F1F5F9;">
+
+                        <!-- State 1: Choose Roleplay -->
+                        <div id="step-visual-1" class="step-visual"
+                            style="position: absolute; width: 85%; opacity: 1; transform: translateY(0); transition: all 0.6s ease;">
+                            <div
+                                style="background: #F8FAFC; padding: 24px; border-radius: 20px; border: 1px solid #E2E8F0;">
+                                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
+                                    <div
+                                        style="width: 48px; height: 48px; background: #0ea5e9; border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                                        <i class="ph-fill ph-stethoscope" style="color: white; font-size: 24px;"></i>
+                                    </div>
+                                    <div>
+                                        <div style="font-size: 16px; font-weight: 800; color: #000235;">Difficult
+                                            Diagnosis</div>
+                                        <div style="font-size: 12px; color: #64748B;">Practice empathy and clarity</div>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; gap: 10px;">
+                                    <div
+                                        style="padding: 12px; background: white; border-radius: 10px; border: 1px solid #F1F5F9; font-size: 13px; font-weight: 600; color: #475569;">
+                                        Patient: Sarah, 45 years old</div>
+                                    <div
+                                        style="padding: 12px; background: white; border-radius: 10px; border: 1px solid #F1F5F9; font-size: 13px; font-weight: 600; color: #475569;">
+                                        Scenario: Explaining test results</div>
+                                </div>
                             </div>
+                        </div>
+
+                        <!-- State 2: Practice with AI -->
+                        <div id="step-visual-2" class="step-visual"
+                            style="position: absolute; width: 85%; opacity: 0; transform: translateY(40px); transition: all 0.6s ease;">
+                            <div style="position: relative;">
+                                <!-- Speech Bubble -->
+                                <div
+                                    style="background: white; padding: 20px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); border: 1px solid #F1F5F9; margin-bottom: 40px; position: relative; z-index: 2;">
+                                    <div style="display: flex; align-items: center; gap: 12px;">
+                                        <div
+                                            style="width: 32px; height: 32px; background: #6366F1; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                            <i class="ph-bold ph-lightning" style="color: white; font-size: 16px;"></i>
+                                        </div>
+                                        <div style="font-size: 14px; font-weight: 700; color: #1E293B;">What are the
+                                            pros and cons of my treatment options?</div>
+                                    </div>
+                                </div>
+                                <!-- Wave UI -->
+                                <div
+                                    style="background: white; padding: 15px 25px; border-radius: 100px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid #F1F5F9; display: flex; align-items: center; gap: 15px; width: fit-content; margin: 0 auto;">
+                                    <div style="display: flex; align-items: center; gap: 4px;">
+                                        <div style="width: 3px; height: 12px; background: #CBD5E1; border-radius: 2px;">
+                                        </div>
+                                        <div style="width: 3px; height: 24px; background: #6366F1; border-radius: 2px;">
+                                        </div>
+                                        <div style="width: 3px; height: 18px; background: #818CF8; border-radius: 2px;">
+                                        </div>
+                                        <div style="width: 3px; height: 30px; background: #6366F1; border-radius: 2px;">
+                                        </div>
+                                        <div style="width: 3px; height: 14px; background: #CBD5E1; border-radius: 2px;">
+                                        </div>
+                                    </div>
+                                    <div style="font-size: 13px; font-weight: 700; color: #4F46E5;">Next question <i
+                                            class="ph-bold ph-caret-right" style="font-size: 10px;"></i></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- State 3: View Results -->
+                        <div id="step-visual-3" class="step-visual"
+                            style="position: absolute; width: 85%; opacity: 0; transform: translateY(40px); transition: all 0.6s ease;">
+                            <div
+                                style="background: white; padding: 24px; border-radius: 24px; box-shadow: 0 20px 60px rgba(0,0,0,0.1); border: 1px solid #F1F5F9;">
+                                <div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 24px;">
+                                    <img src="../healthcare_doctor_patient_1778043880650.png"
+                                        style="width: 100px; height: 100px; border-radius: 16px; object-fit: cover;">
+                                    <div style="flex: 1;">
+                                        <div
+                                            style="background: #ECFDF5; color: #059669; padding: 4px 12px; border-radius: 100px; font-size: 11px; font-weight: 700; display: inline-block; margin-bottom: 8px;">
+                                            COMPLETED</div>
+                                        <div
+                                            style="font-size: 20px; font-weight: 850; color: #000235; margin-bottom: 4px;">
+                                            Roleplay Analysis</div>
+                                        <div style="font-size: 14px; color: #64748B;">Score: <span
+                                                style="color: #4F46E5; font-weight: 800;">88/100</span></div>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; gap: 12px;">
+                                    <div
+                                        style="display: flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 600; color: #059669;">
+                                        <i class="ph-fill ph-check-circle"></i> No question stacking
+                                    </div>
+                                    <div
+                                        style="display: flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 600; color: #059669;">
+                                        <i class="ph-fill ph-check-circle"></i> Strong agenda setting
+                                    </div>
+                                    <div
+                                        style="display: flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 600; color: #059669;">
+                                        <i class="ph-fill ph-check-circle"></i> Mutual action plan established
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. Right: Text Content Cards -->
+                    <div class="text-side" style="padding-left: 20px; position: relative; height: 160px;">
+                        <!-- Step 1 Text -->
+                        <div id="step-text-1"
+                            style="position: absolute; top: 0; left: 0; opacity: 1; transform: translateY(0); width: 100%; transition: all 0.6s ease;">
+                            <div
+                                style="background: white; padding: 32px; border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.06); border: 1px solid #F1F5F9;">
+                                <h3 style="font-size: 24px; font-weight: 850; color: #000235; margin-bottom: 12px;">
+                                    Choose your roleplay</h3>
+                                <p style="font-size: 16px; color: #475569; line-height: 1.6; margin: 0;">
+                                    Select from a library of medical scenarios, from explaining diagnoses to handling
+                                    difficult patient family members.</p>
+                            </div>
+                        </div>
+                        <!-- Step 2 Text -->
+                        <div id="step-text-2"
+                            style="position: absolute; top: 0; left: 0; opacity: 0; transform: translateY(40px); width: 100%; transition: all 0.6s ease;">
+                            <div
+                                style="background: white; padding: 32px; border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.06); border: 1px solid #F1F5F9;">
+                                <h3 style="font-size: 24px; font-weight: 850; color: #000235; margin-bottom: 12px;">
+                                    Practice with AI</h3>
+                                <p style="font-size: 16px; color: #475569; line-height: 1.6; margin: 0;">
+                                    Engage in realistic conversations with AI patients, colleagues, or family members
+                                    that respond naturally to your communication.</p>
+                            </div>
+                        </div>
+                        <!-- Step 3 Text -->
+                        <div id="step-text-3"
+                            style="position: absolute; top: 0; left: 0; opacity: 0; transform: translateY(40px); width: 100%; transition: all 0.6s ease;">
+                            <div
+                                style="background: white; padding: 32px; border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.06); border: 1px solid #F1F5F9;">
+                                <h3 style="font-size: 24px; font-weight: 850; color: #000235; margin-bottom: 12px;">Get
+                                    personalized feedback</h3>
+                                <p style="font-size: 16px; color: #475569; line-height: 1.6; margin: 0;">
+                                    Receive instant insights on your empathy, clarity, pacing, and professional language
+                                    to improve every interaction.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4. Far Right: Vertical Dots -->
+                    <div
+                        style="position: absolute; right: 0; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 8px; z-index: 10;">
+                        <div id="dot-1" class="progress-dot active"
+                            style="width: 10px; height: 24px; border-radius: 10px; background: #4F46E5; transition: all 0.3s;">
+                        </div>
+                        <div id="dot-2" class="progress-dot"
+                            style="width: 10px; height: 10px; border-radius: 50%; background: #E2E8F0; transition: all 0.3s;">
+                        </div>
+                        <div id="dot-3" class="progress-dot"
+                            style="width: 10px; height: 10px; border-radius: 50%; background: #E2E8F0; transition: all 0.3s;">
                         </div>
                     </div>
                 </div>
-                <div>
-                    <h2 class="section-title">Cách thức Nhập vai AI Yoodli vận hành cho Y tế</h2>
-                    <div style="display: flex; flex-direction: column; gap: 32px; margin-top: 40px;">
-                        <div style="display: flex; gap: 24px;">
-                            <div style="width: 48px; height: 48px; background: #E0F2FE; color: var(--health-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; flex-shrink: 0;">1</div>
-                            <div>
-                                <h4 style="font-size: 20px; font-weight: 700; margin-bottom: 8px;">Thiết lập kịch bản lâm sàng</h4>
-                                <p style="color: #64748B;">Sử dụng các tình huống thực tế từ việc tư vấn phẫu thuật đến thông báo kết quả xét nghiệm.</p>
-                            </div>
-                        </div>
-                        <div style="display: flex; gap: 24px;">
-                            <div style="width: 48px; height: 48px; background: #E0F2FE; color: var(--health-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; flex-shrink: 0;">2</div>
-                            <div>
-                                <h4 style="font-size: 20px; font-weight: 700; margin-bottom: 8px;">Tương tác với bệnh nhân AI</h4>
-                                <p style="color: #64748B;">Luyện tập với các persona bệnh nhân có tính cách và mức độ lo lắng khác nhau để cải thiện sự linh hoạt.</p>
-                            </div>
-                        </div>
-                        <div style="display: flex; gap: 24px;">
-                            <div style="width: 48px; height: 48px; background: #E0F2FE; color: var(--health-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; flex-shrink: 0;">3</div>
-                            <div>
-                                <h4 style="font-size: 20px; font-weight: 700; margin-bottom: 8px;">Đánh giá chỉ số thấu cảm</h4>
-                                <p style="color: #64748B;">Nhận phản hồi về ngôn ngữ sử dụng, tông điệu và khả năng xoa dịu tâm lý bệnh nhân.</p>
-                            </div>
-                        </div>
-                    </div>
+
+                <!-- 5. Footer Button (Bottom Center) -->
+                <div style="text-align: center; margin-top: 5px;">
+                    <a href="#"
+                        style="display: inline-flex; align-items: center; gap: 10px; padding: 12px 32px; background: linear-gradient(135deg, #3B82F6, #4F46E5); color: white; border-radius: 100px; font-weight: 700; text-decoration: none; box-shadow: 0 10px 25px rgba(79, 70, 229, 0.2); font-size: 14px;">
+                        Start roleplaying
+                    </a>
                 </div>
             </div>
         </section>
 
+
         <!-- Impact Section -->
         <section class="container" style="padding: 120px 0;">
-            <h2 class="section-title" style="text-align: center; margin-bottom: 80px;">Tác động của Yoodli đối với <br>Đội ngũ Y tế</h2>
-            
+            <h2 class="section-title" style="text-align: center; margin-bottom: 80px;">Tác động của Yoodli đối với
+                <br>Đội ngũ Y tế
+            </h2>
+
             <div class="impact-row">
                 <div class="impact-content">
                     <div style="color: var(--health-blue); font-weight: 700; margin-bottom: 12px;">AN TOÀN</div>
                     <h3>Giảm thiểu sai sót do giao tiếp</h3>
-                    <p>Cải thiện sự an toàn cho bệnh nhân thông qua việc truyền đạt thông tin lâm sàng rõ ràng, súc tích và chính xác giữa các nhân viên y tế và với bệnh nhân.</p>
+                    <p>Cải thiện sự an toàn cho bệnh nhân thông qua việc truyền đạt thông tin lâm sàng rõ ràng, súc tích
+                        và chính xác giữa các nhân viên y tế và với bệnh nhân.</p>
                 </div>
                 <div class="impact-visual">
-                    <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&q=80&w=800" alt="Hospital staff communicating" style="width: 100%; border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.05);">
+                    <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&q=80&w=800"
+                        alt="Hospital staff communicating"
+                        style="width: 100%; border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.05);">
                 </div>
             </div>
 
             <div class="impact-row" style="grid-template-columns: 1.2fr 1fr;">
                 <div class="impact-visual">
-                    <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=800" alt="Doctor talking to patient" style="width: 100%; border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.05);">
+                    <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&q=80&w=800"
+                        alt="Doctor talking to patient"
+                        style="width: 100%; border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.05);">
                 </div>
                 <div class="impact-content">
                     <div style="color: var(--health-blue); font-weight: 700; margin-bottom: 12px;">HÀI LÒNG</div>
                     <h3>Nâng cao điểm số hài lòng (HCAHPS)</h3>
-                    <p>Tăng tỷ lệ hài lòng của bệnh nhân và người nhà thông qua kỹ năng giao tiếp thấu cảm được cải thiện, giúp xây dựng lòng tin vào quy trình điều trị.</p>
+                    <p>Tăng tỷ lệ hài lòng của bệnh nhân và người nhà thông qua kỹ năng giao tiếp thấu cảm được cải
+                        thiện, giúp xây dựng lòng tin vào quy trình điều trị.</p>
                 </div>
             </div>
         </section>
@@ -325,19 +573,26 @@
             <div style="margin-top: 60px;">
                 <div class="faq-item">
                     <div class="faq-question">Yoodli có tuân thủ HIPAA không? <i class="ph ph-plus"></i></div>
-                    <div class="faq-answer">Yoodli cam kết bảo mật dữ liệu y tế và có thể cung cấp các giải pháp tuân thủ HIPAA cho các tổ chức yêu cầu bảo mật thông tin sức khỏe nghiêm ngặt.</div>
+                    <div class="faq-answer">Yoodli cam kết bảo mật dữ liệu y tế và có thể cung cấp các giải pháp tuân
+                        thủ HIPAA cho các tổ chức yêu cầu bảo mật thông tin sức khỏe nghiêm ngặt.</div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">Tôi có thể huấn luyện cho cả nhân viên không chuyên môn không? <i class="ph ph-plus"></i></div>
-                    <div class="faq-answer">Có, Yoodli rất hiệu quả cho việc đào tạo nhân viên tiếp tân, điều phối viên chăm sóc khách hàng để nâng cao tính chuyên nghiệp và sự thấu hiểu.</div>
+                    <div class="faq-question">Tôi có thể huấn luyện cho cả nhân viên không chuyên môn không? <i
+                            class="ph ph-plus"></i></div>
+                    <div class="faq-answer">Có, Yoodli rất hiệu quả cho việc đào tạo nhân viên tiếp tân, điều phối viên
+                        chăm sóc khách hàng để nâng cao tính chuyên nghiệp và sự thấu hiểu.</div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">Làm sao để đo lường sự thấu cảm trong giao tiếp? <i class="ph ph-plus"></i></div>
-                    <div class="faq-answer">Hệ thống AI của chúng tôi phân tích các từ khóa thấu cảm, ngôn ngữ hỗ trợ và tông điệu giọng nói để đưa ra điểm số định lượng về khả năng kết nối cảm xúc.</div>
+                    <div class="faq-question">Làm sao để đo lường sự thấu cảm trong giao tiếp? <i
+                            class="ph ph-plus"></i></div>
+                    <div class="faq-answer">Hệ thống AI của chúng tôi phân tích các từ khóa thấu cảm, ngôn ngữ hỗ trợ và
+                        tông điệu giọng nói để đưa ra điểm số định lượng về khả năng kết nối cảm xúc.</div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">Yoodli có thể tích hợp với hệ thống LMS của bệnh viện không? <i class="ph ph-plus"></i></div>
-                    <div class="faq-answer">Có, chúng tôi hỗ trợ các chuẩn tích hợp phổ biến để đồng bộ dữ liệu luyện tập vào hệ thống quản lý học tập (LMS) hiện có của tổ chức.</div>
+                    <div class="faq-question">Yoodli có thể tích hợp với hệ thống LMS của bệnh viện không? <i
+                            class="ph ph-plus"></i></div>
+                    <div class="faq-answer">Có, chúng tôi hỗ trợ các chuẩn tích hợp phổ biến để đồng bộ dữ liệu luyện
+                        tập vào hệ thống quản lý học tập (LMS) hiện có của tổ chức.</div>
                 </div>
             </div>
         </section>
@@ -345,12 +600,19 @@
         <!-- Final CTA -->
         <section class="final-cta">
             <div class="container">
-                <h2 style="font-size: 48px; font-weight: 800; margin-bottom: 24px;">Sẵn sàng nâng tầm giao tiếp y tế?</h2>
-                <p style="font-size: 20px; opacity: 0.8; margin-bottom: 40px; max-width: 700px; margin-left: auto; margin-right: auto;">Hãy gia nhập hàng ngũ các tổ chức y tế tiên tiến đang cải thiện trải nghiệm bệnh nhân mỗi ngày với Yoodli.</p>
+                <h2 style="font-size: 48px; font-weight: 800; margin-bottom: 24px;">Sẵn sàng nâng tầm giao tiếp y tế?
+                </h2>
+                <p
+                    style="font-size: 20px; opacity: 0.8; margin-bottom: 40px; max-width: 700px; margin-left: auto; margin-right: auto;">
+                    Hãy gia nhập hàng ngũ các tổ chức y tế tiên tiến đang cải thiện trải nghiệm bệnh nhân mỗi ngày với
+                    Yoodli.</p>
                 <div style="display: flex; gap: 20px; justify-content: center;">
-                    <a href="../app.html" class="btn btn-primary-pill" style="background: white; color: var(--health-navy); padding: 20px 48px; font-size: 20px;">Bắt đầu ngay</a>
+                    <a href="../app.html" class="btn btn-primary-pill"
+                        style="background: white; color: var(--health-navy); padding: 20px 48px; font-size: 20px;">Bắt
+                        đầu ngay</a>
                 </div>
-                <p style="margin-top: 32px; font-size: 14px; opacity: 0.6;"><i class="ph ph-check-circle"></i> Đảm bảo bảo mật • Hỗ trợ triển khai toàn diện</p>
+                <p style="margin-top: 32px; font-size: 14px; opacity: 0.6;"><i class="ph ph-check-circle"></i> Đảm bảo
+                    bảo mật • Hỗ trợ triển khai toàn diện</p>
             </div>
         </section>
     </main>
@@ -364,7 +626,7 @@
             item.addEventListener('click', () => {
                 const parent = item.parentElement;
                 parent.classList.toggle('active');
-                
+
                 const icon = item.querySelector('i');
                 if (parent.classList.contains('active')) {
                     icon.classList.replace('ph-plus', 'ph-minus');
@@ -372,6 +634,49 @@
                     icon.classList.replace('ph-minus', 'ph-plus');
                 }
             });
+        });
+
+        // Sticky Scroll Logic
+        window.addEventListener('scroll', () => {
+            const section = document.querySelector('.how-it-works-sticky');
+            if (!section) return;
+
+            const rect = section.getBoundingClientRect();
+            const scrollPercent = Math.min(Math.max(-rect.top / (rect.height - window.innerHeight), 0), 1);
+
+            let activeStep = 1;
+            if (scrollPercent > 0.66) {
+                activeStep = 3;
+            } else if (scrollPercent > 0.33) {
+                activeStep = 2;
+            }
+
+            // Update Steps
+            for (let i = 1; i <= 3; i++) {
+                const visual = document.getElementById(`step-visual-${i}`);
+                const text = document.getElementById(`step-text-${i}`);
+                const dot = document.getElementById(`dot-${i}`);
+
+                if (i === activeStep) {
+                    visual.style.opacity = '1';
+                    visual.style.transform = 'translateY(0)';
+                    text.style.opacity = '1';
+                    text.style.transform = 'translateY(0)';
+                    dot.classList.add('active');
+                    dot.style.height = '24px';
+                    dot.style.borderRadius = '10px';
+                    dot.style.background = '#4F46E5';
+                } else {
+                    visual.style.opacity = '0';
+                    visual.style.transform = i < activeStep ? 'translateY(-40px)' : 'translateY(40px)';
+                    text.style.opacity = '0';
+                    text.style.transform = i < activeStep ? 'translateY(-40px)' : 'translateY(40px)';
+                    dot.classList.remove('active');
+                    dot.style.height = '10px';
+                    dot.style.borderRadius = '50%';
+                    dot.style.background = '#E2E8F0';
+                }
+            }
         });
     </script>
 </body>

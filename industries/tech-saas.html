@@ -10,28 +10,90 @@
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <style>
         .tech-hero {
-            padding: 120px 0 100px;
-            background: linear-gradient(135deg, #F8FAFC 0%, #EFF6FF 100%);
+            padding: 100px 0 160px;
+            background: #ffffff;
+            /* Pure white background as requested */
             position: relative;
             overflow: hidden;
         }
 
-        .tech-hero::after {
-            content: '';
-            position: absolute;
-            top: -10%;
-            right: -10%;
-            width: 40%;
-            height: 60%;
-            background: radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, transparent 70%);
-            z-index: 0;
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-image-box {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+            /* Soft shadow */
+        }
+
+        .main-hero-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .hero-image-box:hover .main-hero-img {
+            transform: scale(1.02);
+        }
+
+        .hero-headline {
+            font-size: 64px;
+            font-weight: 850;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            color: #060a3b;
+            /* Navy */
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #3b82f6 0%, #6366f1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+
+        .hero-description {
+            font-size: 20px;
+            color: #5b6b8c;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            max-width: 540px;
+        }
+
+        .btn-gradient-pill {
+            display: inline-block;
+            background: linear-gradient(90deg, #3b82f6 0%, #6366f1 100%);
+            color: white;
+            padding: 18px 48px;
+            border-radius: 100px;
+            /* Pill shape */
+            font-weight: 800;
+            font-size: 18px;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.25);
+            margin-bottom: 24px;
+        }
+
+        .btn-gradient-pill:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 35px rgba(59, 130, 246, 0.35);
         }
 
         .tech-card {
             background: white;
             padding: 40px;
             border-radius: 32px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
             transition: all 0.3s ease;
             text-align: left;
             border: 1px solid #F1F5F9;
@@ -39,53 +101,258 @@
 
         .tech-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
             border-color: var(--rp-indigo);
         }
 
-        .ecosystem-section {
+        /* New Tech Feature Cards */
+        .tech-performance-section {
             padding: 120px 0;
-            background: white;
+            background: #ffffff;
         }
 
-        .floating-ui-box {
-            background: #F8FAFC;
-            border-radius: 40px;
-            padding: 60px;
-            position: relative;
+        .section-header-centered {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 80px;
         }
 
-        .ui-card {
-            background: white;
-            padding: 20px;
-            border-radius: 16px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-            margin-bottom: 20px;
-            width: 280px;
-            animation: float 4s ease-in-out infinite;
+        .section-header-centered h2 {
+            font-size: 44px;
+            font-weight: 850;
+            color: #060a3b;
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
         }
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+        .section-header-centered p {
+            font-size: 18px;
+            color: #5b6b8c;
+            line-height: 1.6;
         }
 
-        .impact-row {
+        .tech-feature-grid {
             display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 80px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+
+        .feature-card-tech {
+            background: #f4f7ff;
+            /* Very light blue/indigo */
+            padding: 60px 40px;
+            border-radius: 40px;
+            text-align: center;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
             align-items: center;
-            margin-bottom: 120px;
         }
 
-        .impact-row.reverse {
-            grid-template-columns: 1.2fr 1fr;
+        .feature-card-tech:hover {
+            transform: translateY(-10px);
+            background: #ebf0ff;
         }
 
-        .impact-img {
+        .tech-icon-circle {
+            width: 80px;
+            height: 80px;
+            background: #4f46e5;
+            /* Indigo */
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 32px;
+            box-shadow: 0 10px 20px rgba(79, 70, 229, 0.2);
+        }
+
+        .tech-icon-circle i {
+            font-size: 32px;
+            color: white;
+        }
+
+        .feature-card-tech h3 {
+            font-size: 24px;
+            font-weight: 800;
+            color: #060a3b;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .feature-card-tech p {
+            font-size: 16px;
+            color: #5b6b8c;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 992px) {
+            .tech-feature-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .section-header-centered h2 {
+                font-size: 32px;
+            }
+        }
+
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #64748b;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .trust-badge i {
+            color: #10b981;
+            font-size: 18px;
+        }
+
+        .wave-divider-bottom {
+            position: absolute;
+            bottom: 0;
+            left: 0;
             width: 100%;
-            border-radius: 32px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+            overflow: hidden;
+            line-height: 0;
+            transform: rotate(180deg);
+        }
+
+        .wave-divider-bottom svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 80px;
+        }
+
+        @media (max-width: 992px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 48px;
+            }
+
+            .hero-description {
+                margin: 0 auto 40px;
+            }
+
+            .hero-headline {
+                font-size: 48px;
+            }
+
+            .trust-badge {
+                justify-content: center;
+            }
+        }
+
+        /* Trusted By Section Styles */
+        .tech-trusted-section {
+            background: #050a30;
+            /* Very dark navy */
+            padding: 100px 0;
+            color: white;
+            text-align: center;
+        }
+
+        .trusted-title {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 60px;
+            letter-spacing: -0.01em;
+        }
+
+        .trusted-logo-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            align-items: center;
+        }
+
+        .logo-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .trusted-logo {
+            height: 45px;
+            max-width: 180px;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
+            /* Default to white for dark bg */
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+        }
+
+        .logo-item:nth-child(1) .trusted-logo {
+            filter: none;
+            opacity: 1;
+        }
+
+        /* Google Cloud colored */
+        .logo-item:nth-child(2) .trusted-logo {
+            filter: brightness(0) invert(1) sepia(1) saturate(5) hue-rotate(180deg);
+        }
+
+        /* Snowflake blue-ish white */
+        .logo-item:nth-child(3) .trusted-logo {
+            filter: none;
+            opacity: 1;
+        }
+
+        /* Databricks colored */
+
+        .sap-logo-wrapper {
+            background: #008fd3;
+            padding: 10px 20px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .sap-white {
+            height: 25px;
+            filter: brightness(0) invert(1);
+        }
+
+        .logo-pill-btn {
+            background: white;
+            color: #050a30;
+            padding: 8px 20px;
+            border-radius: 100px;
+            font-size: 13px;
+            font-weight: 700;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .logo-pill-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+            background: #f8fafc;
+        }
+
+        .logo-pill-btn i {
+            font-size: 14px;
+        }
+
+        @media (max-width: 992px) {
+            .trusted-logo-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 60px 30px;
+            }
+
+            .trusted-title {
+                font-size: 28px;
+            }
         }
     </style>
 </head>
@@ -95,133 +362,609 @@
     <!-- Navbar will be injected by master_layout.js -->
 
     <main>
-        <!-- Hero -->
         <section class="tech-hero">
-            <div class="container hero-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
-                <div class="hero-content">
-                    <h1 style="font-size: 64px; font-weight: 800; line-height: 1.1; margin-bottom: 24px;">Yoodli dành cho <br><span style="color: var(--rp-indigo);">Công nghệ & SaaS</span></h1>
-                    <p style="font-size: 20px; color: var(--text-light); margin-bottom: 32px; line-height: 1.6;">Huấn luyện đội ngũ bán hàng, thành công khách hàng và sản phẩm của bạn bằng AI. Tăng tốc độ tăng trưởng và chuẩn hóa thông điệp trong một thị trường thay đổi nhanh chóng.</p>
-                    <a href="../app.html" class="btn btn-primary" style="padding: 18px 40px; font-size: 18px;">Dùng thử miễn phí</a>
-                </div>
+            <div class="container hero-grid">
+                <!-- Left: Lifestyle Image -->
                 <div class="hero-visual">
-                    <img src="https://images.unsplash.com/photo-1522071823991-b59fe576caad?auto=format&fit=crop&q=80&w=800" alt="Tech Team" style="width: 100%; border-radius: 32px; box-shadow: 0 30px 60px rgba(0,0,0,0.1);">
-                </div>
-            </div>
-        </section>
-
-        <!-- Fast Growing Section -->
-        <section class="container" style="padding: 120px 0; text-align: center;">
-            <h2 style="font-size: 44px; font-weight: 800; margin-bottom: 60px;">Thúc đẩy hiệu suất cho các đội ngũ Tech</h2>
-            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;">
-                <div class="tech-card">
-                    <i class="ph-bold ph-megaphone" style="font-size: 32px; color: var(--rp-indigo); margin-bottom: 24px;"></i>
-                    <h3 style="font-size: 22px; font-weight: 700; margin-bottom: 16px;">Chuẩn hóa bài Sales Pitch</h3>
-                    <p style="color: var(--text-light); line-height: 1.6;">Đảm bảo mọi AE và SDR đều truyền tải đúng giá trị sản phẩm và giải quyết được các nỗi đau của khách hàng.</p>
-                </div>
-                <div class="tech-card">
-                    <i class="ph-bold ph-user-gear" style="font-size: 32px; color: var(--rp-indigo); margin-bottom: 24px;"></i>
-                    <h3 style="font-size: 22px; font-weight: 700; margin-bottom: 16px;">Nâng cao kỹ năng CSM</h3>
-                    <p style="color: var(--text-light); line-height: 1.6;">Huấn luyện đội ngũ thành công khách hàng trong việc xử lý gia hạn, bán thêm và giải quyết khiếu nại.</p>
-                </div>
-                <div class="tech-card">
-                    <i class="ph-bold ph-rocket-launch" style="font-size: 32px; color: var(--rp-indigo); margin-bottom: 24px;"></i>
-                    <h3 style="font-size: 22px; font-weight: 700; margin-bottom: 16px;">Tăng tốc hòa nhập (Onboarding)</h3>
-                    <p style="color: var(--text-light); line-height: 1.6;">Giảm thời gian ramp-up cho nhân viên mới từ vài tháng xuống còn vài tuần thông qua luyện tập AI.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Trusted By -->
-        <section style="background: #0B0E23; padding: 80px 0; color: white;">
-            <div class="container" style="text-align: center;">
-                <p style="font-size: 14px; opacity: 0.6; text-transform: uppercase; letter-spacing: 0.2em; margin-bottom: 40px;">Được tin dùng bởi các nhà lãnh đạo công nghệ</p>
-                <div style="display: flex; justify-content: center; gap: 80px; flex-wrap: wrap;">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft" style="height: 30px; filter: brightness(0) invert(1);">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Salesforce.com_logo.svg" alt="Salesforce" style="height: 40px; filter: brightness(0) invert(1);">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Slack_Technologies_Logo.svg" alt="Slack" style="height: 30px; filter: brightness(0) invert(1);">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/59/SAP_2011_logo.svg" alt="SAP" style="height: 30px; filter: brightness(0) invert(1);">
-                </div>
-            </div>
-        </section>
-
-        <!-- Ecosystem -->
-        <section class="ecosystem-section">
-            <div class="container" style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 80px; align-items: center;">
-                <div class="floating-ui-box">
-                    <div class="ui-card" style="animation-delay: 0s;">
-                        <div style="font-weight: 700; font-size: 14px; margin-bottom: 8px;">Nhập vai Bán hàng</div>
-                        <div style="font-size: 12px; color: #64748B;">Luyện tập xử lý phản đối giá</div>
-                    </div>
-                    <div class="ui-card" style="animation-delay: 1s; margin-left: 60px;">
-                        <div style="font-weight: 700; font-size: 14px; margin-bottom: 8px;">Scorecard AI</div>
-                        <div style="font-size: 12px; color: #64748B;">Đạt 95% mức độ tự tin</div>
-                    </div>
-                    <div class="ui-card" style="animation-delay: 2s; margin-left: 20px;">
-                        <div style="font-weight: 700; font-size: 14px; margin-bottom: 8px;">Phân tích đội ngũ</div>
-                        <div style="font-size: 12px; color: #64748B;">Hàn thiện kỹ năng thuyết trình</div>
+                    <div class="hero-image-box">
+                        <img src="../tech_team_working_1778041065447.png" alt="Tech Team Collaborating"
+                            class="main-hero-img">
                     </div>
                 </div>
-                <div>
-                    <h2 style="font-size: 44px; font-weight: 800; margin-bottom: 24px;">Cách Yoodli AI phù hợp với hệ sinh thái Công nghệ</h2>
-                    <p style="font-size: 18px; color: var(--text-light); line-height: 1.6;">Yoodli tích hợp trực tiếp vào quy trình làm việc của bạn, từ CRM đến Slack, cung cấp phản hồi ngay lập tức khi đội ngũ của bạn cần nhất.</p>
+
+                <!-- Right: Content -->
+                <div class="hero-content">
+                    <div class="hero-text-wrapper">
+                        <h1 class="hero-headline">
+                            Yoodli for<br>
+                            <span class="gradient-text">Technology & SaaS</span>
+                        </h1>
+                        <p class="hero-description">
+                            Empower your go-to-market tech teams with AI-powered communication training. Build
+                            confidence in sales calls, customer conversations, and product demos.
+                        </p>
+                        <div class="hero-actions">
+                            <a href="../app.html" class="btn-gradient-pill">Get Yoodli for your team</a>
+                            <div class="trust-badge">
+                                <i class="ph-fill ph-check-circle"></i>
+                                <span>SOC 2 Type 2 certified and GDPR compliant</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+            </div>
+
+            <!-- Wave Divider Bottom -->
+            <div class="wave-divider-bottom">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                    preserveAspectRatio="none">
+                    <path
+                        d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                        fill="#ffffff"></path>
+                </svg>
             </div>
         </section>
 
-        <!-- Impact Rows -->
-        <section class="container" style="padding: 120px 0;">
-            <div class="impact-row">
-                <div>
-                    <h2 style="font-size: 36px; font-weight: 800; margin-bottom: 20px;">Thống nhất thông điệp chung</h2>
-                    <p style="color: var(--text-light); font-size: 18px; line-height: 1.6;">Trong các công ty SaaS phát triển nhanh, sản phẩm thay đổi hàng tuần. Yoodli giúp đảm bảo toàn bộ đội ngũ GTM đều cập nhật và trình bày thông điệp mới nhất một cách chuẩn xác.</p>
-                </div>
-                <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=1000" alt="Meeting" class="impact-img">
-            </div>
-            <div class="impact-row reverse">
-                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1000" alt="Coaching" class="impact-img">
-                <div>
-                    <h2 style="font-size: 36px; font-weight: 800; margin-bottom: 20px;">Xây dựng văn hóa huấn luyện đẳng cấp thế giới</h2>
-                    <p style="color: var(--text-light); font-size: 18px; line-height: 1.6;">Biến việc huấn luyện từ một gánh nặng quản lý thành một thói quen tự giác của nhân viên. AI của chúng tôi cung cấp sự hỗ trợ liên tục mà không cần sự can thiệp 24/7 của cấp quản lý.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- CTA -->
-        <section style="background: #0B0E23; padding: 120px 0; color: white; text-align: center;">
+        <!-- High-Performing Tech Teams Section -->
+        <section class="tech-performance-section">
             <div class="container">
-                <h2 style="font-size: 56px; font-weight: 800; margin-bottom: 24px;">Sẵn sàng thay đổi cách giao tiếp?</h2>
-                <p style="font-size: 20px; opacity: 0.8; margin-bottom: 40px;">Hãy tham gia cùng các công ty SaaS hàng đầu đang định nghĩa lại tiêu chuẩn giao tiếp.</p>
-                <a href="../app.html" class="btn btn-primary" style="background: white; color: #0B0E23; padding: 20px 48px; font-size: 20px;">Bắt đầu ngay bây giờ</a>
+                <div class="section-header-centered">
+                    <h2>Built for High-Performing Tech Teams</h2>
+                    <p>Technology companies move fast. Yoodli helps teams communicate clearly, sell confidently, and
+                        collaborate effectively in high-growth environments.</p>
+                </div>
+
+                <div class="tech-feature-grid">
+                    <!-- Card 1 -->
+                    <div class="feature-card-tech">
+                        <div class="tech-icon-circle">
+                            <i class="ph-bold ph-code"></i>
+                        </div>
+                        <h3>Practice Real Work Roleplays</h3>
+                        <p>Practice sales calls, customer demos, investor pitches, interviews, and performance
+                            conversations with AI-powered single and multi-persona roleplays.</p>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="feature-card-tech">
+                        <div class="tech-icon-circle">
+                            <i class="ph-bold ph-chart-line-up"></i>
+                        </div>
+                        <h3>Improve Revenue & Customer Conversations</h3>
+                        <p>Refine messaging, objection handling, and executive presence before high-stakes meetings with
+                            prospects and customers.</p>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="feature-card-tech">
+                        <div class="tech-icon-circle">
+                            <i class="ph-bold ph-sparkle"></i>
+                        </div>
+                        <h3>Actionable Feedback & Metrics</h3>
+                        <p>Get instant feedback on clarity, confidence, filler words, pacing, and tone — with metrics
+                            that track growth over time.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- FAQ -->
-        <section class="faq-section" style="padding: 120px 0; max-width: 900px; margin: 0 auto;">
-            <h2 style="text-align:center; margin-bottom:60px; font-size:36px; font-weight:800;">Câu hỏi thường gặp</h2>
-            <div class="faq-list">
-                <div class="faq-item">
-                    <div class="faq-question">Yoodli có hỗ trợ các thuật ngữ chuyên ngành Tech không? <i class="ph ph-plus"></i></div>
-                    <div class="faq-answer">Có, AI của chúng tôi có thể được tùy chỉnh để hiểu các thuật ngữ kỹ thuật, tên sản phẩm và các khái niệm SaaS đặc thù của doanh nghiệp bạn.</div>
+
+
+
+        <!-- Trusted By Section -->
+        <section class="tech-trusted-section">
+            <div class="container">
+                <h2 class="trusted-title">Trusted by technology teams at</h2>
+
+                <div class="trusted-logo-grid">
+                    <!-- Google Cloud -->
+                    <div class="logo-item">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Google_Cloud_logo.svg"
+                            alt="Google Cloud" class="trusted-logo">
+                        <a href="#" class="logo-pill-btn">Case study <i class="ph ph-arrow-up-right"></i></a>
+                    </div>
+
+                    <!-- Snowflake -->
+                    <div class="logo-item">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/f/ff/Snowflake_Logo.svg"
+                            alt="Snowflake" class="trusted-logo">
+                        <a href="#" class="logo-pill-btn">Case study <i class="ph ph-arrow-up-right"></i></a>
+                    </div>
+
+                    <!-- Databricks -->
+                    <div class="logo-item">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/6/63/Databricks_Logo.svg"
+                            alt="Databricks" class="trusted-logo">
+                        <a href="#" class="logo-pill-btn">Webinar <i class="ph ph-arrow-up-right"></i></a>
+                    </div>
+
+                    <!-- SAP -->
+                    <div class="logo-item">
+                        <div class="sap-logo-wrapper">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/5/59/SAP_2011_logo.svg" alt="SAP"
+                                class="trusted-logo sap-white">
+                        </div>
+                        <a href="#" class="logo-pill-btn">Announcement <i class="ph ph-arrow-up-right"></i></a>
+                    </div>
                 </div>
-                <div class="faq-item">
-                    <div class="faq-question">Làm sao để triển khai cho đội ngũ 100+ người? <i class="ph ph-plus"></i></div>
-                    <div class="faq-answer">Yoodli được xây dựng để mở rộng quy mô. Bạn có thể dễ dàng quản lý người dùng, phân phối các bài tập nhập vai và theo dõi tiến độ thông qua bảng điều khiển quản trị tập trung.</div>
+            </div>
+        </section>
+
+        <!-- Scroll-driven Sticky Section: How Yoodli AI Roleplays work -->
+        <!-- Scroll-driven Sticky Section: How Yoodli AI Roleplays work -->
+        <section class="how-it-works-sticky" style="height: 500vh; position: relative;">
+            <div class="sticky-inner"
+                style="position: sticky; top: 0; height: 100vh; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #F3F4FA; padding: 10px 0 40px; border-radius: 0 0 50% 50% / 0 0 60px 60px; overflow: hidden;">
+
+                <!-- 1. Header (Top Center) -->
+                <div style="text-align: center; width: 100%; margin-bottom: 30px;">
+                    <div
+                        style="font-size: 13px; font-weight: 800; color: #4F46E5; letter-spacing: 2px; margin-bottom: 8px; text-transform: uppercase;">
+                        How it works</div>
+                    <h2 style="font-size: 40px; font-weight: 850; color: #000235; margin-bottom: 12px;">How Yoodli AI
+                        Roleplays works for Tech</h2>
+                    <p style="font-size: 18px; color: #5b6b8c; max-width: 700px; margin: 0 auto; line-height: 1.6;">
+                        Practice real business conversations with AI-powered simulations that adapt to your responses
+                        and deliver personalized coaching.</p>
+                </div>
+
+                <div class="container"
+                    style="max-width: 1200px; margin: 0 auto; padding: 0 24px; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: center; width: 100%; position: relative;">
+
+                    <!-- 2. Left: Interactive Mockup -->
+                    <div class="mockup-side"
+                        style="position: relative; height: 420px; background: rgba(255, 255, 255, 0.6); backdrop-filter: blur(10px); border-radius: 24px; display: flex; align-items: center; justify-content: center; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.8);">
+                        <!-- State 1: Choose Roleplay -->
+                        <div id="step-visual-1" class="step-visual"
+                            style="position: absolute; width: 85%; opacity: 1; transform: translateY(0); transition: all 0.5s ease;">
+                            <div
+                                style="background: white; padding: 20px; border-radius: 16px; box-shadow: 0 10px 40px rgba(0,0,0,0.05); margin-bottom: 15px; border: 1px solid #F1F5F9;">
+                                <div style="font-size: 12px; color: #64748B; margin-bottom: 6px; font-weight: 600;">
+                                    Topic</div>
+                                <div style="font-size: 18px; font-weight: 800; color: #000235;">Why should we buy your
+                                    product?</div>
+                            </div>
+                            <div
+                                style="background: white; padding: 20px; border-radius: 16px; box-shadow: 0 10px 40px rgba(0,0,0,0.05); border: 1px solid #F1F5F9; display: flex; justify-content: space-between; align-items: center;">
+                                <div>
+                                    <div style="font-size: 12px; color: #64748B; margin-bottom: 4px; font-weight: 600;">
+                                        Conversation Partner</div>
+                                    <div style="font-size: 18px; font-weight: 800; color: #000235;">Sophisticated Buyer
+                                    </div>
+                                </div>
+                                <i class="ph ph-magnifying-glass" style="font-size: 24px; color: #94A3B8;"></i>
+                            </div>
+                        </div>
+
+                        <!-- State 2: Start Speaking -->
+                        <div id="step-visual-2" class="step-visual"
+                            style="position: absolute; width: 85%; opacity: 0; transform: translateY(20px); transition: all 0.5s ease;">
+                            <div
+                                style="background: white; padding: 30px; border-radius: 24px; box-shadow: 0 15px 50px rgba(0,0,0,0.08); text-align: center;">
+                                <div
+                                    style="width: 60px; height: 60px; background: linear-gradient(135deg, #4F46E5, #818CF8); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                                    <i class="ph-fill ph-microphone" style="color: white; font-size: 28px;"></i>
+                                </div>
+                                <div style="font-size: 20px; font-weight: 700; color: #000235; margin-bottom: 10px;">
+                                    Recording...</div>
+                                <div style="display: flex; justify-content: center; gap: 4px; height: 30px;">
+                                    <div style="width: 4px; height: 10px; background: #4F46E5; border-radius: 2px;">
+                                    </div>
+                                    <div style="width: 4px; height: 25px; background: #4F46E5; border-radius: 2px;">
+                                    </div>
+                                    <div style="width: 4px; height: 20px; background: #4F46E5; border-radius: 2px;">
+                                    </div>
+                                    <div style="width: 4px; height: 15px; background: #4F46E5; border-radius: 2px;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- State 3: View Results -->
+                        <div id="step-visual-3" class="step-visual"
+                            style="position: absolute; width: 85%; opacity: 0; transform: translateY(20px); transition: all 0.5s ease;">
+                            <div
+                                style="background: white; padding: 24px; border-radius: 24px; box-shadow: 0 15px 50px rgba(0,0,0,0.08);">
+                                <div style="display: flex; gap: 20px; align-items: center; margin-bottom: 20px;">
+                                    <div
+                                        style="width: 60px; height: 60px; border-radius: 50%; background: #F0FDF4; display: flex; align-items: center; justify-content: center;">
+                                        <i class="ph ph-chart-bar" style="color: #16A34A; font-size: 28px;"></i>
+                                    </div>
+                                    <div>
+                                        <div style="font-size: 24px; font-weight: 800; color: #000235;">84%</div>
+                                        <div style="font-size: 14px; color: #64748B;">Performance Score</div>
+                                    </div>
+                                </div>
+                                <div style="height: 8px; background: #F1F5F9; border-radius: 4px; overflow: hidden;">
+                                    <div style="width: 84%; height: 100%; background: #16A34A;"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- State 4: Practice with AI (Mockup 4) -->
+                        <div id="step-visual-4" class="step-visual"
+                            style="position: absolute; width: 90%; opacity: 0; transform: translateY(20px); transition: all 0.5s ease;">
+                            <!-- Speech Bubbles -->
+                            <div style="display: flex; flex-direction: column; gap: 20px;">
+                                <div
+                                    style="background: white; padding: 20px; border-radius: 20px 20px 20px 4px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); align-self: flex-start; display: flex; align-items: center; gap: 15px; border: 1px solid #EEF2FF;">
+                                    <div
+                                        style="width: 44px; height: 44px; background: #4F46E5; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                        <i class="ph ph-microphone-stage" style="color: white; font-size: 22px;"></i>
+                                    </div>
+                                    <div style="font-size: 16px; font-weight: 700; color: #000235; line-height: 1.4;">
+                                        How does your platform stand apart from industry competitors?</div>
+                                </div>
+                                <div
+                                    style="background: white; padding: 20px; border-radius: 20px 20px 4px 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); align-self: flex-end; display: flex; align-items: center; gap: 15px; border: 1px solid #EEF2FF; width: 80%;">
+                                    <div style="display: flex; gap: 4px; align-items: center; flex-grow: 1;">
+                                        <div style="height: 12px; width: 4px; background: #CBD5E1; border-radius: 2px;">
+                                        </div>
+                                        <div style="height: 24px; width: 4px; background: #CBD5E1; border-radius: 2px;">
+                                        </div>
+                                        <div style="height: 32px; width: 4px; background: #4F46E5; border-radius: 2px;">
+                                        </div>
+                                        <div style="height: 20px; width: 4px; background: #4F46E5; border-radius: 2px;">
+                                        </div>
+                                        <div style="height: 28px; width: 4px; background: #4F46E5; border-radius: 2px;">
+                                        </div>
+                                        <div style="height: 16px; width: 4px; background: #CBD5E1; border-radius: 2px;">
+                                        </div>
+                                    </div>
+                                    <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=100"
+                                        style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">
+                                </div>
+                                <div
+                                    style="background: white; padding: 12px 24px; border-radius: 100px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); align-self: center; display: flex; align-items: center; gap: 20px; border: 1px solid #E0E7FF;">
+                                    <div
+                                        style="display: flex; align-items: center; gap: 8px; color: #4F46E5; font-weight: 700;">
+                                        <i class="ph ph-circle" style="font-size: 10px;"></i> 00:12
+                                    </div>
+                                    <div style="width: 1px; height: 20px; background: #E2E8F0;"></div>
+                                    <div style="color: #4F46E5; font-weight: 800; cursor: pointer;">Next question <i
+                                            class="ph ph-caret-right"></i></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- State 5: Get personalized feedback (Mockup 5) -->
+                        <div id="step-visual-5" class="step-visual"
+                            style="position: absolute; width: 90%; opacity: 0; transform: translateY(20px); transition: all 0.5s ease;">
+                            <div
+                                style="display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 20px; align-items: center;">
+                                <div style="position: relative;">
+                                    <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=600"
+                                        style="width: 100%; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
+                                    <!-- Badges -->
+                                    <div
+                                        style="position: absolute; top: 20px; left: -20px; display: flex; flex-direction: column; gap: 10px;">
+                                        <div
+                                            style="background: white; padding: 10px 15px; border-radius: 10px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); display: flex; align-items: center; gap: 10px; font-weight: 700; color: #059669; border: 1px solid #D1FAE5; font-size: 13px;">
+                                            <i class="ph-fill ph-check-circle"></i> No question stacking
+                                        </div>
+                                        <div
+                                            style="background: white; padding: 10px 15px; border-radius: 10px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); display: flex; align-items: center; gap: 10px; font-weight: 700; color: #059669; border: 1px solid #D1FAE5; font-size: 13px;">
+                                            <i class="ph-fill ph-thumbs-up"></i> Agenda setting
+                                        </div>
+                                        <div
+                                            style="background: white; padding: 10px 15px; border-radius: 10px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); display: flex; align-items: center; gap: 10px; font-weight: 700; color: #D97706; border: 1px solid #FEF3C7; font-size: 13px;">
+                                            <i class="ph-fill ph-flag"></i> Mutual action plan
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; gap: 10px;">
+                                    <div style="height: 8px; width: 100%; background: #E2E8F0; border-radius: 4px;">
+                                    </div>
+                                    <div style="height: 8px; width: 100%; background: #E2E8F0; border-radius: 4px;">
+                                    </div>
+                                    <div style="height: 8px; width: 70%; background: #E2E8F0; border-radius: 4px;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. Right: Text Content Cards -->
+                    <div class="text-side" style="padding-left: 20px; position: relative; height: 180px;">
+                        <!-- Step 1 Text -->
+                        <div id="step-text-1" class="step-text"
+                            style="position: absolute; top: 0; left: 0; opacity: 1; transform: translateY(0); width: 100%; transition: all 0.5s ease;">
+                            <div
+                                style="background: white; padding: 30px; border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.04); border: 1px solid #F1F5F9;">
+                                <h3 style="font-size: 22px; font-weight: 800; color: #000235; margin-bottom: 12px;">
+                                    Choose your roleplay</h3>
+                                <p style="font-size: 16px; color: #475569; line-height: 1.6; margin: 0;">
+                                    Customize your conversation partner and speaking goals to match your real-world
+                                    scenarios.</p>
+                            </div>
+                        </div>
+                        <!-- Step 2 Text -->
+                        <div id="step-text-2" class="step-text"
+                            style="position: absolute; top: 0; left: 0; opacity: 0; transform: translateY(20px); width: 100%; transition: all 0.5s ease;">
+                            <div
+                                style="background: white; padding: 30px; border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.04); border: 1px solid #F1F5F9;">
+                                <h3 style="font-size: 22px; font-weight: 800; color: #000235; margin-bottom: 12px;">
+                                    Start
+                                    speaking</h3>
+                                <p style="font-size: 16px; color: #475569; line-height: 1.6; margin: 0;">
+                                    Yoodli will ask you AI-powered follow-up questions and challenge you like a real
+                                    buyer.</p>
+                            </div>
+                        </div>
+                        <!-- Step 3 Text -->
+                        <div id="step-text-3" class="step-text"
+                            style="position: absolute; top: 0; left: 0; opacity: 0; transform: translateY(20px); width: 100%; transition: all 0.5s ease;">
+                            <div
+                                style="background: white; padding: 30px; border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.04); border: 1px solid #F1F5F9;">
+                                <h3 style="font-size: 22px; font-weight: 800; color: #000235; margin-bottom: 12px;">View
+                                    your results</h3>
+                                <p style="font-size: 16px; color: #475569; line-height: 1.6; margin: 0;">
+                                    Real-time feedback on your content, delivery, and progress over time with actionable
+                                    insights.</p>
+                            </div>
+                        </div>
+                        <!-- Step 4 Text (Mới) -->
+                        <div id="step-text-4" class="step-text"
+                            style="position: absolute; top: 0; left: 0; opacity: 0; transform: translateY(20px); width: 100%; transition: all 0.5s ease;">
+                            <div
+                                style="background: white; padding: 30px; border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.04); border: 1px solid #F1F5F9;">
+                                <h3 style="font-size: 22px; font-weight: 800; color: #000235; margin-bottom: 12px;">
+                                    Practice with AI</h3>
+                                <p style="font-size: 16px; color: #475569; line-height: 1.6; margin: 0;">
+                                    Engage in realistic conversations with AI personas that respond naturally across:
+                                    prospects, customers, managers, or teammates.</p>
+                            </div>
+                        </div>
+                        <!-- Step 5 Text (Mới) -->
+                        <div id="step-text-5" class="step-text"
+                            style="position: absolute; top: 0; left: 0; opacity: 0; transform: translateY(20px); width: 100%; transition: all 0.5s ease;">
+                            <div
+                                style="background: white; padding: 30px; border-radius: 24px; box-shadow: 0 10px 30px rgba(0,0,0,0.04); border: 1px solid #F1F5F9;">
+                                <h3 style="font-size: 22px; font-weight: 800; color: #000235; margin-bottom: 12px;">Get
+                                    personalized feedback</h3>
+                                <p style="font-size: 16px; color: #475569; line-height: 1.6; margin: 0;">
+                                    Receive instant insights on clarity, confidence, conciseness, and executive presence
+                                    to improve every conversation. All customized to fit each organization or team.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4. Far Right: Vertical Dots -->
+                    <div
+                        style="position: absolute; right: 0; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 12px; z-index: 10;">
+                        <div id="dot-1" class="progress-dot active"
+                            style="width: 10px; height: 24px; border-radius: 10px; background: #4F46E5; transition: all 0.3s;">
+                        </div>
+                        <div id="dot-2" class="progress-dot"
+                            style="width: 10px; height: 10px; border-radius: 50%; background: #E2E8F0; transition: all 0.3s;">
+                        </div>
+                        <div id="dot-3" class="progress-dot"
+                            style="width: 10px; height: 10px; border-radius: 50%; background: #E2E8F0; transition: all 0.3s;">
+                        </div>
+                        <div id="dot-4" class="progress-dot"
+                            style="width: 10px; height: 10px; border-radius: 50%; background: #E2E8F0; transition: all 0.3s;">
+                        </div>
+                        <div id="dot-5" class="progress-dot"
+                            style="width: 10px; height: 10px; border-radius: 50%; background: #E2E8F0; transition: all 0.3s;">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. Footer Button (Bottom Center) -->
+                <div style="text-align: center; margin-top: 40px;">
+                    <a href="#"
+                        style="display: inline-flex; align-items: center; gap: 10px; padding: 16px 40px; background: linear-gradient(135deg, #3B82F6, #4F46E5); color: white; border-radius: 100px; font-weight: 700; text-decoration: none; box-shadow: 0 10px 25px rgba(79, 70, 229, 0.2); font-size: 16px;">
+                        Start roleplaying
+                    </a>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Real Impact Section: For High-Growth Tech Teams -->
+        <section style="padding: 120px 0; background: white; border-top: 1px solid #F1F5F9;">
+            <div class="container">
+                <!-- Main Header -->
+                <div style="text-align: center; margin-bottom: 90px;">
+                    <h2
+                        style="font-size: 48px; font-weight: 850; color: #000235; margin-bottom: 24px; letter-spacing: -0.02em;">
+                        Real impact for <span
+                            style="background: linear-gradient(90deg, #3B82F6, #8B5CF6); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">high-growth
+                            tech teams</span>
+                    </h2>
+                    <p
+                        style="font-size: 20px; color: #475569; max-width: 850px; margin: 0 auto; line-height: 1.6; opacity: 0.9;">
+                        Communication training that accelerates revenue, strengthens collaboration, and scales talent in
+                        technology organizations.
+                    </p>
+                </div>
+
+                <!-- Row 1: For Revenue & Customer-Facing Teams -->
+                <div
+                    style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; margin-bottom: 120px;">
+                    <div style="padding-right: 40px;">
+                        <h3 style="font-size: 26px; font-weight: 800; color: #3B82F6; margin-bottom: 24px;">For Revenue
+                            & Customer-Facing Teams</h3>
+                        <p style="font-size: 19px; color: #475569; line-height: 1.7; margin-bottom: 0; opacity: 0.85;">
+                            Yoodli helps sales, customer success, and support teams communicate with confidence in every
+                            interaction. Practice pitches, demos, renewals, and difficult customer conversations to
+                            improve conversion rates, retention, and customer trust.
+                        </p>
+                    </div>
+                    <div style="position: relative;">
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1200"
+                            alt="Modern Tech Office"
+                            style="width: 100%; border-radius: 28px; box-shadow: 0 30px 60px rgba(0,0,0,0.1); object-fit: cover; height: 450px;">
+                    </div>
+                </div>
+
+                <!-- Row 2: For People, Leaders, and Talent Teams -->
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
+                    <div style="position: relative;">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=1200"
+                            alt="Team Discussion"
+                            style="width: 100%; border-radius: 28px; box-shadow: 0 30px 60px rgba(0,0,0,0.1); object-fit: cover; height: 450px;">
+                    </div>
+                    <div style="padding-left: 40px;">
+                        <h3 style="font-size: 26px; font-weight: 800; color: #3B82F6; margin-bottom: 24px;">For People,
+                            Leaders, and Talent Teams</h3>
+                        <p style="font-size: 19px; color: #475569; line-height: 1.7; margin-bottom: 0; opacity: 0.85;">
+                            From interview training to leadership communication, Yoodli helps tech organizations scale
+                            strong communicators at every level. Reduce ramp time for new hires, strengthen internal
+                            collaboration, and build confident leaders as your company grows.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section style="padding: 140px 0 160px; background: #F8FAFC;">
+            <div class="container" style="max-width: 800px;">
+                <div style="text-align: center; margin-bottom: 60px;">
+                    <h2 style="font-size: 36px; font-weight: 850; color: #000235; margin-bottom: 16px;">Frequently Asked Questions</h2>
+                    <p style="font-size: 18px; color: #64748B;">Everything you need to know about Yoodli for Tech teams.</p>
+                </div>
+
+                <div class="faq-container" style="display: flex; flex-direction: column; gap: 16px;">
+                    <!-- Q1 -->
+                    <div class="faq-item" style="background: white; border-radius: 16px; border: 1px solid #E2E8F0; overflow: hidden; transition: all 0.3s ease;">
+                        <div class="faq-question" style="padding: 24px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-weight: 700; color: #000235; font-size: 18px;">
+                            <span>Is Yoodli SOC 2 and GDPR compliant?</span>
+                            <i class="ph ph-plus" style="transition: transform 0.3s;"></i>
+                        </div>
+                        <div class="faq-answer" style="max-height: 0; overflow: hidden; transition: all 0.3s ease; background: #FDFDFF;">
+                            <p style="padding: 0 24px 24px; color: #475569; line-height: 1.6; margin: 0;">
+                                Yes, security is our top priority. Yoodli is SOC 2 Type 2 certified and fully GDPR compliant. We ensure your team's data and recordings are encrypted and handled with enterprise-grade security standards.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Q2 -->
+                    <div class="faq-item" style="background: white; border-radius: 16px; border: 1px solid #E2E8F0; overflow: hidden; transition: all 0.3s ease;">
+                        <div class="faq-question" style="padding: 24px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-weight: 700; color: #000235; font-size: 18px;">
+                            <span>Can we upload our own company-specific playbooks?</span>
+                            <i class="ph ph-plus" style="transition: transform 0.3s;"></i>
+                        </div>
+                        <div class="faq-answer" style="max-height: 0; overflow: hidden; transition: all 0.3s ease; background: #FDFDFF;">
+                            <p style="padding: 0 24px 24px; color: #475569; line-height: 1.6; margin: 0;">
+                                Absolutely. You can customize the AI roleplays with your own sales playbooks, product documentation, and specific customer personas. This ensures your team practices in the exact context of your business.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Q3 -->
+                    <div class="faq-item" style="background: white; border-radius: 16px; border: 1px solid #E2E8F0; overflow: hidden; transition: all 0.3s ease;">
+                        <div class="faq-question" style="padding: 24px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-weight: 700; color: #000235; font-size: 18px;">
+                            <span>How do we track ROI and team progress?</span>
+                            <i class="ph ph-plus" style="transition: transform 0.3s;"></i>
+                        </div>
+                        <div class="faq-answer" style="max-height: 0; overflow: hidden; transition: all 0.3s ease; background: #FDFDFF;">
+                            <p style="padding: 0 24px 24px; color: #475569; line-height: 1.6; margin: 0;">
+                                Yoodli provides a comprehensive dashboard for team admins. You can track engagement metrics, average performance scores across different skills (e.g., objection handling, conciseness), and see individual growth over time.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+              <!-- Final CTA Section: Transform Tech Communication -->
+        <section style="padding: 140px 0 120px; background: #050a30; color: white; text-align: center;">
+            <div class="container">
+                <h2 style="font-size: 42px; font-weight: 800; margin-bottom: 24px; letter-spacing: -0.01em;">Ready to Transform Tech Communication?</h2>
+                <p style="font-size: 20px; opacity: 0.8; max-width: 800px; margin: 0 auto 48px; line-height: 1.6;">
+                    Join leading tech organizations using Yoodli to improve win rates through better communication. Get started today with a personalized demo.
+                </p>
+                
+                <div style="margin-bottom: 32px;">
+                    <a href="#" style="display: inline-flex; align-items: center; padding: 18px 48px; background: #4F46E5; color: white; border-radius: 100px; font-weight: 700; text-decoration: none; font-size: 18px; transition: all 0.3s; box-shadow: 0 10px 25px rgba(79, 70, 229, 0.4);">
+                        Request technology demo
+                    </a>
+                </div>
+
+                <div style="display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 15px; opacity: 0.7;">
+                    <i class="ph-fill ph-check-circle" style="color: #94A3B8;"></i>
+                    <span>SOC 2 Type 2 certified and GDPR compliant</span>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
-    <!-- Footer will be injected by master_layout.js -->
+    <!-- Footer Script Injection -->
     <script src="../master_layout.js"></script>
 
     <script>
+        // FAQ Accordion Logic
         document.querySelectorAll('.faq-question').forEach(q => {
             q.addEventListener('click', () => {
-                q.parentElement.classList.toggle('active');
+                const faqItem = q.parentElement;
+                const answer = q.nextElementSibling;
+                const icon = q.querySelector('i');
+                
+                faqItem.classList.toggle('active');
+                
+                if (faqItem.classList.contains('active')) {
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                    icon.style.transform = 'rotate(45deg)';
+                } else {
+                    answer.style.maxHeight = '0';
+                    icon.style.transform = 'rotate(0deg)';
+                }
             });
+        });
+
+        // Sticky Scroll Logic for 5 Steps
+        window.addEventListener('scroll', () => {
+            const section = document.querySelector('.how-it-works-sticky');
+            if (!section) return;
+
+            const rect = section.getBoundingClientRect();
+            const sectionHeight = section.offsetHeight;
+            const stickyHeight = window.innerHeight;
+            
+            let progress = -rect.top / (sectionHeight - stickyHeight);
+            progress = Math.max(0, Math.min(1, progress));
+
+            const totalSteps = 5;
+            const stepIndex = Math.min(Math.floor(progress * totalSteps), totalSteps - 1);
+
+            for (let i = 1; i <= totalSteps; i++) {
+                const visual = document.getElementById(`step-visual-${i}`);
+                const text = document.getElementById(`step-text-${i}`);
+                const dot = document.getElementById(`dot-${i}`);
+
+                if (i === stepIndex + 1) {
+                    if (visual) {
+                        visual.style.opacity = '1';
+                        visual.style.transform = 'translateY(0)';
+                    }
+                    if (text) {
+                        text.style.opacity = '1';
+                        text.style.transform = 'translateY(0)';
+                    }
+                    if (dot) {
+                        dot.classList.add('active');
+                        dot.style.height = '24px';
+                        dot.style.borderRadius = '10px';
+                        dot.style.background = '#4F46E5';
+                    }
+                } else {
+                    if (visual) {
+                        visual.style.opacity = '0';
+                        visual.style.transform = i < stepIndex + 1 ? 'translateY(-20px)' : 'translateY(20px)';
+                    }
+                    if (text) {
+                        text.style.opacity = '0';
+                        text.style.transform = i < stepIndex + 1 ? 'translateY(-20px)' : 'translateY(20px)';
+                    }
+                    if (dot) {
+                        dot.classList.remove('active');
+                        dot.style.height = '10px';
+                        dot.style.borderRadius = '50%';
+                        dot.style.background = '#E2E8F0';
+                    }
+                }
+            }
         });
     </script>
 </body>
-
 </html>

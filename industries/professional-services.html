@@ -16,9 +16,11 @@
         }
 
         .prof-hero {
-            padding: 140px 0 100px;
-            background: radial-gradient(circle at 90% 10%, rgba(2, 132, 199, 0.1) 0%, transparent 40%),
-                        linear-gradient(180deg, #FFFFFF 0%, #F0F9FF 100%);
+            padding: 80px 0 140px;
+            background: #F8FAFC;
+            position: relative;
+            overflow: hidden;
+            border-radius: 0 0 50% 50% / 0 0 80px 80px;
         }
 
         .hero-image-wrapper {
@@ -51,7 +53,7 @@
             padding: 48px 40px;
             border-radius: 32px;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
             border: 1px solid #E0F2FE;
             transition: all 0.3s ease;
         }
@@ -84,10 +86,10 @@
         }
 
         .trust-cat-item {
-            background: rgba(255,255,255,0.05);
+            background: rgba(255, 255, 255, 0.05);
             padding: 32px;
             border-radius: 24px;
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             transition: all 0.3s;
         }
 
@@ -110,7 +112,7 @@
         .ui-mockup {
             background: white;
             border-radius: 24px;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
             width: 100%;
             max-width: 400px;
             padding: 30px;
@@ -170,8 +172,18 @@
         }
 
         @media (max-width: 992px) {
-            .hero-grid, .impact-row { grid-template-columns: 1fr; gap: 60px; text-align: center; }
-            .prof-card-grid, .trust-category-grid { grid-template-columns: 1fr; }
+
+            .hero-grid,
+            .impact-row {
+                grid-template-columns: 1fr;
+                gap: 60px;
+                text-align: center;
+            }
+
+            .prof-card-grid,
+            .trust-category-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -181,16 +193,40 @@
 
     <main>
         <!-- Hero Section -->
-        <section class="prof-hero">
-            <div class="container hero-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
+        <section class="prof-hero"
+            style="padding: 80px 0 140px; background: #F8FAFC; position: relative; overflow: hidden; border-radius: 0 0 50% 50% / 0 0 80px 80px;">
+            <div class="container"
+                style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
                 <div class="hero-image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32d7?auto=format&fit=crop&q=80&w=1000" alt="Professional services consultant on a call">
+                    <img src="../prof_services_hero_man_phone_1778049318209.png" alt="Yoodli for Professional Services"
+                        style="width: 100%; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
                 </div>
                 <div class="hero-content">
-                    <h1 class="section-title">Yoodli dành cho <br><span style="color: var(--prof-blue);">Dịch vụ Chuyên nghiệp</span></h1>
-                    <p style="font-size: 20px; color: #64748B; margin-bottom: 32px; line-height: 1.6;">Xây dựng niềm tin với khách hàng thông qua giao tiếp chuyên nghiệp. Giúp các chuyên gia tư vấn, luật sư và kế toán giao tiếp rõ ràng và tự tin.</p>
-                    <a href="../app.html" class="btn btn-primary-pill" style="padding: 18px 40px; font-size: 18px; background: var(--prof-blue);">Bắt đầu miễn phí</a>
-                    <p style="font-size: 14px; color: #94A3B8; margin-top: 24px; font-weight: 500;">Được tin dùng bởi các hãng luật và công ty tư vấn hàng đầu</p>
+                    <h1
+                        style="font-size: 64px; font-weight: 900; line-height: 1.1; color: #000235; margin-bottom: 24px;">
+                        Yoodli for <br>
+                        <span
+                            style="background: linear-gradient(135deg, #3B82F6, #4F46E5); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Professional
+                            Services</span>
+                    </h1>
+                    <p
+                        style="font-size: 20px; color: #1E293B; line-height: 1.6; margin-bottom: 32px; font-weight: 500;">
+                        Empower your teams with AI-powered communication training. Build confidence in client
+                        engagements, presentations, negotiations, and internal collaboration.
+                    </p>
+
+                    <div style="margin-bottom: 32px;">
+                        <a href="#"
+                            style="display: inline-block; background: linear-gradient(135deg, #3B82F6, #4F46E5); color: white; padding: 18px 40px; border-radius: 100px; font-size: 18px; font-weight: 700; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 10px 25px rgba(79, 70, 229, 0.3);">
+                            Get Yoodli for your team
+                        </a>
+                    </div>
+
+                    <div
+                        style="display: flex; align-items: center; gap: 10px; color: #64748B; font-size: 16px; font-weight: 600;">
+                        <i class="ph-fill ph-check-circle" style="font-size: 22px; color: #64748B;"></i>
+                        SOC 2 Type 2 certified and GDPR compliant
+                    </div>
                 </div>
             </div>
         </section>
@@ -202,17 +238,20 @@
                 <div class="prof-card">
                     <i class="ph-fill ph-users-three"></i>
                     <h3 style="font-size: 22px; font-weight: 700; margin-bottom: 16px;">Tư vấn Khách hàng</h3>
-                    <p style="color: #64748B; line-height: 1.6;">Luyện tập các cuộc họp khởi động dự án và trình bày giải pháp thuyết phục, chuyên nghiệp.</p>
+                    <p style="color: #64748B; line-height: 1.6;">Luyện tập các cuộc họp khởi động dự án và trình bày
+                        giải pháp thuyết phục, chuyên nghiệp.</p>
                 </div>
                 <div class="prof-card">
                     <i class="ph-fill ph-handshake"></i>
                     <h3 style="font-size: 22px; font-weight: 700; margin-bottom: 16px;">Đàm phán & Thương lượng</h3>
-                    <p style="color: #64748B; line-height: 1.6;">Nâng cao kỹ năng thương lượng hợp đồng và giải quyết xung đột lợi ích với khách hàng lớn.</p>
+                    <p style="color: #64748B; line-height: 1.6;">Nâng cao kỹ năng thương lượng hợp đồng và giải quyết
+                        xung đột lợi ích với khách hàng lớn.</p>
                 </div>
                 <div class="prof-card">
                     <i class="ph-fill ph-chart-line-up"></i>
                     <h3 style="font-size: 22px; font-weight: 700; margin-bottom: 16px;">Phát triển Kinh doanh</h3>
-                    <p style="color: #64748B; line-height: 1.6;">Đào tạo kỹ năng bán chéo dịch vụ và mở rộng mối quan hệ đối tác một cách tinh tế.</p>
+                    <p style="color: #64748B; line-height: 1.6;">Đào tạo kỹ năng bán chéo dịch vụ và mở rộng mối quan hệ
+                        đối tác một cách tinh tế.</p>
                 </div>
             </div>
         </section>
@@ -241,79 +280,220 @@
                 </div>
             </div>
         </section>
+        <!-- Scroll-driven Sticky Section: How Yoodli AI Roleplays work -->
+        <section class="how-it-works-sticky" style="height: 300vh; position: relative;">
+            <div class="sticky-inner"
+                style="position: sticky; top: 0; height: 100vh; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #F3F4FA; padding: 10px 0 60px; border-radius: 0 0 50% 50% / 0 0 100px 100px; overflow: hidden;">
 
-        <!-- How it works -->
-        <section style="padding: 120px 0; background: white;">
-            <div class="container" style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 80px; align-items: center;">
-                <div class="ui-mockup-wrapper">
-                    <div class="ui-mockup">
-                        <div style="border-bottom: 1px solid #F1F5F9; padding-bottom: 20px; margin-bottom: 20px;">
-                            <div style="font-weight: 800; color: var(--prof-blue);">Kịch bản: Thuyết trình Đề xuất</div>
-                            <div style="font-size: 14px; color: #64748B;">Khách hàng: Khắt khe về chi phí</div>
-                        </div>
-                        <div style="background: #F8FAFC; padding: 20px; border-radius: 12px; margin-bottom: 16px;">
-                            <div style="font-size: 12px; color: #94A3B8; margin-bottom: 8px;">MỨC ĐỘ THUYẾT PHỤC</div>
-                            <div style="font-weight: 600; color: #0284C7;">95/100 - "Lập luận sắc bén"</div>
-                        </div>
-                        <div style="display: flex; gap: 10px;">
-                            <div style="flex: 1; height: 8px; background: #E2E8F0; border-radius: 4px; overflow: hidden;">
-                                <div style="width: 95%; height: 100%; background: #38BDF8;"></div>
+                <!-- 1. Header (Top Center) -->
+                <div style="text-align: center; width: 100%; margin-bottom: 10px;">
+                    <div
+                        style="font-size: 13px; font-weight: 800; color: #4F46E5; letter-spacing: 2px; margin-bottom: 4px;">
+                        CÁCH THỨC HOẠT ĐỘNG</div>
+                    <h2 style="font-size: 32px; font-weight: 800; color: #000235; margin: 0;">Cách Yoodli giúp đội ngũ của bạn tỏa sáng</h2>
+                </div>
+
+                <div class="container"
+                    style="max-width: 1200px; margin: 0 auto; padding: 0 24px; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: center; width: 100%; position: relative;">
+
+                    <!-- 2. Left: Interactive Mockup -->
+                    <div class="mockup-side"
+                        style="position: relative; height: 420px; background: white; border-radius: 24px; display: flex; align-items: center; justify-content: center; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.05); border: 1px solid #F1F5F9;">
+
+                        <!-- State 1: Choose Roleplay -->
+                        <div id="step-visual-1" class="step-visual"
+                            style="position: absolute; width: 85%; opacity: 1; transform: translateY(0); transition: all 0.6s ease;">
+                            <div
+                                style="background: #F8FAFC; padding: 24px; border-radius: 20px; border: 1px solid #E2E8F0;">
+                                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
+                                    <div
+                                        style="width: 48px; height: 48px; background: #4F46E5; border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                                        <i class="ph-fill ph-briefcase" style="color: white; font-size: 24px;"></i>
+                                    </div>
+                                    <div>
+                                        <div style="font-size: 16px; font-weight: 800; color: #000235;">Client Negotiation
+                                        </div>
+                                        <div style="font-size: 12px; color: #64748B;">Practice high-stakes deal closing
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; gap: 10px;">
+                                    <div
+                                        style="padding: 12px; background: white; border-radius: 10px; border: 1px solid #F1F5F9; font-size: 13px; font-weight: 600; color: #475569;">
+                                        Scenario: Handling Price Objections</div>
+                                    <div
+                                        style="padding: 12px; background: white; border-radius: 10px; border: 1px solid #F1F5F9; font-size: 13px; font-weight: 600; color: #475569;">
+                                        Role: Procurement Director</div>
+                                </div>
                             </div>
+                        </div>
+
+                        <!-- State 2: Practice with AI -->
+                        <div id="step-visual-2" class="step-visual"
+                            style="position: absolute; width: 85%; opacity: 0; transform: translateY(40px); transition: all 0.6s ease;">
+                            <div style="position: relative;">
+                                <!-- Speech Bubble -->
+                                <div
+                                    style="background: white; padding: 20px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); border: 1px solid #F1F5F9; margin-bottom: 40px; position: relative; z-index: 2;">
+                                    <div style="display: flex; align-items: center; gap: 12px;">
+                                        <div
+                                            style="width: 32px; height: 32px; background: #9333EA; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                            <i class="ph-bold ph-chats" style="color: white; font-size: 16px;"></i>
+                                        </div>
+                                        <div style="font-size: 14px; font-weight: 700; color: #1E293B;">That budget seems high. Can you justify the ROI for this phase?</div>
+                                    </div>
+                                </div>
+                                <!-- Wave UI -->
+                                <div
+                                    style="background: white; padding: 15px 25px; border-radius: 100px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid #F1F5F9; display: flex; align-items: center; gap: 15px; width: fit-content; margin: 0 auto;">
+                                    <div style="display: flex; align-items: center; gap: 4px;">
+                                        <div style="width: 3px; height: 12px; background: #CBD5E1; border-radius: 2px;">
+                                        </div>
+                                        <div style="width: 3px; height: 24px; background: #4F46E5; border-radius: 2px;">
+                                        </div>
+                                        <div style="width: 3px; height: 18px; background: #9333EA; border-radius: 2px;">
+                                        </div>
+                                        <div style="width: 3px; height: 30px; background: #4F46E5; border-radius: 2px;">
+                                        </div>
+                                        <div style="width: 3px; height: 14px; background: #CBD5E1; border-radius: 2px;">
+                                        </div>
+                                    </div>
+                                    <div style="font-size: 13px; font-weight: 700; color: #4F46E5;">Analyzing
+                                        confidence... <i class="ph-bold ph-circle-notch ph-spin"
+                                            style="font-size: 10px;"></i></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- State 3: View Results -->
+                        <div id="step-visual-3" class="step-visual"
+                            style="position: absolute; width: 85%; opacity: 0; transform: translateY(40px); transition: all 0.6s ease;">
+                            <div
+                                style="background: white; padding: 24px; border-radius: 24px; box-shadow: 0 20px 60px rgba(0,0,0,0.1); border: 1px solid #F1F5F9;">
+                                <div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 24px;">
+                                    <img src="../prof_services_hero_man_phone_1778049318209.png"
+                                        style="width: 100px; height: 100px; border-radius: 16px; object-fit: cover;">
+                                    <div style="flex: 1;">
+                                        <div
+                                            style="background: #F5F3FF; color: #7C3AED; padding: 4px 12px; border-radius: 100px; font-size: 11px; font-weight: 700; display: inline-block; margin-bottom: 8px;">
+                                            ANALYSIS COMPLETE</div>
+                                        <div
+                                            style="font-size: 20px; font-weight: 850; color: #000235; margin-bottom: 4px;">
+                                            Executive Presence</div>
+                                        <div style="font-size: 14px; color: #64748B;">Persuasion Score: <span
+                                                style="color: #4F46E5; font-weight: 800;">96/100</span></div>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; gap: 12px;">
+                                    <div
+                                        style="display: flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 600; color: #7C3AED;">
+                                        <i class="ph-fill ph-check-circle"></i> Excellent objection handling
+                                    </div>
+                                    <div
+                                        style="display: flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 600; color: #7C3AED;">
+                                        <i class="ph-fill ph-check-circle"></i> Professional and firm tone
+                                    </div>
+                                    <div
+                                        style="display: flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 600; color: #7C3AED;">
+                                        <i class="ph-fill ph-check-circle"></i> Clear value proposition
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. Right: Text Content Cards -->
+                    <div class="text-side" style="padding-left: 20px; position: relative; height: 160px;">
+                        <!-- Step 1 Text -->
+                        <div id="step-text-1"
+                            style="position: absolute; top: 0; left: 0; opacity: 1; transform: translateY(0); width: 100%; transition: all 0.6s ease;">
+                            <div
+                                style="background: white; padding: 32px; border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.06); border: 1px solid #F1F5F9;">
+                                <h3 style="font-size: 24px; font-weight: 850; color: #000235; margin-bottom: 12px;">
+                                    Choose your scenario</h3>
+                                <p style="font-size: 16px; color: #475569; line-height: 1.6; margin: 0;">
+                                    Select from a library of high-stakes professional scenarios, from client negotiations to leadership presentations.</p>
+                            </div>
+                        </div>
+                        <!-- Step 2 Text -->
+                        <div id="step-text-2"
+                            style="position: absolute; top: 0; left: 0; opacity: 0; transform: translateY(40px); width: 100%; transition: all 0.6s ease;">
+                            <div
+                                style="background: white; padding: 32px; border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.06); border: 1px solid #F1F5F9;">
+                                <h3 style="font-size: 24px; font-weight: 850; color: #000235; margin-bottom: 12px;">
+                                    Practice with AI</h3>
+                                <p style="font-size: 16px; color: #475569; line-height: 1.6; margin: 0;">
+                                    Engage in realistic conversations with AI clients or partners who provide dynamic, human-like responses.</p>
+                            </div>
+                        </div>
+                        <!-- Step 3 Text -->
+                        <div id="step-text-3"
+                            style="position: absolute; top: 0; left: 0; opacity: 0; transform: translateY(40px); width: 100%; transition: all 0.6s ease;">
+                            <div
+                                style="background: white; padding: 32px; border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.06); border: 1px solid #F1F5F9;">
+                                <h3 style="font-size: 24px; font-weight: 850; color: #000235; margin-bottom: 12px;">Master executive presence</h3>
+                                <p style="font-size: 16px; color: #475569; line-height: 1.6; margin: 0;">
+                                    Receive instant, data-driven feedback on your persuasion, tone, and delivery to win every interaction.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4. Far Right: Vertical Dots -->
+                    <div
+                        style="position: absolute; right: 0; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 8px; z-index: 10;">
+                        <div id="dot-1" class="progress-dot active"
+                            style="width: 10px; height: 24px; border-radius: 10px; background: #4F46E5; transition: all 0.3s;">
+                        </div>
+                        <div id="dot-2" class="progress-dot"
+                            style="width: 10px; height: 10px; border-radius: 50%; background: #E2E8F0; transition: all 0.3s;">
+                        </div>
+                        <div id="dot-3" class="progress-dot"
+                            style="width: 10px; height: 10px; border-radius: 50%; background: #E2E8F0; transition: all 0.3s;">
                         </div>
                     </div>
                 </div>
-                <div>
-                    <h2 class="section-title">Cách thức Nhập vai AI Yoodli vận hành</h2>
-                    <div style="display: flex; flex-direction: column; gap: 32px; margin-top: 40px;">
-                        <div style="display: flex; gap: 24px;">
-                            <div style="width: 48px; height: 48px; background: #E0F2FE; color: var(--prof-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; flex-shrink: 0;">1</div>
-                            <div>
-                                <h4 style="font-size: 20px; font-weight: 700; margin-bottom: 8px;">Chọn kịch bản chuyên ngành</h4>
-                                <p style="color: #64748B;">Sử dụng các tình huống đặc thù như bảo vệ tư vấn chiến lược, đàm phán phí dịch vụ hay giải quyết khiếu nại.</p>
-                            </div>
-                        </div>
-                        <div style="display: flex; gap: 24px;">
-                            <div style="width: 48px; height: 48px; background: #E0F2FE; color: var(--prof-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; flex-shrink: 0;">2</div>
-                            <div>
-                                <h4 style="font-size: 20px; font-weight: 700; margin-bottom: 8px;">Tương tác với khách hàng AI</h4>
-                                <p style="color: #64748B;">Luyện tập phản xạ với các câu hỏi khó, các lời từ chối từ những persona khách hàng giả lập cực kỳ thực tế.</p>
-                            </div>
-                        </div>
-                        <div style="display: flex; gap: 24px;">
-                            <div style="width: 48px; height: 48px; background: #E0F2FE; color: var(--prof-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; flex-shrink: 0;">3</div>
-                            <div>
-                                <h4 style="font-size: 20px; font-weight: 700; margin-bottom: 8px;">Nhận phản hồi về sự chuyên nghiệp</h4>
-                                <p style="color: #64748B;">Đo lường mức độ tự tin, tính rõ ràng trong ngôn ngữ chuyên môn và khả năng tạo thiện cảm.</p>
-                            </div>
-                        </div>
-                    </div>
+
+                <!-- 5. Footer Button (Bottom Center) -->
+                <div style="text-align: center; margin-top: 5px;">
+                    <a href="#"
+                        style="display: inline-flex; align-items: center; gap: 10px; padding: 12px 32px; background: linear-gradient(135deg, #3B82F6, #4F46E5); color: white; border-radius: 100px; font-weight: 700; text-decoration: none; box-shadow: 0 10px 25px rgba(79, 70, 229, 0.2); font-size: 14px;">
+                        Start roleplaying
+                    </a>
                 </div>
             </div>
         </section>
 
         <!-- Impact Section -->
         <section class="container" style="padding: 120px 0;">
-            <h2 class="section-title" style="text-align: center; margin-bottom: 80px;">Tác động của Yoodli đối với <br>Đội ngũ của bạn</h2>
-            
+            <h2 class="section-title" style="text-align: center; margin-bottom: 80px;">Tác động của Yoodli đối với
+                <br>Đội ngũ của bạn
+            </h2>
+
             <div class="impact-row">
                 <div class="impact-content">
                     <div style="color: var(--prof-blue); font-weight: 700; margin-bottom: 12px;">TĂNG TRƯỞNG</div>
                     <h3>Tỷ lệ chốt hợp đồng cao hơn</h3>
-                    <p>Tăng khả năng giành được dự án nhờ vào kỹ năng thuyết trình xuất sắc và khả năng trả lời câu hỏi trôi chảy trong các vòng pitching.</p>
+                    <p>Tăng khả năng giành được dự án nhờ vào kỹ năng thuyết trình xuất sắc và khả năng trả lời câu hỏi
+                        trôi chảy trong các vòng pitching.</p>
                 </div>
                 <div class="impact-visual">
-                    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=800" alt="Team pitching to client" style="width: 100%; border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.05);">
+                    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=800"
+                        alt="Team pitching to client"
+                        style="width: 100%; border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.05);">
                 </div>
             </div>
 
             <div class="impact-row" style="grid-template-columns: 1.2fr 1fr;">
                 <div class="impact-visual">
-                    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=800" alt="Consultants reviewing document" style="width: 100%; border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.05);">
+                    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=800"
+                        alt="Consultants reviewing document"
+                        style="width: 100%; border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.05);">
                 </div>
                 <div class="impact-content">
                     <div style="color: var(--prof-blue); font-weight: 700; margin-bottom: 12px;">LONG TRUNG THÀNH</div>
                     <h3>Giữ chân khách hàng dài hạn</h3>
-                    <p>Xây dựng mối quan hệ đối tác bền vững và gia tăng giá trị thông qua giao tiếp đáng tin cậy, thấu hiểu trong suốt quá trình triển khai dự án.</p>
+                    <p>Xây dựng mối quan hệ đối tác bền vững và gia tăng giá trị thông qua giao tiếp đáng tin cậy, thấu
+                        hiểu trong suốt quá trình triển khai dự án.</p>
                 </div>
             </div>
         </section>
@@ -323,20 +503,29 @@
             <h2 class="section-title" style="text-align: center;">Câu hỏi thường gặp</h2>
             <div style="margin-top: 60px;">
                 <div class="faq-item">
-                    <div class="faq-question">Bảo mật dữ liệu nội bộ của hãng tư vấn như thế nào? <i class="ph ph-plus"></i></div>
-                    <div class="faq-answer">Yoodli cung cấp môi trường luyện tập riêng tư với mã hóa đầu cuối. Mọi kịch bản và dữ liệu ghi âm không bao giờ được sử dụng để huấn luyện mô hình AI bên ngoài.</div>
+                    <div class="faq-question">Bảo mật dữ liệu nội bộ của hãng tư vấn như thế nào? <i
+                            class="ph ph-plus"></i></div>
+                    <div class="faq-answer">Yoodli cung cấp môi trường luyện tập riêng tư với mã hóa đầu cuối. Mọi kịch
+                        bản và dữ liệu ghi âm không bao giờ được sử dụng để huấn luyện mô hình AI bên ngoài.</div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">Chúng tôi có thể tải lên các kịch bản đàm phán độc quyền của mình không? <i class="ph ph-plus"></i></div>
-                    <div class="faq-answer">Có, quản trị viên có thể dễ dàng tạo ra các kịch bản nhập vai phản ánh chính xác quy trình và phương pháp tư vấn độc quyền của công ty bạn.</div>
+                    <div class="faq-question">Chúng tôi có thể tải lên các kịch bản đàm phán độc quyền của mình không?
+                        <i class="ph ph-plus"></i>
+                    </div>
+                    <div class="faq-answer">Có, quản trị viên có thể dễ dàng tạo ra các kịch bản nhập vai phản ánh chính
+                        xác quy trình và phương pháp tư vấn độc quyền của công ty bạn.</div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">Yoodli có giúp đào tạo nhân sự mới (onboarding) không? <i class="ph ph-plus"></i></div>
-                    <div class="faq-answer">Rất hiệu quả. Nhân viên mới có thể luyện tập các tình huống giao tiếp với khách hàng an toàn với AI trước khi chính thức tiếp quản dự án.</div>
+                    <div class="faq-question">Yoodli có giúp đào tạo nhân sự mới (onboarding) không? <i
+                            class="ph ph-plus"></i></div>
+                    <div class="faq-answer">Rất hiệu quả. Nhân viên mới có thể luyện tập các tình huống giao tiếp với
+                        khách hàng an toàn với AI trước khi chính thức tiếp quản dự án.</div>
                 </div>
                 <div class="faq-item">
-                    <div class="faq-question">Làm sao để đánh giá hiệu quả của hệ thống đối với công ty luật? <i class="ph ph-plus"></i></div>
-                    <div class="faq-answer">Bảng điều khiển Analytics cung cấp cái nhìn chi tiết về thời lượng luyện tập, sự cải thiện điểm số tự tin, và mức độ trôi chảy khi tranh luận của từng luật sư.</div>
+                    <div class="faq-question">Làm sao để đánh giá hiệu quả của hệ thống đối với công ty luật? <i
+                            class="ph ph-plus"></i></div>
+                    <div class="faq-answer">Bảng điều khiển Analytics cung cấp cái nhìn chi tiết về thời lượng luyện
+                        tập, sự cải thiện điểm số tự tin, và mức độ trôi chảy khi tranh luận của từng luật sư.</div>
                 </div>
             </div>
         </section>
@@ -344,12 +533,19 @@
         <!-- Final CTA -->
         <section class="final-cta">
             <div class="container">
-                <h2 style="font-size: 48px; font-weight: 800; margin-bottom: 24px;">Sẵn sàng nâng tầm dịch vụ <br>chuyên nghiệp của bạn?</h2>
-                <p style="font-size: 20px; opacity: 0.8; margin-bottom: 40px; max-width: 700px; margin-left: auto; margin-right: auto;">Hãy để đội ngũ của bạn giao tiếp bằng sự tự tin, chuyên môn cao và xây dựng lòng tin tuyệt đối với khách hàng.</p>
+                <h2 style="font-size: 48px; font-weight: 800; margin-bottom: 24px;">Sẵn sàng nâng tầm dịch vụ <br>chuyên
+                    nghiệp của bạn?</h2>
+                <p
+                    style="font-size: 20px; opacity: 0.8; margin-bottom: 40px; max-width: 700px; margin-left: auto; margin-right: auto;">
+                    Hãy để đội ngũ của bạn giao tiếp bằng sự tự tin, chuyên môn cao và xây dựng lòng tin tuyệt đối với
+                    khách hàng.</p>
                 <div style="display: flex; gap: 20px; justify-content: center;">
-                    <a href="../app.html" class="btn btn-primary-pill" style="background: white; color: var(--prof-navy); padding: 20px 48px; font-size: 20px;">Trải nghiệm miễn phí</a>
+                    <a href="../app.html" class="btn btn-primary-pill"
+                        style="background: white; color: var(--prof-navy); padding: 20px 48px; font-size: 20px;">Trải
+                        nghiệm miễn phí</a>
                 </div>
-                <p style="margin-top: 32px; font-size: 14px; opacity: 0.6;"><i class="ph ph-check-circle"></i> Đăng ký cho doanh nghiệp • Hỗ trợ tùy chỉnh kịch bản</p>
+                <p style="margin-top: 32px; font-size: 14px; opacity: 0.6;"><i class="ph ph-check-circle"></i> Đăng ký
+                    cho doanh nghiệp • Hỗ trợ tùy chỉnh kịch bản</p>
             </div>
         </section>
     </main>
@@ -359,6 +555,49 @@
     <script src="../master_layout.js"></script>
 
     <script>
+        // Sticky Scroll Logic
+        window.addEventListener('scroll', () => {
+            const section = document.querySelector('.how-it-works-sticky');
+            if (!section) return;
+
+            const rect = section.getBoundingClientRect();
+            const scrollPercent = Math.min(Math.max(-rect.top / (rect.height - window.innerHeight), 0), 1);
+
+            let activeStep = 1;
+            if (scrollPercent > 0.66) {
+                activeStep = 3;
+            } else if (scrollPercent > 0.33) {
+                activeStep = 2;
+            }
+
+            // Update Steps
+            for (let i = 1; i <= 3; i++) {
+                const visual = document.getElementById(`step-visual-${i}`);
+                const text = document.getElementById(`step-text-${i}`);
+                const dot = document.getElementById(`dot-${i}`);
+
+                if (i === activeStep) {
+                    visual.style.opacity = '1';
+                    visual.style.transform = 'translateY(0)';
+                    text.style.opacity = '1';
+                    text.style.transform = 'translateY(0)';
+                    dot.classList.add('active');
+                    dot.style.height = '24px';
+                    dot.style.borderRadius = '10px';
+                    dot.style.background = '#4F46E5';
+                } else {
+                    visual.style.opacity = '0';
+                    visual.style.transform = i < activeStep ? 'translateY(-40px)' : 'translateY(40px)';
+                    text.style.opacity = '0';
+                    text.style.transform = i < activeStep ? 'translateY(-40px)' : 'translateY(40px)';
+                    dot.classList.remove('active');
+                    dot.style.height = '10px';
+                    dot.style.borderRadius = '50%';
+                    dot.style.background = '#E2E8F0';
+                }
+            }
+        });
+
         document.querySelectorAll('.faq-question').forEach(item => {
             item.addEventListener('click', () => {
                 const parent = item.parentElement;

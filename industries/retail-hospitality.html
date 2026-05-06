@@ -10,15 +10,17 @@
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <style>
         :root {
-            --retail-blue: #4F46E5;
-            --retail-navy: #1E1B4B;
-            --retail-bg: #EEF2FF;
+            --retail-teal: #10B981;
+            --retail-navy: #000235;
+            --retail-bg: #F8FAFC;
         }
 
         .retail-hero {
-            padding: 140px 0 100px;
-            background: radial-gradient(circle at 90% 10%, rgba(79, 70, 229, 0.1) 0%, transparent 40%),
-                        linear-gradient(180deg, #FFFFFF 0%, #EEF2FF 100%);
+            padding: 80px 0 140px;
+            background: var(--retail-bg);
+            position: relative;
+            overflow: hidden;
+            border-radius: 0 0 50% 50% / 0 0 80px 80px;
         }
 
         .hero-image-wrapper {
@@ -28,7 +30,7 @@
         .hero-image-wrapper img {
             width: 100%;
             border-radius: 32px;
-            box-shadow: 0 30px 60px rgba(79, 70, 229, 0.15);
+            box-shadow: 0 30px 60px rgba(2, 132, 199, 0.15);
         }
 
         .section-title {
@@ -36,42 +38,42 @@
             font-weight: 800;
             line-height: 1.2;
             margin-bottom: 24px;
-            color: var(--retail-navy);
+            color: var(--prof-navy);
         }
 
-        .retail-card-grid {
+        .prof-card-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 32px;
             margin-top: 60px;
         }
 
-        .retail-card {
+        .prof-card {
             background: white;
             padding: 48px 40px;
             border-radius: 32px;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-            border: 1px solid #E0E7FF;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+            border: 1px solid #E0F2FE;
             transition: all 0.3s ease;
         }
 
-        .retail-card:hover {
+        .prof-card:hover {
             transform: translateY(-10px);
-            border-color: var(--retail-blue);
-            box-shadow: 0 20px 40px rgba(79, 70, 229, 0.1);
+            border-color: var(--prof-blue);
+            box-shadow: 0 20px 40px rgba(2, 132, 199, 0.1);
         }
 
-        .retail-card i {
+        .prof-card i {
             font-size: 40px;
-            color: var(--retail-blue);
+            color: var(--prof-blue);
             margin-bottom: 24px;
             display: block;
         }
 
         .trust-section {
             padding: 100px 0;
-            background: var(--retail-navy);
+            background: var(--prof-navy);
             color: white;
             text-align: center;
         }
@@ -84,10 +86,10 @@
         }
 
         .trust-cat-item {
-            background: rgba(255,255,255,0.05);
+            background: rgba(255, 255, 255, 0.05);
             padding: 32px;
             border-radius: 24px;
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             transition: all 0.3s;
         }
 
@@ -95,11 +97,11 @@
             font-size: 32px;
             margin-bottom: 16px;
             display: block;
-            color: #818CF8;
+            color: #38BDF8;
         }
 
         .ui-mockup-wrapper {
-            background: #E0E7FF;
+            background: #E0F2FE;
             border-radius: 48px;
             padding: 60px;
             display: flex;
@@ -110,7 +112,7 @@
         .ui-mockup {
             background: white;
             border-radius: 24px;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
             width: 100%;
             max-width: 400px;
             padding: 30px;
@@ -162,7 +164,7 @@
         }
 
         .final-cta {
-            background: var(--retail-navy);
+            background: var(--prof-navy);
             color: white;
             padding: 120px 0;
             text-align: center;
@@ -170,124 +172,288 @@
         }
 
         @media (max-width: 992px) {
-            .hero-grid, .impact-row { grid-template-columns: 1fr; gap: 60px; text-align: center; }
-            .retail-card-grid, .trust-category-grid { grid-template-columns: 1fr; }
+
+            .hero-grid,
+            .impact-row {
+                grid-template-columns: 1fr;
+                gap: 60px;
+                text-align: center;
+            }
+
+            .prof-card-grid,
+            .trust-category-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 
 <body>
-    <!-- Navbar -->
     <!-- Navbar will be injected by master_layout.js -->
 
     <main>
         <!-- Hero Section -->
-        <section class="retail-hero">
-            <div class="container hero-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
+        <section class="retail-hero"
+            style="padding: 80px 0 140px; background: #F8FAFC; position: relative; overflow: hidden; border-radius: 0 0 50% 50% / 0 0 80px 80px;">
+            <div class="container"
+                style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
                 <div class="hero-image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=1000" alt="Customer service representative assisting a guest">
+                    <img src="../retail_hospitality_hero_front_desk_1778050218552.png" alt="Yoodli for Retail & Hospitality"
+                        style="width: 100%; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
                 </div>
                 <div class="hero-content">
-                    <h1 class="section-title">Yoodli dành cho <br><span style="color: var(--retail-blue);">Bán lẻ & Khách sạn</span></h1>
-                    <p style="font-size: 20px; color: #64748B; margin-bottom: 32px; line-height: 1.6;">Nâng tầm trải nghiệm khách hàng với dịch vụ xuất sắc. Đào tạo đội ngũ tiền sảnh, nhân viên bán hàng và CSKH cách giao tiếp tự tin, chuẩn mực và thấu hiểu.</p>
-                    <a href="../app.html" class="btn btn-primary-pill" style="padding: 18px 40px; font-size: 18px; background: var(--retail-blue);">Bắt đầu miễn phí</a>
-                    <p style="font-size: 14px; color: #94A3B8; margin-top: 24px; font-weight: 500;">Được tin dùng bởi các chuỗi bán lẻ và tập đoàn khách sạn hàng đầu</p>
+                    <h1
+                        style="font-size: 64px; font-weight: 900; line-height: 1.1; color: #000235; margin-bottom: 24px;">
+                        Yoodli for <br>
+                        <span
+                            style="background: linear-gradient(135deg, #10B981, #3B82F6); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Retail & Hospitality</span>
+                    </h1>
+                    <p
+                        style="font-size: 20px; color: #1E293B; line-height: 1.6; margin-bottom: 32px; font-weight: 500;">
+                        Elevate every guest interaction with AI-powered communication training. Build confidence in front-desk service, tableside hospitality, and high-stakes customer resolutions.
+                    </p>
+
+                    <div style="margin-bottom: 32px;">
+                        <a href="#"
+                            style="display: inline-block; background: linear-gradient(135deg, #10B981, #3B82F6); color: white; padding: 18px 40px; border-radius: 100px; font-size: 18px; font-weight: 700; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);">
+                            Get Yoodli for your team
+                        </a>
+                    </div>
+
+                    <div
+                        style="display: flex; align-items: center; gap: 10px; color: #64748B; font-size: 16px; font-weight: 600;">
+                        <i class="ph-fill ph-check-circle" style="font-size: 22px; color: #64748B;"></i>
+                        SOC 2 Type 2 certified and GDPR compliant
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Value Prop Cards -->
         <section class="container" style="padding: 100px 0; text-align: center;">
-            <h2 class="section-title">Xây dựng trải nghiệm khách hàng xuất sắc</h2>
-            <div class="retail-card-grid">
-                <div class="retail-card">
-                    <i class="ph-fill ph-warning-circle"></i>
+            <h2 class="section-title">Xây dựng trải nghiệm khách hàng <br>chuẩn mực và thấu hiểu</h2>
+            <div class="retail-card-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 60px;">
+                <div class="retail-card" style="background: white; padding: 48px 40px; border-radius: 32px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03); border: 1px solid #ECFDF5; transition: all 0.3s ease;">
+                    <i class="ph-fill ph-chat-teardrop-dots" style="font-size: 40px; color: #10B981; margin-bottom: 24px; display: block;"></i>
                     <h3 style="font-size: 22px; font-weight: 700; margin-bottom: 16px;">Xử lý tình huống khó</h3>
-                    <p style="color: #64748B; line-height: 1.6;">Đào tạo nhân viên cách giải quyết phàn nàn của khách hàng một cách chuyên nghiệp, đồng cảm và giữ bình tĩnh.</p>
+                    <p style="color: #64748B; line-height: 1.6;">Đào tạo nhân viên cách giải quyết phàn nàn của khách hàng một cách chuyên nghiệp, đồng cảm và hiệu quả.</p>
                 </div>
-                <div class="retail-card">
-                    <i class="ph-fill ph-shopping-cart"></i>
+                <div class="retail-card" style="background: white; padding: 48px 40px; border-radius: 32px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03); border: 1px solid #ECFDF5; transition: all 0.3s ease;">
+                    <i class="ph-fill ph-shopping-cart-simple" style="font-size: 40px; color: #10B981; margin-bottom: 24px; display: block;"></i>
                     <h3 style="font-size: 22px; font-weight: 700; margin-bottom: 16px;">Bán chéo & Nâng hạng</h3>
-                    <p style="color: #64748B; line-height: 1.6;">Luyện tập cách giới thiệu sản phẩm, dịch vụ thêm (upsell/cross-sell) một cách tinh tế và hiệu quả.</p>
+                    <p style="color: #64748B; line-height: 1.6;">Luyện tập kỹ năng gợi ý sản phẩm và dịch vụ bổ sung một cách tinh tế để tăng giá trị đơn hàng.</p>
                 </div>
-                <div class="retail-card">
-                    <i class="ph-fill ph-star"></i>
+                <div class="retail-card" style="background: white; padding: 48px 40px; border-radius: 32px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03); border: 1px solid #ECFDF5; transition: all 0.3s ease;">
+                    <i class="ph-fill ph-star" style="font-size: 40px; color: #10B981; margin-bottom: 24px; display: block;"></i>
                     <h3 style="font-size: 22px; font-weight: 700; margin-bottom: 16px;">Tiêu chuẩn Dịch vụ</h3>
-                    <p style="color: #64748B; line-height: 1.6;">Đảm bảo mọi nhân viên đều nắm vững và thực hành đúng kịch bản chào đón và phục vụ chuẩn mực của thương hiệu.</p>
+                    <p style="color: #64748B; line-height: 1.6;">Đảm bảo mọi nhân viên đều duy trì phong cách phục vụ nhất quán và chuyên nghiệp theo chuẩn thương hiệu.</p>
                 </div>
             </div>
         </section>
 
         <!-- Trust Category Section -->
-        <section class="trust-section">
+        <section class="trust-section" style="background: #000235; padding: 100px 0; color: white; text-align: center;">
             <div class="container">
-                <h2 style="font-size: 36px; font-weight: 800;">Được tin dùng bởi các tổ chức trong mảng:</h2>
-                <div class="trust-category-grid">
-                    <div class="trust-cat-item">
-                        <i class="ph ph-storefront"></i>
-                        <span style="font-weight: 700;">Chuỗi Bán lẻ</span>
+                <h2 style="font-size: 36px; font-weight: 800; margin-bottom: 60px;">Được tin dùng bởi các tập đoàn:</h2>
+                <div class="trust-category-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;">
+                    <div class="trust-cat-item" style="background: rgba(255, 255, 255, 0.05); padding: 32px; border-radius: 24px; border: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.3s;">
+                        <i class="ph ph-buildings" style="font-size: 32px; margin-bottom: 16px; display: block; color: #10B981;"></i>
+                        <span style="font-weight: 700;">Khách sạn & Khu nghỉ dưỡng</span>
                     </div>
-                    <div class="trust-cat-item">
-                        <i class="ph ph-buildings"></i>
-                        <span style="font-weight: 700;">Khách sạn & Nghỉ dưỡng</span>
+                    <div class="trust-cat-item" style="background: rgba(255, 255, 255, 0.05); padding: 32px; border-radius: 24px; border: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.3s;">
+                        <i class="ph ph-storefront" style="font-size: 32px; margin-bottom: 16px; display: block; color: #10B981;"></i>
+                        <span style="font-weight: 700;">Chuỗi Bán lẻ & Thời trang</span>
                     </div>
-                    <div class="trust-cat-item">
-                        <i class="ph ph-fork-knife"></i>
-                        <span style="font-weight: 700;">Nhà hàng & F&B</span>
+                    <div class="trust-cat-item" style="background: rgba(255, 255, 255, 0.05); padding: 32px; border-radius: 24px; border: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.3s;">
+                        <i class="ph ph-coffee" style="font-size: 32px; margin-bottom: 16px; display: block; color: #10B981;"></i>
+                        <span style="font-weight: 700;">Nhà hàng & Dịch vụ F&B</span>
                     </div>
-                    <div class="trust-cat-item">
-                        <i class="ph ph-headset"></i>
-                        <span style="font-weight: 700;">Chăm sóc Khách hàng</span>
+                    <div class="trust-cat-item" style="background: rgba(255, 255, 255, 0.05); padding: 32px; border-radius: 24px; border: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.3s;">
+                        <i class="ph ph-headset" style="font-size: 32px; margin-bottom: 16px; display: block; color: #10B981;"></i>
+                        <span style="font-weight: 700;">Trung tâm CSKH</span>
                     </div>
                 </div>
             </div>
         </section>
+        <!-- Scroll-driven Sticky Section: How Yoodli AI Roleplays work -->
+        <section class="how-it-works-sticky" style="height: 300vh; position: relative;">
+            <div class="sticky-inner"
+                style="position: sticky; top: 0; height: 100vh; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #F3F4FA; padding: 10px 0 60px; border-radius: 0 0 50% 50% / 0 0 100px 100px; overflow: hidden;">
 
-        <!-- How it works -->
-        <section style="padding: 120px 0; background: white;">
-            <div class="container" style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 80px; align-items: center;">
-                <div class="ui-mockup-wrapper">
-                    <div class="ui-mockup">
-                        <div style="border-bottom: 1px solid #F1F5F9; padding-bottom: 20px; margin-bottom: 20px;">
-                            <div style="font-weight: 800; color: var(--retail-blue);">Kịch bản: Khách hàng phàn nàn dịch vụ</div>
-                            <div style="font-size: 14px; color: #64748B;">Khách hàng: Tức giận, mất bình tĩnh</div>
-                        </div>
-                        <div style="background: #F8FAFC; padding: 20px; border-radius: 12px; margin-bottom: 16px;">
-                            <div style="font-size: 12px; color: #94A3B8; margin-bottom: 8px;">ĐIỂM ĐỒNG CẢM</div>
-                            <div style="font-weight: 600; color: #4F46E5;">92/100 - "Sự lắng nghe và thấu hiểu tuyệt vời"</div>
-                        </div>
-                        <div style="display: flex; gap: 10px;">
-                            <div style="flex: 1; height: 8px; background: #E2E8F0; border-radius: 4px; overflow: hidden;">
-                                <div style="width: 92%; height: 100%; background: #818CF8;"></div>
+                <!-- 1. Header (Top Center) -->
+                <div style="text-align: center; width: 100%; margin-bottom: 10px;">
+                    <div
+                        style="font-size: 13px; font-weight: 800; color: #10B981; letter-spacing: 2px; margin-bottom: 4px;">
+                        CÁCH THỨC HOẠT ĐỘNG</div>
+                    <h2 style="font-size: 32px; font-weight: 800; color: #000235; margin: 0;">Nâng tầm dịch vụ khách hàng với AI</h2>
+                </div>
+
+                <div class="container"
+                    style="max-width: 1200px; margin: 0 auto; padding: 0 24px; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: center; width: 100%; position: relative;">
+
+                    <!-- 2. Left: Interactive Mockup -->
+                    <div class="mockup-side"
+                        style="position: relative; height: 420px; background: white; border-radius: 24px; display: flex; align-items: center; justify-content: center; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.05); border: 1px solid #F1F5F9;">
+
+                        <!-- State 1: Choose Roleplay -->
+                        <div id="step-visual-1" class="step-visual"
+                            style="position: absolute; width: 85%; opacity: 1; transform: translateY(0); transition: all 0.6s ease;">
+                            <div
+                                style="background: #F8FAFC; padding: 24px; border-radius: 20px; border: 1px solid #E2E8F0;">
+                                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
+                                    <div
+                                        style="width: 48px; height: 48px; background: #10B981; border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                                        <i class="ph-fill ph-bell-ringing" style="color: white; font-size: 24px;"></i>
+                                    </div>
+                                    <div>
+                                        <div style="font-size: 16px; font-weight: 800; color: #000235;">Guest Resolution
+                                        </div>
+                                        <div style="font-size: 12px; color: #64748B;">Practice handling service recovery
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; gap: 10px;">
+                                    <div
+                                        style="padding: 12px; background: white; border-radius: 10px; border: 1px solid #F1F5F9; font-size: 13px; font-weight: 600; color: #475569;">
+                                        Scenario: Late Check-in Complaint</div>
+                                    <div
+                                        style="padding: 12px; background: white; border-radius: 10px; border: 1px solid #F1F5F9; font-size: 13px; font-weight: 600; color: #475569;">
+                                        Role: Front Desk Supervisor</div>
+                                </div>
                             </div>
+                        </div>
+
+                        <!-- State 2: Practice with AI -->
+                        <div id="step-visual-2" class="step-visual"
+                            style="position: absolute; width: 85%; opacity: 0; transform: translateY(40px); transition: all 0.6s ease;">
+                            <div style="position: relative;">
+                                <!-- Speech Bubble -->
+                                <div
+                                    style="background: white; padding: 20px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); border: 1px solid #F1F5F9; margin-bottom: 40px; position: relative; z-index: 2;">
+                                    <div style="display: flex; align-items: center; gap: 12px;">
+                                        <div
+                                            style="width: 32px; height: 32px; background: #F59E0B; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                            <i class="ph-bold ph-smiley-sad" style="color: white; font-size: 16px;"></i>
+                                        </div>
+                                        <div style="font-size: 14px; font-weight: 700; color: #1E293B;">I was promised a room with a view, but this is facing the parking lot!</div>
+                                    </div>
+                                </div>
+                                <!-- Wave UI -->
+                                <div
+                                    style="background: white; padding: 15px 25px; border-radius: 100px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid #F1F5F9; display: flex; align-items: center; gap: 15px; width: fit-content; margin: 0 auto;">
+                                    <div style="display: flex; align-items: center; gap: 4px;">
+                                        <div style="width: 3px; height: 12px; background: #CBD5E1; border-radius: 2px;">
+                                        </div>
+                                        <div style="width: 3px; height: 24px; background: #10B981; border-radius: 2px;">
+                                        </div>
+                                        <div style="width: 3px; height: 18px; background: #F59E0B; border-radius: 2px;">
+                                        </div>
+                                        <div style="width: 3px; height: 30px; background: #10B981; border-radius: 2px;">
+                                        </div>
+                                        <div style="width: 3px; height: 14px; background: #CBD5E1; border-radius: 2px;">
+                                        </div>
+                                    </div>
+                                    <div style="font-size: 13px; font-weight: 700; color: #10B981;">Analyzing
+                                        empathy... <i class="ph-bold ph-circle-notch ph-spin"
+                                            style="font-size: 10px;"></i></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- State 3: View Results -->
+                        <div id="step-visual-3" class="step-visual"
+                            style="position: absolute; width: 85%; opacity: 0; transform: translateY(40px); transition: all 0.6s ease;">
+                            <div
+                                style="background: white; padding: 24px; border-radius: 24px; box-shadow: 0 20px 60px rgba(0,0,0,0.1); border: 1px solid #F1F5F9;">
+                                <div style="display: flex; gap: 20px; align-items: flex-start; margin-bottom: 24px;">
+                                    <img src="../retail_hospitality_hero_front_desk_1778050218552.png"
+                                        style="width: 100px; height: 100px; border-radius: 16px; object-fit: cover;">
+                                    <div style="flex: 1;">
+                                        <div
+                                            style="background: #D1FAE5; color: #065F46; padding: 4px 12px; border-radius: 100px; font-size: 11px; font-weight: 700; display: inline-block; margin-bottom: 8px;">
+                                            SERVICE EXCELLENCE</div>
+                                        <div
+                                            style="font-size: 20px; font-weight: 850; color: #000235; margin-bottom: 4px;">
+                                            Guest Satisfaction</div>
+                                        <div style="font-size: 14px; color: #64748B;">Empathy Score: <span
+                                                style="color: #10B981; font-weight: 800;">98/100</span></div>
+                                    </div>
+                                </div>
+                                <div style="display: flex; flex-direction: column; gap: 12px;">
+                                    <div
+                                        style="display: flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 600; color: #065F46;">
+                                        <i class="ph-fill ph-check-circle"></i> Exceptional empathy demonstrated
+                                    </div>
+                                    <div
+                                        style="display: flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 600; color: #065F46;">
+                                        <i class="ph-fill ph-check-circle"></i> Clear resolution path offered
+                                    </div>
+                                    <div
+                                        style="display: flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 600; color: #065F46;">
+                                        <i class="ph-fill ph-check-circle"></i> Calm and professional tone
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. Right: Text Content Cards -->
+                    <div class="text-side" style="padding-left: 20px; position: relative; height: 160px;">
+                        <!-- Step 1 Text -->
+                        <div id="step-text-1"
+                            style="position: absolute; top: 0; left: 0; opacity: 1; transform: translateY(0); width: 100%; transition: all 0.6s ease;">
+                            <div
+                                style="background: white; padding: 32px; border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.06); border: 1px solid #F1F5F9;">
+                                <h3 style="font-size: 24px; font-weight: 850; color: #000235; margin-bottom: 12px;">
+                                    Choose your scenario</h3>
+                                <p style="font-size: 16px; color: #475569; line-height: 1.6; margin: 0;">
+                                    Select from a library of service-focused scenarios, from guest check-ins to managing complex customer complaints.</p>
+                            </div>
+                        </div>
+                        <!-- Step 2 Text -->
+                        <div id="step-text-2"
+                            style="position: absolute; top: 0; left: 0; opacity: 0; transform: translateY(40px); width: 100%; transition: all 0.6s ease;">
+                            <div
+                                style="background: white; padding: 32px; border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.06); border: 1px solid #F1F5F9;">
+                                <h3 style="font-size: 24px; font-weight: 850; color: #000235; margin-bottom: 12px;">
+                                    Practice with AI</h3>
+                                <p style="font-size: 16px; color: #475569; line-height: 1.6; margin: 0;">
+                                    Engage in realistic roleplays with AI guests who simulate a wide range of emotions and service needs.</p>
+                            </div>
+                        </div>
+                        <!-- Step 3 Text -->
+                        <div id="step-text-3"
+                            style="position: absolute; top: 0; left: 0; opacity: 0; transform: translateY(40px); width: 100%; transition: all 0.6s ease;">
+                            <div
+                                style="background: white; padding: 32px; border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.06); border: 1px solid #F1F5F9;">
+                                <h3 style="font-size: 24px; font-weight: 850; color: #000235; margin-bottom: 12px;">Get instant service insights</h3>
+                                <p style="font-size: 16px; color: #475569; line-height: 1.6; margin: 0;">
+                                    Receive instant, data-driven feedback on your empathy, clarity, and effectiveness to master every guest interaction.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4. Far Right: Vertical Dots -->
+                    <div
+                        style="position: absolute; right: 0; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 8px; z-index: 10;">
+                        <div id="dot-1" class="progress-dot active"
+                            style="width: 10px; height: 24px; border-radius: 10px; background: #10B981; transition: all 0.3s;">
+                        </div>
+                        <div id="dot-2" class="progress-dot"
+                            style="width: 10px; height: 10px; border-radius: 50%; background: #E2E8F0; transition: all 0.3s;">
+                        </div>
+                        <div id="dot-3" class="progress-dot"
+                            style="width: 10px; height: 10px; border-radius: 50%; background: #E2E8F0; transition: all 0.3s;">
                         </div>
                     </div>
                 </div>
-                <div>
-                    <h2 class="section-title">Cách thức Nhập vai AI Yoodli vận hành</h2>
-                    <div style="display: flex; flex-direction: column; gap: 32px; margin-top: 40px;">
-                        <div style="display: flex; gap: 24px;">
-                            <div style="width: 48px; height: 48px; background: #E0E7FF; color: var(--retail-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; flex-shrink: 0;">1</div>
-                            <div>
-                                <h4 style="font-size: 20px; font-weight: 700; margin-bottom: 8px;">Chọn kịch bản dịch vụ</h4>
-                                <p style="color: #64748B;">Sử dụng các tình huống đặc thù như xử lý phàn nàn, tư vấn sản phẩm, hoặc hỗ trợ nâng hạng phòng khách sạn.</p>
-                            </div>
-                        </div>
-                        <div style="display: flex; gap: 24px;">
-                            <div style="width: 48px; height: 48px; background: #E0E7FF; color: var(--retail-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; flex-shrink: 0;">2</div>
-                            <div>
-                                <h4 style="font-size: 20px; font-weight: 700; margin-bottom: 8px;">Tương tác với khách hàng AI</h4>
-                                <p style="color: #64748B;">Luyện tập phản xạ với các persona đa dạng, từ khách hàng dễ tính đến những vị khách khó chiều nhất.</p>
-                            </div>
-                        </div>
-                        <div style="display: flex; gap: 24px;">
-                            <div style="width: 48px; height: 48px; background: #E0E7FF; color: var(--retail-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; flex-shrink: 0;">3</div>
-                            <div>
-                                <h4 style="font-size: 20px; font-weight: 700; margin-bottom: 8px;">Nhận phản hồi về sự tận tâm</h4>
-                                <p style="color: #64748B;">Đo lường mức độ đồng cảm, tính chuyên nghiệp và khả năng giải quyết vấn đề nhanh chóng.</p>
-                            </div>
-                        </div>
-                    </div>
+
+                <!-- 5. Footer Button (Bottom Center) -->
+                <div style="text-align: center; margin-top: 5px;">
+                    <a href="#"
+                        style="display: inline-flex; align-items: center; gap: 10px; padding: 12px 32px; background: linear-gradient(135deg, #10B981, #3B82F6); color: white; border-radius: 100px; font-weight: 700; text-decoration: none; box-shadow: 0 10px 25px rgba(16, 185, 129, 0.2); font-size: 14px;">
+                        Start roleplaying
+                    </a>
                 </div>
             </div>
         </section>
@@ -296,61 +462,60 @@
         <section class="container" style="padding: 120px 0;">
             <h2 class="section-title" style="text-align: center; margin-bottom: 80px;">Tác động của Yoodli đối với <br>Đội ngũ Dịch vụ</h2>
             
-            <div class="impact-row">
+            <div class="impact-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; margin-bottom: 100px;">
                 <div class="impact-content">
-                    <div style="color: var(--retail-blue); font-weight: 700; margin-bottom: 12px;">TRẢI NGHIỆM KHÁCH HÀNG</div>
-                    <h3>Chỉ số hài lòng (CSAT) cao hơn</h3>
-                    <p>Tăng điểm hài lòng của khách hàng thông qua đội ngũ nhân viên tự tin, thấu hiểu và có khả năng giao tiếp chuẩn mực trong mọi tình huống.</p>
+                    <div style="color: #10B981; font-weight: 700; margin-bottom: 12px;">TRẢI NGHIỆM KHÁCH HÀNG</div>
+                    <h3 style="font-size: 32px; font-weight: 800; color: #000235; margin-bottom: 20px;">Chỉ số hài lòng (CSAT) cao hơn</h3>
+                    <p style="font-size: 18px; color: #475569; line-height: 1.6;">Tăng điểm hài lòng của khách hàng thông qua đội ngũ nhân viên tự tin, thấu hiểu và có khả năng giao tiếp chuẩn mực trong mọi tình huống.</p>
                 </div>
                 <div class="impact-visual">
                     <img src="https://images.unsplash.com/photo-1560264280-88b68371db39?auto=format&fit=crop&q=80&w=800" alt="Hotel receptionist assisting guests" style="width: 100%; border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.05);">
                 </div>
             </div>
 
-            <div class="impact-row" style="grid-template-columns: 1.2fr 1fr;">
+            <div class="impact-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
                 <div class="impact-visual">
                     <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?auto=format&fit=crop&q=80&w=800" alt="Retail worker helping customer" style="width: 100%; border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.05);">
                 </div>
                 <div class="impact-content">
-                    <div style="color: var(--retail-blue); font-weight: 700; margin-bottom: 12px;">HIỆU QUẢ KINH DOANH</div>
-                    <h3>Tăng trưởng doanh thu</h3>
-                    <p>Cải thiện tỷ lệ bán thêm (upsell) và bán chéo (cross-sell) bằng cách luyện tập kịch bản giới thiệu sản phẩm tự nhiên, không gây khó chịu cho khách hàng.</p>
+                    <div style="color: #10B981; font-weight: 700; margin-bottom: 12px;">HIỆU QUẢ KINH DOANH</div>
+                    <h3 style="font-size: 32px; font-weight: 800; color: #000235; margin-bottom: 20px;">Tăng trưởng doanh thu</h3>
+                    <p style="font-size: 18px; color: #475569; line-height: 1.6;">Cải thiện tỷ lệ bán thêm (upsell) và bán chéo (cross-sell) bằng cách luyện tập kịch bản giới thiệu sản phẩm tự nhiên, thấu hiểu nhu cầu khách hàng.</p>
                 </div>
             </div>
         </section>
 
-        <!-- FAQ Section -->
-        <section class="faq-section">
+        <section class="container" style="padding: 100px 0; max-width: 800px;">
             <h2 class="section-title" style="text-align: center;">Câu hỏi thường gặp</h2>
             <div style="margin-top: 60px;">
-                <div class="faq-item">
-                    <div class="faq-question">Yoodli có thể giả lập khách hàng khó tính không? <i class="ph ph-plus"></i></div>
-                    <div class="faq-answer">Có, AI Persona của Yoodli có thể được tùy chỉnh để đóng vai những khách hàng đang tức giận, không hài lòng, giúp nhân viên rèn luyện kỹ năng giữ bình tĩnh và xoa dịu tình huống.</div>
+                <div class="faq-item" style="border-bottom: 1px solid #E2E8F0; padding: 24px 0;">
+                    <div class="faq-question" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-size: 18px; font-weight: 700; color: #000235;">Yoodli có thể giả lập khách hàng khó tính không? <i class="ph ph-plus"></i></div>
+                    <div class="faq-answer" style="display: none; padding-top: 16px; color: #475569; line-height: 1.6;">Có, AI Persona của Yoodli có thể được tùy chỉnh để đóng vai những khách hàng đang tức giận hoặc không hài lòng, giúp nhân viên rèn luyện kỹ năng giữ bình tĩnh và xoa dịu tình huống.</div>
                 </div>
-                <div class="faq-item">
-                    <div class="faq-question">Nhân viên cửa hàng có thể luyện tập bằng điện thoại di động không? <i class="ph ph-plus"></i></div>
-                    <div class="faq-answer">Hoàn toàn có thể. Yoodli hỗ trợ trên đa nền tảng, cho phép nhân viên có thể luyện tập nhanh chóng qua điện thoại ngay trong giờ giải lao.</div>
+                <div class="faq-item" style="border-bottom: 1px solid #E2E8F0; padding: 24px 0;">
+                    <div class="faq-question" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-size: 18px; font-weight: 700; color: #000235;">Nhân viên có thể luyện tập bằng điện thoại di động không? <i class="ph ph-plus"></i></div>
+                    <div class="faq-answer" style="display: none; padding-top: 16px; color: #475569; line-height: 1.6;">Hoàn toàn có thể. Yoodli hỗ trợ đa nền tảng, giúp nhân viên tranh thủ luyện tập các kịch bản dịch vụ ngay trên điện thoại trong giờ nghỉ hoặc trước ca làm việc.</div>
                 </div>
-                <div class="faq-item">
-                    <div class="faq-question">Làm sao để triển khai hệ thống kịch bản đồng nhất cho nhiều chi nhánh? <i class="ph ph-plus"></i></div>
-                    <div class="faq-answer">Quản trị viên có thể tạo và phân phối các kịch bản chuẩn mực từ hệ thống trung tâm xuống tất cả các chi nhánh, đảm bảo sự nhất quán trong chất lượng dịch vụ.</div>
+                <div class="faq-item" style="border-bottom: 1px solid #E2E8F0; padding: 24px 0;">
+                    <div class="faq-question" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-size: 18px; font-weight: 700; color: #000235;">Làm sao để triển khai kịch bản chuẩn cho toàn hệ thống? <i class="ph ph-plus"></i></div>
+                    <div class="faq-answer" style="display: none; padding-top: 16px; color: #475569; line-height: 1.6;">Quản trị viên có thể tạo kịch bản chuẩn từ trung tâm và phân phối xuống tất cả các chi nhánh, đảm bảo sự nhất quán trong chất lượng phục vụ trên toàn chuỗi.</div>
                 </div>
-                <div class="faq-item">
-                    <div class="faq-question">Quản lý có thể theo dõi tiến độ của nhân viên không? <i class="ph ph-plus"></i></div>
-                    <div class="faq-answer">Có, hệ thống Analytics cung cấp báo cáo chi tiết về mức độ hoàn thành bài tập, điểm số cải thiện và những kỹ năng nhân viên cần bổ sung thêm.</div>
+                <div class="faq-item" style="border-bottom: 1px solid #E2E8F0; padding: 24px 0;">
+                    <div class="faq-question" style="display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-size: 18px; font-weight: 700; color: #000235;">Quản lý có thể theo dõi tiến độ của đội ngũ không? <i class="ph ph-plus"></i></div>
+                    <div class="faq-answer" style="display: none; padding-top: 16px; color: #475569; line-height: 1.6;">Có, bảng điều khiển Analytics cung cấp báo cáo chi tiết về tần suất luyện tập, điểm số cải thiện và những kỹ năng giao tiếp mà đội ngũ cần tập trung thêm.</div>
                 </div>
             </div>
         </section>
 
         <!-- Final CTA -->
-        <section class="final-cta">
+        <section class="final-cta" style="background: #000235; color: white; padding: 120px 0; text-align: center;">
             <div class="container">
-                <h2 style="font-size: 48px; font-weight: 800; margin-bottom: 24px;">Nâng tầm dịch vụ khách hàng <br>ngay hôm nay?</h2>
+                <h2 style="font-size: 48px; font-weight: 800; margin-bottom: 24px;">Sẵn sàng nâng tầm dịch vụ <br>khách hàng của bạn?</h2>
                 <p style="font-size: 20px; opacity: 0.8; margin-bottom: 40px; max-width: 700px; margin-left: auto; margin-right: auto;">Trang bị cho đội ngũ của bạn kỹ năng giao tiếp tự tin để mang lại những trải nghiệm tuyệt vời nhất cho khách hàng.</p>
                 <div style="display: flex; gap: 20px; justify-content: center;">
-                    <a href="../app.html" class="btn btn-primary-pill" style="background: white; color: var(--retail-navy); padding: 20px 48px; font-size: 20px;">Bắt đầu dùng thử</a>
+                    <a href="../app.html" class="btn btn-primary-pill" style="background: white; color: #000235; padding: 20px 48px; font-size: 20px;">Trải nghiệm miễn phí</a>
                 </div>
-                <p style="margin-top: 32px; font-size: 14px; opacity: 0.6;"><i class="ph ph-check-circle"></i> Triển khai nhanh chóng • Linh hoạt trên di động</p>
+                <p style="margin-top: 32px; font-size: 14px; opacity: 0.6;"><i class="ph ph-check-circle"></i> Triển khai nhanh chóng • Tùy chỉnh theo thương hiệu</p>
             </div>
         </section>
     </main>
@@ -360,11 +525,54 @@
     <script src="../master_layout.js"></script>
 
     <script>
+        // Sticky Scroll Logic
+        window.addEventListener('scroll', () => {
+            const section = document.querySelector('.how-it-works-sticky');
+            if (!section) return;
+
+            const rect = section.getBoundingClientRect();
+            const scrollPercent = Math.min(Math.max(-rect.top / (rect.height - window.innerHeight), 0), 1);
+
+            let activeStep = 1;
+            if (scrollPercent > 0.66) {
+                activeStep = 3;
+            } else if (scrollPercent > 0.33) {
+                activeStep = 2;
+            }
+
+            // Update Steps
+            for (let i = 1; i <= 3; i++) {
+                const visual = document.getElementById(`step-visual-${i}`);
+                const text = document.getElementById(`step-text-${i}`);
+                const dot = document.getElementById(`dot-${i}`);
+
+                if (i === activeStep) {
+                    visual.style.opacity = '1';
+                    visual.style.transform = 'translateY(0)';
+                    text.style.opacity = '1';
+                    text.style.transform = 'translateY(0)';
+                    dot.classList.add('active');
+                    dot.style.height = '24px';
+                    dot.style.borderRadius = '10px';
+                    dot.style.background = '#10B981';
+                } else {
+                    visual.style.opacity = '0';
+                    visual.style.transform = i < activeStep ? 'translateY(-40px)' : 'translateY(40px)';
+                    text.style.opacity = '0';
+                    text.style.transform = i < activeStep ? 'translateY(-40px)' : 'translateY(40px)';
+                    dot.classList.remove('active');
+                    dot.style.height = '10px';
+                    dot.style.borderRadius = '50%';
+                    dot.style.background = '#E2E8F0';
+                }
+            }
+        });
+
         document.querySelectorAll('.faq-question').forEach(item => {
             item.addEventListener('click', () => {
                 const parent = item.parentElement;
                 parent.classList.toggle('active');
-                
+
                 const icon = item.querySelector('i');
                 if (parent.classList.contains('active')) {
                     icon.classList.replace('ph-plus', 'ph-minus');

@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bản ghi âm của tôi | Yoodli AI</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="recordings.css">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="app-container">
@@ -16,7 +16,6 @@
                 <a href="index.html" class="logo-small">
                     <i class="ph-fill ph-microphone-stage"></i> yoodli
                 </a>
-                <a href="#" style="color: #64748B;"><i class="ph-bold ph-caret-left"></i></a>
             </div>
             
             <div class="practice-menu-container">
@@ -36,7 +35,7 @@
                     <a href="interview.html" class="practice-item">
                         <i class="ph-duotone ph-users-three"></i> Phỏng vấn
                     </a>
-                    <a href="upload.html" class="practice-item">
+                    <a href="#" class="practice-item">
                         <i class="ph-duotone ph-cloud-arrow-up"></i> Tải lên
                     </a>
                 </div>
@@ -78,18 +77,153 @@
                             <span class="email">lykimngan777@...</span>
                         </div>
                     </div>
-                    <i class="ph-bold ph-caret-up" style="color: #64748B;"></i>
+                    <i class="ph-bold ph-caret-up" style="color: #64748B; font-size: 14px;"></i>
                 </div>
             </div>
         </aside>
 
         <!-- Main Content -->
-        <main class="main-content" style="background: #FFFFFF; padding: 40px;">
-            <h1 style="font-size: 24px; font-weight: 800; color: #0F172A; margin-bottom: 24px;">Bản ghi âm của tôi</h1>
-            <div style="background: #F8FAFC; border: 1px dashed #E2E8F0; border-radius: 16px; height: 300px; display: flex; align-items: center; justify-content: center; color: #64748B;">
-                <p>Bạn chưa có bản ghi âm nào...</p>
+        <main class="main-content">
+            <header class="recordings-header">
+                <div class="header-top">
+                    <h1>Bản ghi</h1>
+                    <div class="header-actions">
+                        <button class="btn-upload">Tải lên</button>
+                        <i class="ph ph-question btn-help"></i>
+                    </div>
+                </div>
+                <div class="header-tabs">
+                    <div class="header-tab active">Bản ghi của tôi</div>
+                    <div class="header-tab">Chia sẻ với tôi</div>
+                </div>
+            </header>
+
+            <section class="filter-section">
+                <div class="search-group">
+                    <label class="search-label">Tìm kiếm</label>
+                    <div class="search-input-wrapper">
+                        <input type="text" placeholder="Tìm kiếm theo tiêu đề...">
+                        <i class="ph ph-magnifying-glass"></i>
+                    </div>
+                </div>
+
+                <div class="filters-row">
+                    <div class="filter-group">
+                        <label class="filter-label">Lọc và tinh chỉnh</label>
+                        <span class="filter-label" style="font-size: 11px; margin-top: -4px;">Nhập vai</span>
+                        <div class="filter-select">
+                            Tất cả <i class="ph-bold ph-caret-down" style="font-size: 12px;"></i>
+                        </div>
+                    </div>
+                    <div class="filter-group" style="margin-top: 20px;">
+                        <span class="filter-label" style="font-size: 11px;">Chương trình</span>
+                        <div class="filter-select">
+                            Tất cả <i class="ph-bold ph-caret-down" style="font-size: 12px;"></i>
+                        </div>
+                    </div>
+                    <div class="filter-group" style="margin-top: 20px;">
+                        <span class="filter-label" style="font-size: 11px;">Loại</span>
+                        <div class="filter-select">
+                            Tất cả <i class="ph-bold ph-caret-down" style="font-size: 12px; color: #4F46E5;"></i>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="recordings-table-container">
+                <div id="table-headers" class="table-header">
+                    <div class="th-item">Tiêu đề</div>
+                    <div class="th-item">Được tạo <i class="ph ph-arrow-down"></i></div>
+                    <div class="th-item">Diễn vai</div>
+                    <div class="th-item">Loại</div>
+                    <div class="th-item">Điểm số <i class="ph ph-arrow-down"></i></div>
+                </div>
+
+                <div class="empty-state">
+                    <h2 id="empty-title">Thư viện của bạn trống rỗng</h2>
+                    <p id="empty-desc">Ghi âm bài thuyết trình thực hành đầu tiên của bạn</p>
+                    <button class="btn-start-practice" id="empty-btn">Bắt đầu luyện tập</button>
+                </div>
             </div>
+
+            <footer class="pagination-bar">
+                <div class="page-size-selector">
+                    Số hàng trên mỗi trang:
+                    <div class="size-select">
+                        20 <i class="ph-bold ph-caret-down" style="font-size: 10px;"></i>
+                    </div>
+                </div>
+                <div class="page-info">0–0 trên 0</div>
+                <div class="pagination-controls">
+                    <i class="ph-bold ph-caret-left"></i>
+                    <i class="ph-bold ph-caret-right"></i>
+                </div>
+            </footer>
         </main>
     </div>
+    </div>
+
+    <script>
+        const tabs = document.querySelectorAll('.header-tab');
+        const filterLabels = document.querySelectorAll('.filter-group .filter-label:nth-child(2)');
+        const filterRows = document.querySelectorAll('.filter-group');
+        const tableHeaders = document.getElementById('table-headers');
+        const emptyTitle = document.getElementById('empty-title');
+        const emptyDesc = document.getElementById('empty-desc');
+        const emptyBtn = document.getElementById('empty-btn');
+
+        tabs.forEach((tab, index) => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+
+                if (index === 1) { // Chia sẻ với tôi
+                    // Update filters
+                    filterLabels[0].textContent = 'Được chia sẻ bởi';
+                    filterLabels[1].textContent = 'Loại';
+                    filterRows[2].querySelector('.filter-label').textContent = 'Trạng thái';
+                    filterRows[2].querySelector('.filter-select').innerHTML = 'Tất cả <i class="ph-bold ph-caret-down" style="font-size: 12px; color: #4F46E5;"></i>';
+
+                    // Update Table Headers
+                    tableHeaders.innerHTML = `
+                        <div class="th-item">Tiêu đề</div>
+                        <div class="th-item">Được tạo <i class="ph ph-arrow-down"></i></div>
+                        <div class="th-item">Đã xem</div>
+                        <div class="th-item">Được chia sẻ bởi</div>
+                        <div class="th-item">Diễn vai</div>
+                        <div class="th-item">Loại</div>
+                        <div class="th-item">Điểm số <i class="ph ph-arrow-down"></i></div>
+                    `;
+                    tableHeaders.style.gridTemplateColumns = '2fr 1fr 1fr 1fr 1fr 1fr 1fr';
+
+                    // Update Empty State
+                    emptyTitle.textContent = 'Không tìm thấy kết quả';
+                    emptyDesc.textContent = 'Thử từ khóa tìm kiếm khác hoặc tùy chọn bộ lọc khác';
+                    emptyBtn.style.display = 'none';
+                } else { // Bản ghi của tôi
+                    // Reset filters
+                    filterLabels[0].textContent = 'Nhập vai';
+                    filterLabels[1].textContent = 'Chương trình';
+                    filterRows[2].querySelector('.filter-label').textContent = 'Loại';
+                    filterRows[2].querySelector('.filter-select').innerHTML = 'Tất cả <i class="ph-bold ph-caret-down" style="font-size: 12px; color: #4F46E5;"></i>';
+
+                    // Reset Table Headers
+                    tableHeaders.innerHTML = `
+                        <div class="th-item">Tiêu đề</div>
+                        <div class="th-item">Được tạo <i class="ph ph-arrow-down"></i></div>
+                        <div class="th-item">Diễn vai</div>
+                        <div class="th-item">Loại</div>
+                        <div class="th-item">Điểm số <i class="ph ph-arrow-down"></i></div>
+                    `;
+                    tableHeaders.style.gridTemplateColumns = '2fr 1fr 1fr 1fr 1fr';
+
+                    // Reset Empty State
+                    emptyTitle.textContent = 'Thư viện của bạn trống rỗng';
+                    emptyDesc.textContent = 'Ghi âm bài thuyết trình thực hành đầu tiên của bạn';
+                    emptyBtn.style.display = 'block';
+                }
+            });
+        });
+    </script>
 </body>
 </html>

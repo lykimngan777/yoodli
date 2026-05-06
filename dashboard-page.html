@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bảng điều khiển | Yoodli AI</title>
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="dashboard.css">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="app-container">
@@ -16,7 +16,6 @@
                 <a href="index.html" class="logo-small">
                     <i class="ph-fill ph-microphone-stage"></i> yoodli
                 </a>
-                <a href="#" style="color: #64748B;"><i class="ph-bold ph-caret-left"></i></a>
             </div>
             
             <div class="practice-menu-container">
@@ -36,7 +35,7 @@
                     <a href="interview.html" class="practice-item">
                         <i class="ph-duotone ph-users-three"></i> Phỏng vấn
                     </a>
-                    <a href="upload.html" class="practice-item">
+                    <a href="#" class="practice-item">
                         <i class="ph-duotone ph-cloud-arrow-up"></i> Tải lên
                     </a>
                 </div>
@@ -78,18 +77,88 @@
                             <span class="email">lykimngan777@...</span>
                         </div>
                     </div>
-                    <i class="ph-bold ph-caret-up" style="color: #64748B;"></i>
+                    <i class="ph-bold ph-caret-up" style="color: #64748B; font-size: 14px;"></i>
                 </div>
             </div>
         </aside>
 
         <!-- Main Content -->
-        <main class="main-content" style="background: #FFFFFF; padding: 40px;">
-            <h1 style="font-size: 24px; font-weight: 800; color: #0F172A; margin-bottom: 24px;">Bảng điều khiển</h1>
-            <div style="background: #F8FAFC; border: 1px dashed #E2E8F0; border-radius: 16px; height: 300px; display: flex; align-items: center; justify-content: center; color: #64748B;">
-                <p>Nội dung phân tích dữ liệu đang được cập nhật...</p>
+        <main class="main-content">
+            <div class="top-bar">
+                <div class="streak-info">
+                    <i class="ph-fill ph-lightning" style="color: #64748B;"></i> 0 DÂY LIÊN TIẾP
+                </div>
+                <div class="current-date">6 tháng 5, 2026</div>
+            </div>
+
+            <div class="dashboard-container">
+                <div class="section-header">
+                    <h2 class="section-title">PHÂN TÍCH TẬP TRUNG</h2>
+                    <div class="header-controls">
+                        <div class="date-range-picker">
+                            29 thg 4, 26 — 6 thg 5, 26 <i class="ph-fill ph-caret-circle-down" style="color: #4F46E5; font-size: 18px;"></i>
+                        </div>
+                        <div class="filter-by">
+                            bởi 
+                            <div class="filter-select">
+                                Tất cả <i class="ph-bold ph-caret-down" style="font-size: 12px;"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="analysis-card">
+                    <div class="analysis-tabs">
+                        <div class="analysis-tab active">Hit target thời gian</div>
+                        <div class="analysis-tab">nghe một cách chủ động</div>
+                        <div class="analysis-tab">Luyện điểm nói chuyện</div>
+                        <div class="analysis-tab">Thời gian trao đổi</div>
+                        <div class="scan-icon-btn">
+                            <i class="ph ph-scan"></i>
+                        </div>
+                    </div>
+
+                    <div class="chart-area">
+                        <i class="ph ph-chart-line-up empty-chart-icon"></i>
+                        <h2>Chưa có dữ liệu!</h2>
+                        <p>Luyện tập ngay trong 30 giây để nhận được một chẩn đoán ban đầu về Hit target thời gian của bạn</p>
+                        <button class="btn-practice-now">Luyện ngay bây giờ</button>
+                    </div>
+                </div>
+
+                <div class="info-section-header">
+                    <h3 class="info-title">THÔNG TIN</h3>
+                </div>
+
+                <div class="info-grid">
+                    <div class="info-card">
+                        <p class="info-card-text">31% của câu của bạn bắt đầu bằng "Em"</p>
+                        <a href="#" class="info-link">Xem khóa học miễn phí của chúng tôi về giao tiếp <i class="ph-bold ph-arrow-circle-right"></i></a>
+                    </div>
+                </div>
             </div>
         </main>
     </div>
+
+    <script>
+        // Tab switching logic
+        const tabs = document.querySelectorAll('.analysis-tab');
+        const chartTitle = document.querySelector('.chart-area h2');
+        const chartDesc = document.querySelector('.chart-area p');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs
+                tabs.forEach(t => t.classList.remove('active'));
+                // Add active class to clicked tab
+                tab.classList.add('active');
+
+                // Update text to match tab
+                const tabName = tab.textContent;
+                chartTitle.textContent = `Chưa có dữ liệu cho ${tabName}!`;
+                chartDesc.textContent = `Luyện tập ngay trong 30 giây để nhận được một chẩn đoán ban đầu về ${tabName} của bạn`;
+            });
+        });
+    </script>
 </body>
 </html>

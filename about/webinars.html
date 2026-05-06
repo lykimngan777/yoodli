@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hội thảo & Podcast | Yoodli AI</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        :root {
+            --navy-dark: #000235;
+            --primary-blue: #3B82F6;
+            --bg-light: #F8FAFC;
+        }
+
+        body { font-family: 'Inter', sans-serif; color: #1E293B; background: white; margin: 0; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
+
+        /* Page Header */
+        .page-header {
+            text-align: center;
+            padding: 60px 0;
+            background: linear-gradient(90deg, #E0F2FE 0%, #F5F3FF 100%);
+            margin-bottom: 60px;
+        }
+        
+        .page-header h1 {
+            font-size: 40px;
+            font-weight: 900;
+            color: var(--navy-dark);
+            margin: 0;
+        }
+
+        /* Webinar List */
+        .webinar-list { padding-bottom: 100px; }
+        .webinar-card {
+            background: white;
+            border: 1px solid #E2E8F0;
+            border-radius: 16px;
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            overflow: hidden;
+            margin-bottom: 24px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .webinar-card:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transform: translateY(-2px);
+            border-color: var(--primary-blue);
+        }
+
+        .card-visual {
+            background: linear-gradient(135deg, #3B82F6 0%, #818CF8 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-visual::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/wave-grid.png');
+            opacity: 0.1;
+        }
+
+        .card-visual i {
+            font-size: 64px;
+            color: white;
+            z-index: 1;
+        }
+
+        .card-content {
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-content h3 {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--navy-dark);
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .card-content p {
+            font-size: 15px;
+            color: #64748B;
+            line-height: 1.6;
+            margin-bottom: 24px;
+            flex-grow: 1;
+        }
+
+        .card-meta {
+            font-size: 13px;
+            font-weight: 700;
+            color: #94A3B8;
+        }
+
+        @media (max-width: 768px) {
+            .webinar-card { grid-template-columns: 1fr; }
+            .card-visual { height: 160px; }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <!-- Page Header -->
+        <section class="page-header">
+            <h1>Webinars</h1>
+        </section>
+
+        <!-- Webinar List -->
+        <section class="webinar-list">
+            <div class="container">
+                <!-- Card 1 -->
+                <a href="#" class="webinar-card">
+                    <div class="card-visual">
+                        <i class="ph ph-microphone-stage"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Podcast: Pigment and Yoodli talk Enablement</h3>
+                        <p>Esha, Nate, and Andres talk about genAI and AI roleplays and how they are transforming the landscape.</p>
+                        <div class="card-meta">July 12, 2025</div>
+                    </div>
+                </a>
+
+                <!-- Card 2 -->
+                <a href="#" class="webinar-card">
+                    <div class="card-visual">
+                        <i class="ph ph-broadcast"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Yoodli AI Roleplays and Databricks: Hot Takes on genAI GTM Enablement</h3>
+                        <p>A deep dive into how Databricks uses Yoodli to prepare their go-to-market teams for complex customer interactions.</p>
+                        <div class="card-meta">July 10, 2025</div>
+                    </div>
+                </a>
+
+                <!-- Card 3 -->
+                <a href="#" class="webinar-card">
+                    <div class="card-visual">
+                        <i class="ph ph-presentation-chart"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Webinar: How USB Payments Uses Yoodli to Scale Sales Training</h3>
+                        <p>Learn the exact framework USB Payments used to roll out AI coaching to hundreds of sales representatives globally.</p>
+                        <div class="card-meta">March 19, 2025</div>
+                    </div>
+                </a>
+
+                <!-- Card 4 -->
+                <a href="#" class="webinar-card">
+                    <div class="card-visual">
+                        <i class="ph ph-microphone"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Podcast: How Databricks is Scaling Success with Yoodli’s AI Role-Play</h3>
+                        <p>Exploring the impact of continuous practice on revenue performance and sales cycle reduction.</p>
+                        <div class="card-meta">March 19, 2025</div>
+                    </div>
+                </a>
+
+                <!-- Card 5 -->
+                <a href="#" class="webinar-card">
+                    <div class="card-visual">
+                        <i class="ph ph-chalkboard-teacher"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Webinar: Maximize Your Coaching Impact with Yoodli</h3>
+                        <p>By incorporating Yoodli into your coaching sessions, you can enhance the learning experience, offer data-driven insights, and give participants the tools to track and improve their progress.</p>
+                        <div class="card-meta">March 5, 2025</div>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <script src="../master_layout.js"></script>
+</body>
+</html>

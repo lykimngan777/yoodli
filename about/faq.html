@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Câu hỏi thường gặp (FAQ) | Yoodli AI</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        :root {
+            --navy-dark: #000235;
+            --primary-blue: #3B82F6;
+        }
+
+        body { font-family: 'Inter', sans-serif; color: #1E293B; background: white; margin: 0; }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+
+        /* Page Header */
+        .page-header {
+            text-align: center;
+            padding: 80px 0;
+            background: linear-gradient(90deg, #E0F2FE 0%, #F5F3FF 100%);
+            margin-bottom: 80px;
+        }
+        
+        .page-header h1 {
+            font-size: 40px;
+            font-weight: 900;
+            color: var(--navy-dark);
+            margin: 0;
+        }
+
+        /* FAQ Accordion */
+        .faq-section { padding-bottom: 120px; }
+        .faq-item {
+            border-bottom: 1px solid #F1F5F9;
+            padding: 24px 0;
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .faq-question h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--navy-dark);
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        .faq-icon {
+            color: var(--primary-blue);
+            font-size: 20px;
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-icon { transform: rotate(180deg); }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            opacity: 0;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding-top: 20px;
+            opacity: 1;
+        }
+
+        .faq-answer p {
+            font-size: 16px;
+            color: #64748B;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .cta-box {
+            background: #F8FAFC;
+            padding: 40px;
+            border-radius: 24px;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        .cta-box h2 { font-size: 24px; font-weight: 850; margin-bottom: 12px; }
+        .cta-box p { color: #64748B; margin-bottom: 24px; }
+
+        @media (max-width: 640px) {
+            .page-header h1 { font-size: 32px; }
+            .faq-question h3 { font-size: 16px; }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <!-- Page Header -->
+        <section class="page-header">
+            <h1>Frequently Asked Questions</h1>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="container">
+                <div class="faq-list">
+                    <!-- Item 1 -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Do you have instructional videos where I can get started?</h3>
+                            <i class="ph ph-caret-down faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes! We have a library of tutorials and onboarding videos in our Help Center. You can also find tips and tricks on our YouTube channel to help you make the most of Yoodli's AI coaching.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>How secure is my data?</h3>
+                            <i class="ph ph-caret-down faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Data security is our top priority. We use industry-standard encryption and security protocols to ensure your data is safe. We never sell your personal information or training data to third parties.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>What about pricing?</h3>
+                            <i class="ph ph-caret-down faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yoodli offers a free tier for individuals to practice and get basic feedback. For organizations and power users, we offer premium plans with advanced analytics, team management, and custom persona configurations. Check our Pricing page for details.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 4 -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>I’m looking for a coach/want to meet other users. Where should I go?</h3>
+                            <i class="ph ph-caret-down faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We have a vibrant community of speakers and coaches. You can join our LinkedIn group or participate in our regular webinars to connect with other Yoodli users and experts.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 5 -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Can I use Yoodli on my everyday calls?</h3>
+                            <i class="ph ph-caret-down faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes! Yoodli can be integrated with platforms like Zoom, Google Meet, and Microsoft Teams to provide real-time analysis during your actual meetings.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 6 -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>I’m a communication coach. How can I use Yoodli?</h3>
+                            <i class="ph ph-caret-down faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Communication coaches use Yoodli to provide objective data to their clients. You can set up custom curriculum, track client progress, and use Yoodli's analytics to supplement your personalized coaching.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 7 -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Can I use Yoodli in multiple languages?</h3>
+                            <i class="ph ph-caret-down faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>While our primary focus is English, we are constantly expanding our language capabilities. Stay tuned for updates on multi-language support!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA Box -->
+                <div class="cta-box">
+                    <h2>Vẫn còn câu hỏi?</h2>
+                    <p>Nếu bạn không tìm thấy câu trả lời mình cần, đừng ngần ngại liên hệ với đội ngũ hỗ trợ của chúng tôi.</p>
+                    <a href="mailto:support@yoodli.ai" class="btn btn-primary-pill" style="background: var(--primary-blue);">Liên hệ hỗ trợ</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="../master_layout.js"></script>
+    <script>
+        // FAQ Accordion Logic
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                const isActive = item.classList.contains('active');
+                
+                // Close all other items
+                document.querySelectorAll('.faq-item').forEach(otherItem => {
+                    otherItem.classList.remove('active');
+                });
+
+                // Toggle current item
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
